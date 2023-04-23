@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block head %}
+{% if page == 'myOrder' %}
+<link rel="stylesheet" href="/static/sellerJobBox.css">
+
+{% endif %}
+{% endblock %}
+        {% block content %}
+
+        <div class="sellerJobBox">
+            <h2>Your Orders:- </h2>
+
+            <div class="sellerJobs">
+
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                    <!-- <img src="templates/user.png" alt="buyerImg">  -->
+                </div>
+                    <div class="jobDetails">
+                        <h2> Job By :Username </h2>
+                        <div class="time">
+                            <p> Delivery Time : 2:00 PM  </p>
+                            <p> Pickup Time : 2:00 PM  </p>
+                        </div>
+                        <div>
+                            <p>Delivery Address: Kolkata</p>
+                            <p>Pickup Address: Kolkata</p>
+
+                        </div>
+                    </div>
+
+                    <div class="job_button">
+                         <a href="/check-job"><button class="btn"> Chat </button></a>
+                         <a href="/check-job"><button class="btn"> Check Order </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                </div>
+                    <div class="jobDetails">
+                        <h2> Job By :Username </h2>
+                        <div class="time">
+                            <p> Delivery Time : 2:00 PM  </p>
+                            <p> Pickup Time : 2:00 PM  </p>
+                        </div>
+                        <div>
+                            <p>Delivery Address: Kolkata</p>
+                            <p>Pickup Address: Kolkata</p>
+
+                        </div>
+                    </div>
+
+                    <div class="job_button">
+                        <a href="/check-job"><button class="btn"> Chat </button></a>
+                        <a href="/check-job"><button class="btn"> Check Order </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                </div>
+                    <div class="jobDetails">
+                        <h2> Job By :Username </h2>
+                        <div class="time">
+                            <p> Delivery Time : 2:00 PM  </p>
+                            <p> Pickup Time : 2:00 PM  </p>
+                        </div>
+                        <div>
+                            <p>Delivery Address: Kolkata</p>
+                            <p>Pickup Address: Kolkata</p>
+
+                        </div>
+                    </div>
+
+                    <div class="job_button">
+                        <a href="/check-job"><button class="btn"> Chat </button></a>
+                        <a href="/check-job"><button class="btn"> Check Order </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                </div>
+                    <div class="jobDetails">
+                        <h2> Job By :Username </h2>
+                        <div class="time">
+                            <p> Delivery Time : 2:00 PM  </p>
+                            <p> Pickup Time : 2:00 PM  </p>
+                        </div>
+                        <div>
+                            <p>Delivery Address: Kolkata</p>
+                            <p>Pickup Address: Kolkata</p>
+
+                        </div>
+                    </div>
+
+                    <div class="job_button">
+                        <a href="/check-job"><button class="btn"> Chat </button></a>
+                        <a href="/check-job"><button class="btn"> Check Order </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                </div>
+                    <div class="jobDetails">
+                        <h2> Job By :Username </h2>
+                        <div class="time">
+                            <p> Delivery Time : 2:00 PM  </p>
+                            <p> Pickup Time : 2:00 PM  </p>
+                        </div>
+                        <div>
+                            <p>Delivery Address: Kolkata</p>
+                            <p>Pickup Address: Kolkata</p>
+
+                        </div>
+                    </div>
+
+                    <div class="job_button">
+                        <a href="/check-job"><button class="btn"> Chat </button></a>
+                        <a href="/check-job"><button class="btn"> Check Order </button></a>
+                    </div>
+                </div>
+            </div>
+         </div>
+         
+
+    </div>
+    {% endblock %}

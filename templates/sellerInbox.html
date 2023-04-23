@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block head %}
+{% if page == 'sellerInbox' %}
+<link rel="stylesheet" href="/static/sellerJobBox.css">
+
+{% endif %}
+{% endblock %}
+        {% block content %}
+
+        <div class="sellerJobBox">
+            <!-- <h2> My Inbox </h2> -->
+
+            <div class="sellerJobs">
+
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                    <!-- <img src="templates/user.png" alt="buyerImg">  -->
+                </div>
+                    <div class="jobDetails">
+                        <h2> Username </h2>
+                        
+                    </div>
+
+                    <div class="job_button">
+                         <a href="/check-job"><button class="btn"> Chat </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                </div>
+                    <div class="jobDetails">
+                        <h2> Username </h2>
+                        
+                    </div>
+
+                    <div class="job_button">
+                        <a href="/check-job"><button class="btn"> Chat </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                </div>
+                    <div class="jobDetails">
+                        <h2> Username </h2>
+                        
+                    </div>
+
+                    <div class="job_button">
+                        <a href="/check-job"><button class="btn"> Chat </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                </div>
+                    <div class="jobDetails">
+                        <h2> Username </h2>
+                        
+                    </div>
+
+                    <div class="job_button">
+                        <a href="/check-job"><button class="btn"> Chat </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                <div class="image"> 
+                    <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                </div>
+                    <div class="jobDetails">
+                        <h2> Username </h2>
+                        
+                    </div>
+
+                    <div class="job_button">
+                        <a href="/check-job"><button class="btn"> Chat </button></a>
+                    </div>
+                </div>
+            </div>
+         </div>
+         
+
+    </div>
+    {% endblock %}

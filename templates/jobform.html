@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/jobform.css">
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <title>DeliverEase</title>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">DeliverEase</label>
+        <ul>
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="/templates/aboutus.html">About Us</a></li>
+          <li> <a class='button' href="/templates/myorders.html">My Orders</a></li>
+
+        </ul>
+      </nav>
+      <h1 class='pleasefill'>Please fill these details to continue :-</h1>
+
+<form action="#" method="POST">
+<input type="text" class='collectdel' name="pickup_address" placeholder='PickUp Address' />
+<input type="text" class='collectdel' placeholder='Delivery Address' />
+<input type="text" class='collectdel' name="pickup_time" placeholder='PickUp Time' />
+<input type="text" class='collectdel' name="delivery_time" placeholder='Delivery Time' />
+<input type="text" class='collectdel' name="pickup_pincode" placeholder='PickUp Pin Code' />
+<input type="text" class='collectdel' name="delivery_pincode" placeholder='Delivery Pin Code' />
+
+</form>
+<button class='butt'>Place Order</button>
+</body>
+</html>

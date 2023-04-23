@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block head %}
+{% if page == 'sellerEachjobpage' %}
+<link rel="stylesheet" href="/static/sellerCheckjob.css">
+
+
+{% endif %}
+{% endblock %}
+        {% block content %}
+
+         <div class="checkJob">
+
+            <div class="contentBox_sellercheckjob">
+
+               <div class="buyers_details">
+
+                  <div class="buyer_image"> 
+                     <!-- <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                     <img src="/static/buyer.jpeg" alt="buyerimage" > -->
+                     <img src="{{ url_for('static', filename='buyer.jpeg') }}" alt="buyerImg"> 
+                  </div>
+      
+                  <div class="buyer_info">
+                     <h2>Atrika show</h2> 
+                     <h3> Buyer Since 2005</h3>
+                     <button class="btn">Chat</button>
+                  </div>
+              </div>
+
+               <div> 
+                     <div class="buyers_Jobdetails">
+                        <div>
+                           <h2> Collect The Delivery from :-</h2>
+                           <p>Domino's Store, Front of Aggrawal Sweets, Karol Bagh, New Delhi 110040</p>
+                        </div>
+            
+                        <div>
+                           <h2>Collect the Delivery At :-</h2>
+                           <p>4 PM</p>
+                        </div>
+                        <div>
+                           <h2>Deliver At :-</h2>
+                           <p>Green Island Apartment, 108th floor , Karol Bagh, New Delhi, 110034</p>
+                        </div>
+            
+                        <div>
+                           <h2>Deliver By:-</h2>
+                           <p> 6 PM </p>
+                        </div>
+                        <button class="btn" style="background-color: green"> Accept</button>
+                        <button class="btn" style="background-color: red"> Reject</button>
+                     </div>
+                     <div>
+                        <p>Please don't drive faster than 40KM, take your time, the time we told you is just the customer expectations, we never promote, deliver time.</p>
+                     </div>
+                     
+                </div>
+
+            </div>
+
+         </div>
+    {% endblock %}

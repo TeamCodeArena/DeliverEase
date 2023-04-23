@@ -1,0 +1,23 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.nav_link{
+    display: flex;
+}
+.nav_link li a{
+    color: var(--font-color);
+    padding: 1rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+.nav_link li a:hover{
+    color: rgb(42, 169, 233);
+}

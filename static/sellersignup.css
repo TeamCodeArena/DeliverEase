@@ -86,6 +86,13 @@ textarea::placeholder{
 .sellerInfo_third input{
     width: 70%;
 }
+.confpass{
+    display: flex;
+    justify-content: center;
+}
+#confpassword{
+    width: 70%;
+}
 .sellerInfo_third textarea{
     width: 70%;
     margin-bottom: 2rem;

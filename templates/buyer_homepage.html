@@ -1,0 +1,11 @@
+{%extends "buyer_base.html"%}
+{% block title %}Home{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="/static/buyerhomepage.css">
+<h1 class='heading'>Get something delivered.<br>Directly by them.</h1>
+<form action="/place_order">
+    <button class='btn' type="submit">Place Order</button>
+</form>
+<img src="/assests/homepageimg.png" alt="deliveryman" class='homepage'>
+
+{% endblock %}

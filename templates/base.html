@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}Home{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/sellerNavbar.css">
+    
+    {% block head %}{% endblock %}
+   
+</head>
+<body>
+    <div class="App">
+
+        <nav> 
+        <div class='navbar'>
+            <h1> DeliverEase</h1>
+                <div class='nav_right'>
+                    <ul class="nav_link">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                    </ul>
+                    <button class="btn"> My order</button>
+                    <button class="btn">Order Request</button>
+                </div>
+        </div> 
+        </nav>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+    {% block content %}
+    <center>
+        <h1>Welcome to Crypto Tracker</h1>
+    </center>
+    <h2>
+      <a href="/login">Login</a><br>
+      <a href="/register">Register</a>
+    </h2>
+    {% endblock %}
+    </div>
+</body>
+</html>

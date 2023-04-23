@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style2.css">
-    <title>DeliverEase</title>
-</head>
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <title>{%block title%}Home{% endblock %}</title>
+
+    </head>
 <body>
     <a href=""><h1 class='brandname' >DeliverEase</h1></a>
 
     <a href="/home"><h2 class='home'>Home</h2></a>
     <a href="/about"></a><h2 class='about'>About Us</h2></a>
 
-    <a href="/login"> <button class='btn'>Login</button></a>
+    <a href="/login"> <button class='button'>Login</button></a>
+
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+          {{ message }}
+        {% else %}
+          {{ message }}
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

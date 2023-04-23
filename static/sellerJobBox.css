@@ -1,0 +1,16 @@
+.sellerJobBox{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.sellerJobs{
+    
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 99%;
+    height: auto;
+    border: 2px solid white;
+}
