@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/buyerhomepage.css">
     <link rel="stylesheet" href="/static/stylesheet.css">
+    <link rel="stylesheet" href="/static/buyerorseller.css">
+    <link rel="stylesheet" href="/static/jobform.css">
     <title>DeliverEase</title>
 </head>
 <body>
-
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
@@ -19,12 +19,17 @@
         <ul>
           <li><a class="active" href="#">Home</a></li>
           <li><a href="/templates/aboutus.html">About Us</a></li>
-          <li> <a class='button' href="/templates/myorders.html">My Orders</a></li>
-  
+          <li> <a class='button' href="/templates/my_orders.html">My Orders</a></li>
         </ul>
       </nav>
-    <h1 class='heading'>Get something delivered.<br>Directly by them.</h1>
-<a href="/place_order"><button class="butto" role="button">Order something.</button></a>
-<img src="/assests/homepageimg.png" alt="deliveryman" class='homepage'>
+
+      <div>
+        <h1 class='que'>Who are you?</h1>
+        <div class="button-container">
+            <a class='butt' href="/buyer">Buyer</a>
+            <a class='butt' href="/seller">Seller</a>
+        </div>
+      </div>
+
 </body>
 </html>

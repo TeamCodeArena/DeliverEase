@@ -10,9 +10,6 @@
 h2{
     color: var(--font-color);
     background-color: var(--white-color);
-    font-family: Inter;
-    font-size: 1.5rem;
-    font-weight: 700;
 }
 .buyers_details{
     display: flex;
@@ -24,10 +21,10 @@ h2{
     /* background-color: #fff; */
 }
 .buyer_image{
-    width: 18rem; 
+    width: 18rem;
 }
 .buyer_image img{
-    border-radius: 50px;
+    border-radius: 22px;
 }
 .buyer_info{
     background-color: transparent;

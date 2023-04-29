@@ -21,30 +21,34 @@
                   </div>
       
                   <div class="buyer_info">
-                     <h2>Buyer Name</h2> 
-                     <h3> Buyer Since 2005</h3>
+                     <h2>Buyer Info:
+                         Name: {{ buyer_name }}
+                         Email: {{ buyer_email }}
+                         Phone No. : {{ buyer_phone_no }}</h2>
                   </div>
               </div>
 
                <div> 
                      <div class="buyers_Jobdetails">
                         <div>
-                           <h2> Collect The Delivery from :-</h2>
-                           <p>Domino's Store, Front of Aggrawal Sweets, Karol Bagh, New Delhi 110040</p>
+                           <h2> Delivery Type :-</h2>
+                           <p>{{ product_type }}</p>
+                        <h2> Collect The Delivery from :-</h2>
+                           <p>{{ pickup_address }}, {{ pickup_pincode }}</p>
                         </div>
             
                         <div>
                            <h2>Collect the Delivery At :-</h2>
-                           <p>4 PM</p>
+                           <p>{{ pickup_time }}</p>
                         </div>
                         <div>
                            <h2>Deliver At :-</h2>
-                           <p>Green Island Apartment, 108th floor , Karol Bagh, New Delhi, 110034</p>
+                           <p>{{ delivery_address }}, {{ delivery_pincode }}</p>
                         </div>
             
                         <div>
                            <h2>Deliver By:-</h2>
-                           <p> 6 PM </p>
+                           <p> {{ delivery_time }} </p>
                         </div>
                      </div>
                      <button class="btn" id='applyBtn'> Apply</button>
