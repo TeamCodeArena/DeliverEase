@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block head %}
+{% if page == 'sellerhomepage' %}
+<link rel="stylesheet" href="/static/sellerJobBox.css">
+
+{% endif %}
+{% endblock %}
+        {% block content %}
+
+         <div class="sellerJobBox">
+            <h2> Jobs </h2>
+
+            <div class="sellerJobs">
+
+                <div class="eachJobBox">
+
+                    <div class="eachJobBox_left"> 
+                        <div class="image"> 
+                            <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                            <!-- <img src="templates/user.png" alt="buyerImg">  -->
+                        </div>
+                        <div class="jobDetails">
+                                <h2> Job By :{{  buyer_name }} </h2>
+                                <div class="time">
+                                    <p> Delivery Time : {{ job_details_list[0] }}  </p>
+                                    <p> Pickup Time : {{ job_details_list[4] }} </p>
+                                </div>
+                                <div>
+                                    <p>Delivery Address: {{ job_details_list[2] }}</p>
+                                    <p>Pickup Address: {{ job_details_list[3] }}</p>
+    
+                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job_button">
+                            <a href="/check-job"><button class="btn btn_sm"> Check job </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                    <div class="eachJobBox_left"> 
+                        <div class="image"> 
+                            <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                            <!-- <img src="templates/user.png" alt="buyerImg">  -->
+                        </div>
+                        <div class="jobDetails">
+                                <h2> Job By :{{  buyer_name }} </h2>
+                                <div class="time">
+                                    <p> Delivery Time : {{ job_details_list[0] }}  </p>
+                                    <p> Pickup Time : {{ job_details_list[4] }} </p>
+                                </div>
+                                <div>
+                                    <p>Delivery Address: {{ job_details_list[2] }}</p>
+                                    <p>Pickup Address: {{ job_details_list[3] }}</p>
+    
+                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job_button">
+                            <a href="/check-job"><button class="btn btn_sm"> Check job </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                    <div class="eachJobBox_left"> 
+                        <div class="image"> 
+                            <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                            <!-- <img src="templates/user.png" alt="buyerImg">  -->
+                        </div>
+                        <div class="jobDetails">
+                                <h2> Job By :{{  buyer_name }} </h2>
+                                <div class="time">
+                                    <p> Delivery Time : {{ job_details_list[0] }}  </p>
+                                    <p> Pickup Time : {{ job_details_list[4] }} </p>
+                                </div>
+                                <div>
+                                    <p>Delivery Address: {{ job_details_list[2] }}</p>
+                                    <p>Pickup Address: {{ job_details_list[3] }}</p>
+    
+                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job_button">
+                            <a href="/check-job"><button class="btn btn_sm"> Check job </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                    <div class="eachJobBox_left"> 
+                        <div class="image"> 
+                            <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                            <!-- <img src="templates/user.png" alt="buyerImg">  -->
+                        </div>
+                        <div class="jobDetails">
+                                <h2> Job By :{{  buyer_name }} </h2>
+                                <div class="time">
+                                    <p> Delivery Time : {{ job_details_list[0] }}  </p>
+                                    <p> Pickup Time : {{ job_details_list[4] }} </p>
+                                </div>
+                                <div>
+                                    <p>Delivery Address: {{ job_details_list[2] }}</p>
+                                    <p>Pickup Address: {{ job_details_list[3] }}</p>
+    
+                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job_button">
+                            <a href="/check-job"><button class="btn btn_sm"> Check job </button></a>
+                    </div>
+                </div>
+                <div class="eachJobBox">
+
+                    <div class="eachJobBox_left"> 
+                        <div class="image"> 
+                            <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg"> 
+                            <!-- <img src="templates/user.png" alt="buyerImg">  -->
+                        </div>
+                        <div class="jobDetails">
+                                <h2> Job By :{{  buyer_name }} </h2>
+                                <div class="time">
+                                    <p> Delivery Time : {{ job_details_list[0] }}  </p>
+                                    <p> Pickup Time : {{ job_details_list[4] }} </p>
+                                </div>
+                                <div>
+                                    <p>Delivery Address: {{ job_details_list[2] }}</p>
+                                    <p>Pickup Address: {{ job_details_list[3] }}</p>
+    
+                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job_button">
+                            <a href="/check-job"><button class="btn btn_sm"> Check job </button></a>
+                    </div>
+                </div>
+
+            </div>
+         </div>
+         
+
+    </div>
+    {% endblock %}
