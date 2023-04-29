@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,300&display=swap');
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar h1{
+    font-family: "Kaushan Script";
+}
+.nav_right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.nav_link{
+    display: flex;
+}
+.nav_link li a{
+    color: var(--font-color);
+    padding: 1rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+.nav_link li a:hover{
+    color: rgb(42, 169, 233);
+}
+
+  
+/*============================================================*/
+
+  @media screen and (max-width: 780px) {
+    .nav_link{
+        display: none;
+    }
+}
+  
+  /* @media (max-width:830px){
+    
+    .header{
+        position: relative;
+    }
+    .mobile_navbar_btn{
+        display: block;
+        z-index: 10;
+        border: 0px solid black;
+        color: var(--font-color);
+    }
+    .mobile_nav_icon{
+        width: 2rem;
+        height: 2rem;
+    }
+    .navbar{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #b5e7f5;
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+  
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .nav_right{
+        flex-direction: column;
+        background-color: transparent;
+    }
+    .nav_link{
+        flex-direction: column;
+        background-color: transparent;
+  
+    }
+    .nav_link li a{
+        padding: 10px;
+        margin-right: 0rem;
+        background-color: transparent;
+        font-size: 1.5rem;
+    }
+    .nav_link li {
+        background-color: transparent;      
+    }
+    .btn_m{
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
+    .active .navbar{
+        transform: translateX(0%);
+  
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .active .mobile_navbar_btn .mobile_nav_icon[name="menu"]{
+        display: none;
+    }
+    .active .mobile_navbar_btn .mobile_nav_icon[name="close"]{
+        display: block;
+    }
+  } */

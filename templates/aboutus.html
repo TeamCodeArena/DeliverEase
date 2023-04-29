@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/aboutus.css">
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <title>DeliverEase</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+        <a href="#" class="nav-logo">DeliverEase</a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="button">My Orders</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    </header>
+
+      <div class="aboutus_container"> 
+        <h1 class="aboutus_title" >Who are we?</h1>
+          <div class="aboutus_para"> 
+            <h2 >Welcome to CodeArena! We are a team of passionate developers committed to creating innovative solutions using coding and programming skills. Our team consists of Devansh Singh Parmar, Aryan Gupta, and Atrika Show.
+              <br><br>
+              Our current project is a platform that connects delivery personnel with customers directly. We believe that this platform will revolutionize the delivery industry by providing a more flexible and cost-effective delivery model that is more in line with contemporary needs and expectations.
+              <br><br>
+              At CodeArena, we are dedicated to creating user-friendly and efficient platforms that address the needs of our customers. We are committed to excellence in all aspects of our work, from design to development to customer service. Our team has the skills and experience necessary to bring your ideas to life and help you achieve your goals.</h2>
+            </div>
+      </div>
+</body>
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  const navLink = document.querySelectorAll(".nav-link");
+  
+  hamburger.addEventListener("click", mobileMenu);
+  navLink.forEach(n => n.addEventListener("click", closeMenu));
+  
+  function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+  }
+  
+  function closeMenu() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+  }
+      </script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/jobform.css">
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <link rel="stylesheet" href="/static/navbar.css">
+    <title>DeliverEase</title>
+</head>
+<body>
+  <div class="App"> 
+
+    <header class="header">
+      <nav class="navbar">
+          <a href="#" class="nav-logo">DeliverEase</a>
+          <ul class="nav-menu">
+              <li class="nav-item">
+                  <a href="#" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="button">My Orders</a>
+              </li>
+          </ul>
+          <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+      </nav>
+  </header>
+
+      <div class="formBox"> 
+      <h1>Please fill these details to continue :-</h1>
+      <form action="#" method="POST">
+          <div class="formInput">
+          <div>
+            <input type="text" class='collectdel' placeholder='PickUp Address' />
+            <input type="text" class='collectdel' placeholder='Delivery Address' />
+          </div>
+          <div> 
+            <input type="text" class='collectdel' placeholder='PickUp Time' />
+            <input type="text" class='collectdel' placeholder='Delivery Time' />
+          </div>
+          <div> 
+            <input type="text" class='collectdel' placeholder='PickUp Date' />
+            <input type="text" class='collectdel' placeholder='Delivery Date' />
+          </div>
+          <div> 
+          <input type="text" class='collectdel' placeholder='PickUp Pin Code' />
+          <input type="text" class='collectdel' placeholder='Delivery Pin Code' />
+        </div>
+          <button class='btn'>Place Order</button>
+        </div>
+      </form>
+
+  </div>
+</body>
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  const navLink = document.querySelectorAll(".nav-link");
+  
+  hamburger.addEventListener("click", mobileMenu);
+  navLink.forEach(n => n.addEventListener("click", closeMenu));
+  
+  function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+  }
+  
+  function closeMenu() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+  }
+      </script>
+</html>

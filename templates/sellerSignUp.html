@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/sellersignup.css">
+</head>
+<body>
+    <div class='App'>
+        
+    <div class='signUp'> 
+        <h1> Signup as a seller </h1>
+          
+          <hr/>
+  
+          <div class="sellerDetails">
+              <form onSubmit={handleFormSubmit}>
+              
+              <div class="sellerInfo_first"> 
+                <input type="text" name="fullName"   placeholder='Full Name' />
+                
+                
+                  
+                <input type="email" name="email"   placeholder='Billiot@example.com' />
+              </div>
+            
+              <div class="sellerInfo_second">
+                <input type="password" name="password"    placeholder='Password'/>
+                <input type="tel" name="phoneNo"  autoComplete="tel" placeholder='Phone Number'/>
+              </div>
+              <div class="confpass"> 
+              <input type="password" name="cofirmPassword" id="confpassword"  placeholder='Confirm Password'/>
+            </div>
+            
+              <div class="sellerInfo_third">
+                <input type="text" name="workExperience"   autoComplete="organization-title" placeholder='Do you have any work experience?'/>
+              
+              
+                
+                <textarea name="address"  autoComplete="street-address" placeholder='2639 1st Hwy, STE 7768, Pierre, South Dakota, 93567'></textarea>
+              </div>
+  
+            <button class='btn' type="submit">Submit</button>
+          </form>
+    
+  
+          </div>
+      </div>
+    </div>
+    
+</body>
+</html>
