@@ -1,0 +1,17 @@
+.que{
+    color: #645888;
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 700;
+    font: bold;
+}
+.buyerorseller_container{
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.button-container{
+    margin-top: 2rem;
+}

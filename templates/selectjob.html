@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <link rel="stylesheet" href="/static/selectjob.css">
+    <link rel="stylesheet" href="/static/navbar.css">
+    <title>DeliverEase | Register</title>
+</head>
+<body>
+  <div class="App"> 
+    <header class="header">
+      <nav class="navbar">
+          <a href="#" class="nav-logo">DeliverEase</a>
+          <ul class="nav-menu">
+              <li class="nav-item">
+                  <a href="#" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="button">My Orders</a>
+              </li>
+          </ul>
+          <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+      </nav>
+      </header>
+
+        
+  <div class="selectjob_container"> 
+    <h1 class='completed'>Completed, now choose one of these :-</h1>
+
+      <div class="selectjob_container_firstDiv"> 
+        <button class='buttonjob'>Post this as a Job</button>
+        <h1 class='dis1'>In this option, you will post a job, nearest delivery man will accept it and deliver the goods to your doorsteps.</h1>
+    </div>
+    <div> 
+      <button class='buttonjob2'>Select a delivery man</button>
+      <h1 class='dis2'>In this option, you will post a job, nearest delivery man will  accept it and deliver the goods to your doorsteps.</h1>
+    </div>
+  </div>
+  </div>
+        
+</body>
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  const navLink = document.querySelectorAll(".nav-link");
+  
+  hamburger.addEventListener("click", mobileMenu);
+  navLink.forEach(n => n.addEventListener("click", closeMenu));
+  
+  function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+  }
+  
+  function closeMenu() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+  }
+      </script>
+</html>

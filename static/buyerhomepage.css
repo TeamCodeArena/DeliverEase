@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+h1{
+    font-size: 3.4rem;
+    color: #645888;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 2rem;
+}
+
+.image{
+  width: 40%;
+}
+.image img{
+  background-color: transparent;
+}
+
+.butto {
+  align-items: center;
+  background-color: #645888;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  margin-left: 50px;
+}
+.butto:hover,
+.butto:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.butto:hover {
+  transform: translateY(-1px);
+}
+.butto:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+/*----------------------------- BuyerHomepage media query--------------------------------*/
+
+.buyerhomepage_left{
+  width: 60%;
+}
+
+
+@media screen and (max-width: 1140px) {
+  h1{
+    font-size: 2.4rem;
+    color: #645888;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  h1{
+    font-size: 2rem;
+  }
+  .image{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 570px) {
+  .container{
+    flex-direction: column;
+  }
+  h1{
+    font-size: 2rem;
+  }
+  .buyerhomepage_left{
+    width: 90%;
+  }
+  .image{
+    width: 100%;
+  }
+}

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+.image{
+    width: 60%;
+}
+.img{
+    border-radius: 50px;
+    margin-left: 90px;
+    margin-top: 20px;
+    width: 300px;
+}
+
+.username{
+    font-family: 'Pathway Extreme', sans-serif;
+    color: #645888;
+}
+
+.disotp{
+font-family: 'Roboto Mono', monospace;
+font-size: 15px;
+}
+.otp{
+    font-family: 'Sigmar', cursive;
+    font-size: 40px;
+    color: #645888;
+    font: bold;
+    }
+.headingon{ 
+    color: #645888;
+    font-family: Inter;
+    font-size: 16px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700;
+}
+
+.headingof{
+    color: #343F71;
+    font-family: Inter;
+    font-size: 16px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700;
+}
+
+.headingon1{
+    color: #645888;
+    font-family: Inter;
+    font-size: 16px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700;
+}
+
+.headingof1{
+    color: #343F71;
+    font-family: Inter;
+    font-size: 16px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700;
+}
+/*---------------------------------------------*/
+.checkorder_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+}
+.checkorder_container_left{
+    margin-top: 2rem;
+    width: 40%;
+}
+.checkorder_container_right{
+    width: 40%;
+}
+
+
+ @media screen and (max-width: 730px) {
+    
+    .checkorder_container{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .checkorder_container_left{
+        width: 80%;
+    }
+    .checkorder_container_right{
+        width: 80%;
+    }
+    .username{
+        font-size: 1.3rem;
+    }
+    .otp{
+        font-size: 30px;
+        }
+} 
