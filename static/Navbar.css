@@ -10,10 +10,10 @@
     justify-content: space-between;
     align-items: center;
 }
-.nav h2{
+.navbar h2{
     color: #645888;
     font-family: "Kaushan Script";
-    font-size: 1.55rem;
+    font-size: 1.8rem;
     font-weight: 400;
 }
 .nav .nav_right{
@@ -39,11 +39,11 @@
     font-size: 1.8rem;
     color: var(--font-color);
     margin-left: 0.7rem;
-
-     display: none; 
+}
+.menuIcon, .closeIcon{
+    display: none;
 }
 
-/*
 @media screen and (max-width: 750px) {
     
     .nav ul li {
@@ -57,27 +57,7 @@
     width: 6rem;
     }
 }
-@media screen and (max-width:550px){
-    .nav h2{
-        font-size: 1.3rem;
-    }
-    .btn{
-        width: 5rem;
-        font-size: 14px;
-    }
-    .nav ul{
-        display: none;
-    }
-    
-    .icons ion-icon:first-child {
-        display: block ;
-      }
-    
-      .icons ion-icon:last-child {
-        display: none ;
-      }
-      
-}
+
 /* specially for only icon*/
 /*
 @media screen and (min-width:551px){

@@ -13,43 +13,41 @@
 <body>
     <div class="App">
 
-        <div class='nav'>
-            <h2> DeliverEase</h2>
-            <div class='nav_right'>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
+        
+
+        <header class="header">
+            <nav class="navbar">
+                <h2> DeliverEase</h2>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+<!--                         <a href="#" class="btn">My Orders</a> -->
+                        <button class="btn"> Login</button>
+                    </li>
                 </ul>
-                <button class="btn">Login</button>
-        </div>
-        </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
 
         <div class='container'>
             <h1> Empowering Delivery Partners,<br/>Connecting Communities!</h1>
       
             <div class='containerLower'>
-
+      
               <div class='left'>
                       <p> New User ?</p>
-                  <table>
-                      <tr>
-                          <td>
-                                <form action="/get_started">
-                                    <button class='btn' type="submit">Get Started</button>
-                                </form>
-
-                          </td>
-                          <td>
-                                 <form action="/about_us">
-                                      <button class='btn' type="submit">About Us</button>
-                                  </form>
-
-                          </td>
-
-                      </tr>
-                  </table>
-
-
+                  <Link to="/getstarted"> <button class='btn'> Get started</button> </Link>
+                  
+                  <button class='btn'> Who we are</button>
               </div>
       
               <div class='right'>
@@ -60,7 +58,30 @@
         </div>
             
        
-          
+       
     </div>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            const navLink = document.querySelectorAll(".nav-link");
+
+            hamburger.addEventListener("click", mobileMenu);
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+            function mobileMenu() {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            }
+
+            function closeMenu() {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+    </script>
+
+    
 </body>
 </html>
