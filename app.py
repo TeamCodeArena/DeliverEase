@@ -48,7 +48,7 @@ class Buyer(db.Model):
     address = db.Column(db.String(100))
 
     def __repr__(self) -> str:
-        return f"{self.name} {self.id} {self.email} {self.phoneNo} {self.email} {self.address}"
+        return f"{self.name} {self.id} {self.email} {self.phoneNo} {self.password} {self.address}"
 
 
 
@@ -69,7 +69,6 @@ class Job(db.Model):
     status = db.Column(db.String(100), default='Pending')
     rating = db.Column(db.Integer, default='NIL')
     otp = db.Column(db.Integer, default='NIL')
-    review = db.Column(db.String(100), default='N/A')
     def __repr__(self) -> str:
         return f"Job ID: {self.id} Job Status: {self.status} Job Review: {self.review} Item Type: {self.product_type} Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}"
 
@@ -77,47 +76,55 @@ otp = []
 
 with app.app_context():
     db.create_all()
-    # new_buyer = Buyer(email='test@234123wrqw', name='username', password='password123', phoneNo='1234567890', address='123 Main St')
+    # new_buyer = Buyer(email='aryan@buyer', name='username', password='123', phoneNo='1234567890', address='123 Main St')
     # db.session.add(new_buyer)
     #
     # db.session.commit()
-
-    # new_job = Job(pickup_pincode='110034', delivery_pincode='110035', pickup_address='street2', pickup_time='11:00 AM',
-    #               delivery_address='456 West', delivery_time='12:00AM ',buyer_id = 1)
+    #
+    # new_job = Job(order_tag = 12, pickup_pincode='110034', delivery_pincode='110035', pickup_address='street2', pickup_time='11:00 AM',
+    #               delivery_address='456 West', delivery_time='12:00AM ', created_by = 1)
     # db.session.add(new_job)
     # db.session.commit()
     #
-    # new_job = Job(pickup_pincode='110006', delivery_pincode='11009', pickup_address='Street random', pickup_time='12:00 AM', delivery_address='west zone Pitampura metro', delivery_time='2:00AM',buyer_id=1)
+    # new_job = Job(order_tag = 123, pickup_pincode='110006', delivery_pincode='11009', pickup_address='Street random', pickup_time='12:00 AM',
+    #               delivery_address='west zone Pitampura metro', delivery_time='2:00AM',created_by=1)
     # db.session.add(new_job)
     # db.session.commit()
     #
     #
-    # new_job = Job(pickup_pincode='110099', delivery_pincode='110056', pickup_address='chandi chowk parathewali gali', pickup_time='12:00 PM', delivery_address='okhala metro', delivery_time='2:00PM',buyer_id=1)
+    # new_job = Job(order_tag = 124, pickup_pincode='110099', delivery_pincode='110056',
+    #               pickup_address='chandi chowk parathewali gali', pickup_time='12:00 PM',
+    #               delivery_address='okhala metro', delivery_time='2:00PM',created_by=1)
     # db.session.add(new_job)
     # db.session.commit()
     #
-    # new_job = Job(pickup_pincode='711302', delivery_pincode='711303', pickup_address='park street', pickup_time='12:00 AM', delivery_address='kolkata central metro', delivery_time='2:00AM',buyer_id=1)
+    # new_job = Job(order_tag = 125, pickup_pincode='711302', delivery_pincode='711303', pickup_address='park street',
+    #               pickup_time='12:00 AM', delivery_address='kolkata central metro', delivery_time='2:00AM',created_by=1)
     # db.session.add(new_job)
     # db.session.commit()
     #
-    # new_job = Job(pickup_pincode='731302', delivery_pincode='711403', pickup_address='pragati maidan', pickup_time='13:00 AM', delivery_address='bagbazar', delivery_time='4:00AM',buyer_id=1)
+    # new_job = Job(order_tag = 1254, pickup_pincode='731302', delivery_pincode='711403', pickup_address='pragati maidan',
+    #               pickup_time='13:00 AM', delivery_address='bagbazar', delivery_time='4:00AM',created_by=1)
     # db.session.add(new_job)
-
-
-    # new_job = Job(pickup_pincode='711322', delivery_pincode='711303', pickup_address='mere ghar se', pickup_time='12:00 AM', delivery_address='kolkata central metro', delivery_time='2:00AM',buyer_id=1)
+    #
+    #
+    # new_job = Job(order_tag = 1234, pickup_pincode='711322', delivery_pincode='711303', pickup_address='mere ghar se',
+    #               pickup_time='12:00 AM', delivery_address='kolkata central metro', delivery_time='2:00AM',created_by=1)
     # db.session.add(new_job)
     # db.session.commit()
     #
-    # new_job = Job(pickup_pincode='732302', delivery_pincode='711403', pickup_address='kahi se', pickup_time='13:00 AM', delivery_address='bagbazar', delivery_time='4:00AM',buyer_id=1)
+    # new_job = Job(order_tag=124424, pickup_pincode='732302', delivery_pincode='711403', pickup_address='kahi se', pickup_time='13:00 AM',
+    #               delivery_address='bagbazar', delivery_time='4:00AM',created_by=1)
     # db.session.add(new_job)
     # db.session.commit()
-    # jobs = Job.query.all()
-    # if not jobs:
-    #     print('Absent')
-    # for job in jobs:
-    #     print(job)
-# sellers = Seller.query.all()
-# print(sellers)
+    jobs = Job.query.all()
+    if not jobs:
+        print('Absent')
+    for job in jobs:
+        print(job)
+    sellers = Buyer.query.all()
+    for buyer in sellers:
+        print(buyer)
 
 # def search_jobs():
 #     jobs
@@ -195,6 +202,8 @@ def get_reviews(seller_id):
 
 def get_jobs():
     num_jobs = Job.query.filter_by(assigned_to=0).order_by(func.random()).limit(5).all()
+    # for job in num_jobs:
+    #     print(job)
     job1 = {}
     job2 = {}
     job3 = {}
@@ -203,10 +212,10 @@ def get_jobs():
     job_ids = []
     for job in num_jobs:
         job_ids.append(job.id)
-    for x in range(6):
+    for x in range(len(job_ids)):
     # job_id = 1
-        buyer = db.session.query(Buyer).join(Job).filter(Job.id == job_id).first()
-        job = Job.query.get(job_id)
+        job = Job.query.filter_by(id=job_ids[x]).first()
+        buyer = Buyer.query.filter_by(id=job.created_by).first()
         # print(job, buyer)
         if x == 1:
             job1 = {
@@ -221,7 +230,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
 
         elif x == 2:
@@ -236,7 +245,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
         elif x == 3:
             job3 = {
@@ -250,7 +259,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
         elif x == 4:
             job4 = {
@@ -264,7 +273,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
         elif x == 5:
             job5 = {
@@ -278,7 +287,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
         # print(job5)
     return job1, job2, job3, job4, job5
@@ -293,8 +302,11 @@ def user_login(email, password):
     user_type = 'Seller'
     if not user:
         user = Buyer.query.filter_by(email=email).first()
-        user_type = 'Buyer'
+        print(user)
+        if user:
+            user_type = 'Buyer'
     print(user_type, user)
+
     if user:
         if check_password_hash(user.password, password):
             flash('Logged in successfully!', category='success')
@@ -302,6 +314,7 @@ def user_login(email, password):
                 url = url_for('seller_home')
 
             if user_type == 'Buyer':
+                print(user_type)
                 url = url_for('buyer_home')
             return url
         else:
@@ -359,7 +372,7 @@ def index_page():  # put application's code here
 @app.route('/seller_signup', methods=['GET', 'POST'])
 def seller_signup():
     if request.method == 'GET':
-        return render_template('signUp.html')
+        return render_template('sellerSignUp.html')
     elif request.method == 'POST':
 
         seller_username = request.form.get('fullName')
@@ -369,9 +382,9 @@ def seller_signup():
         seller_phoneNo = request.form.get('phoneNo')
         seller_address = request.form.get('address')
         seller_experience = request.form.get('workExperience')
-        session['email'] = email
+        session['email'] = seller_email
         url = user_signup(user_type='Seller', username=seller_username,  password1=seller_password1, password2=seller_password2, address=seller_address, phoneNo=seller_phoneNo, experience=seller_experience, email=seller_email)
-        return redirect(url, email=email)
+        return redirect(url)
 
 @app.route('/about_us')
 def aboutus():
@@ -383,7 +396,7 @@ def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
-        print(email, password)
+        print('idhar', email, password)
         url = user_login(email=email, password=password)
         session['email'] = email
         return  redirect(url)
@@ -476,22 +489,32 @@ def detailed_job():
         delivery_pincode = job_dict.get('delivery_pincode')
         pickup_pincode = job_dict.get('pickup_pincode')
         delivery_type = job_dict.get('product_type')
-        return render_template('sellerCheckjob.html',product_type=delivery_type,  buyer_name=buyer_name, delivery_time=delivery_time, pickup_time=pickup_time, delivery_address=delivery_address, pickup_address=pickup_address, pickup_pincode=pickup_pincode, delivery_pincode=delivery_pincode)
+        order_tag = job_dict.get('Job Tag')
+        session['order_tag'] = order_tag
+        return render_template('sellerCheckjob.html',product_type=delivery_type,  buyer_name=buyer_name, delivery_time=delivery_time, pickup_time=pickup_time, delivery_address=delivery_address, pickup_address=pickup_address, pickup_pincode=pickup_pincode, delivery_pincode=delivery_pincode, order_tag=order_tag)
 
 ## for seller
 @app.route('/order_delivery')
 def job_accepted():
-    email = session['email']
-    job = Job.query.filter_by(email=email, status='In Progress').first()
-
+    order_tag = session['order_tag']
+    # job =
+    seller_email = session['email']
+    print(seller_email)
+    seller = Seller.query.filter_by(email=seller_email).first()
+    job = Job.query.filter_by(order_tag=order_tag).first()
+    print('ye hai', job)
+    job.status = 'In Progress'
+    db.session.commit()
+    job.assigned_to = seller.id
+    db.session.commit()
     return render_template('checkorder.html',otp=job.otp, delivery_address=job.delivery_address,
                            delivery_pincode=job.delivery_pincode, delivery_time=job.delivery_time, seller_name=job.assigned_to,
                            pickup_address=job.pickup_address, pickup_time=job.pickup_time, pickup_pincode=job.pickup_pincode)
 
 
 
-@app.route('/order_delivery', methods['GET', 'POST'])
-def job_accepted():
+@app.route('/order_delivery', methods=['GET', 'POST'])
+def job_accepteD():
     if request.method == 'POST':
         email = session['email']
         job = Job.query.filter_by(email=email, status='In Progress').first()

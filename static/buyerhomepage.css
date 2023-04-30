@@ -1,25 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-.container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
+
+.homepage{
+   width: 400px;
+   padding-left: 800px;
+   padding-top: 10px;
+   position: absolute;
 }
-h1{
-    font-size: 3.4rem;
-    color: #645888;
+.heading{
+    font-size: 40px;
+    padding-top: 150px;
     font-family: 'Inter', sans-serif;
-    margin-bottom: 2rem;
 }
 
-.image{
-  width: 40%;
-}
-.image img{
-  background-color: transparent;
-}
-
-.butto {
+.button {
   align-items: center;
   background-color: #645888;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -45,59 +38,20 @@ h1{
   touch-action: manipulation;
   vertical-align: baseline;
   width: auto;
-  margin-left: 50px;
 }
-.butto:hover,
-.butto:focus {
+.button:hover,
+.button:focus {
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   color: rgba(0, 0, 0, 0.65);
 }
-.butto:hover {
+.button:hover {
   transform: translateY(-1px);
 }
-.butto:active {
+.button:active {
   background-color: #F0F0F1;
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
-}
-/*----------------------------- BuyerHomepage media query--------------------------------*/
-
-.buyerhomepage_left{
-  width: 60%;
-}
-
-
-@media screen and (max-width: 1140px) {
-  h1{
-    font-size: 2.4rem;
-    color: #645888;
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 2rem;
-  }
-}
-
-@media screen and (max-width: 875px) {
-  h1{
-    font-size: 2rem;
-  }
-  .image{
-    width: 50%;
-  }
-}
-@media screen and (max-width: 570px) {
-  .container{
-    flex-direction: column;
-  }
-  h1{
-    font-size: 2rem;
-  }
-  .buyerhomepage_left{
-    width: 90%;
-  }
-  .image{
-    width: 100%;
-  }
 }

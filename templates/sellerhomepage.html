@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block head %}
-{% if page == 'sellerhomepage' %}
-<link rel="stylesheet" href="/static/sellerJobBox.css">
-
-{% endif %}
+    {% if page == 'sellerhomepage' %}
+        <link rel="stylesheet" href="/static/sellerJobBox.css">
+    {% endif %}
 {% endblock %}
-        {% block content %}
 
-         <div class="sellerJobBox">
+{% block content %}
+    <div class="sellerJobBox">
         <h2> Jobs </h2>
         <div class="sellerJobs">
                 <div class="eachJobBox">
@@ -107,5 +106,6 @@
             </div>
         </div>
          </div>
+
 
     {% endblock %}
