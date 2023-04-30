@@ -68,10 +68,12 @@ class Job(db.Model):
     assigned_to = db.Column(db.Integer, db.ForeignKey('seller.id'), default=0)
     status = db.Column(db.String(100), default='Pending')
     rating = db.Column(db.Integer, default='NIL')
+    otp = db.Column(db.Integer, default='NIL')
+    review = db.Column(db.String(100), default='N/A')
     def __repr__(self) -> str:
-        return f"Job ID: {self.id} Job Status: {self.status} Item Type: {self.product_type} Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}"
+        return f"Job ID: {self.id} Job Status: {self.status} Job Review: {self.review} Item Type: {self.product_type} Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}"
 
-
+otp = []
 
 with app.app_context():
     db.create_all()
@@ -186,27 +188,22 @@ def order_completed(order_tag, seller_id, buyer_email, rating):
 
 def get_reviews(seller_id):
     seller_reviews = Job.query.filter_by(assigned_to=seller_id, status='Completed').all()
-    for review in seller_reviews:
-        print(review.rating)
+    for seller_review in seller_reviews:
+        print(seller_review.rating)
+        print(seller_review.review)
 
 
 def get_jobs():
-    num_jobs = Job.query.filter_by(assigned_to=0).count()
-    print('Num of jobs', num_jobs)
+    num_jobs = Job.query.filter_by(assigned_to=0).order_by(func.random()).limit(5).all()
     job1 = {}
     job2 = {}
     job3 = {}
     job4 = {}
     job5 = {}
     job_ids = []
+    for job in num_jobs:
+        job_ids.append(job.id)
     for x in range(6):
-        job_id = random.randint(1, num_jobs)
-        while job_id  in job_ids:
-            job_id = random.randint(1, num_jobs)
-
-        job_ids.append(job_id)
-        print(job_ids)
-        # print(job_id)
     # job_id = 1
         buyer = db.session.query(Buyer).join(Job).filter(Job.id == job_id).first()
         job = Job.query.get(job_id)
@@ -372,6 +369,7 @@ def seller_signup():
         seller_phoneNo = request.form.get('phoneNo')
         seller_address = request.form.get('address')
         seller_experience = request.form.get('workExperience')
+        session['email'] = email
         url = user_signup(user_type='Seller', username=seller_username,  password1=seller_password1, password2=seller_password2, address=seller_address, phoneNo=seller_phoneNo, experience=seller_experience, email=seller_email)
         return redirect(url, email=email)
 
@@ -387,6 +385,7 @@ def login():
         password = request.form.get('password')
         print(email, password)
         url = user_login(email=email, password=password)
+        session['email'] = email
         return  redirect(url)
     elif request.method == 'GET':
         return render_template('login.html')
@@ -398,8 +397,6 @@ def get_started():
 
 @app.route('/buyer_home')
 def buyer_home():
-    email = request.args.get('email')
-    session['email'] = email
     return render_template('buyer_homepage.html')
 
 @app.route('/place_order', methods=['GET', 'POST'])
@@ -418,8 +415,11 @@ def place_order():
         email = session['email']
         buyer = Buyer.query.filter_by(email=email).first()
         buyer_id = buyer.id
+        new_otp = random.randint(1000, 9999)
+        while new_otp not in otp:
+            opt.append(new_otp)
         new_job = Job(pickup_address=pickup_address, pickup_time=pickup_time, delivery_address=delivery_address,pickup_pincode=pickup_pincode,
-                      delivery_time=delivery_time, created_by=buyer_id, delivery_pincode=delivery_pincode, product_type='product_type')
+                      delivery_time=delivery_time, created_by=buyer_id, delivery_pincode=delivery_pincode, product_type='product_type', otp=new_otp)
         db.session.add(new_job)
         db.session.commit()
         print(new_job)
@@ -460,6 +460,7 @@ def buyer_signup():
         url = user_signup(user_type='Buyer', username=username, password1=password1,
                           password2=password2, address=address, phoneNo=phoneNo, email=email)
         print(url)
+        session['email'] = email
         return redirect(url)
 
 @app.route('/check-job', methods=['GET'])
@@ -475,22 +476,130 @@ def detailed_job():
         delivery_pincode = job_dict.get('delivery_pincode')
         pickup_pincode = job_dict.get('pickup_pincode')
         delivery_type = job_dict.get('product_type')
-
-
         return render_template('sellerCheckjob.html',product_type=delivery_type,  buyer_name=buyer_name, delivery_time=delivery_time, pickup_time=pickup_time, delivery_address=delivery_address, pickup_address=pickup_address, pickup_pincode=pickup_pincode, delivery_pincode=delivery_pincode)
 
-#
-# login_manager = LoginManager()
-# login_manager.login_view = 'login'
-# login_manager.init_app(app)
-#
-# @login_manager.user_loader
-# def load_user(id):
-#     try:
-#         user = Buyer.query.get(int(id))
-#     except:
-#         user = Seller.query.get(int(id))
-#     return user
+## for seller
+@app.route('/order_delivery')
+def job_accepted():
+    email = session['email']
+    job = Job.query.filter_by(email=email, status='In Progress').first()
+
+    return render_template('checkorder.html',otp=job.otp, delivery_address=job.delivery_address,
+                           delivery_pincode=job.delivery_pincode, delivery_time=job.delivery_time, seller_name=job.assigned_to,
+                           pickup_address=job.pickup_address, pickup_time=job.pickup_time, pickup_pincode=job.pickup_pincode)
+
+
+
+@app.route('/order_delivery', methods['GET', 'POST'])
+def job_accepted():
+    if request.method == 'POST':
+        email = session['email']
+        job = Job.query.filter_by(email=email, status='In Progress').first()
+        otp = request.form.get('OTP')
+        rating = request.form.get('rating')
+        reveiw = request.form.get('review')
+        if otp == job.otp:
+            print('Delivery Completed Successfully')
+            job.status = 'Completed'
+            job.review = reveiew
+            job.rating = rating
+
+
+    return render_template('complete_delivery.html')
+
+@app.route('/my_orders')
+def buyer_orders():
+    email = session['email']
+    buyer = Buyer.query.filter_by(email=email).first()
+    num_jobs = Job.query.filter_by(assigned_to=0).order_by(func.random()).limit(5).all()
+    job1 = {}
+    job2 = {}
+    job3 = {}
+    job4 = {}
+    job5 = {}
+    job_ids = []
+    for job in num_jobs:
+        job_ids.append(job.id)
+    for x in range(6):
+        # job_id = 1
+        buyer = db.session.query(Buyer).join(Job).filter(Job.id == job_id).first()
+        job = Job.query.get(job_id)
+        # print(job, buyer)
+        if x == 1:
+            job1 = {
+
+                "buyer_name": buyer.name,
+                "Delivery Type": job.product_type,
+                "buyer_email": buyer.email,
+                "buyer_phone_no": buyer.phoneNo,
+                "delivery_time": job.delivery_time,
+                "pickup_time": job.pickup_time,
+                "delivery_address": job.delivery_address,
+                "pickup_address": job.pickup_address,
+                "delivery_pincode": job.delivery_pincode,
+                "pickup_pincode": job.pickup_pincode,
+                "Job Tag": job.order_Tag
+            }
+
+        elif x == 2:
+            job2 = {
+                "buyer_name": buyer.name,
+                "Delivery Type": job.product_type,
+                "buyer_email": buyer.email,
+                "buyer_phone_no": buyer.phoneNo,
+                "delivery_time": job.delivery_time,
+                "pickup_time": job.pickup_time,
+                "delivery_address": job.delivery_address,
+                "pickup_address": job.pickup_address,
+                "delivery_pincode": job.delivery_pincode,
+                "pickup_pincode": job.pickup_pincode,
+                "Job Tag": job.order_Tag
+            }
+        elif x == 3:
+            job3 = {
+                "buyer_name": buyer.name,
+                "Delivery Type": job.product_type,
+                "buyer_email": buyer.email,
+                "buyer_phone_no": buyer.phoneNo,
+                "delivery_time": job.delivery_time,
+                "pickup_time": job.pickup_time,
+                "delivery_address": job.delivery_address,
+                "pickup_address": job.pickup_address,
+                "delivery_pincode": job.delivery_pincode,
+                "pickup_pincode": job.pickup_pincode,
+                "Job Tag": job.order_Tag
+            }
+        elif x == 4:
+            job4 = {
+                "buyer_name": buyer.name,
+                "Delivery Type": job.product_type,
+                "buyer_email": buyer.email,
+                "buyer_phone_no": buyer.phoneNo,
+                "delivery_time": job.delivery_time,
+                "pickup_time": job.pickup_time,
+                "delivery_address": job.delivery_address,
+                "pickup_address": job.pickup_address,
+                "delivery_pincode": job.delivery_pincode,
+                "pickup_pincode": job.pickup_pincode,
+                "Job Tag": job.order_Tag
+            }
+        elif x == 5:
+            job5 = {
+                "buyer_name": buyer.name,
+                "Delivery Type": job.product_type,
+                "buyer_email": buyer.email,
+                "buyer_phone_no": buyer.phoneNo,
+                "delivery_time": job.delivery_time,
+                "pickup_time": job.pickup_time,
+                "delivery_address": job.delivery_address,
+                "pickup_address": job.pickup_address,
+                "delivery_pincode": job.delivery_pincode,
+                "pickup_pincode": job.pickup_pincode,
+                "Job Tag": job.order_Tag
+            }
+        # print(job5)
+    return render_template('myorders.html', job1=job1, job2=job2, job3=job3, job4=job4, job5=job5)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
