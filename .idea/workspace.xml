@@ -21,7 +21,9 @@
       <change beforePath="$PROJECT_DIR$/css/sellersignup.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sellerSignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerSignUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/complete_delivery.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/complete_delivery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sellerCheckjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerCheckjob.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +35,8 @@
       <list>
         <option value="Flask Main" />
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -214,7 +216,7 @@
       <workItem from="1687887295930" duration="1157000" />
       <workItem from="1687928779129" duration="145000" />
       <workItem from="1687965295083" duration="11477000" />
-      <workItem from="1688010599186" duration="2758000" />
+      <workItem from="1688010599186" duration="15616000" />
     </task>
     <servers />
   </component>

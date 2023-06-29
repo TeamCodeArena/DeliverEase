@@ -33,9 +33,8 @@ class Seller(db.Model, UserMixin):
     phoneNo = db.Column(db.String(100))
     address = db.Column(db.String(100))
     experience = db.Column(db.String(100))
-
     def __repr__(self) -> str:
-        return f"{self.name} {self.id} {self.email} {self.phoneNo} {self.email} {self.address}"
+        return f"{self.name}  {self.id} {self.email} {self.phoneNo} {self.email} {self.address}"
 
 
 class Buyer(db.Model):
@@ -46,9 +45,8 @@ class Buyer(db.Model):
     password = db.Column(db.String(100))
     phoneNo = db.Column(db.String(100))
     address = db.Column(db.String(100))
-
     def __repr__(self) -> str:
-        return f"{self.name} {self.id} {self.email} {self.phoneNo} {self.email} {self.address}"
+        return f"{self.name}  {self.id} {self.email} {self.phoneNo} {self.email} {self.address}"
 
 
 
@@ -68,8 +66,9 @@ class Job(db.Model):
     assigned_to = db.Column(db.Integer, db.ForeignKey('seller.id'), default=0)
     status = db.Column(db.String(100), default='Pending')
     rating = db.Column(db.Integer, default='NIL')
+    otp = db.Column(db.Integer)
     def __repr__(self) -> str:
-        return f"Job ID: {self.id} Job Status: {self.status} Item Type: {self.product_type} Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}"
+        return f"Job ID: {self.id} Job OTP: {self.otp} Job Status: {self.status} Item Type: {self.product_type} Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}"
 
 
 
@@ -125,20 +124,27 @@ def assign_job(order_tag, seller_id, buyer_email):
     buyer = Buyer.query.filter_by(email=buyer_email).first()
     print('Buyer', buyer)
     buyer_id = buyer.id
+    print("Seller ID", seller_id)
     print('Buyer ID', buyer_id)
     buyer_job = Job.query.filter_by(created_by=buyer_id, assigned_to=0).filter_by(
         order_tag=order_tag).first() ##checks if the job is available
     # print('Job', buyer_job)
     if buyer_job:
+        print("Job Exists")
+
         buyer_job.assigned_to = seller_id
-        db.session.commit()
+        # db.session.commit()
+        # db.session.commit()
         buyer_job.status = "In Progress"
         db.session.commit()
+        db.session.commit()
+
         print('Job Assigned')
+        return "Success"
     else:
 
         print('Job already assigned to someone')
-
+        return "Error"
 def cancel_job(order_tag, seller_id, buyer_email):
 
     buyer = Buyer.query.filter_by(email=buyer_email).first()
@@ -153,9 +159,6 @@ def cancel_job(order_tag, seller_id, buyer_email):
         db.session.commit()
         buyer_job.status = "Cancelled"
         db.session.commit()
-        return "Success"
-    else:
-        return "Error"
 
 def display_jobs():
     number_of_jobs = Job.query.count()
@@ -452,16 +455,61 @@ def place_order():
         if find_job:
             print("job already exists")
         else:
-            new_job = Job(pickup_address=pickup_address, pickup_time=pickup_time, delivery_address=delivery_address, pickup_pincode=pickup_pincode,
+            otps = []
+            one_time_password = random.randint(1000, 9999)
+            while one_time_password in otps:
+                one_time_password = random.randint(1000, 9999)
+            otps.append(one_time_password)
+            session['otp'] = one_time_password
+            new_job = Job(otp=one_time_password, pickup_address=pickup_address, pickup_time=pickup_time, delivery_address=delivery_address, pickup_pincode=pickup_pincode,
                       delivery_time=delivery_time, created_by=buyer_id, delivery_pincode=delivery_pincode, product_type=product_type,
                       order_tag=ordertag)
 
             db.session.add(new_job)
             db.session.commit()
             print(new_job)
+            session['order_tag'] = ordertag
             # return redirect(url_for('seller_home'))
-            return redirect('/my_orders')
+            return redirect(url_for('waiting'))
     return render_template('jobform.html')
+
+@app.route('/wait_for_seller', methods=['GET', 'POST'])
+def waiting():
+    if request.method == "GET":
+        return render_template("wait.html")
+    if request.method == "POST":
+        order_tag = session['order_tag']
+        user_job = Job.query.filter_by(order_tag=order_tag).first()
+        if user_job.assigned_to == 0:
+            flash("Your order has not been assigned")
+            return redirect('/wait_for_seller?msg=wait')
+        else:
+            return redirect(url_for('complete_delivery'))
+
+## complete delivery page for buyer
+@app.route('/complete_order', methods=['POST', 'GET'])
+def complete_delivery():
+    if request.method == "GET":
+        otp = session['otp']
+        return render_template('complete_delivery.html', otp=otp)
+
+    elif request.method == "POST":
+        review = request.form.get('review')
+        rating = request.form.get('rating')
+        print(rating, review)
+        ordertag = session['ordertag']
+        find_job = Job.query.filter_by(order_tag=ordertag).first()
+        print(find_job)
+        find_job.rating = rating
+        find_job.review = review
+
+        db.session.commit()
+        check_update_job = Job.query.filter_by(order_tag=ordertag).first()
+        print(check_update_job)
+
+
+
+
 @app.route('/seller_home')
 def seller_home():
     seller_email = request.args.get('email')
@@ -518,7 +566,12 @@ def buyer_signup():
         print(url)
         return redirect(url)
 
-@app.route('/check-job', methods=['GET'])
+@app.route('/cancel_order')
+def cancel_order():
+
+    cancel_job()
+
+@app.route('/check-job', methods=['GET', 'POST'])
 def detailed_job():
     if request.method == 'GET':
         job = request.args.get('job')
@@ -537,20 +590,40 @@ def detailed_job():
         session['orderTag'] = order_tag
         session['buyer_email'] = buyer_email
         return render_template('sellerCheckjob.html',buyer_email=buyer_email, buyer_phone_no=buyer_phone,product_type=delivery_type,  buyer_name=buyer_name, delivery_time=delivery_time, pickup_time=pickup_time, delivery_address=delivery_address, pickup_address=pickup_address, pickup_pincode=pickup_pincode, delivery_pincode=delivery_pincode)
+    if request.method == "POST":
+        orderTag = session['orderTag']
+        buyer_email = session['buyer_email']
+        seller_email = session['seller_email']
+        seller = Seller.query.filter_by(email=seller_email).first()
+        seller_id = seller.id
+        status = assign_job(order_tag=orderTag, seller_id=seller_id, buyer_email=buyer_email)
 
-@app.route('/assign_job')
-def assign_job():
-    orderTag = session['orderTag']
-    buyer_email = session['buyer_email']
-    seller_email = session['seller_email']
-    seller_id = Seller.query.filter_by(email=seller_email).first()
-    status = assign_job(order_tag=orderTag, seller_id=seller_id, buyer_email=buyer_email)
-    if status == "Success":
-        flash('Job assigned successfully', category='success')
-    else:
-        flash("Job already assigned to someone else", category='error')
-    return redirect(url_for('seller_home'))
-#
+        if status == "Success":
+            flash('Job assigned successfully', category='success')
+        else:
+            flash("Job already assigned to someone else", category='error')
+        return redirect(url_for('complete_job'))
+
+## for seller
+@app.route('/delivery_complete', methods=["GET", "POST"])
+def complete_job():
+    if request.method == "GET":
+        return render_template('seller_finish_delivery.html')
+    elif request.method == "POST":
+        otp = request.form.get('otp')
+        order_tag = session['orderTag']
+        get_job = Job.query.filter_by(order_tag=order_tag).first()
+        job_otp = get_job.otp
+        if otp == job_otp:
+            print("Job successfully Completed")
+            return redirect(url_for('delivery_completed'))
+        else:
+            flash('Incorrect OTP')
+            return render_template('seller_finish_delivery.html')
+
+@app.route('/Thanks')
+def delivery_completed():
+    return render_template('Thanks.html')
 # login_manager = LoginManager()
 # login_manager.login_view = 'login'
 # login_manager.init_app(app)

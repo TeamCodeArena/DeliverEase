@@ -1,8 +1,10 @@
 {% extends "buyer_base.html" %}
-<p> otp: {{ otp }}</p>
-<form>
-  <input type="email" name="review"   placeholder='Review' />
-  <input type="password" name="rating"   placeholder='Rating'/>
+{% block content %}
+<p> otp: {{ otp }}  Share with the delivery guy at the time of delivery</p>
+<form action="/Thanks">
+  <input type="text" name="review"   placeholder='Review' />
+  <input type="text" name="rating"   placeholder='Rating'/>
   <button class="btn">send</button>
 
 </form>
+{% endblock %}
