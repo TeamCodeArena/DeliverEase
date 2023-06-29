@@ -21,36 +21,7 @@
       <change beforePath="$PROJECT_DIR$/css/sellersignup.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/test.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/test2.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/buyerhomepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/buyerhomepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/buyerorseller.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/buyerorseller.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/indexcontainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/indexcontainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/jobform.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/jobform.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sellerCheckjob.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sellerCheckjob.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sellerJobBox.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sellerJobBox.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sellerNavbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sellerNavbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aboutus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buyer_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buyer_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buyer_homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buyer_homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buyerorseller.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buyerorseller.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/checkorder.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/checkorder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/jobform.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jobform.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myOrder.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myOrder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myorders.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myorders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orderRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orderRequest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/selectjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/selectjob.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sellerCheckjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerCheckjob.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sellerEachjobpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerEachjobpage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sellerSignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerSignUp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sellerhomepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerhomepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +214,7 @@
       <workItem from="1687887295930" duration="1157000" />
       <workItem from="1687928779129" duration="145000" />
       <workItem from="1687965295083" duration="11477000" />
-      <workItem from="1688010599186" duration="2061000" />
+      <workItem from="1688010599186" duration="2758000" />
     </task>
     <servers />
   </component>

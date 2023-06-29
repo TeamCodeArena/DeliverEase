@@ -383,7 +383,7 @@ def index_page():  # put application's code here
 @app.route('/seller_signup', methods=['GET', 'POST'])
 def seller_signup():
     if request.method == 'GET':
-        return render_template('signUp.html')
+        return render_template('sellerSignUp.html')
     elif request.method == 'POST':
 
         seller_username = request.form.get('fullName')
@@ -393,6 +393,7 @@ def seller_signup():
         seller_phoneNo = request.form.get('phoneNo')
         seller_address = request.form.get('address')
         seller_experience = request.form.get('workExperience')
+        print(seller_experience, seller_address, seller_phoneNo, seller_email, seller_password2, seller_password1)
         url = user_signup(user_type='Seller', username=seller_username,  password1=seller_password1, password2=seller_password2, address=seller_address, phoneNo=seller_phoneNo, experience=seller_experience, email=seller_email)
         print(url)
         return redirect(url)
@@ -463,7 +464,7 @@ def place_order():
     return render_template('jobform.html')
 @app.route('/seller_home')
 def seller_home():
-    seller_email = request.args.get(email)
+    seller_email = request.args.get('email')
     session['seller_email'] = seller_email
 
     job1, job2, job3, job4, job5 = get_jobs(For="Seller")
