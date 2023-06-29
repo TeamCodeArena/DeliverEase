@@ -7,12 +7,52 @@
     --background-color : #E2F3F5;
     --font-color:#645888;
     --white-color :#ffff;
-
-    --transition: 0.8s all ease;
+  
+    --transition: 0.8s all ease;
 }
 
 body{
     background-color: #E2F3F5;
+}
+.App{
+  width: 90vw;
+  margin: auto;
+
+}
+.btn{
+  cursor: pointer;
+  background-color: var(--font-color);
+  color: var(--white-color);
+  margin-right: 15px;
+  width: 9rem;
+  height: 2.6rem;
+  border: 0px solid;
+  border-radius: 8px;
+
+  font-family: 'NSimSun';
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.408px;
+}
+.btn_sm{
+  width: 9rem;
+  height: 2.6rem;
+}
+.btn:hover{
+  background-color: transparent;
+  color: var(--font-color);
+  border: 2px solid var(--font-color);
+  transition: var(--transition);
+}
+
+
+img{
+  width: 100%;
+  object-fit: cover;
+  margin: auto;
+  
 }
 .brandname{
     font-family: 'Kaushan Script', cursive;
@@ -21,6 +61,8 @@ body{
     text-decoration: none;
     font-size: 1.3rem;
 }
+
+/*-------------------------------------------------------------------------------*/
 
 .home{
     position: absolute;
@@ -48,7 +90,6 @@ body{
 
 .button {
     margin-top: 500px;
-
     align-items: right;
     background-color: #343F71;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -57,14 +98,13 @@ body{
     box-sizing: border-box;
     color: #FFF;
     cursor: pointer;
-    display: inline-flex;
     font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 600;
     justify-content: center;
-    line-height: 1.25;
     margin: 0;
     min-height: 3rem;
+    line-height: 1.25;
     padding: calc(.875rem - 1px) calc(1.5rem - 1px);
     position: relative;
     text-decoration: none;
@@ -113,7 +153,7 @@ body{
     font-size: 35px;
     font-family: 'Kaushan Script', cursive;
     line-height: 80px;
-    padding: 0 100px;
+    /* padding: 0 100px; */
     font-weight: bold;
   }
   nav ul{

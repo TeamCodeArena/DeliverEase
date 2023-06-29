@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+.button {
+
+    align-items: right;
+    background-color: #343F71;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+  }
+  .button:hover,
+  .button:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+  .button:hover {
+    transform: translateY(-1px);
+  }
+  .button:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  html {
+      font-size: 42.5%;
+      color: #645888;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 10px;
+  }
+  
+  li {
+      list-style: none;
+  }
+  
+  a {
+      text-decoration: none;
+  }
+  
+  .header{
+      border-bottom: 1px solid #E2E8F0;
+  }
+  
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1.5rem;
+  }
+  
+  .hamburger {
+      display: none;
+  }
+  
+  .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: #101010;
+  }
+  
+  .nav-menu {
+
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .nav-item {
+      margin-left: 5rem;
+  }
+  
+  .nav-link{
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #475569;
+  }
+  
+  .nav-link:hover{
+      color: #343F71;
+  }
+  
+  .nav-logo {
+    font-family: 'Kaushan Script', cursive;
+      font-size: 2.1rem;
+      font-weight: 500;
+      color: #343F71;
+  }
+  
+  @media only screen and (max-width: 768px) {
+      .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 5rem;
+          flex-direction: column;
+          background-color: #E2F3F5;
+          width: 100%;
+          border-radius: 20px;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow:
+              0 10px 27px rgba(0, 0, 0, 0.05);
+      }
+  
+      .nav-menu.active {
+          left: 0;
+      }
+  
+      .nav-item {
+          margin: 1.5rem 0;
+      }
+  
+      .hamburger {
+          display: block;
+          cursor: pointer;
+      }
+  
+      .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+      }
+  
+      .hamburger.active .bar:nth-child(1) {
+          -webkit-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+      }
+  
+      .hamburger.active .bar:nth-child(3) {
+          -webkit-transform: translateY(-8px) rotate(-45deg);
+          transform: translateY(-8px) rotate(-45deg);
+  }
+
+
+
+.aboutus_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+}
+.aboutus_title{
+    font-family: 'Pathway Extreme', sans-serif;
+    margin-bottom: 1rem;   
+}
+
+.aboutus_para{
+    color: #645888;
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+}
+
+/*--------------------------------About Us Responsiveness------------------------------------------*/
+@media screen and (max-width: 600px) {
+    .aboutus_title{
+        font-size: 1.4rem;   
+    }
+    .aboutus_para{
+        font-size: 15px;
+    }
+};
+};

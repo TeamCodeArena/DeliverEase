@@ -136,6 +136,7 @@ def assign_job(order_tag, seller_id, buyer_email):
         db.session.commit()
         print('Job Assigned')
     else:
+
         print('Job already assigned to someone')
 
 def cancel_job(order_tag, seller_id, buyer_email):
@@ -152,9 +153,9 @@ def cancel_job(order_tag, seller_id, buyer_email):
         db.session.commit()
         buyer_job.status = "Cancelled"
         db.session.commit()
-        print('Job Cancelled Success')
+        return "Success"
     else:
-        print('Job not  assigned to you')
+        return "Error"
 
 def display_jobs():
     number_of_jobs = Job.query.count()
@@ -190,26 +191,44 @@ def get_reviews(seller_id):
         print(review.rating)
 
 
-def get_jobs():
+
+def get_jobs(For, buyer_id=0):
+
     num_jobs = Job.query.filter_by(assigned_to=0).count()
+    job_ids = []
+    jobs = Job.query.all()
+    if For == 'Seller':
+        for job in jobs:
+            if job.assigned_to == 0:
+                job_ids.append(job.id)
+    elif For == "Buyer":
+        for job in jobs:
+            if job.created_by == buyer_id:
+                job_ids.append(job.id)
+                print(job_ids)
+
+    print(job_ids)
     print('Num of jobs', num_jobs)
     job1 = {}
     job2 = {}
     job3 = {}
     job4 = {}
     job5 = {}
-    job_ids = []
-    for x in range(6):
-        job_id = random.randint(1, num_jobs)
-        while job_id  in job_ids:
-            job_id = random.randint(1, num_jobs)
+    ids = []
+    for x in range(5):
+        id = random.randint(0, len(job_ids) - 1)
+        while id in ids:
+            id = random.randint(0, len(job_ids) - 1)
 
-        job_ids.append(job_id)
-        print(job_ids)
+        ids.append(id)
+        print(ids)
+        job_id = job_ids[id]
+        print(job_id)
         # print(job_id)
     # job_id = 1
         buyer = db.session.query(Buyer).join(Job).filter(Job.id == job_id).first()
         job = Job.query.get(job_id)
+        print(job)
         # print(job, buyer)
         if x == 1:
             job1 = {
@@ -224,7 +243,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
 
         elif x == 2:
@@ -239,7 +258,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
         elif x == 3:
             job3 = {
@@ -253,7 +272,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
         elif x == 4:
             job4 = {
@@ -267,7 +286,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
         elif x == 5:
             job5 = {
@@ -281,7 +300,7 @@ def get_jobs():
                 "pickup_address": job.pickup_address,
                 "delivery_pincode": job.delivery_pincode,
                 "pickup_pincode": job.pickup_pincode,
-                "Job Tag": job.order_Tag
+                "Job Tag": job.order_tag
             }
         # print(job5)
     return job1, job2, job3, job4, job5
@@ -302,15 +321,17 @@ def user_login(email, password):
         if check_password_hash(user.password, password):
             flash('Logged in successfully!', category='success')
             if user_type == 'Seller':
-                url = url_for('seller_home')
+                url = url_for('seller_home', email=email)
 
             if user_type == 'Buyer':
-                url = url_for('buyer_home')
+                url = url_for('buyer_home', email=email)
             return url
         else:
             flash('Incorrect password, try again.', category='error')
     else:
         flash('Account does not exist.', category='error')
+
+
 
 def user_signup(username, password1, password2, address, phoneNo, email, user_type, experience='None'):
     if user_type == 'Seller':
@@ -373,7 +394,8 @@ def seller_signup():
         seller_address = request.form.get('address')
         seller_experience = request.form.get('workExperience')
         url = user_signup(user_type='Seller', username=seller_username,  password1=seller_password1, password2=seller_password2, address=seller_address, phoneNo=seller_phoneNo, experience=seller_experience, email=seller_email)
-        return redirect(url, email=email)
+        print(url)
+        return redirect(url)
 
 @app.route('/about_us')
 def aboutus():
@@ -387,7 +409,7 @@ def login():
         password = request.form.get('password')
         print(email, password)
         url = user_login(email=email, password=password)
-        return  redirect(url)
+        return redirect(url)
     elif request.method == 'GET':
         return render_template('login.html')
 
@@ -399,7 +421,10 @@ def get_started():
 @app.route('/buyer_home')
 def buyer_home():
     email = request.args.get('email')
+    print(email)
     session['email'] = email
+
+    print("ok", email)
     return render_template('buyer_homepage.html')
 
 @app.route('/place_order', methods=['GET', 'POST'])
@@ -407,28 +432,58 @@ def place_order():
     if request.method == 'POST':
         print('hi')
         pickup_address = request.form.get('pickup_address')
-        pickup_time = request.form.get('pickup_time')
+        pickup_time1 = request.form.get('pickup_time')
         pickup_date = request.form.get('pickup_date')
         delivery_address = request.form.get('delivery_address')
-        delivery_time = request.form.get('delivery_time')
+        delivery_time1 = request.form.get('delivery_time')
         delivery_date = request.form.get('delivery_date')
         delivery_pincode = request.form.get('delivery_pincode')
         pickup_pincode = request.form.get('pickup_pincode')
-        # product_type = request.form.get('product_type')
+        ordertag = request.form.get('orderTag')
+        product_type = request.form.get('product_type')
+        pickup_time = pickup_date + ' ' + pickup_time1
+        delivery_time = delivery_date + ' ' + delivery_time1
         email = session['email']
+        print(email)
         buyer = Buyer.query.filter_by(email=email).first()
         buyer_id = buyer.id
-        new_job = Job(pickup_address=pickup_address, pickup_time=pickup_time, delivery_address=delivery_address,pickup_pincode=pickup_pincode,
-                      delivery_time=delivery_time, created_by=buyer_id, delivery_pincode=delivery_pincode, product_type='product_type')
-        db.session.add(new_job)
-        db.session.commit()
-        print(new_job)
-        return redirect(url_for('seller_home'))
+        find_job = Job.query.filter_by(order_tag=ordertag).first()
+        if find_job:
+            print("job already exists")
+        else:
+            new_job = Job(pickup_address=pickup_address, pickup_time=pickup_time, delivery_address=delivery_address, pickup_pincode=pickup_pincode,
+                      delivery_time=delivery_time, created_by=buyer_id, delivery_pincode=delivery_pincode, product_type=product_type,
+                      order_tag=ordertag)
 
+            db.session.add(new_job)
+            db.session.commit()
+            print(new_job)
+            # return redirect(url_for('seller_home'))
+            return redirect('/my_orders')
     return render_template('jobform.html')
 @app.route('/seller_home')
 def seller_home():
-    job1, job2, job3, job4, job5 = get_jobs()
+    seller_email = request.args.get(email)
+    session['seller_email'] = seller_email
+
+    job1, job2, job3, job4, job5 = get_jobs(For="Seller")
+    # print('job5', job5)
+    print(job1, job2, job3, job4, job5)
+    # print(job_details.items())
+
+    return render_template('sellerhomepage.html', job1=job1, job2=job2, job3=job3, job4=job4, job5=job5)
+
+@app.route('/my_orders')
+def buyer_orders():
+    email = session['email']
+    print(email)
+
+    buyer = Buyer.query.filter_by(email=email).first()
+    print('Buyer', buyer)
+    buyer_id = buyer.id
+    print('Buyer ID', buyer_id)
+
+    job1, job2, job3, job4, job5 = get_jobs(For="Buyer", buyer_id=buyer_id)
     # print('job5', job5)
     print(job1, job2, job3, job4, job5)
     # print(job_details.items())
@@ -468,6 +523,8 @@ def detailed_job():
         job = request.args.get('job')
         job_dict = eval(job)
         buyer_name = job_dict.get('buyer_name')
+        buyer_email = job_dict.get('buyer_email')
+        buyer_phone = job_dict.get('buyer_phone_no')
         delivery_time = job_dict.get('delivery_time')
         pickup_time = job_dict.get('pickup_time')
         delivery_address = job_dict.get('delivery_address')
@@ -475,10 +532,23 @@ def detailed_job():
         delivery_pincode = job_dict.get('delivery_pincode')
         pickup_pincode = job_dict.get('pickup_pincode')
         delivery_type = job_dict.get('product_type')
+        order_tag = job_dict.get('Job Tag')
+        session['orderTag'] = order_tag
+        session['buyer_email'] = buyer_email
+        return render_template('sellerCheckjob.html',buyer_email=buyer_email, buyer_phone_no=buyer_phone,product_type=delivery_type,  buyer_name=buyer_name, delivery_time=delivery_time, pickup_time=pickup_time, delivery_address=delivery_address, pickup_address=pickup_address, pickup_pincode=pickup_pincode, delivery_pincode=delivery_pincode)
 
-
-        return render_template('sellerCheckjob.html',product_type=delivery_type,  buyer_name=buyer_name, delivery_time=delivery_time, pickup_time=pickup_time, delivery_address=delivery_address, pickup_address=pickup_address, pickup_pincode=pickup_pincode, delivery_pincode=delivery_pincode)
-
+@app.route('/assign_job')
+def assign_job():
+    orderTag = session['orderTag']
+    buyer_email = session['buyer_email']
+    seller_email = session['seller_email']
+    seller_id = Seller.query.filter_by(email=seller_email).first()
+    status = assign_job(order_tag=orderTag, seller_id=seller_id, buyer_email=buyer_email)
+    if status == "Success":
+        flash('Job assigned successfully', category='success')
+    else:
+        flash("Job already assigned to someone else", category='error')
+    return redirect(url_for('seller_home'))
 #
 # login_manager = LoginManager()
 # login_manager.login_view = 'login'

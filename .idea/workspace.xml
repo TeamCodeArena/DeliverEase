@@ -5,305 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df98248d-e32b-45e7-85c8-c3ffe57b3ba1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DeliverEase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DeliverEase.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-2.2.3.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-2.2.3.dist-info/LICENSE.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-2.2.3.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-2.2.3.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-2.2.3.dist-info/REQUESTED" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-2.2.3.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-2.2.3.dist-info/entry_points.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-2.2.3.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Login-0.6.2.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Login-0.6.2.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Login-0.6.2.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Login-0.6.2.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Login-0.6.2.dist-info/REQUESTED" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Login-0.6.2.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Login-0.6.2.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_SQLAlchemy-3.0.3.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_SQLAlchemy-3.0.3.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_SQLAlchemy-3.0.3.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_SQLAlchemy-3.0.3.dist-info/REQUESTED" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_SQLAlchemy-3.0.3.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_SQLAlchemy-3.0.3.dist-info/licenses/LICENSE.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Jinja2-3.1.2.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Jinja2-3.1.2.dist-info/LICENSE.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Jinja2-3.1.2.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Jinja2-3.1.2.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Jinja2-3.1.2.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Jinja2-3.1.2.dist-info/entry_points.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Jinja2-3.1.2.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/MarkupSafe-2.1.2.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/MarkupSafe-2.1.2.dist-info/LICENSE.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/MarkupSafe-2.1.2.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/MarkupSafe-2.1.2.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/MarkupSafe-2.1.2.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/MarkupSafe-2.1.2.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/SQLAlchemy-2.0.9.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/SQLAlchemy-2.0.9.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/SQLAlchemy-2.0.9.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/SQLAlchemy-2.0.9.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/SQLAlchemy-2.0.9.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/SQLAlchemy-2.0.9.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Werkzeug-2.2.3.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Werkzeug-2.2.3.dist-info/LICENSE.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Werkzeug-2.2.3.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Werkzeug-2.2.3.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Werkzeug-2.2.3.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Werkzeug-2.2.3.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/_distutils_hack/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/_distutils_hack/override.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/_virtualenv.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/_virtualenv.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click-8.1.3.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click-8.1.3.dist-info/LICENSE.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click-8.1.3.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click-8.1.3.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click-8.1.3.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click-8.1.3.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/_compat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/_termui_impl.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/_textwrap.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/_winconsole.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/core.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/decorators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/exceptions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/formatting.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/globals.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/py.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/shell_completion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/termui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/testing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/types.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/click/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama-0.4.6.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama-0.4.6.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama-0.4.6.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama-0.4.6.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama-0.4.6.dist-info/licenses/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/ansi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/ansitowin32.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/initialise.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/tests/ansi_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/tests/ansitowin32_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/tests/initialise_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/tests/isatty_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/tests/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/tests/winterm_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/win32.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/colorama/winterm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/distutils-precedence.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/__main__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/blueprints.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/cli.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/ctx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/debughelpers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/globals.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/helpers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/json/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/json/provider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/json/tag.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/logging.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/py.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/scaffold.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/sessions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/signals.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/templating.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/testing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/typing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/wrappers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_login/__about__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_login/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_login/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_login/login_manager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_login/mixins.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_login/signals.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_login/test_client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_login/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/cli.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/extension.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/pagination.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/py.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/query.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/record_queries.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/session.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sqlalchemy/track_modifications.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet-2.0.2.dist-info/AUTHORS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet-2.0.2.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet-2.0.2.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet-2.0.2.dist-info/LICENSE.PSF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet-2.0.2.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet-2.0.2.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet-2.0.2.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet-2.0.2.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_allocator.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_compiler_compat.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_cpython_compat.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_exceptions.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_greenlet.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_internal.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_refs.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_slp_switch.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_thread_state.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_thread_state_dict_cleanup.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/greenlet_thread_support.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/setup_switch_x64_masm.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_aarch64_gcc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_alpha_unix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_amd64_unix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_arm32_gcc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_arm32_ios.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_arm64_masm.asm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_arm64_masm.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_arm64_msvc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_csky_gcc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_m68k_gcc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_mips_unix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_ppc64_aix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_ppc64_linux.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_ppc_aix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_ppc_linux.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_ppc_macosx.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_ppc_unix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_riscv_unix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_s390_unix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_sparc_sun_gcc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_x32_unix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_x64_masm.asm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_x64_masm.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_x64_msvc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_x86_msvc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/platform/switch_x86_unix.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/slp_platformselect.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/_test_extension.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/_test_extension.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/_test_extension_cpp.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/_test_extension_cpp.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/leakcheck.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_contextvars.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_cpp.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_extension_interface.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_gc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_generator_nested.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_greenlet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_greenlet_trash.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_leaks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_stack_saved.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_throw.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_tracing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_version.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/greenlet/tests/test_weakref.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn-20.1.0.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn-20.1.0.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn-20.1.0.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn-20.1.0.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn-20.1.0.dist-info/REQUESTED" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn-20.1.0.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn-20.1.0.dist-info/entry_points.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn-20.1.0.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/__main__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/app/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/app/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/app/pasterapp.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/app/wsgiapp.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/arbiter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/debug.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/errors.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/glogging.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/http/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/http/body.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/http/errors.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/http/message.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/http/parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/http/unreader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/http/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/instrument/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/instrument/statsd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/pidfile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/reloader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/sock.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/systemd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/workers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/workers/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/workers/base_async.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/workers/geventlet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/workers/ggevent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/workers/gthread.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/workers/gtornado.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/workers/sync.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/gunicorn/workers/workertmp.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous-2.1.2.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous-2.1.2.dist-info/LICENSE.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous-2.1.2.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous-2.1.2.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous-2.1.2.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous-2.1.2.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous/_json.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous/encoding.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous/exc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous/py.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous/serializer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous/signer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous/timed.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/itsdangerous/url_safe.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/_identifier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/async_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/bccache.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/compiler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/constants.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/debug.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/defaults.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/environment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/exceptions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/ext.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/filters.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/idtracking.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/lexer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/loaders.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/meta.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/nativetypes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/nodes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/optimizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/py.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/runtime.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/sandbox.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/jinja2/visitor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/markupsafe/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/markupsafe/_native.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/markupsafe/_speedups.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/markupsafe/_speedups.pyi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/markupsafe/py.typed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css" beforeDir="false" afterPath="$PROJECT_DIR$/css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/Navbar.css" beforeDir="false" />
@@ -319,19 +21,36 @@
       <change beforePath="$PROJECT_DIR$/css/sellersignup.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/test.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/test2.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/buyerhomepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/buyerhomepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/buyerorseller.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/buyerorseller.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/indexcontainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/indexcontainer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/jobform.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/jobform.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/sellerCheckjob.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sellerCheckjob.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/sellerJobBox.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sellerJobBox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/sellerNavbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sellerNavbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aboutus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/buyer_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buyer_base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/buyer_homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buyer_homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buyer_signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buyer_signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/buyerorseller.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buyerorseller.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/checkorder.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/checkorder.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/jobform.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jobform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/myOrder.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myOrder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/myorders.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myorders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orderRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orderRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/selectjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/selectjob.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sellerCheckjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerCheckjob.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sellerEachjobpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerEachjobpage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sellerSignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerSignUp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seller_homepage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/testdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/testdb-instance/test.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sellerhomepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerhomepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,23 +89,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/panka/Desktop/KIDS/Aryan/Hackathon/DeliverEase&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/panka/Desktop/KIDS/Aryan/Hackathon/DeliverEase",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Python.app">
+}]]></component>
+  <component name="RunManager" selected="Flask server.DeliverEase">
     <configuration name="DeliverEase" type="PythonConfigurationType" factoryName="Python">
       <module name="DeliverEase" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -518,7 +238,12 @@
       <workItem from="1682518489992" duration="21000" />
       <workItem from="1682677914543" duration="2939000" />
       <workItem from="1682684807988" duration="1082000" />
-      <workItem from="1682743300169" duration="7873000" />
+      <workItem from="1682743300169" duration="9806000" />
+      <workItem from="1683127836619" duration="69000" />
+      <workItem from="1687887295930" duration="1157000" />
+      <workItem from="1687928779129" duration="145000" />
+      <workItem from="1687965295083" duration="11477000" />
+      <workItem from="1688010599186" duration="2061000" />
     </task>
     <servers />
   </component>

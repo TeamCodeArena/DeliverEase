@@ -17,7 +17,7 @@
           <hr/>
   
           <div class="sellerDetails">
-              <form onSubmit={handleFormSubmit}>
+              <form method="POST" action="#">
               
               <div class="sellerInfo_first"> 
                 <input type="text" name="fullName"   placeholder='Full Name' />
@@ -40,7 +40,8 @@
               
               
                 
-                <textarea name="address"  autoComplete="street-address" placeholder='2639 1st Hwy, STE 7768, Pierre, South Dakota, 93567'></textarea>
+                <textarea name="address"  autoComplete="address" placeholder='2639 1st Hwy, STE 7768, Pierre, South Dakota, 93567'></textarea>
+                <textarea name="phoneNo"  autoComplete="Phone Number" placeholder='9560XXXXXX'></textarea>
               </div>
   
             <button class='btn' type="submit">Submit</button>
