@@ -21,10 +21,8 @@
       <change beforePath="$PROJECT_DIR$/css/sellersignup.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buyer_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buyer_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/complete_delivery.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/complete_delivery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sellerhomepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sellerhomepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +216,7 @@
       <workItem from="1687928779129" duration="145000" />
       <workItem from="1687965295083" duration="11477000" />
       <workItem from="1688010599186" duration="16323000" />
-      <workItem from="1688129185895" duration="10390000" />
+      <workItem from="1688129185895" duration="12232000" />
     </task>
     <servers />
   </component>

@@ -200,18 +200,24 @@ def get_reviews(seller_id):
 
 
 
-def get_jobs(For, buyer_id=0):
+def get_jobs(For, buyer_id=0, seller_id=0):
 
     num_jobs = Job.query.filter_by(assigned_to=0).count()
     job_ids = []
     jobs = Job.query.all()
-    if For == 'Seller':
+    if For == 'unassigned_jobs':
         for job in jobs:
             if job.assigned_to == 0:
                 job_ids.append(job.id)
     elif For == "Buyer":
         for job in jobs:
             if job.created_by == buyer_id:
+                job_ids.append(job.id)
+                print(job_ids)
+
+    elif For == "Seller":
+        for job in jobs:
+            if job.assigned_to == seller_id:
                 job_ids.append(job.id)
                 print(job_ids)
 
@@ -363,8 +369,8 @@ def user_signup(username, password1, password2, address, phoneNo, email, user_ty
         flash('Passwords don\'t match.', category='error')
     else:
         if user_type == 'Seller':
-            new_user = Seller(email=email, name=username, password=generate_password_hash(
-                password1, method='sha256'), experience=experience, phoneNo=phoneNo, address=address)
+            new_user = Seller(email=email, name=username,
+                              password=generate_password_hash(password1, method='sha256'), experience=experience, phoneNo=phoneNo, address=address)
         elif user_type == 'Buyer':
             new_user = Buyer(email=email, name=username, password=generate_password_hash(
                 password1, method='sha256'), phoneNo=phoneNo, address=address)
@@ -552,7 +558,7 @@ def seller_home():
     seller_email = request.args.get('email')
     session['seller_email'] = seller_email
 
-    job1, job2, job3, job4, job5 = get_jobs(For="Seller")
+    job1, job2, job3, job4, job5 = get_jobs(For="unassigned_jobs")
     # print('job5', job5)
     print(job1, job2, job3, job4, job5)
     # print(job_details.items())
@@ -580,12 +586,20 @@ def buyer_orders():
     # return redirect(url_for('posted_jobs')
 
 
-@app.route('/jobs')
+@app.route('/completed_jobs_by_me')
 def posted_jobs():
-    job1, job2, job3, job4, job5 = get_jobs()
+
+    email = session['seller_email']
+    print(email)
+
+    seller = Seller.query.filter_by(email=email).first()
+    print('Seller', seller)
+    seller_id = seller.id
+    print('Seller ID', seller_id)
+    job1, job2, job3, job4, job5 = get_jobs(For="Seller", seller_id=seller_id)
     # print(job_details.items())
 
-    return render_template('seller_homepage.html', job1=job1, job2=job2, job3=job3, job4=job4, job5=job5)
+    return render_template('sellerhomepage.html', job1=job1, job2=job2, job3=job3, job4=job4, job5=job5)
 
 @app.route('/buyer_signup', methods=['GET', 'POST'])
 def buyer_signup():
