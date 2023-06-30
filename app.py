@@ -1,3 +1,6 @@
+#TODO fix my orders for less than 5 orders placed and can go to job page after logging out
+#TODO add a buyer and seller to the code and 5 jobs by the buyer and assign  one of them to the seller
+#TODO add completed orders for seller
 from flask import render_template, request, redirect, url_for, flash, session
 from flask import Flask
 from sqlalchemy.sql import func
@@ -68,7 +71,8 @@ class Job(db.Model):
     rating = db.Column(db.Integer, default='NIL')
     otp = db.Column(db.Integer)
     def __repr__(self) -> str:
-        return f"Job ID: {self.id} Job OTP: {self.otp} Job Status: {self.status} Item Type: {self.product_type} Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}"
+        return f"Job ID: {self.id} Job OTP: {self.otp} Job Status: {self.status} Item Type: {self.product_type} Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}" \
+               f"Rating: {self.rating} "
 
 
 
@@ -131,6 +135,7 @@ def assign_job(order_tag, seller_id, buyer_email):
     # print('Job', buyer_job)
     if buyer_job:
         print("Job Exists")
+        print(buyer_job)
 
         buyer_job.assigned_to = seller_id
         # db.session.commit()
@@ -469,23 +474,55 @@ def place_order():
             db.session.commit()
             print(new_job)
             session['order_tag'] = ordertag
+            print(session['order_tag'])
             # return redirect(url_for('seller_home'))
             return redirect(url_for('waiting'))
     return render_template('jobform.html')
 
 @app.route('/wait_for_seller', methods=['GET', 'POST'])
 def waiting():
-    if request.method == "GET":
-        return render_template("wait.html")
-    if request.method == "POST":
-        order_tag = session['order_tag']
-        user_job = Job.query.filter_by(order_tag=order_tag).first()
-        if user_job.assigned_to == 0:
-            flash("Your order has not been assigned")
-            return redirect('/wait_for_seller?msg=wait')
-        else:
-            return redirect(url_for('complete_delivery'))
+    # if request.method == "GET":
+    #     try:
+    #         session['order_tag'] = order_tag
 
+    #     except:
+    #         pass
+    #     else:
+    #         order_tag = request.args.get('order_Ttag')
+
+    #         print('i m here')
+    #         session['order_tag'] = order_tag
+    #
+    #
+    #     return render_template("wait.html")
+    # if request.method == "POST":
+    #     order_tag = session['order_tag']
+    #     print(order_tag)
+    #     user_job = Job.query.filter_by(order_tag=order_tag).first()
+    #     if user_job.assigned_to == 0:
+    #         flash("Your order has not been assigned")
+    #         return redirect('/wait_for_seller?msg=wait')
+    #     else:
+    #         return redirect(url_for('complete_delivery'))
+
+    try:
+        order_tag = session['order_tag']
+    except:
+        order_tag = request.args.get('order_tag')
+
+        # pass
+
+    print(order_tag)
+    user_job = Job.query.filter_by(order_tag=order_tag).first()
+    if user_job.assigned_to == 0:
+        # flash("Your order has not been assigned")
+        return redirect('/job_not_assigned')
+    else:
+        return redirect(url_for('complete_delivery'))
+
+@app.route('/job_not_assigned')
+def job_not_assigned():
+    return render_template('job_not_assigned.html')
 ## complete delivery page for buyer
 @app.route('/complete_order', methods=['POST', 'GET'])
 def complete_delivery():
@@ -497,15 +534,15 @@ def complete_delivery():
         review = request.form.get('review')
         rating = request.form.get('rating')
         print(rating, review)
-        ordertag = session['ordertag']
+        ordertag = session['orderTag']
         find_job = Job.query.filter_by(order_tag=ordertag).first()
         print(find_job)
         find_job.rating = rating
-        find_job.review = review
 
         db.session.commit()
         check_update_job = Job.query.filter_by(order_tag=ordertag).first()
-        print(check_update_job)
+        print("updated job: ", check_update_job)
+        return redirect('/Thanks')
 
 
 
@@ -524,6 +561,7 @@ def seller_home():
 
 @app.route('/my_orders')
 def buyer_orders():
+
     email = session['email']
     print(email)
 
@@ -537,7 +575,7 @@ def buyer_orders():
     print(job1, job2, job3, job4, job5)
     # print(job_details.items())
 
-    return render_template('sellerhomepage.html', job1=job1, job2=job2, job3=job3, job4=job4, job5=job5)
+    return render_template('buyer_orders.html', job1=job1, job2=job2, job3=job3, job4=job4, job5=job5)
 
     # return redirect(url_for('posted_jobs')
 
@@ -566,6 +604,28 @@ def buyer_signup():
         print(url)
         return redirect(url)
 
+@app.route('/buyer_check-job', methods=['GET', 'POST'])
+def detailed_job_for_buyer():
+    if request.method == 'GET':
+        job = request.args.get('job')
+        job_dict = eval(job)
+        buyer_name = job_dict.get('buyer_name')
+        buyer_email = job_dict.get('buyer_email')
+        buyer_phone = job_dict.get('buyer_phone_no')
+        delivery_time = job_dict.get('delivery_time')
+        pickup_time = job_dict.get('pickup_time')
+        delivery_address = job_dict.get('delivery_address')
+        pickup_address = job_dict.get('pickup_address')
+        delivery_pincode = job_dict.get('delivery_pincode')
+        pickup_pincode = job_dict.get('pickup_pincode')
+        delivery_type = job_dict.get('product_type')
+        order_tag = job_dict.get('Job Tag')
+        session['orderTag'] = order_tag
+        session['buyer_email'] = buyer_email
+        return render_template('buyer_see_job.html',buyer_email=buyer_email, buyer_phone_no=buyer_phone,product_type=delivery_type,  buyer_name=buyer_name, delivery_time=delivery_time, pickup_time=pickup_time, delivery_address=delivery_address, pickup_address=pickup_address, pickup_pincode=pickup_pincode, delivery_pincode=delivery_pincode, order_tag=order_tag)
+
+
+
 @app.route('/cancel_order')
 def cancel_order():
 
@@ -589,7 +649,7 @@ def detailed_job():
         order_tag = job_dict.get('Job Tag')
         session['orderTag'] = order_tag
         session['buyer_email'] = buyer_email
-        return render_template('sellerCheckjob.html',buyer_email=buyer_email, buyer_phone_no=buyer_phone,product_type=delivery_type,  buyer_name=buyer_name, delivery_time=delivery_time, pickup_time=pickup_time, delivery_address=delivery_address, pickup_address=pickup_address, pickup_pincode=pickup_pincode, delivery_pincode=delivery_pincode)
+        return render_template('sellerCheckjob.html',buyer_email=buyer_email, buyer_phone_no=buyer_phone,product_type=delivery_type,  buyer_name=buyer_name, delivery_time=delivery_time, pickup_time=pickup_time, delivery_address=delivery_address, pickup_address=pickup_address, pickup_pincode=pickup_pincode, delivery_pincode=delivery_pincode, order_tag=order_tag)
     if request.method == "POST":
         orderTag = session['orderTag']
         buyer_email = session['buyer_email']
@@ -611,10 +671,12 @@ def complete_job():
         return render_template('seller_finish_delivery.html')
     elif request.method == "POST":
         otp = request.form.get('otp')
+        print(type(otp))
         order_tag = session['orderTag']
         get_job = Job.query.filter_by(order_tag=order_tag).first()
         job_otp = get_job.otp
-        if otp == job_otp:
+        print(type(job_otp))
+        if int(otp) == job_otp:
             print("Job successfully Completed")
             return redirect(url_for('delivery_completed'))
         else:

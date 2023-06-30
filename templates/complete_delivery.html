@@ -1,8 +1,7 @@
 {% extends "buyer_base.html" %}
 {% block content %}
 <p> otp: {{ otp }}  Share with the delivery guy at the time of delivery</p>
-<form action="/Thanks">
-  <input type="text" name="review"   placeholder='Review' />
+<form action="#" method="POST">
   <input type="text" name="rating"   placeholder='Rating'/>
   <button class="btn">send</button>
 
