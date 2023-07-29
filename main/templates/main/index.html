@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index page</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{% static  %}">
     <link rel="stylesheet" href="/static/Navbar.css">
     <link rel="stylesheet" href="/static/indexcontainer.css">
 
@@ -20,10 +21,10 @@
                 <h2> DeliverEase</h2>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="{% url "global_index" %}" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
+                        <a href="{% url "about_us" %}" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
 <!--                         <a href="#" class="btn">My Orders</a> -->
