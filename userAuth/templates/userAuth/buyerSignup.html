@@ -1,3 +1,4 @@
+{% load static %}
 {#{% load messages %}#}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/stylesheet.css">
-    <link rel="stylesheet" href="/static/singup_buyer.css">
+    <link rel="stylesheet" href="{% static "userAuth/stylesheet.css" %}">
+    <link rel="stylesheet" href="{% static "userAuth/singup_buyer.css" %}">
     <title>DeliverEase | Register</title>
 </head>
 <body>
@@ -18,9 +19,9 @@
         </label>
         <label class="logo">DeliverEase</label>
         <ul>
-          <li><a class="active" href="#">Home</a></li>
-          <li><a href="/templates/aboutus.html">About Us</a></li>
-          <li> <a class='button' href="/templates/myorders.html">My Orders</a></li>
+          <li><a class="active" href="/">Home</a></li>
+          <li><a href="/about_us">About Us</a></li>
+          <!-- <li> <a class='button' href="/templates/myorders.html">My Orders</a></li> -->
   
         </ul>
       </nav>

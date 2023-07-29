@@ -1,7 +1,8 @@
+{% load static %}
 {% extends "seller/base.html" %}
 {% block head %}
 {% if page == 'sellerCheckjob' %}
-<link rel="stylesheet" href="/static/sellerCheckjob.css">
+<link rel="stylesheet" href="{% static "seller/sellerCheckjob.css" %}">
 
 
 {% endif %}
