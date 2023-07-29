@@ -89,11 +89,12 @@ def index(request):
 
     return render(request, 'buyer/buyer_homepage.html')
 
-# @login_required(login_url='/auth/login')
+
 def add_job(request):
     if request.method == 'POST':
         id = request.session['id']
         print(f'id {id}')
+        current_buyer = Buyer.objects.get(id=id)
         pickup_address = request.POST['pickup_address']
         pickup_time1 = request.POST['pickup_time']
         pickup_date = request.POST['pickup_date']
@@ -102,7 +103,13 @@ def add_job(request):
         delivery_date = request.POST['delivery_date']
         delivery_pincode = request.POST['delivery_pincode']
         pickup_pincode = request.POST['pickup_pincode']
-        return HttpResponseRedirect
+        new_job = Job(pickup_address=pickup_address, pickup_time=pickup_time1,
+                      delivery_address=delivery_address, pickup_pincode=pickup_pincode,
+                      delivery_time=delivery_time1, created_by=current_buyer,
+                      delivery_pincode=delivery_pincode)
+        print(new_job)
+        new_job.save()
+        return HttpResponseRedirect (reverse('my_orders'))
 
     else:
 
@@ -113,7 +120,25 @@ def add_job(request):
 
 
 def my_orders(request):
-    return render(request, 'buyer/buyer_orders.html') #check in vs code for different template
+    if request.method == 'POST':
+        id = request.POST['job_id']
+        return HttpResponseRedirect (reverse('check_order', args=[id]))
 
-def check_order(request):
-    return render(request, 'buyer/check_order.html')
+
+    id = request.session['id']
+    # print(id)
+    buyer =  Buyer.objects.filter(id=id)
+    # print(buyer)
+    all_job = Job.objects.filter(created_by=id)
+
+    return render(request, 'buyer/test.html', {
+        'jobs': all_job, 'buyer': buyer
+    }) #check in vs code for different template
+
+def check_order(request, job_id):
+    job = Job.objects.get(pk=job_id)
+    id = request.session['id']
+    current_user = Buyer.objects.get(pk=id)
+    return render(request, 'buyer/check_order.html', {
+        'job': job, 'buyer': current_user
+    })

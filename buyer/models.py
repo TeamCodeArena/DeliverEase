@@ -14,14 +14,14 @@ class Job(models.Model):
     delivery_pincode = models.IntegerField()
     pickup_pincode = models.IntegerField()
     created_by = models.ForeignKey(Buyer, on_delete=models.CASCADE,
-                               related_name='buyers')  # models.CASCADE Means delete the flight if a
+                                related_name='buyers')  # models.CASCADE Means delete the flight if a
 
     assigned_to = models.ForeignKey(Seller, on_delete=models.CASCADE, related_name='sellers',
-                                    blank=True) # models.CASCADE Means delete the flight if a
+                                     blank=True, null=True) # models.CASCADE Means delete the flight if a
     
-    status = models.CharField(max_length=100, blank=True)
-    rating = models.IntegerField(blank=True)
-    otp = models.IntegerField(blank=True)
+    status = models.CharField(max_length=100, default='Pending')
+    rating = models.IntegerField(blank=True, null=True)
+    otp = models.IntegerField(blank=True, null=True)
 
     def __repr__(self) -> str:
         return f"Job ID: {self.id} Job Status: {self.status} Job Review: {self.review} Item Type: {self.product_type} Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}"

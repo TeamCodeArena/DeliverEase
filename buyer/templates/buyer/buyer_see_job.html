@@ -22,36 +22,33 @@
 
                   <div class="buyer_info">
                      <h2>Buyer Info:
-                         Name: {{ buyer_name }}
-                         Email: {{ buyer_email }}
-                         Phone No. : {{ buyer_phone_no }}</h2>
+                         Name: {{ current_user.name }}
+                         Email: {{ current_user.email }}
+                         Phone No. : {{ current_user.phone_no }}</h2>
                   </div>
               </div>
 
                <div>
                      <div class="buyers_Jobdetails">
                         <div>
-                           <h2> Delivery Type :-</h2>
-                           <p>{{ product_type }}</p>
                         <h2> Collect The Delivery from :-</h2>
-                           <p>{{ pickup_address }}, {{ pickup_pincode }}</p>
+                           <p>{{ job.pickup_address }}, {{ job.pickup_pincode }}</p>
                         </div>
 
                         <div>
                            <h2>Collect the Delivery At :-</h2>
-                           <p>{{ pickup_time }}</p>
+                           <p>{{ job.pickup_time }}</p>
                         </div>
                         <div>
                            <h2>Deliver At :-</h2>
-                           <p>{{ delivery_address }}, {{ delivery_pincode }}</p>
+                           <p>{{ job.delivery_address }}, {{ job.delivery_pincode }}</p>
                         </div>
 
                         <div>
                            <h2>Deliver By:-</h2>
-                           <p> {{ delivery_time }} </p>
+                           <p> {{ job.delivery_time }} </p>
                         </div>
                      </div>
-                     <a href="/wait_for_seller?order_tag={{ order_tag }}"><button class="btn"> Check Job Status</button></a>
                      </div>
 
             </div>

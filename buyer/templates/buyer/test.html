@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> Jobs </h2>
+{% for job1 in jobs %}
+<div class="sellerJobBox">
+
+    <div class="sellerJobs">
+        <div class="eachJobBox">
+            <div class="image">
+{#                <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg">#}
+            </div>
+            <div class="jobDetails">
+                <h2> Job By : {{ buyer.name }}</h2>
+                <div class="time">
+                    <p> Delivery Time : {{ job1.delivery_time }}  </p>
+                    <p> Pickup Time : {{ job1.pickup_time }} </p>
+                </div>
+                <div>
+                    <p>Delivery Address: {{ job1.delivery_address }}</p>
+                    <p>Pickup Address: {{ job1.pickup_address }}</p>
+                </div>
+                <div class="job_button">
+                    <form method="post" action="#">
+                        {% csrf_token %}
+                        <input value="job1.id" name="job_id" type="hidden">
+                        <button type="submit">Check Job</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+{% endfor %}
+
+</body>
+</html>

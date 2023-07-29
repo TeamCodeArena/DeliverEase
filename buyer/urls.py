@@ -4,7 +4,7 @@ urlpatterns = [
    path('home/', views.index, name='index'),
    path('add_job/', views.add_job, name='add_job'),
    path('my_orders/', views.my_orders, name='my_orders'),
-   path('check_order/', views.check_order, name='check_order')
+   path('check_order/<int:job_id>/', views.check_order, name='check_order')
 ]
 
 # home
