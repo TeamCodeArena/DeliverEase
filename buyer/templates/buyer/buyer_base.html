@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>DeliverEase</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/stylesheet.css">
+    <link rel="stylesheet" href="{% static 'stylesheet.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
@@ -15,9 +16,9 @@
       </label>
       <label class="logo">DeliverEase</label>
       <ul>
-        <li><a class="active" href="/buyer_home">Home</a></li>
+        <li><a class="active" href="{% url "index" %}">Home</a></li>
         <li><a href="/about_us">About Us</a></li>
-        <li> <a class='button' href="/my_orders">My Orders</a></li>
+        <li> <a class='button' href="{% url "my_orders" %}">My Orders</a></li>
       </ul>
     </nav>
     <section></section>

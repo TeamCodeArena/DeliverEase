@@ -1,35 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/aboutus.css">
-    <link rel="stylesheet" href="/static/stylesheet.css">
+    <link rel="stylesheet" href="{% static "main/aboutus.css" %}">
+    <link rel="stylesheet" href="{% static "main/stylesheet.css" %}">
     <title>DeliverEase</title>
 </head>
 <body>
   <header class="header">
     <nav class="navbar">
-        <a href="#" class="nav-logo">DeliverEase</a>
+        <a href="{% url "index" %}" class="nav-logo">DeliverEase</a>
         <ul class="nav-menu">
             <li class="nav-item">
-                <a href="#" class="nav-link">Home</a>
+                <a href="{% url "index" %}" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">About Us</a>
+                <a href="/about_us"" class="nav-link">About Us</a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="button">My Orders</a>
-            </li>
-        </ul>
+           </ul>
         <div class="hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
     </nav>
-    </header>
+</header>
 
       <div class="aboutus_container"> 
         <h1 class="aboutus_title" >Who are we?</h1>
@@ -59,5 +57,5 @@
       hamburger.classList.remove("active");
       navMenu.classList.remove("active");
   }
-      </script>
+  </script>
 </html>

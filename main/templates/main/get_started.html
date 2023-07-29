@@ -1,12 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/stylesheet.css">
-    <link rel="stylesheet" href="/static/buyerorseller.css">
-    <link rel="stylesheet" href="/static/jobform.css">
+
+    <link rel="stylesheet" href="{% static "main/stylesheet.css" %}">
+    <link rel="stylesheet" href="{% static "main/buyerorseller.css" %}">
+    <link rel="stylesheet" href="{% static "main/jobform.css" %}">
     <title>DeliverEase</title>
 </head>
 <body>
@@ -17,17 +19,17 @@
         </label>
         <label class="logo">DeliverEase</label>
         <ul>
-          <li><a class="active" href="#">Home</a></li>
-          <li><a href="/templates/aboutus.html">About Us</a></li>
-          <li> <a class='button' href="/templates/my_orders.html">My Orders</a></li>
+          <li><a class="active" href="{% url "index" %}">Home</a></li>
+          <li><a href="/about_us">About Us</a></li>
+          <li> <a class='button' href="{% url "my_orders" %}">My Orders</a></li>
         </ul>
       </nav>
 
       <div>
         <h1 class='que'>Who are you?</h1>
         <div class="button-container">
-            <a class='butt' href="/buyer">Buyer</a>
-            <a class='butt' href="/seller">Seller</a>
+            <a class='butt' href="/auth/buyer_signup">Buyer</a>
+            <a class='butt' href="/auth/seller_signup">Seller</a>
         </div>
       </div>
 
