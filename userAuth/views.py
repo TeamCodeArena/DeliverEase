@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
+from django.conf import settings
 # Create your views here.
 def check_user_exists(email):
 
@@ -69,6 +70,7 @@ def user_login(email, password):
     print(user_type, user)
     if user:
         if (user.password == password):
+            id = user.id
             message = 'Logged in successfully!'
             if user_type == 'Seller':
                 url = '/seller/home'
@@ -76,7 +78,7 @@ def user_login(email, password):
             if user_type == 'Buyer':
                 url = '/buyer/home'
 
-            return url, message
+            return url, message, id
         else:
             url = '/auth/login'
             message = 'Incorrect password, try again.'
@@ -132,11 +134,10 @@ def login_user(request):
         email = request.POST['email']
         password = request.POST['password']
         print(f" 1{email}, {password}")
-        url, message = user_login(email=email, password=password)
-        if message == 'Logged in successfully!':
-            find_user = authenticate(request, username=email, password=password)
-            login(request, find_user)
+        url, message, account = user_login(email=email, password=password)
 
+        if message == 'Logged in successfully!':
+            request.session['id'] = account
         messages.warning(request, message)
         print(f'url: {url}')
         return HttpResponseRedirect (url)

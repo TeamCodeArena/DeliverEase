@@ -3,6 +3,8 @@ from userAuth.models import Buyer,  Seller
 from .models import Job
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 # Create your views here.
 # path('home/', views.home, name='index'),
 # path('add_job/', views.add_job, name='add_job'),
@@ -87,9 +89,11 @@ def index(request):
 
     return render(request, 'buyer/buyer_homepage.html')
 
-@login_required(login_url='/auth/login')
+# @login_required(login_url='/auth/login')
 def add_job(request):
     if request.method == 'POST':
+        id = request.session['id']
+        print(f'id {id}')
         pickup_address = request.POST['pickup_address']
         pickup_time1 = request.POST['pickup_time']
         pickup_date = request.POST['pickup_date']
@@ -98,7 +102,8 @@ def add_job(request):
         delivery_date = request.POST['delivery_date']
         delivery_pincode = request.POST['delivery_pincode']
         pickup_pincode = request.POST['pickup_pincode']
-        product_type = request.POST['product_type']
+        return HttpResponseRedirect
+
     else:
 
         author = request.user
