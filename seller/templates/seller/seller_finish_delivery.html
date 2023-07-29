@@ -1,0 +1,10 @@
+{% extends "buyer_base.html" %}
+{% block content %}
+    <p> After the delivery is complete Enter the OTP taking it from the Buyer to complete the Delivery.</p>
+<form method="POST" action="#">
+  <input type="text" name="otp"   placeholder='Enter the OTP' />
+  <button class="btn">Complete Delivery</button>
+
+</form>
+    <button onclick="window.location.href='/cancel_order'">Cancel Order</button>
+ {% endblock %}

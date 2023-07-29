@@ -1,0 +1,66 @@
+{#{% load messages %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <link rel="stylesheet" href="/static/singup_buyer.css">
+    <title>DeliverEase | Register</title>
+</head>
+<body>
+{#    {% messages %}#}
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">DeliverEase</label>
+        <ul>
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="/templates/aboutus.html">About Us</a></li>
+          <li> <a class='button' href="/templates/myorders.html">My Orders</a></li>
+  
+        </ul>
+      </nav>
+
+      <div class='App'>
+        
+        <div class='signUp'> 
+            <h1> Signup as a Buyer</h1>
+              
+              <div class="buyerDetails">
+                  <form method="post">
+                      {% csrf_token %}
+                  
+                  <div class="buyerInfo_first">
+                    <input type="text" name="fullName"   placeholder='Full Name' />
+                    
+                    
+                      
+                    <input type="email" name="email"   placeholder='Billiot@example.com' />
+                  </div>
+                
+                  <div class="buyerInfo_second">
+                    <input type="password" name="password"    placeholder='Password'/>
+                    <input type="tel" name="phoneNo"  autoComplete="tel" placeholder='Phone Number'/>
+                  </div>
+                  <div class="confpass"> 
+                  <input type="password" name="confirmPassword" id="confpassword"  placeholder='Confirm Password'/>
+                </div>
+
+                  <div class="sellerInfo_third">
+                    <textarea name="address"  autoComplete="street-address" placeholder='2639 1st Hwy, STE 7768, Pierre, South Dakota, 93567'></textarea>
+                  </div>
+      
+                <button class='button' type="submit">Register</button>
+              </form>
+        
+                        <h1 class='loginhave'>Already have an account?<a href="/login">LogIn</a></h1>
+              </div>
+          </div>
+        </div>
+        
+</body>
+</html>

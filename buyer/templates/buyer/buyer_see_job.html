@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block head %}
+{% if page == 'buyer_see_job' %}
+<link rel="stylesheet" href="/static/sellerCheckjob.css">
+
+
+{% endif %}
+{% endblock %}
+        {% block content %}
+
+<div class="checkJob">
+
+            <div class="contentBox_sellercheckjob">
+
+               <div class="buyers_details">
+
+                  <div class="buyer_image">
+                     <!-- <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg">
+                     <img src="/static/buyer.jpeg" alt="buyerimage" > -->
+                     <img src="{{ url_for('static', filename='buyer.jpeg') }}" alt="buyerImg">
+                  </div>
+
+                  <div class="buyer_info">
+                     <h2>Buyer Info:
+                         Name: {{ buyer_name }}
+                         Email: {{ buyer_email }}
+                         Phone No. : {{ buyer_phone_no }}</h2>
+                  </div>
+              </div>
+
+               <div>
+                     <div class="buyers_Jobdetails">
+                        <div>
+                           <h2> Delivery Type :-</h2>
+                           <p>{{ product_type }}</p>
+                        <h2> Collect The Delivery from :-</h2>
+                           <p>{{ pickup_address }}, {{ pickup_pincode }}</p>
+                        </div>
+
+                        <div>
+                           <h2>Collect the Delivery At :-</h2>
+                           <p>{{ pickup_time }}</p>
+                        </div>
+                        <div>
+                           <h2>Deliver At :-</h2>
+                           <p>{{ delivery_address }}, {{ delivery_pincode }}</p>
+                        </div>
+
+                        <div>
+                           <h2>Deliver By:-</h2>
+                           <p> {{ delivery_time }} </p>
+                        </div>
+                     </div>
+                     <a href="/wait_for_seller?order_tag={{ order_tag }}"><button class="btn"> Check Job Status</button></a>
+                     </div>
+
+            </div>
+
+         </div>
+
+    {% endblock %}
