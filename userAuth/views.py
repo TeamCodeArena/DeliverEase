@@ -3,6 +3,7 @@ from .models import Buyer, Seller
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth import login, authenticate
 # Create your views here.
 def check_user_exists(email):
 
@@ -50,7 +51,7 @@ def user_signup(username, password1, password2, address, phoneNo, email, user_ty
         print(f"new user {new_user}")
         print(f"url {url}")
         print(f'message: {error_message}')
-        return url, error_message
+        return url, error_message, new_user
 
 def user_login(email, password):
     try:
@@ -95,7 +96,7 @@ def buyer_signup(request):
         email = request.POST['email']
         address = request.POST['address']
         try:
-            url, message = user_signup(username=username, password1=password, password2=confPassword, phoneNo=phoneNo,
+            url, message, user = user_signup(username=username, password1=password, password2=confPassword, phoneNo=phoneNo,
                         email=email, address=address, user_type='Buyer')
             messages.warning(request, message)
             print(message)
@@ -103,6 +104,7 @@ def buyer_signup(request):
             print(error)
             print('hi')
             messages.error(request, 'Please fill all the details')
+            login(request, user)
             return HttpResponseRedirect (reverse('buyer_signup'))
 
         return HttpResponseRedirect (url)
@@ -125,12 +127,16 @@ def seller_signup(request):
     return render(request, 'userAuth/sellerSignup.html')
 
 
-def login(request):
+def login_user(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
         print(f" 1{email}, {password}")
         url, message = user_login(email=email, password=password)
+        if message == 'Logged in successfully!':
+            find_user = authenticate(request, username=email, password=password)
+            login(request, find_user)
+
         messages.warning(request, message)
         print(f'url: {url}')
         return HttpResponseRedirect (url)

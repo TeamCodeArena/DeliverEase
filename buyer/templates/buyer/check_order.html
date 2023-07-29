@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/checkorder.css">
+    <link rel="stylesheet" href="/static/stylesheet.css">
+    <title>DeliverEase</title>
+</head>
+<body>
+  <div class="App">
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">DeliverEase</label>
+        <ul>
+          <li><a class="active" href="/seller_home">Home</a></li>
+          <li><a href="/about_us">About Us</a></li>
+          <li> <a class='button' href="/my_orders">My Orders</a></li>
+        </ul>
+      </nav>
+
+      <div class="checkorder_container">
+        <div class="checkorder_container_left">
+          <div class="image">
+            <img src="/static/check.jpg" alt="image" class='img'>
+          </div>
+            <h1 class='Delivery By:'>{{ seller_name }}</h1>
+            <h2 class='disotp'>Please share this OTP, once they ask you.</h2>
+
+            <h1 class='otp'>{{ otp }}</h1>
+        </div>
+
+      <div class='headingon'>
+      <h1 >Delivering on :- </h1>
+    </div>
+    <div class='headingof'>
+      <h2>{{ delivery_address }}, {{ delivery_pincode }}</h2>
+    </div>
+
+      <div class='headingon1'>
+      <h1 >Delivering at :-</h1>
+    </div>
+    <div class='headingof1'>
+      <h2>{{ delivery_time }}</h2>
+    </div>
+
+      <div class='headingon'>
+      <h1 >Pickup Details :- </h1>
+    </div>
+    <div class='headingof'>
+      <h2>{{ pickup_address }}, {{ pickup_pincode }}</h2>
+    </div>
+
+
+  <div class='headingon1'>
+      <h1 >Pickup Time :-</h1>
+    </div>
+    <div class='headingof1'>
+      <h2>{{ pickup_time }}</h2>
+    </div>
+          <a href="/get_otp"><button class="btn btn_sm"> Get OTP </button></a>
+
+
+  </div>
+</div>
+
+</body>
+</html>
