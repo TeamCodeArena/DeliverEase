@@ -4,13 +4,11 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
-from django.conf import settings
+
 # Create your views here.
 def check_user_exists(email):
-
     buyer_exists = Buyer.objects.filter(email=email).exists()
     seller_exists = Seller.objects.filter(email=email).exists()
-
     if buyer_exists or seller_exists:
         return True
     else:
@@ -43,7 +41,7 @@ def user_signup(username, password1, password2, address, phoneNo, email, user_ty
                               password=password1, experience=experience,
                               phoneNo=phoneNo, address=address)
             url = '/seller/home'
-
+            error_message = 'Account created successfully'
         elif user_type == 'Buyer':
             new_user = Buyer(email=email, name=username, password=password1,
                              phoneNo=phoneNo, address=address)
@@ -56,7 +54,7 @@ def user_signup(username, password1, password2, address, phoneNo, email, user_ty
         print(f"new user {new_user}")
         print(f"url {url}")
         print(f'message: {error_message}')
-        return url, error_message, new_user
+        return url, error_message
 
 
 def user_login(email, password):
@@ -75,7 +73,6 @@ def user_login(email, password):
     print(user_type, user)
     if user:
         if (user.password == password):
-            id = user.id
             message = 'Logged in successfully!'
             if user_type == 'Seller':
                 url = '/seller/home'
@@ -83,7 +80,7 @@ def user_login(email, password):
             if user_type == 'Buyer':
                 url = '/buyer/home'
             url  += f'/?email={email}'
-            return url, message, id
+            return url, message
         else:
             url = '/auth/login'
             message = 'Incorrect password, try again.'
@@ -103,7 +100,7 @@ def buyer_signup(request):
         email = request.POST['email']
         address = request.POST['address']
         try:
-            url, message, user = user_signup(username=username, password1=password, password2=confPassword, phoneNo=phoneNo,
+            url, message = user_signup(username=username, password1=password, password2=confPassword, phoneNo=phoneNo,
                         email=email, address=address, user_type='Buyer')
             messages.warning(request, message)
             print(message)
@@ -111,7 +108,7 @@ def buyer_signup(request):
             print(error)
             print('hi')
             messages.error(request, 'Please fill all the details')
-            login(request, user)
+
             return HttpResponseRedirect (reverse('buyer_signup'))
 
         return HttpResponseRedirect (url)
@@ -139,10 +136,8 @@ def login_user(request):
         email = request.POST['email']
         password = request.POST['password']
         print(f" 1{email}, {password}")
-        url, message, account = user_login(email=email, password=password)
+        url, message = user_login(email=email, password=password)
 
-        if message == 'Logged in successfully!':
-            request.session['id'] = account
         messages.warning(request, message)
         print(f'url: {url}')
         print(url)

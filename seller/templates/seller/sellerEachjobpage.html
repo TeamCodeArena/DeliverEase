@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "seller/base.html" %}
 {% block head %}
 {% if page == 'sellerCheckjob' %}
 <link rel="stylesheet" href="/static/sellerCheckjob.css">
@@ -48,8 +48,9 @@
                            <p> {{ job.delivery_time }} </p>
                         </div>
                      </div>
-                   <form>
-                        <button href="{% url "complete_delivery" %}" class="btn" id='applyBtn'> Apply</button>
+                   <form method="post">
+                        {% csrf_token %}
+                        <button>Apply</button>
                    </form>
                      <div>
                         <p>Please don't drive faster than 40KM, take your time, the time we told you is just the customer expectations, we never promote, deliver time.</p>

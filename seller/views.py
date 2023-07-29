@@ -1,8 +1,17 @@
 from django.shortcuts import render
 from buyer.models import Buyer, Seller, Job
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 def home(request):
+
+    if request.method == 'POST':
+        job_id = request.POST['job_id']
+        request.session['job_id'] = job_id
+        print('hi')
+        return HttpResponseRedirect (reverse('job_details'))
+
     email = request.GET.get('email', 'None')
     print(f'email {email}')
     seller = Seller.objects.get(email=email)
@@ -19,6 +28,7 @@ def home(request):
     return render(request, 'seller/jobs.html',{
         'jobs': jobs
     })
+
 
 # def jobs(request):
 #     return render(request, 'seller/jobs.html')
@@ -42,6 +52,9 @@ def my_orders(request):
     return render(request, 'seller/myOrder.html')
 
 def job_details(request):
+    if request.method == 'POST':
+        return HttpResponseRedirect(reverse('complete_delivery'))
+    print('hi')
     job_id = request.session['job_id']
     print(job_id)
     job = Job.objects.get(pk=job_id)
@@ -49,7 +62,24 @@ def job_details(request):
         'job': job
     })
 
+
+
 def complete_delivery(request):
+    if request.method == 'POST':
+        otp = request.POST['otp']
+        job_id = request.session['job_id']
+        job = Job.objects.get(pk=job_id)
+        try:
+            job_otp = job.otp
+        except:
+
+            message = 'Please ask the buyer to click the complete delivery button'
+        else:
+            if not job_otp:
+                message = 'Please ask the buyer to click the complete delivery button'
+            if message:
+                return HttpResponseRedirect(reverse('home'))
+
 
     job_id = request.session['job_id']
     id = request.session['id']

@@ -9,10 +9,10 @@
 </head>
 <body>
     <p> otp: {{ otp }}</p>
-<form>
+<form method="post">
     {% csrf_token %}
-  <input type="email" name="review"   placeholder='Review' />
-  <input type="password" name="rating"   placeholder='Rating'/>
+  <input type="text" name="review"   placeholder='Review' />
+  <input type="number" name="rating"   placeholder='Rating'/>
   <button class="btn">send</button>
 
 </form>

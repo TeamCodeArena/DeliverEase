@@ -64,6 +64,7 @@
     </div>
           <h1> Click only when you want to recieve the delivery</h1>
           <form method="post">
+              {% csrf_token %}
               <input type="hidden" value="job.id" name="job_id">
               <button type="submit">Complete Order</button>
           </form>
