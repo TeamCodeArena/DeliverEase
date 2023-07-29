@@ -8,6 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>This is your otp {{otp}}</h2>
+    <p> otp: {{ otp }}</p>
+<form>
+    {% csrf_token %}
+  <input type="email" name="review"   placeholder='Review' />
+  <input type="password" name="rating"   placeholder='Rating'/>
+  <button class="btn">send</button>
+
+</form>
+
 </body>
 </html>

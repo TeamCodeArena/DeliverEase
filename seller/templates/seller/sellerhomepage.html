@@ -4,15 +4,6 @@
 <link rel="stylesheet" href="/static/sellerJobBox.css">
 
 {% endif %}
-     {% with messages = get_flashed_messages(with_categories=true) %} {% if
-        messages %} {% for category, message in messages %} {% if category ==
-        'error' %}
-          {{ message }}
-
-        {% else %}
-          {{ message }}
-
-    {% endif %} {% endfor %} {% endif %} {% endwith %}
 
 {% endblock %}
         {% block content %}
@@ -21,9 +12,9 @@
         <h2> Jobs </h2>
         <div class="sellerJobs">
                 <div class="eachJobBox">
-                    <div class="image">
-                        <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg">
-                    </div>
+{#                    <div class="image">#}
+{#                        <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg">#}
+{#                    </div>#}
                     <div class="jobDetails">
                                      <h2> Job By : {{ job1.buyer_name }}</h2>
                     <div class="time">

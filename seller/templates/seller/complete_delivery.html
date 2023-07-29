@@ -1,0 +1,8 @@
+{% extends "buyer_base.html" %}
+
+<form method="post">
+    {% csrf_token %}
+  <input type="number" name="otp"   placeholder='OTP'>
+  <button type="submit" class="btn">Complete Job</button>
+
+</form>

@@ -18,53 +18,9 @@ def check_user_loggedin(request):
         print(id)
     except Exception as error:
         print(error)
-def assign_job(order_tag, seller_id, buyer_email):
-
-    buyer = Buyer.query.filter_by(email=buyer_email).first()
-    print('Buyer', buyer)
-    buyer_id = buyer.id
-    print('Buyer ID', buyer_id)
-    buyer_job = Job.query.filter_by(created_by=buyer_id, assigned_to=0).filter_by(
-        order_tag=order_tag).first() ##checks if the job is available
-    # print('Job', buyer_job)
-    if buyer_job:
-        buyer_job.assigned_to = seller_id
-        db.session.commit()
-        buyer_job.status = "In Progress"
-        db.session.commit()
-        print('Job Assigned')
-    else:
-        print('Job already assigned to someone')
 
 
-def cancel_job(job_id, seller_id, buyer_email):
-    buyer = Buyer.objects.filter(email=buyer_email)
-    print('Buyer', buyer)
-    buyer_id = buyer.id
-    print('Buyer ID', buyer_id)
-    buyer_job = Job.objects.filter(created_by=buyer_id, assigned_to=seller_id, id=job_id)
-    ##checks if the job is available
-    # print('Job', buyer_job)
-    if buyer_job:
-        buyer_job.assigned_to = 0
-        buyer_job.save()
-        buyer_job.status = "Cancelled"
-        buyer_job.save()
-        print('Job Cancelled Success')
-    else:
-        print('Job not  assigned to you')
 
-#
-# def display_jobs():
-#     number_of_jobs = Job.objects.count()
-#     if number_of_jobs < 5:
-#         jobs = Job.objects.filter(assigned_to=0).order_by(func.random()).limit(number_of_jobs).all()
-#     else:
-#         jobs = Job.query.filter_by(assigned_to=0).order_by(func.random()).limit(5).all()
-#     # Print the job details
-#     for job in jobs:
-#         print(job)
-#
 
 def order_completed(job_id, seller_id, buyer_email, rating):
     buyer = Buyer.objects.get(email=buyer_email)
@@ -92,7 +48,11 @@ def get_reviews(seller_id):
 
 
 def index(request):
-
+    email = request.GET.get('email', 'None')
+    print(f'email: {email}')
+    buyer = Buyer.objects.get(email=email)
+    id = buyer.id
+    request.session['id'] = id
     return render(request, 'buyer/buyer_homepage.html')
 
 
@@ -131,24 +91,28 @@ def my_orders(request):
         return HttpResponseRedirect (reverse('check_order'))
 
     else:
+        try:
+            del request.session['job_id']
+        except:
+            pass
         id = request.session['id']
         # print(id)
         buyer =  Buyer.objects.filter(id=id)
         # print(buyer)
         all_job = Job.objects.filter(created_by=id)
 
-        return render(request, 'buyer/test.html', {
+        return render(request, 'buyer/my_orders.html', {
             'jobs': all_job, 'buyer': buyer
         }) #check in vs code for different template
 
 def check_order(request):
+    if request.method == 'POST':
+        return HttpResponseRedirect (reverse('get_otp'))
     job_id = request.session['job_id']
     print(job_id)
     job = Job.objects.get(pk=job_id)
-    id = request.session['id']
-    current_user = Buyer.objects.get(pk=id)
     return render(request, 'buyer/check_order.html', {
-        'job': job, 'buyer': current_user
+        'job': job
     })
 
 

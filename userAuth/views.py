@@ -15,6 +15,8 @@ def check_user_exists(email):
         return True
     else:
         return False
+
+
 def user_signup(username, password1, password2, address, phoneNo, email, user_type, experience='None'):
     user = check_user_exists(email=email)
 
@@ -48,11 +50,14 @@ def user_signup(username, password1, password2, address, phoneNo, email, user_ty
         # flash('Account created!', category='success')
             url = '/buyer/home'
             error_message = 'Account created successfully'
+        url += f'/?email={email}'
+
         new_user.save()
         print(f"new user {new_user}")
         print(f"url {url}")
         print(f'message: {error_message}')
         return url, error_message, new_user
+
 
 def user_login(email, password):
     try:
@@ -77,7 +82,7 @@ def user_login(email, password):
 
             if user_type == 'Buyer':
                 url = '/buyer/home'
-
+            url  += f'/?email={email}'
             return url, message, id
         else:
             url = '/auth/login'
@@ -140,6 +145,7 @@ def login_user(request):
             request.session['id'] = account
         messages.warning(request, message)
         print(f'url: {url}')
+        print(url)
         return HttpResponseRedirect (url)
     # elif request.method == 'GET':
     return render(request, 'userAuth/login.html')

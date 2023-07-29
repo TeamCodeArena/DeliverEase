@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}Home{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/sellerNavbar.css">
+    
+    {% block head %}{% endblock %}
+   
+</head>
+<body>
+    <div class="App">
+      <!-- <header class="header"> 
+        <h1>DeliverEase</h1>
+          <nav class="navbar">
+            
+              <div class="nav_right">
+                <ul class="nav_link">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about">About Us</a></li>
+                </ul>
+                
+                <button class="btn btn_m">My order</button>
+                <button class="btn btn_m">Order Request</button>
+              
+              </div>
+            
+            </nav>
+            <div class="mobile_navbar_btn">
+              <ion-icon class="mobile_nav_icon" name="menu"></ion-icon>
+              <ion-icon class="mobile_nav_icon" name="close"></ion-icon>
+            </div>
+        </header> -->
+
+         <!-- <nav> 
+          <div class='navbar'>
+              <h1> DeliverEase</h1>
+                  <div class='nav_right'>
+                      <ul class="nav_link">
+                          <li><a href="/">Home</a></li>
+                          <li><a href="/about">About Us</a></li>
+                      </ul>
+                      <button class="btn"> My order</button>
+                      <button class="btn">Order Request</button>
+                  </div>
+          </div> 
+        </nav>  -->
+
+        <header class="header">
+          <nav class="navbar">
+              <h1> DeliverEase</h1>
+              <ul class="nav-menu">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <!-- <a href="#" class="btn">My Orders</a> -->
+                      <button class="btn btn_sm"> My Order</button>
+                      <button class="btn btn_sm"> Order Request</button>
+                  </li>
+              </ul>
+              <div class="hamburger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+              </div>
+          </nav>
+      </header>
+    {% block content %}
+    
+    {% endblock %}
+    
+
+  <script>
+      // creating a responsive navbar
+      const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            const navLink = document.querySelectorAll(".nav-link");
+
+            hamburger.addEventListener("click", mobileMenu);
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+            function mobileMenu() {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            }
+
+            function closeMenu() {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+  </script>
+</body>
+</html>

@@ -28,7 +28,7 @@
           <div class="image">
             <img src="/static/check.jpg" alt="image" class='img'>
           </div>
-            <h1 class='Delivery By:'>{{ seller_name }}</h1>
+            <h1 class='Delivery By:'>{{ job.assigned_to.name }}</h1>
             <h2 class='disotp'>Please share this OTP, once they ask you.</h2>
 
             <h1 class='otp'>{{ job.otp }}</h1>
@@ -63,7 +63,10 @@
       <h2>{{ job.pickup_time }}</h2>
     </div>
           <h1> Click only when you want to recieve the delivery</h1>
-          <a href="{% url 'get_otp' %}"><button class="btn btn_sm"> Complete Order </button></a>
+          <form method="post">
+              <input type="hidden" value="job.id" name="job_id">
+              <button type="submit">Complete Order</button>
+          </form>
 
 
   </div>
