@@ -4,6 +4,7 @@ from .models import Job
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
+import random
 from django.urls import reverse
 # Create your views here.
 # path('home/', views.home, name='index'),
@@ -11,7 +12,12 @@ from django.urls import reverse
 # path('my_orders/', views.my_orders, name='my_orders'),
 # path('check_order/', views.check_order, name='check_order')
 
-
+def check_user_loggedin(request):
+    try:
+        id = request.session['id']
+        print(id)
+    except Exception as error:
+        print(error)
 def assign_job(order_tag, seller_id, buyer_email):
 
     buyer = Buyer.query.filter_by(email=buyer_email).first()
@@ -48,17 +54,17 @@ def cancel_job(job_id, seller_id, buyer_email):
     else:
         print('Job not  assigned to you')
 
-
-def display_jobs():
-    number_of_jobs = Job.objects.count()
-    if number_of_jobs < 5:
-        jobs = Job.objects.filter(assigned_to=0).order_by(func.random()).limit(number_of_jobs).all()
-    else:
-        jobs = Job.query.filter_by(assigned_to=0).order_by(func.random()).limit(5).all()
-    # Print the job details
-    for job in jobs:
-        print(job)
-
+#
+# def display_jobs():
+#     number_of_jobs = Job.objects.count()
+#     if number_of_jobs < 5:
+#         jobs = Job.objects.filter(assigned_to=0).order_by(func.random()).limit(number_of_jobs).all()
+#     else:
+#         jobs = Job.query.filter_by(assigned_to=0).order_by(func.random()).limit(5).all()
+#     # Print the job details
+#     for job in jobs:
+#         print(job)
+#
 
 def order_completed(job_id, seller_id, buyer_email, rating):
     buyer = Buyer.objects.get(email=buyer_email)
@@ -112,33 +118,48 @@ def add_job(request):
         return HttpResponseRedirect (reverse('my_orders'))
 
     else:
-
-        author = request.user
-        print(f'author {author}')
+        check_user_loggedin(request=request)
         return render(request, 'buyer/add_job.html')
 
 
 
 def my_orders(request):
     if request.method == 'POST':
-        id = request.POST['job_id']
-        return HttpResponseRedirect (reverse('check_order', args=[id]))
 
+        job_id = request.POST['job_id']
+        request.session['job_id'] = job_id
+        return HttpResponseRedirect (reverse('check_order'))
 
-    id = request.session['id']
-    # print(id)
-    buyer =  Buyer.objects.filter(id=id)
-    # print(buyer)
-    all_job = Job.objects.filter(created_by=id)
+    else:
+        id = request.session['id']
+        # print(id)
+        buyer =  Buyer.objects.filter(id=id)
+        # print(buyer)
+        all_job = Job.objects.filter(created_by=id)
 
-    return render(request, 'buyer/test.html', {
-        'jobs': all_job, 'buyer': buyer
-    }) #check in vs code for different template
+        return render(request, 'buyer/test.html', {
+            'jobs': all_job, 'buyer': buyer
+        }) #check in vs code for different template
 
-def check_order(request, job_id):
+def check_order(request):
+    job_id = request.session['job_id']
+    print(job_id)
     job = Job.objects.get(pk=job_id)
     id = request.session['id']
     current_user = Buyer.objects.get(pk=id)
     return render(request, 'buyer/check_order.html', {
         'job': job, 'buyer': current_user
+    })
+
+
+def get_otp(request):
+    otp = random.randint(100000, 999999)
+    print(otp)
+    job_id = request.session['job_id']
+    get_job = Job.objects.get(id=job_id)
+    get_job.otp = otp
+    get_job.save()
+    print(f'job otp {get_job.otp}')
+    return render(request, 'buyer/final_page.html', {
+        'otp': otp
     })

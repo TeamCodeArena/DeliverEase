@@ -25,9 +25,9 @@
                     <p>Pickup Address: {{ job1.pickup_address }}</p>
                 </div>
                 <div class="job_button">
-                    <form method="post" action="#">
+                    <form method="post">
                         {% csrf_token %}
-                        <input value="job1.id" name="job_id" type="hidden">
+                        <input value="{{ job1.id }}" name="job_id" type="hidden">
                         <button type="submit">Check Job</button>
                     </form>
 
