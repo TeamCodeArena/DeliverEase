@@ -12,16 +12,12 @@ from django.urls import reverse
 # path('my_orders/', views.my_orders, name='my_orders'),
 # path('check_order/', views.check_order, name='check_order')
 
-def check_user_loggedin(request):
-    try:
-        id = request.session['id']
-        print(id)
-    except Exception as error:
-        print(error)
 
 
 def index(request):
     email = request.GET.get('email', 'None')
+    if email == 'None':
+        return HttpResponseRedirect('/auth/login')
     print(f'email: {email}')
     buyer = Buyer.objects.get(email=email)
     id = buyer.id
@@ -50,7 +46,11 @@ def add_job(request):
         new_job.save()
         return HttpResponseRedirect (reverse('my_orders'))
     else:
-        check_user_loggedin(request=request)
+        if 'id' in request.session:
+            pass
+        else:
+            return HttpResponseRedirect('/auth/login')
+
         return render(request, 'buyer/add_job.html')
 
 
@@ -61,6 +61,11 @@ def my_orders(request):
         request.session['job_id'] = job_id
         return HttpResponseRedirect (reverse('check_order'))
     else:
+        if 'id' in request.session:
+            pass
+        else:
+            return HttpResponseRedirect('/auth/login')
+
         try:
             del request.session['job_id']
         except:
@@ -72,12 +77,18 @@ def my_orders(request):
         all_job = Job.objects.filter(created_by=id)
         return render(request, 'buyer/my_orders.html', {
             'jobs': all_job, 'buyer': buyer
-        }) #check in vs code for different template
+        })
 
 
 def check_order(request):
     if request.method == 'POST':
+
         return HttpResponseRedirect (reverse('get_otp'))
+    if 'id' in request.session:
+        pass
+    else:
+        return HttpResponseRedirect('/auth/login')
+
     job_id = request.session['job_id']
     print(job_id)
     job = Job.objects.get(pk=job_id)
@@ -98,13 +109,27 @@ def get_otp(request):
         print(get_job)
         print(review, rating)
         return render(request, 'buyer/thankYou.html')
+    if 'id' in request.session:
+        pass
+    else:
+        return HttpResponseRedirect('/auth/login')
+
     job_id = request.session['job_id']
     get_job = Job.objects.get(id=job_id)
-    otp = random.randint(100000, 999999)
-    print(otp)
-    get_job.otp = otp
-    get_job.save()
-    print(f'job otp {get_job.otp}')
-    return render(request, 'buyer/final_page.html', {
+    try:
+        seller_id = get_job.assigned_to.id
+        seller = Seller.objects.filter(pk=seller_id)
+
+    except:
+        return render(request, 'buyer/final_page.html')
+    else:
+        otp = random.randint(100000, 999999)
+        print(otp)
+        get_job.otp = otp
+        get_job.save()
+
+        print(f'job otp {get_job.otp}')
+        return render(request, 'buyer/final_page.html', {
+        'seller': seller,
         'otp': otp
-    })
+        }   )

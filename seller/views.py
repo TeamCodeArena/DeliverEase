@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 # Create your views here.
 
+
 def home(request):
 
     if request.method == 'POST':
@@ -12,26 +13,27 @@ def home(request):
         print('hi')
         return HttpResponseRedirect (reverse('job_details'))
 
-    email = request.GET.get('email', 'None')
-    print(f'email {email}')
-    seller = Seller.objects.get(email=email)
-    request.session['id'] = seller.id
-    no_of_jobs = Job.objects.count()
-    if no_of_jobs > 5:
-        jobs = Job.objects.filter(status='Pending')[:5]
-    else:
-        jobs = Job.objects.all()
-    for job in jobs:
-        print(f'posted by: {job.created_by.name}')
-        # buyer
+    elif request.method == 'GET':
+        email = request.GET.get('email', 'None')
+        if  email == 'None':
+            return HttpResponseRedirect('/auth/login')
+        print(email)
+        seller = Seller.objects.get(email=email)
+        request.session['id'] = seller.id
 
-    return render(request, 'seller/jobs.html',{
-        'jobs': jobs
-    })
+        jobs = Job.objects.filter(assigned_to__isnull=True)
+            # buyer
+
+        return render(request, 'seller/jobs.html',{
+            'jobs': jobs
+        })
 
 
 # def jobs(request):
 #     return render(request, 'seller/jobs.html')
+def logout(request):
+
+    return
 
 def my_orders(request):
     if request.method == 'POST':
@@ -39,21 +41,27 @@ def my_orders(request):
         job_id = request.POST['job_id']
         request.session['job_id'] = job_id
         return HttpResponseRedirect (reverse('job_details'))
+    if 'id' in request.session:
+        pass
+    else:
+        return HttpResponseRedirect('/auth/login')
 
     id = request.session['id']
-    no_of_jobs = Job.objects.filter(assigned_to=id).count()
-    print(no_of_jobs)
-    if no_of_jobs > 5:
-        jobs = Job.objects.filter(status='Completed')[:5]
-    else:
-        jobs = Job.objects.all()
+    current_user = Seller.objects.get(pk=id)
+    jobs = Job.objects.filter(assigned_to=current_user)
     for job in jobs:
         print(f'posted by: {job.created_by.name}')
-    return render(request, 'seller/myOrder.html')
+    return render(request, 'seller/myOrder.html',
+                  {'jobs': jobs})
 
 def job_details(request):
     if request.method == 'POST':
         return HttpResponseRedirect(reverse('complete_delivery'))
+    if 'id' in request.session:
+        pass
+    else:
+        return HttpResponseRedirect('/auth/login')
+
     print('hi')
     job_id = request.session['job_id']
     print(job_id)
@@ -69,17 +77,29 @@ def complete_delivery(request):
         otp = request.POST['otp']
         job_id = request.session['job_id']
         job = Job.objects.get(pk=job_id)
-        try:
-            job_otp = job.otp
-        except:
+        if job.otp is None:
+            message = 'Please ask the Buyer to generate to check the order status and generate otp'
+        if job.otp:
+            if (int(otp) == job.otp):
+                print('here')
+                job.status = 'Completed'
 
-            message = 'Please ask the buyer to click the complete delivery button'
-        else:
-            if not job_otp:
-                message = 'Please ask the buyer to click the complete delivery button'
-            if message:
-                return HttpResponseRedirect(reverse('home'))
+                job.save()
+                print(job.status)
+            else:
+                message = 'Wrong OTP entered'
+                return render(request, 'seller/seller_finish_delivery.html', {
+                    'job': job
+                })
 
+    # return render(request, 'seller/sellerEachjobpage.html', {
+    #     'job': job
+    # })
+
+    if 'id' in request.session:
+        pass
+    else:
+        return HttpResponseRedirect('/auth/login')
 
     job_id = request.session['job_id']
     id = request.session['id']
@@ -87,8 +107,10 @@ def complete_delivery(request):
     current_seller = Seller.objects.get(pk=id)
 
     job.assigned_to = current_seller
-    job.save()
     job.status = 'In Progress'
     job.save()
-    return render(request, 'seller/seller_finish_delivery.html')
+    job.save()
+    return render(request, 'seller/seller_finish_delivery.html', {
+        'job': job
+    })
 

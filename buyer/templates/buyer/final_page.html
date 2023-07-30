@@ -8,15 +8,24 @@
     <title>DeliverEase</title>
 </head>
 <body>
-seller details or ask to wait.
-    <p> otp: {{ otp }}</p>
+{% if seller %}
+<div class="seller_details">
+
+                  <div class="seller_info">
+                     <h2>Seller Info:
+                         Name: {{ seller.name }}
+                         Email: {{ seller.email }}
+                         Phone No. : {{ seller.phoneNo }}</h2>
+                  </div>
+<p>seller details or ask to wait.</p>
+        <p> otp: {{ otp }}</p>
 <form method="post">
     {% csrf_token %}
   <input type="text" name="review"   placeholder='Review' />
   <input type="number" name="rating"   placeholder='Rating'/>
   <button class="btn">send</button>
-
-</form>
-
+{% else %}
+    <p>This job has not been assigned to a seller.</p>
+{% endif %}
 </body>
 </html>

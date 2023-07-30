@@ -112,6 +112,11 @@ def buyer_signup(request):
             return HttpResponseRedirect (reverse('buyer_signup'))
 
         return HttpResponseRedirect (url)
+    try:
+        del request.session['id']
+    except:
+        pass
+
     return render(request, 'userAuth/buyerSignup.html')
 
 def seller_signup(request):
@@ -128,10 +133,16 @@ def seller_signup(request):
                     email=email, address=address, user_type='Seller', experience=workExperience)
         messages.warning(request, message)
         return HttpResponseRedirect(url)
+    try:
+        del request.session['id']
+    except:
+        pass
+
     return render(request, 'userAuth/sellerSignup.html')
 
 
 def login_user(request):
+
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
@@ -142,5 +153,9 @@ def login_user(request):
         print(f'url: {url}')
         print(url)
         return HttpResponseRedirect (url)
+    try:
+        del request.session['id']
+    except:
+        pass
     # elif request.method == 'GET':
     return render(request, 'userAuth/login.html')
