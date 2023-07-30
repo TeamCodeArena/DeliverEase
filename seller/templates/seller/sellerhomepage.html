@@ -1,7 +1,11 @@
 {% load static %}
-{% extends "base.html" %}
+{% extends "seller/base.html" %}
 {% block head %}
-<link rel="stylesheet" href="{%static "seller/sellerJobBox.css" %}">
+{#<link rel="stylesheet" href="{%static "seller/sellerJobBox.css" %}">#}
+    <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}"></link>
+    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}"></link>
+    <link rel="stylesheet" href="{% static "buyer/myorders.css" %}"></link>
+
 {% endblock %}
         {% block content %}
             <a href="/completed_jobs_by_me"><button>  My orders  </button></a>

@@ -1,11 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}"></link>
+    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}"></link>
+    <link rel="stylesheet" href="{% static "buyer/myorders.css" %}"></link>
 </head>
 <body>
+
 <h2> Jobs </h2>
+
 {% for job1 in jobs %}
 <div class="sellerJobBox">
 
@@ -34,6 +41,7 @@
                 </div>
             </div>
         </div>
+    </div>
 {% endfor %}
 
 </body>
