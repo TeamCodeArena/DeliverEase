@@ -1,11 +1,7 @@
 {% load static %}
 {% extends "base.html" %}
 {% block head %}
-{% if page == 'sellerhomepage' %}
 <link rel="stylesheet" href="{%static "seller/sellerJobBox.css" %}">
-
-{% endif %}
-
 {% endblock %}
         {% block content %}
             <a href="/completed_jobs_by_me"><button>  My orders  </button></a>

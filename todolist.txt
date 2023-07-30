@@ -1,0 +1,5 @@
+1. Arrange css
+2. enable admin.py
+3. check for backend errors
+4. deploy
+5. display messages
