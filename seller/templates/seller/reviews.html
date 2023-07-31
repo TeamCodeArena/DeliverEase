@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}"></link>
+    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}"></link>
+    <link rel="stylesheet" href="{% static "buyer/myorders.css" %}"></link>
+</head>
+<body>
+
+<h2> Jobs </h2>
+{% if jobs %}
+{% for job1 in jobs %}
+<div class="sellerJobBox">
+
+    <div class="sellerJobs">
+        <div class="eachJobBox">
+            <div class="image">
+{#                <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg">#}
+            </div>
+            <div class="jobDetails">
+                <h2> Job By : {{ job1.created_by.name }}</h2>
+                <div class="time">
+                    <p> Delivery Time : {{ job1.delivery_time }}  </p>
+                    <p> Pickup Time : {{ job1.pickup_time }} </p>
+                </div>
+                <div>
+                    <p>Delivery Address: {{ job1.delivery_address }}</p>
+                    <p>Pickup Address: {{ job1.pickup_address }}</p>
+                    <p>Review: {{ job1.review }}</p>
+                    <p>Rating: {{ job1.rating }}</p>
+                </div>
+                <div class="job_button">
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+ {% else %}
+    <p> No Jobs completed till now.<p>
+{% endif %}
+</body>
+</html>

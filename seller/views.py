@@ -8,19 +8,28 @@ from django.http import HttpResponseRedirect
 def home(request):
 
     if request.method == 'POST':
+
         job_id = request.POST['job_id']
         request.session['job_id'] = job_id
+
         print('hi')
         return HttpResponseRedirect (reverse('job_details'))
 
     elif request.method == 'GET':
         email = request.GET.get('email', 'None')
-        if  email == 'None':
-            return HttpResponseRedirect('/auth/login')
-        print(email)
-        seller = Seller.objects.get(email=email)
-        request.session['id'] = seller.id
+        if  email == 'None' :
+            if 'id' in request.session:
+                pass
+            else:
+                return HttpResponseRedirect('/auth/login')
 
+        # print(email)
+        try:
+            seller = Seller.objects.get(email=email)
+            request.session['id'] = seller.id
+        except:
+            id = request.session['id']
+            seller = Seller.objects.get(pk=id)
         jobs = Job.objects.filter(assigned_to__isnull=True)
             # buyer
 
@@ -37,7 +46,6 @@ def logout(request):
 
 def my_orders(request):
     if request.method == 'POST':
-
         job_id = request.POST['job_id']
         request.session['job_id'] = job_id
         return HttpResponseRedirect (reverse('job_details'))
@@ -48,7 +56,7 @@ def my_orders(request):
 
     id = request.session['id']
     current_user = Seller.objects.get(pk=id)
-    jobs = Job.objects.filter(assigned_to=current_user)
+    jobs = Job.objects.filter(assigned_to=current_user, status='In Progress')
     for job in jobs:
         print(f'posted by: {job.created_by.name}')
     return render(request, 'seller/myOrder.html',
@@ -74,7 +82,13 @@ def job_details(request):
 
 def complete_delivery(request):
     if request.method == 'POST':
+        # try:
         otp = request.POST['otp']
+        try:
+            otp = int(otp)
+
+        except:
+            return HttpResponseRedirect(reverse('complete_delivery'))
         job_id = request.session['job_id']
         job = Job.objects.get(pk=job_id)
         if job.otp is None:
@@ -82,19 +96,22 @@ def complete_delivery(request):
         if job.otp:
             if (int(otp) == job.otp):
                 print('here')
+                print(f"job {job}")
+                print(f"job current status: {job}")
                 job.status = 'Completed'
 
                 job.save()
-                print(job.status)
+
+
             else:
                 message = 'Wrong OTP entered'
                 return render(request, 'seller/seller_finish_delivery.html', {
-                    'job': job
+                    'job': job, 'message': message
                 })
 
-    # return render(request, 'seller/sellerEachjobpage.html', {
-    #     'job': job
-    # })
+        # return render(request, 'seller/sellerEachjobpage.html', {
+        #     'job': job
+        # })
 
     if 'id' in request.session:
         pass
@@ -109,8 +126,22 @@ def complete_delivery(request):
     job.assigned_to = current_seller
     job.status = 'In Progress'
     job.save()
-    job.save()
     return render(request, 'seller/seller_finish_delivery.html', {
         'job': job
+    })
+
+def completed_jobs(request):
+    if 'id' in request.session:
+        pass
+    else:
+        return HttpResponseRedirect('/auth/login')
+    id = request.session['id']
+    current_user = Seller.objects.get(pk=id)
+    jobs = Job.objects.filter(assigned_to=current_user, status='Completed')
+    for job in jobs:
+        print(job.assigned_to.id)
+        print(job.status)
+    return render(request, 'seller/reviews.html', {
+        'jobs': jobs
     })
 

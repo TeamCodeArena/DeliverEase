@@ -113,6 +113,7 @@ def buyer_signup(request):
 
         return HttpResponseRedirect (url)
     try:
+        del request.session['buyer_id']
         del request.session['id']
     except:
         pass
@@ -134,6 +135,7 @@ def seller_signup(request):
         messages.warning(request, message)
         return HttpResponseRedirect(url)
     try:
+        del request.session['buyer_id']
         del request.session['id']
     except:
         pass
@@ -156,6 +158,11 @@ def login_user(request):
     try:
         del request.session['id']
     except:
+        try:
+            del request.session['buyer_id']
+            print('here')
+        except:
+            pass
         pass
     # elif request.method == 'GET':
     return render(request, 'userAuth/login.html')

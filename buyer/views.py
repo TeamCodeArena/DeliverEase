@@ -16,18 +16,28 @@ from django.urls import reverse
 
 def index(request):
     email = request.GET.get('email', 'None')
+    email = request.GET.get('email', 'None')
     if email == 'None':
-        return HttpResponseRedirect('/auth/login')
+        if 'id' in request.session:
+            pass
+        else:
+            return HttpResponseRedirect('/auth/login')
+
+
     print(f'email: {email}')
-    buyer = Buyer.objects.get(email=email)
-    id = buyer.id
-    request.session['id'] = id
+    try:
+        buyer = Buyer.objects.get(email=email)
+        request.session['buyer_id'] = buyer.id
+    except:
+        id = request.session['id']
+        buyer = Buyer.objects.get(pk=id)
+
     return render(request, 'buyer/buyer_homepage.html')
 
 
 def add_job(request):
     if request.method == 'POST':
-        id = request.session['id']
+        id = request.session['buyer_id']
         print(f'id {id}')
         current_buyer = Buyer.objects.get(id=id)
         pickup_address = request.POST['pickup_address']
@@ -46,7 +56,8 @@ def add_job(request):
         new_job.save()
         return HttpResponseRedirect (reverse('my_orders'))
     else:
-        if 'id' in request.session:
+
+        if 'buyer_id' in request.session:
             pass
         else:
             return HttpResponseRedirect('/auth/login')
@@ -61,7 +72,7 @@ def my_orders(request):
         request.session['job_id'] = job_id
         return HttpResponseRedirect (reverse('check_order'))
     else:
-        if 'id' in request.session:
+        if 'buyer_id' in request.session:
             pass
         else:
             return HttpResponseRedirect('/auth/login')
@@ -70,7 +81,7 @@ def my_orders(request):
             del request.session['job_id']
         except:
             pass
-        id = request.session['id']
+        id = request.session['buyer_id']
         # print(id)
         buyer =  Buyer.objects.filter(id=id)
         # print(buyer)
@@ -84,7 +95,7 @@ def check_order(request):
     if request.method == 'POST':
 
         return HttpResponseRedirect (reverse('get_otp'))
-    if 'id' in request.session:
+    if 'buyer_id' in request.session:
         pass
     else:
         return HttpResponseRedirect('/auth/login')
@@ -108,8 +119,8 @@ def get_otp(request):
         get_job.save()
         print(get_job)
         print(review, rating)
-        return render(request, 'buyer/thankYou.html')
-    if 'id' in request.session:
+        return render(request, 'buyer/thank_you.html')
+    if 'buyer_id' in request.session:
         pass
     else:
         return HttpResponseRedirect('/auth/login')
