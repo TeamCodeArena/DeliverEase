@@ -158,5 +158,6 @@ def get_otp(request):
         print(f'job otp {get_job.otp}')
         return render(request, 'buyer/final_page.html', {
         'seller': seller,
-        'otp': otp
+        'otp': otp,
+        'job': get_job
         }   )
