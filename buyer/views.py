@@ -16,9 +16,8 @@ from django.urls import reverse
 
 def index(request):
     email = request.GET.get('email', 'None')
-    email = request.GET.get('email', 'None')
     if email == 'None':
-        if 'id' in request.session:
+        if 'buyer_id' in request.session:
             pass
         else:
             return HttpResponseRedirect('/auth/login')
@@ -27,10 +26,11 @@ def index(request):
     print(f'email: {email}')
     try:
         buyer = Buyer.objects.get(email=email)
-        request.session['buyer_id'] = buyer.id
     except:
-        id = request.session['id']
+        id = request.session['buyer_id']
         buyer = Buyer.objects.get(pk=id)
+    else:
+        request.session['buyer_id'] = buyer.id
 
     return render(request, 'buyer/buyer_homepage.html')
 
@@ -48,17 +48,27 @@ def add_job(request):
         delivery_date = request.POST['delivery_date']
         delivery_pincode = request.POST['delivery_pincode']
         pickup_pincode = request.POST['pickup_pincode']
-        new_job = Job(pickup_address=pickup_address, pickup_time=pickup_time1,
-                      delivery_address=delivery_address, pickup_pincode=pickup_pincode,
-                      delivery_time=delivery_time1, created_by=current_buyer,
-                      delivery_pincode=delivery_pincode)
-        print(new_job)
-        new_job.save()
+        try:
+            delivery_pincode = int(delivery_pincode)
+            pickup_pincode = int(pickup_pincode)
+        except:
+            return HttpResponseRedirect(reverse('add_job'))
+        try:
+            new_job = Job(pickup_address=pickup_address, pickup_time=pickup_time1,
+                          delivery_address=delivery_address, pickup_pincode=pickup_pincode,
+                          delivery_time=delivery_time1, created_by=current_buyer,
+                          delivery_pincode=delivery_pincode)
+        except:
+            return HttpResponseRedirect(reverse('add_job'))
+        else:
+            print(new_job)
+            new_job.save()
         return HttpResponseRedirect (reverse('my_orders'))
-    else:
+    elif request.method == 'GET':
 
         if 'buyer_id' in request.session:
-            pass
+            print(request.session['buyer_id'])
+
         else:
             return HttpResponseRedirect('/auth/login')
 
@@ -73,7 +83,7 @@ def my_orders(request):
         return HttpResponseRedirect (reverse('check_order'))
     else:
         if 'buyer_id' in request.session:
-            pass
+            print(request.session['buyer_id'])
         else:
             return HttpResponseRedirect('/auth/login')
 
@@ -93,14 +103,17 @@ def my_orders(request):
 
 def check_order(request):
     if request.method == 'POST':
-
         return HttpResponseRedirect (reverse('get_otp'))
+
     if 'buyer_id' in request.session:
         pass
     else:
         return HttpResponseRedirect('/auth/login')
 
-    job_id = request.session['job_id']
+    try:
+        job_id = request.session['job_id']
+    except:
+        return HttpResponseRedirect(reverse('my_orders'))
     print(job_id)
     job = Job.objects.get(pk=job_id)
     return render(request, 'buyer/check_order.html', {
@@ -112,13 +125,16 @@ def get_otp(request):
     if request.method == 'POST':
         job_id = request.session['job_id']
         get_job = Job.objects.get(id=job_id)
-        review = request.POST['review']
-        rating = request.POST['rating']
-        get_job.review  = review
-        get_job.rating = rating
-        get_job.save()
-        print(get_job)
-        print(review, rating)
+        try:
+            review = request.POST['review']
+            rating = request.POST['rating']
+            get_job.review  = review
+            get_job.rating = rating
+            get_job.save()
+        except:
+            print(get_job)
+            print(review, rating)
+            return HttpResponseRedirect(reverse('get_otp'))
         return render(request, 'buyer/thank_you.html')
     if 'buyer_id' in request.session:
         pass

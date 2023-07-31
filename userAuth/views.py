@@ -109,15 +109,19 @@ def buyer_signup(request):
             print('hi')
             messages.error(request, 'Please fill all the details')
 
+
             return HttpResponseRedirect (reverse('buyer_signup'))
 
         return HttpResponseRedirect (url)
+
     try:
         del request.session['buyer_id']
-        del request.session['id']
-    except:
-        pass
 
+    except:
+        try:
+            del request.session['id']
+        except:
+            pass
     return render(request, 'userAuth/buyerSignup.html')
 
 def seller_signup(request):
@@ -130,15 +134,22 @@ def seller_signup(request):
         email = request.POST['email']
         workExperience = request.POST['workExperience']
         address = request.POST['address']
-        url, message = user_signup(username=username, password1=password, password2=confPassword, phoneNo=phoneNo,
-                    email=email, address=address, user_type='Seller', experience=workExperience)
+        try:
+            url, message = user_signup(username=username, password1=password, password2=confPassword, phoneNo=phoneNo,
+                        email=email, address=address, user_type='Seller', experience=workExperience)
+        except:
+            return  HttpResponseRedirect (reverse('seller_signup'))
         messages.warning(request, message)
         return HttpResponseRedirect(url)
+
     try:
         del request.session['buyer_id']
-        del request.session['id']
+
     except:
-        pass
+        try:
+            del request.session['id']
+        except:
+            pass
 
     return render(request, 'userAuth/sellerSignup.html')
 
@@ -148,9 +159,12 @@ def login_user(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        print(f" 1{email}, {password}")
-        url, message = user_login(email=email, password=password)
 
+        print(f" 1{email}, {password}")
+        try:
+            url, message = user_login(email=email, password=password)
+        except:
+            return HttpResponseRedirect(reverse('login'))
         messages.warning(request, message)
         print(f'url: {url}')
         print(url)
