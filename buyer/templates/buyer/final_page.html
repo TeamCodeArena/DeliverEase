@@ -2,28 +2,80 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <style>
+        *{
+    background: #E2F3F5;
+  }
+  :root{
+    --background-color : #E2F3F5;
+    --font-color:#645888;
+    --white-color :#ffff;
+
+    --transition: 0.8s all ease;
+}
+.finalPage{
+
+    width: 100vw;
+    height: 100vh;
+
+}
+.finalpage_message{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color);
+}
+.finalpage_msg{
+    padding: 2rem;
+}
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'buyer/stylesheet.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
     <title>DeliverEase</title>
+    <link rel="stylesheet" href="{% static "buyer/finalPage.css" %}">
+    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
 </head>
 <body>
+<div class="App">
+        <header class="header">
+          <nav class="navbar">
+              <h1> DeliverEase</h1>
+              <ul class="nav-menu">
+                  <li class="nav-item">
+                      <a href="{% url "home" %}" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/about_us" class="nav-link">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <!-- <a href="#" class="btn">My Orders</a> -->
+                      <a href="{% url "seller_orders" %}"><button  class="btn"> My Orders</button></a>
+                      <a href="{% url "completed_jobs" %}"><button  class="btn">Completed Jobs</button></a>
+                  </li>
+              </ul>
+              <div class="hamburger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+              </div>
+          </nav>
+      </header>
+
 {% if seller %}
 <div class="seller_details">
 
                   <div class="seller_info">
-                     <h2>Seller Info:
+                      <h2>Seller Info: <br>
                          Name: {{ job.assigned_to.name }}
                          <br>
                          Email: {{ job.assigned_to.email }}
                          <br>
                          Phone No. : {{ job.assigned_to.phoneNo }}</h2>
-                  </div>
-<p>seller details or ask to wait.</p>
+
         <p> otp: {{ otp }}</p>
 <form method="post">
     {% csrf_token %}
@@ -31,7 +83,14 @@
   <input type="number" name="rating"   placeholder='Rating'/>
   <button class="btn">send</button>
 {% else %}
-    <p>This job has not been assigned to a seller.</p>
+    <div class="finalPage">
+        <div class="finalpage_message">
+
+            <h2 class="finalpage_msg">This job has not been assigned to a seller.</h2>
+            <!-- <a href="{% url "my_orders" %}" class="button">My Orders</a> -->
+            <a href="{% url "index" %}"> <button class="btn">Home</button> </a>
+        </div>
+    </div>
 {% endif %}
 </body>
 </html>

@@ -10,6 +10,30 @@
     <link rel="stylesheet" href="{% static "buyer/myorders.css" %}"></link>
 </head>
 <body>
+<div class="App">
+        <header class="header">
+          <nav class="navbar">
+              <h1> DeliverEase</h1>
+              <ul class="nav-menu">
+                  <li class="nav-item">
+                      <a href="{% url "home" %}" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/about_us" class="nav-link">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <!-- <a href="#" class="btn">My Orders</a> -->
+                      <a href="{% url "seller_orders" %}"><button  class="btn"> My Orders</button></a>
+                      <a href="{% url "completed_jobs" %}"><button  class="btn">Completed Jobs</button></a>
+                  </li>
+              </ul>
+              <div class="hamburger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+              </div>
+          </nav>
+      </header>
 
 <h2> Jobs </h2>
 {% if jobs %}

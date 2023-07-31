@@ -10,47 +10,11 @@
     <link rel="stylesheet" href="{% static "seller/Navbar.css" %}">
     <link rel="stylesheet" href="{% static "seller/sellerNavbar.css" %}">
 
-    {% block head %}{% endblock %}
+    {#    <link{% block css %}{% endblock %}>#}
    
 </head>
 <body>
     <div class="App">
-      <!-- <header class="header"> 
-        <h1>DeliverEase</h1>
-          <nav class="navbar">
-            
-              <div class="nav_right">
-                <ul class="nav_link">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About Us</a></li>
-                </ul>
-                
-                <button class="btn btn_m">My order</button>
-                <button class="btn btn_m">Order Request</button>
-              
-              </div>
-            
-            </nav>
-            <div class="mobile_navbar_btn">
-              <ion-icon class="mobile_nav_icon" name="menu"></ion-icon>
-              <ion-icon class="mobile_nav_icon" name="close"></ion-icon>
-            </div>
-        </header> -->
-
-         <!-- <nav> 
-          <div class='navbar'>
-              <h1> DeliverEase</h1>
-                  <div class='nav_right'>
-                      <ul class="nav_link">
-                          <li><a href="/">Home</a></li>
-                          <li><a href="/about">About Us</a></li>
-                      </ul>
-                      <button class="btn"> My order</button>
-                      <button class="btn">Order Request</button>
-                  </div>
-          </div> 
-        </nav>  -->
-
         <header class="header">
           <nav class="navbar">
               <h1> DeliverEase</h1>
@@ -63,8 +27,8 @@
                   </li>
                   <li class="nav-item">
                       <!-- <a href="#" class="btn">My Orders</a> -->
-                      <button class="btn btn_sm"> My Order</button>
-                      <button class="btn btn_sm"> Order Request</button>
+                      <a href="{% url "seller_orders" %}"><button  class="btn btn_sm"> My Orders</button></a>
+                      <a href="{% url "completed_jobs" %}"><button  class="btn btn_sm">Completed Jobs</button></a>
                   </li>
               </ul>
               <div class="hamburger">
