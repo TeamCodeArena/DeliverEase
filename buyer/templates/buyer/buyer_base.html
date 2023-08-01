@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DeliverEase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'buyer/stylesheet.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">DeliverEase</label>
+      <ul>
+        <li><a class="active" href="{% url "index" %}">Home</a></li>
+        <li><a href="/about_us">About Us</a></li>
+        <li> <a class='button' href="{% url "my_orders" %}">My Orders</a></li>
+      </ul>
+    </nav>
+    <section></section>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+          {{ message }}
+        {% else %}
+          {{ message }}
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

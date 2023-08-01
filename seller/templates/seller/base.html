@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}Home{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "seller/style.css" %}">
+    <link rel="stylesheet" href="{% static "seller/Navbar.css" %}">
+    <link rel="stylesheet" href="{% static "seller/sellerNavbar.css" %}">
+
+    {#    <link{% block css %}{% endblock %}>#}
+   
+</head>
+<body>
+    <div class="App">
+        <header class="header">
+          <nav class="navbar">
+              <h1> DeliverEase</h1>
+              <ul class="nav-menu">
+                  <li class="nav-item">
+                      <a href="{% url "home" %}" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/about_us" class="nav-link">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <!-- <a href="#" class="btn">My Orders</a> -->
+                      <a href="{% url "seller_orders" %}"><button  class="btn btn_sm"> My Orders</button></a>
+                      <a href="{% url "completed_jobs" %}"><button  class="btn btn_sm">Completed Jobs</button></a>
+                  </li>
+              </ul>
+              <div class="hamburger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+              </div>
+          </nav>
+      </header>
+    {% block content %}
+    
+    {% endblock %}
+    
+
+  <script>
+      // creating a responsive navbar
+      const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            const navLink = document.querySelectorAll(".nav-link");
+
+            hamburger.addEventListener("click", mobileMenu);
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+            function mobileMenu() {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            }
+
+            function closeMenu() {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+  </script>
+</body>
+</html>

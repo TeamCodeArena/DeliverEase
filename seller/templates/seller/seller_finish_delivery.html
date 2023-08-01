@@ -1,0 +1,108 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "seller/style.css" %}">
+    <link rel="stylesheet" href="{% static "seller/Navbar.css" %}">
+    <link rel="stylesheet" href="{% static "seller/sellerNavbar.css" %}">
+    <link rel="stylesheet" href="{% static "seller/sellerCheckjob.css" %}">
+
+</head>
+<body>
+
+<div class="checkJob">
+        <div class="App">
+        <header class="header">
+          <nav class="navbar">
+              <h1> DeliverEase</h1>
+              <ul class="nav-menu">
+                  <li class="nav-item">
+                      <a href="{% url "home" %}" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/about_us" class="nav-link">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <!-- <a href="#" class="btn">My Orders</a> -->
+                      <a href="{% url "seller_orders" %}"><button  class="btn btn_sm"> My Orders</button></a>
+                      <a href="{% url "completed_jobs" %}"><button  class="btn btn_sm">Completed Jobs</button></a>
+                  </li>
+              </ul>
+              <div class="hamburger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+              </div>
+          </nav>
+      </header>
+
+
+<div class="checkJob">
+
+            <div class="contentBox_sellercheckjob">
+
+               <div class="buyers_details">
+
+                   <div class="buyer_image">
+                        <img src="{% static "media/buyer.jpg" %}" alt="buyerImg">
+                    </div>
+{#                  <div class="buyer_image">#}
+{#                     <!-- <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg">#}
+{#                     <img src="/static/buyer.jpeg" alt="buyerimage" > -->#}
+{#                     <img src="{{ url_for('static', filename='buyer.jpeg') }}" alt="buyerImg">#}
+{#                  </div>#}
+                  <div class="buyer_info">
+                     <h2>Buyer Information<br>
+                         Name: {{ job.created_by.name }}<br>
+                         Email: {{ job.created_by.email }}<br>
+                         Phone No. : {{ job.created_by.phoneNo }}</h2>
+                  </div>
+              </div>
+
+               <div>
+                     <div class="buyers_Jobdetails">
+                        <div>
+                           <h2> Collect The Delivery from :-</h2>
+                           <p>{{ job.pickup_address }}, {{ job.pickup_pincode }}</p>
+                        </div>
+
+                        <div>
+                           <h2>Collect the Delivery At :-</h2>
+                           <p>{{ job.pickup_time }}</p>
+                        </div>
+                        <div>
+                           <h2>Deliver At :-</h2>
+                           <p>{{ job.delivery_address }}, {{ job.delivery_pincode }}</p>
+                        </div>
+
+                        <div>
+                           <h2>Deliver By:-</h2>
+                           <p> {{ job.delivery_time }} </p>
+                        </div>
+                     <p> After the delivery is complete Enter the OTP taking it from the Buyer to complete the Delivery.</p>
+                   <form method="post">
+                        {% csrf_token %}
+                    <input type="text" name="otp"   placeholder='Enter the OTP' />
+                    <button class="btn">Complete Delivery</button>
+
+                     </div>
+
+                   </form>
+                     <div>
+                        <p>Please don't drive faster than 40KM, take your time, the time we told you is just the customer expectations, we never promote, deliver time.</p>
+                     </div>
+                </div>
+
+            </div>
+
+         </div>
+
+
+</body>
+</html>
+

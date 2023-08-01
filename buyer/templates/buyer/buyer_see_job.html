@@ -1,0 +1,56 @@
+{% load static %}
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{% static "sellerCheckjob.css" %}">
+
+{% endblock %}
+        {% block content %}
+
+<div class="checkJob">
+
+            <div class="contentBox_sellercheckjob">
+
+               <div class="buyers_details">
+
+                  <div class="buyer_image">
+                     <!-- <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg">
+                     <img src="/static/buyer.jpeg" alt="buyerimage" > -->
+                     <img src="{{ url_for('static', filename='buyer.jpeg') }}" alt="buyerImg">
+                  </div>
+
+                  <div class="buyer_info">
+                     <h2>Buyer Info:
+                         Name: {{ current_user.name }}
+                         Email: {{ current_user.email }}
+                         Phone No. : {{ current_user.phone_no }}</h2>
+                  </div>
+              </div>
+
+               <div>
+                     <div class="buyers_Jobdetails">
+                        <div>
+                        <h2> Collect The Delivery from :-</h2>
+                           <p>{{ job.pickup_address }}, {{ job.pickup_pincode }}</p>
+                        </div>
+
+                        <div>
+                           <h2>Collect the Delivery At :-</h2>
+                           <p>{{ job.pickup_time }}</p>
+                        </div>
+                        <div>
+                           <h2>Deliver At :-</h2>
+                           <p>{{ job.delivery_address }}, {{ job.delivery_pincode }}</p>
+                        </div>
+
+                        <div>
+                           <h2>Deliver By:-</h2>
+                           <p> {{ job.delivery_time }} </p>
+                        </div>
+                     </div>
+                     </div>
+
+            </div>
+
+         </div>
+
+    {% endblock %}

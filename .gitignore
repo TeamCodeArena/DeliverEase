@@ -1,0 +1,6 @@
+todolist.txt
+db.sqlite3
+pyvenv.cfg
+Lib/
+Scripts/
+.idea
