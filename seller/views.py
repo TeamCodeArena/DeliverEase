@@ -51,8 +51,11 @@ def my_orders(request):
     if request.method == 'POST':
         job_id = request.POST['job_id']
         request.session['job_id'] = job_id
-        return HttpResponseRedirect (reverse('job_details'))
-
+        job = Job.objects.get(pk=job_id)
+        if job.status is None:
+            return HttpResponseRedirect (reverse('job_details'))
+        elif job.status == "In Progress":
+            return HttpResponseRedirect (reverse('complete_delivery'))
 
     if 'id' in request.session:
         print(request.session['id'])
