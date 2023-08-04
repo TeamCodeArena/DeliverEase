@@ -72,7 +72,7 @@ To get started with DeliverEase using Django, follow these steps:
 
 - Clone the repository: git clone https://github.com/TeamCodeArena/DeliverEase
 - Navigate to the project directory: cd DeliverEase
-- Install Django if you haven't already: pip install django
+- Install the dependencies: pip install -r requirements.txt
 - Make migrations with the command : python manage.py makemigrations
 - Migrate the migrations made : python manage.py migrate
  - Start the Django development server: python manage.py runserver
