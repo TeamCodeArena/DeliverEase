@@ -2,7 +2,7 @@
 name = "deliverease"
 version = "0.1.0"
 description = ""
-authors = Team DeliverEase
+authors = ["Aryan Gupta <aryangupta07075@gmail.com>", "Atrika Show <readeratrika08@gmail.com>", "Siddhant Kumar <siddhantkumar.xyz@gmail.com>", "Devansh Singh Parmar <devansh18dp@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
