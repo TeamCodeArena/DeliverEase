@@ -6,16 +6,15 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 import random
 from django.urls import reverse
-# Create your views here.
-# path('home/', views.home, name='index'),
-# path('add_job/', views.add_job, name='add_job'),
-# path('my_orders/', views.my_orders, name='my_orders'),
-# path('check_order/', views.check_order, name='check_order')
-
 
 
 def index(request):
-    email = request.GET.get('email', 'None')
+    '''This function allows the seller to visit the home page via GET method'''
+
+    email = request.GET.get('email', 'None') #gets the email of the buyer passed in the get request
+
+
+    ## this is the block  that verifies the user is actually logged into the session
     if email == 'None':
         if 'buyer_id' in request.session:
             pass
@@ -23,7 +22,6 @@ def index(request):
             return HttpResponseRedirect('/auth/login')
 
 
-    print(f'email: {email}')
     try:
         buyer = Buyer.objects.get(email=email)
     except:
@@ -36,10 +34,17 @@ def index(request):
 
 
 def add_job(request):
+    '''This function allows the buyer to visit the  page via 2 methods:
+    1) GET : The seller is shown  the job form to create a new job
+    2) POST : The details entered are extracted and a job is created.
+    '''
     if request.method == 'POST':
+        # gets the id of the buyer in the session
         id = request.session['buyer_id']
         print(f'id {id}')
         current_buyer = Buyer.objects.get(id=id)
+
+        # retrieves the data entered by the user in the job form
         pickup_address = request.POST['pickup_address']
         pickup_time1 = request.POST['pickup_time']
         pickup_date = request.POST['pickup_date']
@@ -48,6 +53,7 @@ def add_job(request):
         delivery_date = request.POST['delivery_date']
         delivery_pincode = request.POST['delivery_pincode']
         pickup_pincode = request.POST['pickup_pincode']
+        # makes sure the pincode is a int and proceeds to save the job
         try:
             delivery_pincode = int(delivery_pincode)
             pickup_pincode = int(pickup_pincode)
@@ -64,6 +70,7 @@ def add_job(request):
             print(new_job)
             new_job.save()
         return HttpResponseRedirect (reverse('my_orders'))
+
     elif request.method == 'GET':
 
         if 'buyer_id' in request.session:
@@ -77,6 +84,10 @@ def add_job(request):
 
 
 def my_orders(request):
+    '''This function allows the buyer to visit the  page via 2 methods:
+    1) GET : The buyer is shown all the jobs created by him
+    2) POST : The job_id of the job selected by the buyer is retrieved and saved in the session.
+    '''
     if request.method == 'POST':
         job_id = request.POST['job_id']
         request.session['job_id'] = job_id
@@ -88,13 +99,11 @@ def my_orders(request):
             return HttpResponseRedirect('/auth/login')
 
         try:
-            del request.session['job_id']
+            del request.session['job_id'] # deletes a job_id if exsts in the session
         except:
             pass
         id = request.session['buyer_id']
-        # print(id)
         buyer =  Buyer.objects.filter(id=id)
-        # print(buyer)
         all_job = Job.objects.filter(created_by=id)
         return render(request, 'buyer/my_orders.html', {
             'jobs': all_job, 'buyer': buyer
@@ -102,6 +111,11 @@ def my_orders(request):
 
 
 def check_order(request):
+    '''This function allows the buyer to visit the  page via 2 methods:
+    1) GET : The buyer is shown the details of the job
+    2) POST : The job_id of the job selected by the buyer is retrieved and saved in the session.
+    '''
+
     if request.method == 'POST':
         return HttpResponseRedirect (reverse('get_otp'))
 
@@ -109,7 +123,7 @@ def check_order(request):
         pass
     else:
         return HttpResponseRedirect('/auth/login')
-
+    ## checks if a job_id exists in the session
     try:
         job_id = request.session['job_id']
     except:
@@ -122,6 +136,11 @@ def check_order(request):
 
 
 def get_otp(request):
+    '''This function allows the buyer to visit the  page via 2 methods:
+        1) GET : An otp is generated and saved with the job. The buyer is shown the otp of the job if the job is assigned
+        2) POST : The review and rating by the buyer regarding the service is obtained and  saved.
+        '''
+
     if request.method == 'POST':
         job_id = request.session['job_id']
         get_job = Job.objects.get(id=job_id)

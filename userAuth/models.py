@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+## this is the buyer table contains the different details about the buyer
 class Buyer(models.Model):
     name = models.CharField(max_length=64)
     email = models.CharField(max_length=64)
@@ -12,6 +14,7 @@ class Buyer(models.Model):
         return f"{self.name}  {self.id} {self.email} {self.phoneNo} {self.email} {self.address}"
 
 
+## this is the seller table contains the different details about the seller
 class Seller(models.Model):
     name = models.CharField(max_length=64)
     email = models.CharField(max_length=64)
