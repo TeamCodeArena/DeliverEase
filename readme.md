@@ -35,7 +35,6 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 4. **Submit Order:** After providing all the necessary information, the Buyer can **submit the order request**
 
 ### Post a Job
-
 1. **Post a Job:** Sellers can post delivery jobs by **clicking on the "Post a Job" option on the homepage**
 
 2. **Job Details:** They must **enter the job specifics**, including the **item to be delivered**, **pickup location**, **delivery location**, and **expected delivery time**
@@ -43,7 +42,6 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 3. **Delivery Partner Assignment:** Once the job is posted, the nearest available delivery partner will have the option to accept the job **`(algorithms are still to be developed)`**
 
 ### Acceptance and Delivery
-
 1. **Delivery Partner Selection:** The nearest available delivery partner can **view available jobs and accept** the ones that match their location and schedule
 
 2. **Order Confirmation:** Once the delivery partner accepts the job the delivery process will begin
@@ -55,32 +53,29 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 5. **Delivery Completion:** Once the delivery is successfully completed, both the buyer and seller will **receive notifications of the successful order**
 
 ## Key Features
-
-- Empowerment of delivery partners to earn income on flexible schedules
-- Direct connection between buyers and sellers without middlemen
-- Efficient and seamless order placement process
-- Post a Job feature for buyers to find suitable delivery partners
-- Real-time job acceptance
-- Convenient pickup and drop-off services
-- No tracking system to ensure user privacy
+- Empowerment of delivery partners to **earn income on flexible schedules**
+- Direct **connection between buyers and sellers** without middlemen
+- Efficient and **seamless order placement process**
+- Post a Job feature for buyers to **find suitable delivery partners**
+- **Real-time job acceptance**
+- **Convenient pickup and drop-off services**
+- **No tracking system** to ensure user privacy
 
 ## Getting Started
-
 To get started with DeliverEase using Django, follow these steps:
+- **Clone the repository:** `git clone https://github.com/TeamCodeArena/DeliverEase`
+- **Navigate to the project directory:** `cd DeliverEase`
+- **Install the dependencies:** `pip install -r requirements.txt`
+- **Make migrations with the command:** `python manage.py makemigrations`
+- **Migrate the migrations made:** `python manage.py migrate`
+- **Start the Django development server:** `python manage.py runserver`
 
-- Clone the repository: `git clone https://github.com/TeamCodeArena/DeliverEase`
-- Navigate to the project directory: `cd DeliverEase`
-- Install the dependencies: `pip install -r requirements.txt`
-- Make migrations with the command: `python manage.py makemigrations`
-- Migrate the migrations made: `python manage.py migrate`
-- Start the Django development server: `python manage.py runserver`
+Now, you should have the **DeliverEase Django application** up and running locally. You can access it by visiting **http://127.0.0.1:8000/** in your web browser.
 
-Now, you should have the DeliverEase Django application up and running locally. You can access it by visiting http://127.0.0.1:8000/ in your web browser.
-
-Please note that this is a simplified installation guide assuming you have Django and Python already set up on your system. If you encounter any issues during the installation process, make sure to check Django's official documentation or reach out for support. Happy delivering!
+Please note that this is a **simplified installation guide** **assuming you have Django and Python already set up on your system.** If you encounter any issues during the installation process, make sure to check Django's official documentation or reach out for support. Happy delivering!
 
 ## Contributing
-
+<!-- TODO: Link Contribiute.md -->
 We welcome contributions from the community to enhance DeliverEase. If you want to contribute, follow these steps:
 
 1. Fork the repository
@@ -94,15 +89,15 @@ We welcome contributions from the community to enhance DeliverEase. If you want 
 We value feedback to improve our platform continuously. If you have any suggestions or encounter any issues, please [**open an issue**](https://github.com/TeamCodeArena/DeliverEase/issues).
 
 ## License
-
 DeliverEase is released under the [**MIT License**](https://opensource.org/licenses/MIT).
 
 <!-- ToDo: Link LICENSE file 
 See [**`LICENSE`**](LICENSE)
 -->
 
-![delivery](https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1)
+<!--![delivery](https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1)-->
 
+<img align="right" width="100" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
 
 ---
 
