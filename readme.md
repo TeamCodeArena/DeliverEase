@@ -1,10 +1,10 @@
 <!-- Documentation start -->
 <!-- Logo start -->
-<img align="right" width="100" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>
+<!--<img align="right" width="100" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>-->
 <!-- Logo end -->
 
 # DeliverEase 
-
+<img align="right" width="100" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
 ### Empowering Delivery Partners, Connecting Communities
