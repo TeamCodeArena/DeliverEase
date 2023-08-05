@@ -4,17 +4,12 @@
 <!-- Logo end -->
 
 # DeliverEase 
-
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
 ### Empowering Delivery Partners, Connecting Communities
-
-<!--![DeliverEase Logo](https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png)-->
-
-DeliverEase is an innovative platform designed to empower delivery partners and foster seamless connections between buyers and sellers without the need for intermediaries. With a user-friendly interface and efficient processes, DeliverEase aims to revolutionize the way goods are delivered, making it convenient for both consumers and businesses.
+>DeliverEase is an innovative platform designed to empower delivery partners and foster seamless connections between buyers and sellers without the need for intermediaries. With a user-friendly interface and efficient processes, DeliverEase aims to revolutionize the way goods are delivered, making it convenient for both consumers and businesses.
 
 ## Table of Contents
-
 - [Introduction](#introduction)
 - [How it Works](#how-it-works)
   - [Order Placement](#order-placement)
@@ -27,20 +22,17 @@ DeliverEase is an innovative platform designed to empower delivery partners and 
 - [License](#license)
 
 ## Introduction
-
-DeliverEase is built on the foundation of empowering delivery partners, enabling them to earn income while providing efficient delivery services to the community. By bridging the gap between buyers and sellers directly, DeliverEase eliminates the need for intermediaries, leading to faster deliveries and reduced costs.
+DeliverEase is built on the foundation of **empowering delivery partners**, enabling them to earn income while providing **efficient delivery services** to the community. By **bridging the gap between buyers and sellers directly**, DeliverEase eliminates the need for intermediaries, leading to **faster deliveries** and **reduced costs**.
 
 ## How it Works
-
 ### Order Placement
+1. **Click Order:** To place an order, Buyers can click on the **"Order Something" button** on the homepage, which will lead them to the **order details page**
 
-1. **Click Order:** To place an order, Buyers can click on the "Order Something" button on the homepage, which will lead them to the order details page
+2. **Enter Delivery Details:** On the order details page, the Buyer can specify the **delivery location**, **preferred delivery time**, and any **additional information** relevant to the delivery
 
-2. **Enter Delivery Details:** On the order details page, the Buyer can specify the delivery location, preferred delivery time, and any additional information relevant to the delivery
+3. **Pickup Information:** They can also **provide pickup details**, including the **location and time** when the delivery partner should collect the item for delivery
 
-3. **Pickup Information:** They can also provide pickup details, including the location and time when the delivery partner should collect the item for delivery
-
-4. **Submit Order:** After providing all the necessary information, the Buyer can submit the order request
+4. **Submit Order:** After providing all the necessary information, the Buyer can **submit the order request**
 
 ### Post a Job
 
