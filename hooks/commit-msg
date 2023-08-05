@@ -1,0 +1,21 @@
+#!/bin/sh
+
+#########################################################################################
+#                                                                                       #
+#   In order use these commit hooks place them in the BASE_DIR/.git/hooks/<your-hook>   #
+#                                                                                       #  
+#########################################################################################
+
+commit_msg_file=$1
+
+# Get the first line of the commit message
+commit_msg=$(head -n 1 "$commit_msg_file")
+
+max_length=50
+
+if [ ${#commit_msg} -gt $max_length ]; then
+    echo "Error: Commit message length is greater than $max_length characters."
+    echo "Please try to make it brief and descriptive."
+    exit 1
+fi
+
