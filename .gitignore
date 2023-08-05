@@ -4,3 +4,4 @@ pyvenv.cfg
 Lib/
 Scripts/
 .idea
+logs/

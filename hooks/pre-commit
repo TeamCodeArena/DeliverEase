@@ -7,21 +7,29 @@
 #########################################################################################
 
 run_python_linters() {
+    # the logs will contain output from previous run only
+    mkdir -p logs
     echo "Running Python linters..."
     
     # linters can be installed by command: pip install <linter_name>
-    
-    flake8 .
+    echo -e "FLAKE8\n" > logs/linter.log
+    flake8 --exclude="*/migrations/*" . >> logs/linter.log
 
-    # black can also be used, however, it offers fewer comprehensive linting capabilities compared to flake8.
-    # black --check --diff --color .
+    echo -e "\nPYCODESTYLE\n" >> logs/linter.log
+    pycodestyle --exclude="*/migrations/*" . >> logs/linter.log
+
+    echo -e "\nPYLINT\n" >> logs/linter.log
+    pylint --load-plugins pylint_django --django-settings-module=DeliverEase.settings --ignore="*/migrations/*" buyer/* seller/* userAuth/* DeliverEase/* main/* >> logs/linter.log
+
+    echo -e "\nPYDOCSTYLE\n" >> logs/linter.log
+    pydocstyle . >> logs/linter.log # matching pattern is mentioned in setup.cfg
 
     exit_code=$?
 
     # If the linters fail, prevent the commit
     if [ $exit_code -ne 0 ]; then
         echo "Python linters failed, Commit aborted."
-        echo "Please reformat your code."
+        echo "Please check logs and reformat your code."
         exit 1
     fi
 }
