@@ -97,7 +97,7 @@ See [**`LICENSE`**](LICENSE)
 
 <!--![delivery](https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1)-->
 
-<img align="right" width="100" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
+<img align="right" width="50" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
 
 ---
 
