@@ -78,24 +78,19 @@ Please note that this is a **simplified installation guide** **assuming you have
 <!-- TODO: Link Contribiute.md -->
 We welcome contributions from the community to enhance DeliverEase. If you want to contribute, follow these steps:
 
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature/your_feature`
-3. Make your changes and commit them: `git commit -m "Add feature/fix"`
-4. Push to the branch: `git push origin feature/your_feature`
-5. Create a pull request
+1. **Fork the repository**
+2. **Create a new branch:** `git checkout -b feature/your_feature`
+3. **Make your changes and commit them:** `git commit -m "Add feature/fix"`
+4. **Push to the branch:** `git push origin feature/your_feature`
+5. **Create a pull request**
 
 ## Feedback
 
 We value feedback to improve our platform continuously. If you have any suggestions or encounter any issues, please [**open an issue**](https://github.com/TeamCodeArena/DeliverEase/issues).
 
 ## License
+<!-- TODO: Link LICENSE.md -->
 DeliverEase is released under the [**MIT License**](https://opensource.org/licenses/MIT).
-
-<!-- ToDo: Link LICENSE file 
-See [**`LICENSE`**](LICENSE)
--->
-
-<!--![delivery](https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1)-->
 
 <img align="right" width="100" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
 
