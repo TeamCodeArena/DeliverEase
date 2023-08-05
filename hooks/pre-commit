@@ -1,0 +1,48 @@
+#!/bin/sh
+
+##############################################################################
+#                                                                            #
+#   In order use these commit hooks place them in the BASE_DIR/.git/hooks    #
+#                                                                            #  
+##############################################################################
+
+#!/bin/bash
+
+# Define a function to run Python linters
+run_python_linters() {
+    echo "Running Python linters..."
+    
+    # each of these linters can be installed by command: pip install <linter_name>
+    lint_command="flake8 . && pylint . && black --check ."
+    
+    eval "$lint_command"
+
+    exit_code=$?
+
+    # If the linters fail, prevent the commit
+    if [ $? -ne 0 ]; then
+        echo "Python linters failed. Commit aborted."
+        exit 1
+    fi
+}
+
+run_test(){
+
+    echo "Running Django test suite before committing..."
+
+    # Run the Django test suite
+    python manage.py test 
+
+    TEST_EXIT_CODE=$?
+
+    if [ $TEST_EXIT_CODE -ne 0 ]; then
+        echo "Django tests failed. Please fix the issues before committing."
+        exit 1
+    fi
+
+    echo "Django tests passed." 
+    exit 0
+}
+
+run_python_linters
+run_test
