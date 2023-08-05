@@ -7,7 +7,7 @@
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
 ### Empowering Delivery Partners, Connecting Communities
->DeliverEase is an innovative platform designed to empower delivery partners and foster seamless connections between buyers and sellers without the need for intermediaries. With a user-friendly interface and efficient processes, DeliverEase aims to revolutionize the way goods are delivered, making it convenient for both consumers and businesses.
+>DeliverEase is an innovative platform **designed to empower delivery partners** and foster **seamless connections between buyers and sellers** without the need for intermediaries. With a **user-friendly interface** and **efficient processes**, DeliverEase aims to **revolutionize the way goods are delivered**, making it convenient for both consumers and businesses.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -36,23 +36,23 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 
 ### Post a Job
 
-1. **Post a Job:** Sellers can post delivery jobs by clicking on the "Post a Job" option on the homepage
+1. **Post a Job:** Sellers can post delivery jobs by **clicking on the "Post a Job" option on the homepage**
 
-2. **Job Details:** They must enter the job specifics, including the item to be delivered, pickup location, delivery location, and expected delivery time
+2. **Job Details:** They must **enter the job specifics**, including the **item to be delivered**, **pickup location**, **delivery location**, and **expected delivery time**
 
-3. **Delivery Partner Assignment:** Once the job is posted, the nearest available delivery partner will have the option to accept the job (algorithms are still to be developed)
+3. **Delivery Partner Assignment:** Once the job is posted, the nearest available delivery partner will have the option to accept the job **`(algorithms are still to be developed)`**
 
 ### Acceptance and Delivery
 
-1. **Delivery Partner Selection:** The nearest available delivery partner can view available jobs and accept the ones that match their location and schedule
+1. **Delivery Partner Selection:** The nearest available delivery partner can **view available jobs and accept** the ones that match their location and schedule
 
 2. **Order Confirmation:** Once the delivery partner accepts the job the delivery process will begin
 
-3. **Delivery Execution:** The delivery partner will collect the item from the buyer's specified pickup location and deliver it to the buyer's specified delivery address
+3. **Delivery Execution:** The delivery partner will **collect the item from the buyer's specified pickup location** and **deliver it to the buyer's specified delivery address**
 
-4. **Confirmation from both sides:** You will get an OTP at our website, tell that to seller so that we can know that this order is completed
+4. **Confirmation from both sides:** You will get an **OTP at our website**, tell that to seller so that we can know that this order is completed
 
-5. **Delivery Completion:** Once the delivery is successfully completed, both the buyer and seller will receive notifications of the successful order
+5. **Delivery Completion:** Once the delivery is successfully completed, both the buyer and seller will **receive notifications of the successful order**
 
 ## Key Features
 
