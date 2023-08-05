@@ -1,13 +1,10 @@
-<!-- Logo start -->
-<img align="right" width="100" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>
-<!-- Logo end -->
-
+<!-- Documentation start -->
 # DeliverEase 
 ### Empowering Delivery Partners, Connecting Communities
 
 <!--![DeliverEase Logo](https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png)-->
 
-![Extra](https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png)
+<img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
 DeliverEase is an innovative platform designed to empower delivery partners and foster seamless connections between buyers and sellers without the need for intermediaries. With a user-friendly interface and efficient processes, DeliverEase aims to revolutionize the way goods are delivered, making it convenient for both consumers and businesses.
 
@@ -113,3 +110,4 @@ See [**`LICENSE`**](LICENSE)
 ---
 
 Thank you for choosing DeliverEase! We hope this platform enhances your delivery experience and connects communities in a meaningful way. Happy delivering!
+<!-- Documentation end -->
