@@ -4,3 +4,22 @@ pyvenv.cfg
 Lib/
 Scripts/
 .idea
+__pycache__/
+DeliverEase/__pycache__/
+seller/__pycache__/
+buyer/__pycache__/
+main/__pycache__/
+main/migrations/__pycache__/
+userAuth/__pycache__/
+userAuth/migrations/__pycache__/
+buyer/migrations/__pycache__/
+C extensions
+*.so
+
+
+# Django stuff:
+*.log
+*.pot
+
+# Sphinx documentation
+docs/_build/
