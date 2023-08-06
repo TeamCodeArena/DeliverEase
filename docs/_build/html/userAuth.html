@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>userAuth package &mdash; DeliverEase 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="userAuth.migrations package" href="userAuth.migrations.html" />
+    <link rel="prev" title="seller.migrations package" href="seller.migrations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DeliverEase
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">DeliverEase</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DeliverEase.html">DeliverEase package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buyer.html">buyer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seller.html">seller package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">userAuth package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="userAuth.migrations.html">userAuth.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userAuth.admin">userAuth.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userAuth.apps">userAuth.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#userAuth.apps.UserauthConfig"><code class="docutils literal notranslate"><span class="pre">UserauthConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userAuth.models">userAuth.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#userAuth.models.Buyer"><code class="docutils literal notranslate"><span class="pre">Buyer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#userAuth.models.Seller"><code class="docutils literal notranslate"><span class="pre">Seller</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userAuth.tests">userAuth.tests module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userAuth.urls">userAuth.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userAuth.views">userAuth.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#userAuth.views.buyer_signup"><code class="docutils literal notranslate"><span class="pre">buyer_signup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#userAuth.views.check_user_exists"><code class="docutils literal notranslate"><span class="pre">check_user_exists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#userAuth.views.login_user"><code class="docutils literal notranslate"><span class="pre">login_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#userAuth.views.seller_signup"><code class="docutils literal notranslate"><span class="pre">seller_signup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#userAuth.views.user_login"><code class="docutils literal notranslate"><span class="pre">user_login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#userAuth.views.user_signup"><code class="docutils literal notranslate"><span class="pre">user_signup()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userAuth">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DeliverEase</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">DeliverEase</a></li>
+      <li class="breadcrumb-item active">userAuth package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/userAuth.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="userauth-package">
+<h1>userAuth package<a class="headerlink" href="#userauth-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userAuth.migrations.html">userAuth.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userAuth.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userAuth.migrations.html#module-userAuth.migrations.0001_initial">userAuth.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userAuth.migrations.html#userAuth.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="userAuth.migrations.html#userAuth.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="userAuth.migrations.html#userAuth.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="userAuth.migrations.html#userAuth.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userAuth.migrations.html#module-userAuth.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-userAuth.admin">
+<span id="userauth-admin-module"></span><h2>userAuth.admin module<a class="headerlink" href="#module-userAuth.admin" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-userAuth.apps">
+<span id="userauth-apps-module"></span><h2>userAuth.apps module<a class="headerlink" href="#module-userAuth.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="userAuth.apps.UserauthConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">userAuth.apps.</span></span><span class="sig-name descname"><span class="pre">UserauthConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userAuth/apps.html#UserauthConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userAuth.apps.UserauthConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.apps.UserauthConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#userAuth.apps.UserauthConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.apps.UserauthConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'userAuth'</span></em><a class="headerlink" href="#userAuth.apps.UserauthConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-userAuth.models">
+<span id="userauth-models-module"></span><h2>userAuth.models module<a class="headerlink" href="#module-userAuth.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="userAuth.models.Buyer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">userAuth.models.</span></span><span class="sig-name descname"><span class="pre">Buyer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phoneNo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userAuth/models.html#Buyer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userAuth.models.Buyer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#userAuth.models.Buyer.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#userAuth.models.Buyer.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.address">
+<span class="sig-name descname"><span class="pre">address</span></span><a class="headerlink" href="#userAuth.models.Buyer.address" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.buyers">
+<span class="sig-name descname"><span class="pre">buyers</span></span><a class="headerlink" href="#userAuth.models.Buyer.buyers" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#userAuth.models.Buyer.email" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#userAuth.models.Buyer.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#userAuth.models.Buyer.name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#userAuth.models.Buyer.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#userAuth.models.Buyer.password" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Buyer.phoneNo">
+<span class="sig-name descname"><span class="pre">phoneNo</span></span><a class="headerlink" href="#userAuth.models.Buyer.phoneNo" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="userAuth.models.Seller">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">userAuth.models.</span></span><span class="sig-name descname"><span class="pre">Seller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phoneNo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experience</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userAuth/models.html#Seller"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userAuth.models.Seller" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="userAuth.models.Seller.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#userAuth.models.Seller.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="userAuth.models.Seller.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#userAuth.models.Seller.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Seller.address">
+<span class="sig-name descname"><span class="pre">address</span></span><a class="headerlink" href="#userAuth.models.Seller.address" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Seller.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#userAuth.models.Seller.email" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Seller.experience">
+<span class="sig-name descname"><span class="pre">experience</span></span><a class="headerlink" href="#userAuth.models.Seller.experience" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Seller.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#userAuth.models.Seller.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Seller.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#userAuth.models.Seller.name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Seller.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#userAuth.models.Seller.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Seller.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#userAuth.models.Seller.password" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Seller.phoneNo">
+<span class="sig-name descname"><span class="pre">phoneNo</span></span><a class="headerlink" href="#userAuth.models.Seller.phoneNo" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userAuth.models.Seller.sellers">
+<span class="sig-name descname"><span class="pre">sellers</span></span><a class="headerlink" href="#userAuth.models.Seller.sellers" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-userAuth.tests">
+<span id="userauth-tests-module"></span><h2>userAuth.tests module<a class="headerlink" href="#module-userAuth.tests" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-userAuth.urls">
+<span id="userauth-urls-module"></span><h2>userAuth.urls module<a class="headerlink" href="#module-userAuth.urls" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-userAuth.views">
+<span id="userauth-views-module"></span><h2>userAuth.views module<a class="headerlink" href="#module-userAuth.views" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="userAuth.views.buyer_signup">
+<span class="sig-prename descclassname"><span class="pre">userAuth.views.</span></span><span class="sig-name descname"><span class="pre">buyer_signup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userAuth/views.html#buyer_signup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userAuth.views.buyer_signup" title="Permalink to this definition"></a></dt>
+<dd><p>This function is executed on the buyer signup page</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="userAuth.views.check_user_exists">
+<span class="sig-prename descclassname"><span class="pre">userAuth.views.</span></span><span class="sig-name descname"><span class="pre">check_user_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userAuth/views.html#check_user_exists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userAuth.views.check_user_exists" title="Permalink to this definition"></a></dt>
+<dd><p>This function makes sure that the user who is trying to register with a email
+doesn’t exits already in the table</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="userAuth.views.login_user">
+<span class="sig-prename descclassname"><span class="pre">userAuth.views.</span></span><span class="sig-name descname"><span class="pre">login_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userAuth/views.html#login_user"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userAuth.views.login_user" title="Permalink to this definition"></a></dt>
+<dd><p>This function is executed on the login page</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="userAuth.views.seller_signup">
+<span class="sig-prename descclassname"><span class="pre">userAuth.views.</span></span><span class="sig-name descname"><span class="pre">seller_signup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userAuth/views.html#seller_signup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userAuth.views.seller_signup" title="Permalink to this definition"></a></dt>
+<dd><p>This function is executed on the seller signup page</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="userAuth.views.user_login">
+<span class="sig-prename descclassname"><span class="pre">userAuth.views.</span></span><span class="sig-name descname"><span class="pre">user_login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userAuth/views.html#user_login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userAuth.views.user_login" title="Permalink to this definition"></a></dt>
+<dd><p>This function is used to login the user on our website</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="userAuth.views.user_signup">
+<span class="sig-prename descclassname"><span class="pre">userAuth.views.</span></span><span class="sig-name descname"><span class="pre">user_signup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phoneNo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experience</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'None'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userAuth/views.html#user_signup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userAuth.views.user_signup" title="Permalink to this definition"></a></dt>
+<dd><p>This function is used to register the user on our website</p>
+</dd></dl>
+
+</section>
+<section id="module-userAuth">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-userAuth" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="seller.migrations.html" class="btn btn-neutral float-left" title="seller.migrations package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="userAuth.migrations.html" class="btn btn-neutral float-right" title="userAuth.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, CodeArena.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

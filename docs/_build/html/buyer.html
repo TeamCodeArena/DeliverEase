@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>buyer package &mdash; DeliverEase 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="buyer.migrations package" href="buyer.migrations.html" />
+    <link rel="prev" title="DeliverEase package" href="DeliverEase.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DeliverEase
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">DeliverEase</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DeliverEase.html">DeliverEase package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">buyer package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html">buyer.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-buyer.admin">buyer.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-buyer.apps">buyer.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#buyer.apps.BuyerConfig"><code class="docutils literal notranslate"><span class="pre">BuyerConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-buyer.models">buyer.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#buyer.models.Job"><code class="docutils literal notranslate"><span class="pre">Job</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-buyer.tests">buyer.tests module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-buyer.urls">buyer.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-buyer.views">buyer.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#buyer.views.add_job"><code class="docutils literal notranslate"><span class="pre">add_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#buyer.views.check_order"><code class="docutils literal notranslate"><span class="pre">check_order()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#buyer.views.get_otp"><code class="docutils literal notranslate"><span class="pre">get_otp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#buyer.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#buyer.views.my_orders"><code class="docutils literal notranslate"><span class="pre">my_orders()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-buyer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seller.html">seller package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userAuth.html">userAuth package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DeliverEase</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">DeliverEase</a></li>
+      <li class="breadcrumb-item active">buyer package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/buyer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="buyer-package">
+<h1>buyer package<a class="headerlink" href="#buyer-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="buyer.migrations.html">buyer.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="buyer.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buyer.migrations.html#module-buyer.migrations.0001_initial">buyer.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="buyer.migrations.html#module-buyer.migrations.0002_alter_job_assigned_to_alter_job_otp_alter_job_rating_and_more">buyer.migrations.0002_alter_job_assigned_to_alter_job_otp_alter_job_rating_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0002_alter_job_assigned_to_alter_job_otp_alter_job_rating_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0002_alter_job_assigned_to_alter_job_otp_alter_job_rating_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0002_alter_job_assigned_to_alter_job_otp_alter_job_rating_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="buyer.migrations.html#module-buyer.migrations.0003_alter_job_assigned_to_alter_job_created_by">buyer.migrations.0003_alter_job_assigned_to_alter_job_created_by module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0003_alter_job_assigned_to_alter_job_created_by.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0003_alter_job_assigned_to_alter_job_created_by.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0003_alter_job_assigned_to_alter_job_created_by.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="buyer.migrations.html#module-buyer.migrations.0004_alter_job_assigned_to_alter_job_created_by">buyer.migrations.0004_alter_job_assigned_to_alter_job_created_by module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0004_alter_job_assigned_to_alter_job_created_by.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0004_alter_job_assigned_to_alter_job_created_by.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0004_alter_job_assigned_to_alter_job_created_by.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="buyer.migrations.html#module-buyer.migrations.0005_job_review">buyer.migrations.0005_job_review module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0005_job_review.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0005_job_review.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="buyer.migrations.html#buyer.migrations.0005_job_review.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="buyer.migrations.html#module-buyer.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-buyer.admin">
+<span id="buyer-admin-module"></span><h2>buyer.admin module<a class="headerlink" href="#module-buyer.admin" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-buyer.apps">
+<span id="buyer-apps-module"></span><h2>buyer.apps module<a class="headerlink" href="#module-buyer.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="buyer.apps.BuyerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">buyer.apps.</span></span><span class="sig-name descname"><span class="pre">BuyerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buyer/apps.html#BuyerConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buyer.apps.BuyerConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.apps.BuyerConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#buyer.apps.BuyerConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.apps.BuyerConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'buyer'</span></em><a class="headerlink" href="#buyer.apps.BuyerConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-buyer.models">
+<span id="buyer-models-module"></span><h2>buyer.models module<a class="headerlink" href="#module-buyer.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="buyer.models.Job">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">buyer.models.</span></span><span class="sig-name descname"><span class="pre">Job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delivery_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delivery_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delivery_pincode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_pincode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assigned_to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">review</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buyer/models.html#Job"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buyer.models.Job" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="buyer.models.Job.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#buyer.models.Job.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="buyer.models.Job.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#buyer.models.Job.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.assigned_to">
+<span class="sig-name descname"><span class="pre">assigned_to</span></span><a class="headerlink" href="#buyer.models.Job.assigned_to" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.assigned_to_id">
+<span class="sig-name descname"><span class="pre">assigned_to_id</span></span><a class="headerlink" href="#buyer.models.Job.assigned_to_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.created_by">
+<span class="sig-name descname"><span class="pre">created_by</span></span><a class="headerlink" href="#buyer.models.Job.created_by" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.created_by_id">
+<span class="sig-name descname"><span class="pre">created_by_id</span></span><a class="headerlink" href="#buyer.models.Job.created_by_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.delivery_address">
+<span class="sig-name descname"><span class="pre">delivery_address</span></span><a class="headerlink" href="#buyer.models.Job.delivery_address" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.delivery_pincode">
+<span class="sig-name descname"><span class="pre">delivery_pincode</span></span><a class="headerlink" href="#buyer.models.Job.delivery_pincode" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.delivery_time">
+<span class="sig-name descname"><span class="pre">delivery_time</span></span><a class="headerlink" href="#buyer.models.Job.delivery_time" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.event_date">
+<span class="sig-name descname"><span class="pre">event_date</span></span><a class="headerlink" href="#buyer.models.Job.event_date" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.event_time">
+<span class="sig-name descname"><span class="pre">event_time</span></span><a class="headerlink" href="#buyer.models.Job.event_time" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buyer.models.Job.get_next_by_event_date">
+<span class="sig-name descname"><span class="pre">get_next_by_event_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">event_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#buyer.models.Job.get_next_by_event_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buyer.models.Job.get_previous_by_event_date">
+<span class="sig-name descname"><span class="pre">get_previous_by_event_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">event_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#buyer.models.Job.get_previous_by_event_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#buyer.models.Job.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#buyer.models.Job.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.otp">
+<span class="sig-name descname"><span class="pre">otp</span></span><a class="headerlink" href="#buyer.models.Job.otp" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.pickup_address">
+<span class="sig-name descname"><span class="pre">pickup_address</span></span><a class="headerlink" href="#buyer.models.Job.pickup_address" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.pickup_pincode">
+<span class="sig-name descname"><span class="pre">pickup_pincode</span></span><a class="headerlink" href="#buyer.models.Job.pickup_pincode" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.pickup_time">
+<span class="sig-name descname"><span class="pre">pickup_time</span></span><a class="headerlink" href="#buyer.models.Job.pickup_time" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.product_type">
+<span class="sig-name descname"><span class="pre">product_type</span></span><a class="headerlink" href="#buyer.models.Job.product_type" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.rating">
+<span class="sig-name descname"><span class="pre">rating</span></span><a class="headerlink" href="#buyer.models.Job.rating" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.review">
+<span class="sig-name descname"><span class="pre">review</span></span><a class="headerlink" href="#buyer.models.Job.review" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buyer.models.Job.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#buyer.models.Job.status" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-buyer.tests">
+<span id="buyer-tests-module"></span><h2>buyer.tests module<a class="headerlink" href="#module-buyer.tests" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-buyer.urls">
+<span id="buyer-urls-module"></span><h2>buyer.urls module<a class="headerlink" href="#module-buyer.urls" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-buyer.views">
+<span id="buyer-views-module"></span><h2>buyer.views module<a class="headerlink" href="#module-buyer.views" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="buyer.views.add_job">
+<span class="sig-prename descclassname"><span class="pre">buyer.views.</span></span><span class="sig-name descname"><span class="pre">add_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buyer/views.html#add_job"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buyer.views.add_job" title="Permalink to this definition"></a></dt>
+<dd><p>This function allows the buyer to visit the  page via 2 methods:
+1) GET : The seller is shown  the job form to create a new job
+2) POST : The details entered are extracted and a job is created.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buyer.views.check_order">
+<span class="sig-prename descclassname"><span class="pre">buyer.views.</span></span><span class="sig-name descname"><span class="pre">check_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buyer/views.html#check_order"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buyer.views.check_order" title="Permalink to this definition"></a></dt>
+<dd><p>This function allows the buyer to visit the  page via 2 methods:
+1) GET : The buyer is shown the details of the job
+2) POST : The job_id of the job selected by the buyer is retrieved and saved in the session.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buyer.views.get_otp">
+<span class="sig-prename descclassname"><span class="pre">buyer.views.</span></span><span class="sig-name descname"><span class="pre">get_otp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buyer/views.html#get_otp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buyer.views.get_otp" title="Permalink to this definition"></a></dt>
+<dd><p>This function allows the buyer to visit the  page via 2 methods:
+1) GET : An otp is generated and saved with the job. The buyer is shown the otp of the job if the job is assigned
+2) POST : The review and rating by the buyer regarding the service is obtained and  saved.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buyer.views.index">
+<span class="sig-prename descclassname"><span class="pre">buyer.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buyer/views.html#index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buyer.views.index" title="Permalink to this definition"></a></dt>
+<dd><p>This function allows the seller to visit the home page via GET method</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buyer.views.my_orders">
+<span class="sig-prename descclassname"><span class="pre">buyer.views.</span></span><span class="sig-name descname"><span class="pre">my_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buyer/views.html#my_orders"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buyer.views.my_orders" title="Permalink to this definition"></a></dt>
+<dd><p>This function allows the buyer to visit the  page via 2 methods:
+1) GET : The buyer is shown all the jobs created by him
+2) POST : The job_id of the job selected by the buyer is retrieved and saved in the session.</p>
+</dd></dl>
+
+</section>
+<section id="module-buyer">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-buyer" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="DeliverEase.html" class="btn btn-neutral float-left" title="DeliverEase package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="buyer.migrations.html" class="btn btn-neutral float-right" title="buyer.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, CodeArena.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
