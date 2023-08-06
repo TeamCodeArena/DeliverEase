@@ -20,7 +20,7 @@
 - [Contributing](#contributing)
 - [Feedback](#feedback)
 - [License](#license)
-
+- [How you can reach us]()
 ## Introduction
 DeliverEase is built on the foundation of **empowering delivery partners**, enabling them to earn income while providing **efficient delivery services** to the community. By **bridging the gap between buyers and sellers directly**, DeliverEase eliminates the need for intermediaries, leading to **faster deliveries** and **reduced costs**.
 
@@ -91,6 +91,10 @@ We value feedback to improve our platform continuously. If you have any suggesti
 ## License
 <!-- TODO: Link LICENSE.md -->
 DeliverEase is released under the [**MIT License**](https://opensource.org/licenses/MIT).
+
+
+## Social Media
+You can join our Slack community by clicking this [**link**](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g)
 
 <img align="right" width="100" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
 
