@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>main package &mdash; DeliverEase 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="main.migrations package" href="main.migrations.html" />
+    <link rel="prev" title="buyer.migrations package" href="buyer.migrations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DeliverEase
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">DeliverEase</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DeliverEase.html">DeliverEase package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buyer.html">buyer package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">main package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="main.migrations.html">main.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-main.admin">main.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-main.apps">main.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main.apps.MainConfig"><code class="docutils literal notranslate"><span class="pre">MainConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-main.models">main.models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-main.tests">main.tests module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-main.urls">main.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-main.views">main.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main.views.about_us"><code class="docutils literal notranslate"><span class="pre">about_us()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main.views.buyer_or_seller"><code class="docutils literal notranslate"><span class="pre">buyer_or_seller()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main.views.get_started"><code class="docutils literal notranslate"><span class="pre">get_started()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-main">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seller.html">seller package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userAuth.html">userAuth package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DeliverEase</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">DeliverEase</a></li>
+      <li class="breadcrumb-item active">main package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/main.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="main-package">
+<h1>main package<a class="headerlink" href="#main-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main.migrations.html">main.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="main.migrations.html#module-main.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-main.admin">
+<span id="main-admin-module"></span><h2>main.admin module<a class="headerlink" href="#module-main.admin" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-main.apps">
+<span id="main-apps-module"></span><h2>main.apps module<a class="headerlink" href="#module-main.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="main.apps.MainConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.apps.</span></span><span class="sig-name descname"><span class="pre">MainConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main/apps.html#MainConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.apps.MainConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.apps.MainConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#main.apps.MainConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.apps.MainConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'main'</span></em><a class="headerlink" href="#main.apps.MainConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-main.models">
+<span id="main-models-module"></span><h2>main.models module<a class="headerlink" href="#module-main.models" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-main.tests">
+<span id="main-tests-module"></span><h2>main.tests module<a class="headerlink" href="#module-main.tests" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-main.urls">
+<span id="main-urls-module"></span><h2>main.urls module<a class="headerlink" href="#module-main.urls" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-main.views">
+<span id="main-views-module"></span><h2>main.views module<a class="headerlink" href="#module-main.views" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.about_us">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">about_us</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main/views.html#about_us"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.views.about_us" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.buyer_or_seller">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">buyer_or_seller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main/views.html#buyer_or_seller"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.views.buyer_or_seller" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.get_started">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">get_started</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main/views.html#get_started"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.views.get_started" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.views.index">
+<span class="sig-prename descclassname"><span class="pre">main.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main/views.html#index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.views.index" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-main">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-main" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="buyer.migrations.html" class="btn btn-neutral float-left" title="buyer.migrations package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="main.migrations.html" class="btn btn-neutral float-right" title="main.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, CodeArena.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

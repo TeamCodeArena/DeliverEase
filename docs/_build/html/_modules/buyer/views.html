@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>buyer.views &mdash; DeliverEase 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            DeliverEase
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">DeliverEase</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">DeliverEase</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">buyer.views</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for buyer.views</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">userAuth.models</span> <span class="kn">import</span> <span class="n">Buyer</span><span class="p">,</span>  <span class="n">Seller</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Job</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">login</span><span class="p">,</span> <span class="n">logout</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+
+
+<div class="viewcode-block" id="index"><a class="viewcode-back" href="../../buyer.html#buyer.views.index">[docs]</a><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;This function allows the seller to visit the home page via GET method&#39;&#39;&#39;</span>
+
+    <span class="n">email</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">)</span> <span class="c1">#gets the email of the buyer passed in the get request</span>
+
+
+    <span class="c1">## this is the block  that verifies the user is actually logged into the session</span>
+    <span class="k">if</span> <span class="n">email</span> <span class="o">==</span> <span class="s1">&#39;None&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;buyer_id&#39;</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s1">&#39;/auth/login&#39;</span><span class="p">)</span>
+
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">buyer</span> <span class="o">=</span> <span class="n">Buyer</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;buyer_id&#39;</span><span class="p">]</span>
+        <span class="n">buyer</span> <span class="o">=</span> <span class="n">Buyer</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;buyer_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">buyer</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;buyer/buyer_homepage.html&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="add_job"><a class="viewcode-back" href="../../buyer.html#buyer.views.add_job">[docs]</a><span class="k">def</span> <span class="nf">add_job</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;This function allows the buyer to visit the  page via 2 methods:</span>
+<span class="sd">    1) GET : The seller is shown  the job form to create a new job</span>
+<span class="sd">    2) POST : The details entered are extracted and a job is created.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="c1"># gets the id of the buyer in the session</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;buyer_id&#39;</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">current_buyer</span> <span class="o">=</span> <span class="n">Buyer</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+
+        <span class="c1"># retrieves the data entered by the user in the job form</span>
+        <span class="n">pickup_address</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;pickup_address&#39;</span><span class="p">]</span>
+        <span class="n">pickup_time1</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;pickup_time&#39;</span><span class="p">]</span>
+        <span class="n">pickup_date</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;pickup_date&#39;</span><span class="p">]</span>
+        <span class="n">delivery_address</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;delivery_address&#39;</span><span class="p">]</span>
+        <span class="n">delivery_time1</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;delivery_time&#39;</span><span class="p">]</span>
+        <span class="n">delivery_date</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;delivery_date&#39;</span><span class="p">]</span>
+        <span class="n">delivery_pincode</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;delivery_pincode&#39;</span><span class="p">]</span>
+        <span class="n">pickup_pincode</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;pickup_pincode&#39;</span><span class="p">]</span>
+        <span class="c1"># makes sure the pincode is a int and proceeds to save the job</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">delivery_pincode</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">delivery_pincode</span><span class="p">)</span>
+            <span class="n">pickup_pincode</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pickup_pincode</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;add_job&#39;</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">new_job</span> <span class="o">=</span> <span class="n">Job</span><span class="p">(</span><span class="n">pickup_address</span><span class="o">=</span><span class="n">pickup_address</span><span class="p">,</span> <span class="n">pickup_time</span><span class="o">=</span><span class="n">pickup_time1</span><span class="p">,</span>
+                          <span class="n">delivery_address</span><span class="o">=</span><span class="n">delivery_address</span><span class="p">,</span> <span class="n">pickup_pincode</span><span class="o">=</span><span class="n">pickup_pincode</span><span class="p">,</span>
+                          <span class="n">delivery_time</span><span class="o">=</span><span class="n">delivery_time1</span><span class="p">,</span> <span class="n">created_by</span><span class="o">=</span><span class="n">current_buyer</span><span class="p">,</span>
+                          <span class="n">delivery_pincode</span><span class="o">=</span><span class="n">delivery_pincode</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;add_job&#39;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">new_job</span><span class="p">)</span>
+            <span class="n">new_job</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span> <span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;my_orders&#39;</span><span class="p">))</span>
+
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="s1">&#39;buyer_id&#39;</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;buyer_id&#39;</span><span class="p">])</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s1">&#39;/auth/login&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;buyer/add_job.html&#39;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="my_orders"><a class="viewcode-back" href="../../buyer.html#buyer.views.my_orders">[docs]</a><span class="k">def</span> <span class="nf">my_orders</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;This function allows the buyer to visit the  page via 2 methods:</span>
+<span class="sd">    1) GET : The buyer is shown all the jobs created by him</span>
+<span class="sd">    2) POST : The job_id of the job selected by the buyer is retrieved and saved in the session.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">job_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;job_id&#39;</span><span class="p">]</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;job_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_id</span>
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span> <span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;check_order&#39;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;buyer_id&#39;</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;buyer_id&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s1">&#39;/auth/login&#39;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;job_id&#39;</span><span class="p">]</span> <span class="c1"># deletes a job_id if exsts in the session</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;buyer_id&#39;</span><span class="p">]</span>
+        <span class="n">buyer</span> <span class="o">=</span>  <span class="n">Buyer</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+        <span class="n">all_job</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">created_by</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;buyer/my_orders.html&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s1">&#39;jobs&#39;</span><span class="p">:</span> <span class="n">all_job</span><span class="p">,</span> <span class="s1">&#39;buyer&#39;</span><span class="p">:</span> <span class="n">buyer</span>
+        <span class="p">})</span></div>
+
+
+<div class="viewcode-block" id="check_order"><a class="viewcode-back" href="../../buyer.html#buyer.views.check_order">[docs]</a><span class="k">def</span> <span class="nf">check_order</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;This function allows the buyer to visit the  page via 2 methods:</span>
+<span class="sd">    1) GET : The buyer is shown the details of the job</span>
+<span class="sd">    2) POST : The job_id of the job selected by the buyer is retrieved and saved in the session.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span> <span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;get_otp&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="s1">&#39;buyer_id&#39;</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s1">&#39;/auth/login&#39;</span><span class="p">)</span>
+    <span class="c1">## checks if a job_id exists in the session</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">job_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;job_id&#39;</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;my_orders&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="n">job</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;buyer/check_order.html&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;job&#39;</span><span class="p">:</span> <span class="n">job</span>
+    <span class="p">})</span></div>
+
+
+<div class="viewcode-block" id="get_otp"><a class="viewcode-back" href="../../buyer.html#buyer.views.get_otp">[docs]</a><span class="k">def</span> <span class="nf">get_otp</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;This function allows the buyer to visit the  page via 2 methods:</span>
+<span class="sd">        1) GET : An otp is generated and saved with the job. The buyer is shown the otp of the job if the job is assigned</span>
+<span class="sd">        2) POST : The review and rating by the buyer regarding the service is obtained and  saved.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">job_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;job_id&#39;</span><span class="p">]</span>
+        <span class="n">get_job</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">job_id</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">review</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">]</span>
+            <span class="n">rating</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span>
+            <span class="n">get_job</span><span class="o">.</span><span class="n">review</span>  <span class="o">=</span> <span class="n">review</span>
+            <span class="n">get_job</span><span class="o">.</span><span class="n">rating</span> <span class="o">=</span> <span class="n">rating</span>
+            <span class="n">get_job</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">get_job</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">review</span><span class="p">,</span> <span class="n">rating</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;get_otp&#39;</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;buyer/thank_you.html&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;buyer_id&#39;</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s1">&#39;/auth/login&#39;</span><span class="p">)</span>
+
+    <span class="n">job_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;job_id&#39;</span><span class="p">]</span>
+    <span class="n">get_job</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">seller_id</span> <span class="o">=</span> <span class="n">get_job</span><span class="o">.</span><span class="n">assigned_to</span><span class="o">.</span><span class="n">id</span>
+        <span class="n">seller</span> <span class="o">=</span> <span class="n">Seller</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">seller_id</span><span class="p">)</span>
+
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;buyer/final_page.html&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">otp</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">999999</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">otp</span><span class="p">)</span>
+        <span class="n">get_job</span><span class="o">.</span><span class="n">otp</span> <span class="o">=</span> <span class="n">otp</span>
+        <span class="n">get_job</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;job otp </span><span class="si">{</span><span class="n">get_job</span><span class="o">.</span><span class="n">otp</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;buyer/final_page.html&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;seller&#39;</span><span class="p">:</span> <span class="n">seller</span><span class="p">,</span>
+        <span class="s1">&#39;otp&#39;</span><span class="p">:</span> <span class="n">otp</span><span class="p">,</span>
+        <span class="s1">&#39;job&#39;</span><span class="p">:</span> <span class="n">get_job</span>
+        <span class="p">}</span>   <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, CodeArena.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
