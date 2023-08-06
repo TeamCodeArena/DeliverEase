@@ -85,4 +85,4 @@ Please Checkout [`**CODE_OF_CONDUCT**`](CODE_OF_CONDUCT.md)
 
 ## Thank You
 
-Thank you for your intrest in contributing to DeliverEase. Your contributions are valuable and help us create a better platform for everyone. Happy contributing!
+Thank you for your interest in contributing to DeliverEase. Your contributions are valuable and help us create a better platform for everyone. Happy contributing!
