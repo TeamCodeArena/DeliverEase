@@ -20,7 +20,7 @@
 - [Contributing](#contributing)
 - [Feedback](#feedback)
 - [License](#license)
-- [How you can reach us]()
+- [How you can reach us](#social-media)
 ## Introduction
 DeliverEase is built on the foundation of **empowering delivery partners**, enabling them to earn income while providing **efficient delivery services** to the community. By **bridging the gap between buyers and sellers directly**, DeliverEase eliminates the need for intermediaries, leading to **faster deliveries** and **reduced costs**.
 
