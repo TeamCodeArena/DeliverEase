@@ -1,6 +1,6 @@
-# Contributing to DeliverEase
+## Contributing to DeliverEase
 
-Welcome to DeliverEase! We are excited to have you contribute to our project. DeliverEase is made using Django (Python) for the backend and HTML/CSS for the frontend. Your contributions can help us improve and enhance the platform, empowering delivery partners and connecting communities even more effectively.
+Welcome to DeliverEase! We are excited to have you contribute to our project. Your contributions can help us improve and enhance the platform, empowering delivery partners and connecting communities even more effectively.
 
 ## How to Contribute
 
@@ -22,13 +22,17 @@ To contribute to DeliverEase, please follow these guidelines:
 
 8. Push your branch to your forked repository.
 
-9. Create a pull request (PR) from your branch to the `main` branch of the main repository.
+9. Create a pull request (PR) from your forked repository, nowadays known as "Contribute".
 
-10. Provide a detailed description of your changes in the pull request, including the problem you are solving, the approach you took, and any relevant information for reviewers.
+10. Include the Issue number also while creating the PR.
 
-11. Be responsive to feedback and comments on your pull request. If requested changes are needed, make the necessary adjustments.
+11. Provide a detailed description of your changes in the pull request, including the problem you are solving, the approach you took, and any relevant information for reviewers.
 
-12. Once your pull request is approved and meets the project's quality standards, it will be merged into the main repository.
+12. Attach an issue number while committing to track it as part of the Issue.
+
+13. Be responsive to feedback and comments on your pull request. If changes are requested, make the necessary adjustments.
+
+14. Once your pull request is approved and meets the project's quality standards, it will be merged into the main repository.
 
 ## Code Style and Guidelines
 
@@ -51,9 +55,9 @@ If you come across any issues, bugs, or have suggestions for improvements, pleas
 ## Code of Conduct
 
 We expect all contributors to adhere to our Code of Conduct, which promotes a welcoming and inclusive community. Please be respectful and considerate of others' opinions and contributions.
+Please Checkout [`**CODE_OF_CONDUCT**`](CODE_OF_CONDUCT.md)
 
-## License
 
-By contributing to DeliverEase, you agree that your contributions will be licensed under the [MIT License](https://opensource.org/licenses/MIT).
+## Thank You
 
 Thank you for your interest in contributing to DeliverEase. Your contributions are valuable and help us create a better platform for everyone. Happy contributing!
