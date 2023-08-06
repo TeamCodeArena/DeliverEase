@@ -4,3 +4,19 @@ pyvenv.cfg
 Lib/
 Scripts/
 .idea
+*/migrations/__pycache__/
+
+*/__pycache__/
+*.pyc
+
+
+C extensions
+*.so
+
+
+# Django stuff:
+*.log
+*.pot
+
+# Sphinx documentation
+docs/_build/
