@@ -24,27 +24,27 @@ To contribute to DeliverEase, please follow these guidelines:
 
 9. In either case get the issue assigned to yourself by commenting on the issue like I would like to work on this issue please assign me and tag a maintainer, and start working on it after you are assigned the issue.
 
-10. Make your changes to the codebase or documentation in your branch. Be sure to follow the coding style and conventions used in the project.
+10. checkout to a new branch whose name will be similar to the issue you worked on . For ex. you worked on the readme you can name it as "docs/readme".
 
-11. Test your changes thoroughly to ensure they work as expected.
+11. Make your changes to the codebase or documentation in your branch. Be sure to follow the coding style and conventions used in the project.
 
-12. Update or create new tests where applicable and also update the dependencies if you have used a new software.
+12. Test your changes thoroughly to ensure they work as expected.
 
-13. Ensure that all existing tests pass successfully before submitting your changes.
+13. Update or create new tests where applicable and also update the dependencies if you have used a new software.
 
-14. Add your changes to git.
+14. Ensure that all existing tests pass successfully before submitting your changes.
 
-15. Commit your changes. 
+15. Add your changes to git.
 
-16. Write clear and concise commit messages for your changes and add GH-(issue number) for ex.add  GH-9 in the end of commit message  if you are working on issue 9.
+16. Commit your changes. 
 
-17. Add the remote upstream branch to git :  `git remote add upstream https://github.com/TeamCodeArena/DeliverEase`
+17. Write clear and concise commit messages for your changes and add GH-(issue number) for ex.add  GH-9 in the end of commit message  if you are working on issue 9.
 
-18. Fetch all the updates in the remote branch while you were working on the issue: `git fetch upstream`
+18. Add the remote upstream branch to git :  `git remote add upstream https://github.com/TeamCodeArena/DeliverEase`
 
-19. Merge your local main branch with the remote branch: `git pull --rebase`.
+19. Fetch all the updates in the remote branch while you were working on the issue: `git fetch upstream`
 
-20. checkout to a new branch whose name will be similar to the issue you worked on . For ex. you worked on the readme you can name it as "docs/readme".
+20. Merge your local  branch with the remote branch: `git pull --rebase`.
 
 21. Add a remote origin : `git remote add origin <link_to_your_forked_copy>` 
 
