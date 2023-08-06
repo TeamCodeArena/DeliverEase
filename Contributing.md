@@ -8,31 +8,33 @@ To contribute to DeliverEase, please follow these guidelines:
 
 1. Fork the repository to your GitHub account.
 
-2. Create a new branch from the `main` branch. Use a descriptive name for your branch that reflects the nature of your contribution.
+2. Clone your fork onto your computer
 
-3. Make your changes to the codebase or documentation in your branch. Be sure to follow the coding style and conventions used in the project.
+3. Create a new branch from the `main` branch. Use a descriptive name for your branch that reflects the nature of your contribution.
 
-4. Write clear and concise commit messages for your changes.
+4. Make your changes to the codebase or documentation in your branch. Be sure to follow the coding style and conventions used in the project.
 
-5. Test your changes thoroughly to ensure they work as expected.
+5. Write clear and concise commit messages for your changes.
 
-6. Update or create new tests where applicable.
+6. Test your changes thoroughly to ensure they work as expected.
 
-7. Ensure that all existing tests pass successfully before submitting your changes.
+7. Update or create new tests where applicable.
 
-8. Push your branch to your forked repository.
+8. Ensure that all existing tests pass successfully before submitting your changes.
 
-9. Create a pull request (PR) from your forked repository, nowadays known as "Contribute".
+9. Push your branch to your forked repository.
 
-10. Include the Issue number also while creating the PR.
+10. Create a pull request (PR) from your forked repository, nowadays known as "Contribute".
 
-11. Provide a detailed description of your changes in the pull request, including the problem you are solving, the approach you took, and any relevant information for reviewers.
+11. Include the Issue number also while creating the PR.
 
-12. Attach an issue number while committing to track it as part of the Issue.
+12. Provide a detailed description of your changes in the pull request, including the problem you are solving, the approach you took, and any relevant information for reviewers.
 
-13. Be responsive to feedback and comments on your pull request. If changes are requested, make the necessary adjustments.
+13. Attach an issue number while committing to track it as part of the Issue.
 
-14. Once your pull request is approved and meets the project's quality standards, it will be merged into the main repository.
+14. Be responsive to feedback and comments on your pull request. If changes are requested, make the necessary adjustments.
+
+15. Once your pull request is approved and meets the project's quality standards, it will be merged into the main repository.
 
 ## Code Style and Guidelines
 
