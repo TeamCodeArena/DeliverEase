@@ -71,6 +71,8 @@ To maintain a consistent codebase, we follow specific code style and guidelines.
 - Use meaningful variable and function names.
 - Include comments where necessary to explain complex logic or processes.
 
+## Join our Mailing List
+Slack Group: https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g
 
 ## Reporting Issues
 
