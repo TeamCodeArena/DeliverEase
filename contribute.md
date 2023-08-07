@@ -44,7 +44,7 @@ To contribute to DeliverEase, please follow these guidelines:
 
 19. Fetch all the updates in the remote branch while you were working on the issue: `git fetch upstream`
 
-20. Merge your local  branch with the remote branch: `git pull --rebase`.
+20. Merge your local  branch with the remote branch: `git merge upstream/main`.
 
 21. Add a remote origin : `git remote add origin <link_to_your_forked_copy>` 
 
