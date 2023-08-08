@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "deliverease"
+name = "DeliverEase"
 version = "0.1.0"
 description = ""
-authors = ["Team DeliverEase"]
+authors = ["CodeArena"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
