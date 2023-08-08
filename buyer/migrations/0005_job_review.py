@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('buyer', '0004_alter_job_assigned_to_alter_job_created_by'),
+        ("buyer", "0004_alter_job_assigned_to_alter_job_created_by"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='job',
-            name='review',
+            model_name="job",
+            name="review",
             field=models.CharField(max_length=100, null=True),
         ),
     ]
