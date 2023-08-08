@@ -24,7 +24,7 @@ To contribute to DeliverEase, please follow these guidelines:
 
 9. In either case get the issue assigned to yourself by commenting on the issue like I would like to work on this issue please assign me and tag a maintainer, and start working on it after you are assigned the issue.
 
-10. checkout to a new branch whose name will be similar to the issue you worked on . For ex. you worked on the readme you can name it as "docs/readme" `git checkout -b docs/readme`
+10. checkout to a new branch whose name will be similar to the issue you worked on . For ex. you worked on the readme you can name it as "docs/readme": `git checkout -b docs/readme`
 
 11. Make your changes to the codebase or documentation in your branch. Be sure to follow the coding style and conventions used in the project.
 
