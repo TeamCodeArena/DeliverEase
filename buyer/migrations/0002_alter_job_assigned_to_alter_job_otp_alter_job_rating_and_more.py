@@ -5,31 +5,36 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('userAuth', '0001_initial'),
-        ('buyer', '0001_initial'),
+        ("userAuth", "0001_initial"),
+        ("buyer", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='job',
-            name='assigned_to',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='sellers', to='userAuth.seller'),
+            model_name="job",
+            name="assigned_to",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="sellers",
+                to="userAuth.seller",
+            ),
         ),
         migrations.AlterField(
-            model_name='job',
-            name='otp',
+            model_name="job",
+            name="otp",
             field=models.IntegerField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='job',
-            name='rating',
+            model_name="job",
+            name="rating",
             field=models.IntegerField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='job',
-            name='status',
-            field=models.CharField(default='Pending', max_length=100),
+            model_name="job",
+            name="status",
+            field=models.CharField(default="Pending", max_length=100),
         ),
     ]
