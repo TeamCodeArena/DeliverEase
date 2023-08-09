@@ -6,32 +6,54 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('userAuth', '0001_initial'),
+        ("userAuth", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Job',
+            name="Job",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('pickup_address', models.CharField(max_length=100)),
-                ('event_date', models.DateField(default=django.utils.timezone.now)),
-                ('event_time', models.TimeField(default=django.utils.timezone.now)),
-                ('product_type', models.CharField(max_length=100)),
-                ('pickup_time', models.CharField(max_length=100)),
-                ('delivery_address', models.CharField(max_length=1000)),
-                ('delivery_time', models.CharField(max_length=100)),
-                ('delivery_pincode', models.IntegerField()),
-                ('pickup_pincode', models.IntegerField()),
-                ('status', models.CharField(blank=True, max_length=100)),
-                ('rating', models.IntegerField(blank=True)),
-                ('otp', models.IntegerField(blank=True)),
-                ('assigned_to', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, related_name='sellers', to='userAuth.seller')),
-                ('created_by', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='buyers', to='userAuth.buyer')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("pickup_address", models.CharField(max_length=100)),
+                ("event_date", models.DateField(default=django.utils.timezone.now)),
+                ("event_time", models.TimeField(default=django.utils.timezone.now)),
+                ("product_type", models.CharField(max_length=100)),
+                ("pickup_time", models.CharField(max_length=100)),
+                ("delivery_address", models.CharField(max_length=1000)),
+                ("delivery_time", models.CharField(max_length=100)),
+                ("delivery_pincode", models.IntegerField()),
+                ("pickup_pincode", models.IntegerField()),
+                ("status", models.CharField(blank=True, max_length=100)),
+                ("rating", models.IntegerField(blank=True)),
+                ("otp", models.IntegerField(blank=True)),
+                (
+                    "assigned_to",
+                    models.ForeignKey(
+                        blank=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="sellers",
+                        to="userAuth.seller",
+                    ),
+                ),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="buyers",
+                        to="userAuth.buyer",
+                    ),
+                ),
             ],
         ),
     ]

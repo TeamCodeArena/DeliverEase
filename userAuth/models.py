@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 ## this is the buyer table contains the different details about the buyer
 class Buyer(models.Model):
     name = models.CharField(max_length=64)
@@ -25,4 +26,3 @@ class Seller(models.Model):
 
     def __repr__(self) -> str:
         return f"{self.name}  {self.id} {self.email} {self.experience} {self.phoneNo}  {self.address}"
-

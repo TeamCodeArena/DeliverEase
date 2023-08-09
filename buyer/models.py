@@ -1,7 +1,9 @@
 from django.db import models
 from userAuth.models import Buyer, Seller
 from django.utils import timezone
+
 # Create your models here.
+
 
 ## It is the Job table that contains the details of the job
 class Job(models.Model):
@@ -15,12 +17,14 @@ class Job(models.Model):
     delivery_pincode = models.IntegerField()
     pickup_pincode = models.IntegerField()
     ## associate it with buyer table
-    created_by = models.ForeignKey(Buyer, on_delete=models.CASCADE,
-                                related_name='buyers')  # models.CASCADE Means delete the job if the buyer is removed
+    created_by = models.ForeignKey(
+        Buyer, on_delete=models.CASCADE, related_name="buyers"
+    )  # models.CASCADE Means delete the job if the buyer is removed
     ## associate it with seller table
-    assigned_to = models.ForeignKey(Seller, related_name='sellers', blank=True, null=True
-                                    , on_delete=models.CASCADE)
-    status = models.CharField(max_length=100, default='Pending')
+    assigned_to = models.ForeignKey(
+        Seller, related_name="sellers", blank=True, null=True, on_delete=models.CASCADE
+    )
+    status = models.CharField(max_length=100, default="Pending")
     rating = models.IntegerField(blank=True, null=True)
     otp = models.IntegerField(blank=True, null=True)
     review = models.CharField(max_length=100, null=True)
