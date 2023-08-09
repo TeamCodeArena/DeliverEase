@@ -8,18 +8,3 @@ urlpatterns = [
     path("check_order/", views.check_order, name="check_order"),
     path("get_otp/", views.get_otp, name="get_otp"),
 ]
-
-# home
-# job
-# home -> myorders -> check order
-#
-
-
-# seller
-# home
-# check job
-#
-#
-# main
-# index
-# aboutus

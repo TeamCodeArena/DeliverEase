@@ -2,10 +2,8 @@ from django.db import models
 from userAuth.models import Buyer, Seller
 from django.utils import timezone
 
-# Create your models here.
+"""It is the Job table that contains the details of the job"""
 
-
-## It is the Job table that contains the details of the job
 class Job(models.Model):
     pickup_address = models.CharField(max_length=100)
     event_date = models.DateField(default=timezone.now)  # For date only
@@ -16,11 +14,11 @@ class Job(models.Model):
     delivery_time = models.CharField(max_length=100)
     delivery_pincode = models.IntegerField()
     pickup_pincode = models.IntegerField()
-    ## associate it with buyer table
+    # associate it with buyer table
     created_by = models.ForeignKey(
         Buyer, on_delete=models.CASCADE, related_name="buyers"
     )  # models.CASCADE Means delete the job if the buyer is removed
-    ## associate it with seller table
+    # associate it with seller table
     assigned_to = models.ForeignKey(
         Seller, related_name="sellers", blank=True, null=True, on_delete=models.CASCADE
     )
@@ -30,4 +28,8 @@ class Job(models.Model):
     review = models.CharField(max_length=100, null=True)
 
     def __repr__(self) -> str:
-        return f"Job ID: {self.id} Job Status: {self.status} Job Review: {self.review} Item Type: {self.product_type} Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}"
+        return f"Job ID: {self.id} Job Status: {self.status} Job Review: {self.review} Item Type: {self.product_type} " \
+               f"Pickup Address: {self.pickup_address} Job Created: {self.date} Job OrderTag: {self.order_tag} " \
+               f"Pickup Time:{self.pickup_time} Delivery Address: {self.delivery_address} " \
+               f"Delivery Time: {self.delivery_time} Delivery Pincode: {self.delivery_pincode} " \
+               f"Pickup Pincode: {self.pickup_pincode} Created By: {self.created_by} Assigned_To: {self.assigned_to}"
