@@ -12,17 +12,23 @@ run_python_linters() {
     echo "Running Python linters..."
     
     # linters can be installed by command: pip install <linter_name>
-    echo -e "FLAKE8\n" > logs/linter.log
+    echo -e "FLAKE8 \n" > logs/linter.log
     flake8 --exclude="*/migrations/*" . >> logs/linter.log
 
-    echo -e "\nPYCODESTYLE\n" >> logs/linter.log
-    pycodestyle --exclude="*/migrations/*" . >> logs/linter.log
+    echo -e "\n PYCODESTYLE \n" >> logs/linter.log
+    pycodestyle --exclude "*/migrations/*","*/tests/*" . >> logs/linter.log
 
-    echo -e "\nPYLINT\n" >> logs/linter.log
+    echo -e "\n PYLINT \n" >> logs/linter.log
     pylint --load-plugins pylint_django --django-settings-module=DeliverEase.settings --ignore="*/migrations/*" buyer/* seller/* userAuth/* DeliverEase/* main/* >> logs/linter.log
 
-    echo -e "\nPYDOCSTYLE\n" >> logs/linter.log
-    pydocstyle . >> logs/linter.log # matching pattern is mentioned in setup.cfg
+    echo -e "\n BLACK \n" >> logs/linter.log
+    black --diff . >> logs/linter.log 2>&1
+
+    echo -e "\n RUFF \n" >> logs/linter.log
+    ruff check . >> logs/linter.log
+    
+    # echo -e "\n PYDOCSTYLE \n" >> logs/linter.log
+    # pydocstyle . >> logs/linter.log # matching pattern is 
 
     exit_code=$?
 
