@@ -13,7 +13,7 @@ def index(request):
         "email", "None"
     )  # gets the email of the buyer passed in the get request
 
-    ## this is the block  that verifies the user is actually logged into the session
+    # this is the block  that verifies the user is actually logged into the session
     if email == "None":
         if "buyer_id" in request.session:
             pass
@@ -34,8 +34,7 @@ def index(request):
 def add_job(request):
     """This function allows the buyer to visit the  page via 2 methods:
     1) GET : The seller is shown  the job form to create a new job
-    2) POST : The details entered are extracted and a job is created.
-    """
+    2) POST : The details entered are extracted and a job is created."""
     if request.method == "POST":
         # gets the id of the buyer in the session
         id = request.session["buyer_id"]
@@ -87,8 +86,8 @@ def add_job(request):
 def my_orders(request):
     """This function allows the buyer to visit the  page via 2 methods:
     1) GET : The buyer is shown all the jobs created by him
-    2) POST : The job_id of the job selected by the buyer is retrieved and saved in the session.
-    """
+    2) POST : The job_id of the job selected by the buyer is retrieved and
+    saved in the session."""
     if request.method == "POST":
         job_id = request.POST["job_id"]
         request.session["job_id"] = job_id
@@ -100,7 +99,8 @@ def my_orders(request):
             return HttpResponseRedirect("/auth/login")
 
         try:
-            del request.session["job_id"]  # deletes a job_id if exsts in the session
+            del request.session["job_id"]
+            # deletes a job_id if exsts in the session
         except:
             pass
         id = request.session["buyer_id"]
@@ -114,8 +114,8 @@ def my_orders(request):
 def check_order(request):
     """This function allows the buyer to visit the  page via 2 methods:
     1) GET : The buyer is shown the details of the job
-    2) POST : The job_id of the job selected by the buyer is retrieved and saved in the session.
-    """
+    2) POST : The job_id of the job selected by the buyer is retrieved and
+    saved in the session."""
 
     if request.method == "POST":
         return HttpResponseRedirect(reverse("get_otp"))
@@ -124,7 +124,7 @@ def check_order(request):
         pass
     else:
         return HttpResponseRedirect("/auth/login")
-    ## checks if a job_id exists in the session
+    # checks if a job_id exists in the session
     try:
         job_id = request.session["job_id"]
     except:
@@ -136,9 +136,10 @@ def check_order(request):
 
 def get_otp(request):
     """This function allows the buyer to visit the  page via 2 methods:
-    1) GET : An otp is generated and saved with the job. The buyer is shown the otp of the job if the job is assigned
-    2) POST : The review and rating by the buyer regarding the service is obtained and  saved.
-    """
+    1) GET : An otp is generated and saved with the job. The buyer is shown
+     the otp of the job if the job is assigned
+    2) POST : The review and rating by the buyer regarding the service
+    is obtained and  saved."""
 
     if request.method == "POST":
         job_id = request.session["job_id"]
