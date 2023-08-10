@@ -5,10 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{#    <link rel="stylesheet" href="{% static "buyer/buyerhomepage.css" %}">#}
+    <link rel="stylesheet" href="{% static "buyer/buyerhomepage.css" %}">
     <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "buyer/navbar.css" %}">
     <title>DeliverEase</title>
+    <style>
+        #order_button{
+            height: 80px;
+            width: 200px;
+
+        }
+        h1{
+            font-size: 50px;
+        }
+        #order_btn{
+            position: relative; /* Use relative positioning */
+            left: 200px; /* Adjust the value to move the image up */
+            top: 100px;
+            margin-top: 100px;
+        }
+        #add_img{
+            position: relative; /* Use relative positioning */
+            top: -200px; /* Adjust the value to move the image up */
+            left: -50px;
+            margin-left: 700px;
+            width: 750px;
+            }
+    </style>
 </head>
 <body>
 
@@ -33,14 +56,15 @@
               <span class="bar"></span>
           </div>
       </nav>
-      </header>
+  </header>
       <div class="container"> 
         <div class="buyerhomepage_left"> 
           <h1 class='heading'>Get something delivered.<br>Directly by them.</h1>
-          <a href="{% url "add_job" %}"><button class="btn" role="button">Order something.</button></a>
+          <a id="order_btn" href="{% url "add_job" %}" ><button id="order_button" class="btn">Place Order</button></a>
         </div>
-        <div class="image"> 
-        <img src="{% static "media/homepage.jpg" %}" alt="deliverymanImg"> </div>
+        <div id="add_img" class="image">
+         <img src="{% static "media/homepage.jpg" %}">
+        </div>
     </div>
 
   </div>

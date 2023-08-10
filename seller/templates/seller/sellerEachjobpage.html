@@ -13,7 +13,11 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
     <link rel="stylesheet" href="{% static "seller/sellerNavbar.css" %}">
 
     <link rel="stylesheet" href="{% static "seller/sellerCheckjob.css" %}">
-
+    <style>
+        #order_form{
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
 <div class="checkJob">
@@ -84,10 +88,10 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                            <h2>Deliver By:-</h2>
                            <p> {{ job.delivery_time }} </p>
                         </div>
-                         <form method="post">
-                        {% csrf_token %}
-                        <button class="btn">Apply</button>
-                   </form>
+                     <form method="post" id="order_form">
+                       {% csrf_token %}
+                        <button id="order_status_btn" class="btn">Order Status</button>
+                     </form>
 
                      </div>
                      <div>
