@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="{% static "userAuth/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "userAuth/singup_buyer.css" %}">
     <title>DeliverEase | Register</title>
+    <style>
+        #reg-button{
+            margin-left: 500px;
+        }
+
+        .already-log{
+            margin-left: 400px;
+            margin-top: 40px;
+        }
+        h1{
+            align-content: center;
+        }
+        .buyerInfo_first{
+            padding-left: 200px;
+        }
+        .buyerInfo_second{
+            padding-left: 200px;
+        }
+        #askHaveAccount{
+            text-align: center;
+            font-size: 20px;
+        }
+        #reg-ins{
+            font-size: 25px;
+        }
+
+       </style>
 </head>
 <body>
 {#    {% messages %}#}
@@ -28,8 +55,8 @@
 
       <div class='App'>
 
-        <ul>
-            <li>Please ensure that password is atleast 7 digits long</li>
+        <ul id="reg-ins">
+            <li>Please ensure that password is at-least 7 digits long</li>
             <li>first name must be  greater than single character</li>
         </ul>
         <div class='signUp'> 
@@ -40,11 +67,12 @@
                       {% csrf_token %}
                   
                   <div class="buyerInfo_first">
-                    <input type="text" name="fullName"   placeholder='Full Name' />
+
+                    <input type="text" name="fullName" id="fullName"   placeholder='Full Name' />
                     
                     
                       
-                    <input type="email" name="email"   placeholder='Billiot@example.com' />
+                    <input type="email" name="email" id="email"  placeholder='Billiot@example.com' />
                   </div>
                 
                   <div class="buyerInfo_second">
@@ -59,11 +87,13 @@
                     <textarea name="address"  autoComplete="street-address" placeholder='2639 1st Hwy, STE 7768, Pierre, South Dakota, 93567'></textarea>
                   </div>
       
-                <button class='button' type="submit">Register</button>
+                <button class='button' id="reg-button" type="submit">Register</button>
               </form>
-        
-                        <h1 class='loginhave'>Already have an account?<a href="/login">LogIn</a></h1>
-              </div>
+                  <form class="already-log" action="/auth/login">
+                      <label id="askHaveAccount" for="askHaveAccount">Already Have a account?</label>
+                      <button id="log-button" class='button' type="submit">Login</button>
+                  </form>
+                </div>
           </div>
         </div>
         
