@@ -1,11 +1,5 @@
 #!/bin/sh
 
-#########################################################################################
-#                                                                                       #
-#   In order use these commit hooks place them in the BASE_DIR/.git/hooks/<your-hook>   #
-#                                                                                       #  
-#########################################################################################
-
 commit_msg_file=$1
 
 # Fetching the first line of the commit message
