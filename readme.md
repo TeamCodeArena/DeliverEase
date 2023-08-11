@@ -90,7 +90,8 @@ We value feedback to improve our platform continuously. If you have any suggesti
 
 ## License
 <!-- TODO: Link LICENSE.md -->
-DeliverEase is released under the [**MIT License**](https://opensource.org/licenses/MIT).
+DeliverEase is released under the [**MIT License**](https://opensource.org/licenses/MIT). 
+See [**`LICENSE.md`**](LICENSE) for more information.
 
 
 ## Social Media
