@@ -16,11 +16,11 @@ To contribute to DeliverEase, please follow these guidelines:
 
 5. Or if you are using poetry, install all the dependencies to your system by: `poetry install`
 
-6. Make migrations into the Database : `python manage.py migrate`
+6. Make migrations into the Database: `python manage.py migrate`
 
 7. Run the server locally: `python manage.py  runserver`
 
-8. Check if there is a stale issue by asking out the current assignee or the maintainer about the progress of the issue or if  there is a unassigned issue.
+8. Check if there is a stale issue by asking out the current assignee or the maintainer about the progress of the issue or if there is a unassigned issue.
 
 9. In either case get the issue assigned to yourself by commenting on the issue like I would like to work on this issue please assign me and tag a maintainer, and start working on it after you are assigned the issue.
 
