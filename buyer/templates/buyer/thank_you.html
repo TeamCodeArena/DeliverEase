@@ -1,6 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <link rel="stylesheet" href="{% static 'buyer/stylesheet.css' %}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@700&display=swap');
 .main{
@@ -19,12 +23,13 @@
 }
 
 .confetti {
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 50%;
     overflow: hidden;
     z-index: 1000;
 }
@@ -152,6 +157,10 @@
     50% {opacity: 1;}
     to {-webkit-transform: translateY(350px);}
 }
+.main{
+    postion: relative;
+    top: 200px;
+}
 </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -170,9 +179,8 @@
                       <a href="/about_us" class="nav-link">About Us</a>
                   </li>
                   <li class="nav-item">
-                      <!-- <a href="#" class="btn">My Orders</a> -->
-                      <a href="{% url "my_orders" %}"><button  class="btn"> My Orders</button></a>
-                      <a href="{% url "buyer_completed_jobs" %}"><button  class="btn">Completed Jobs</button></a>
+                      <a href="{% url "my_orders" %}"><button id="order_btn" class="btn"> My Orders</button></a>
+                      <a href="{% url "buyer_completed_jobs" %}"><button id="comp_btn" class="btn">Completed Jobs</button></a>
                   </li>
               </ul>
               <div class="hamburger">
@@ -182,6 +190,8 @@
               </div>
           </nav>
       </header>
+    <h1 class='main'>Thank you!</h1>
+    <h3 class='alt' >For ordering with DeliverEase</h3>
 
     <div class="confetti">
         <div class="confetti-piece"></div>
@@ -198,7 +208,5 @@
         <div class="confetti-piece"></div>
         <div class="confetti-piece"></div>
     </div>
-    <h1 class='main'>Thank you!</h1>
-    <h3 class='alt'>For ordering with DeliverEase</h3>
 </body>
 </html>
