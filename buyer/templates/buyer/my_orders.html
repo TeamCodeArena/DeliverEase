@@ -5,9 +5,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}"></link>
-    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}"></link>
-    <link rel="stylesheet" href="{% static "buyer/myorders.css" %}"></link>
+    <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}">
+    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
+    <link rel="stylesheet" href="{% static "buyer/myorders.css" %}">
+    <style>
+        form{
+            width: 100px;
+            position: relative;
+            top: -40px;
+            right: 50px;
+            }
+
+    </style>
+
 </head>
 <body>
 <div class="App">
@@ -16,15 +26,15 @@
               <h1> DeliverEase</h1>
               <ul class="nav-menu">
                   <li class="nav-item">
-                      <a href="{% url "home" %}" class="nav-link">Home</a>
+                      <a href="{% url "index" %}" class="nav-link">Home</a>
                   </li>
                   <li class="nav-item">
                       <a href="/about_us" class="nav-link">About Us</a>
                   </li>
                   <li class="nav-item">
                       <!-- <a href="#" class="btn">My Orders</a> -->
-                      <a href="{% url "seller_orders" %}"><button  class="btn"> My Orders</button></a>
-                      <a href="{% url "completed_jobs" %}"><button  class="btn">Completed Jobs</button></a>
+                      <a href="{% url "my_orders" %}"><button  class="btn"> My Orders</button></a>
+                      <a href="{% url "buyer_completed_jobs" %}"><button  class="btn">Completed Jobs</button></a>
                   </li>
               </ul>
               <div class="hamburger">
@@ -55,11 +65,11 @@
                     <p>Delivery Address: {{ job1.delivery_address }}</p>
                     <p>Pickup Address: {{ job1.pickup_address }}</p>
                 </div>
-                <div class="job_button">
+                <div class="job_button" id="btn-area">
                     <form method="post">
                         {% csrf_token %}
                         <input value="{{ job1.id }}" name="job_id" type="hidden">
-                        <button class="btn" type="submit">Check Job</button>
+                        <button id="check-job-button" class="btn" type="submit">Check Job</button>
                     </form>
 
                 </div>
