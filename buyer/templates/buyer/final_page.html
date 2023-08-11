@@ -27,8 +27,33 @@
     align-items: center;
     color: var(--font-color);
 }
+
 .finalpage_msg{
     padding: 2rem;
+}
+
+#userInput{
+    font-family: sans-serif;
+    font-size: 25px;
+    padding: 50px;
+    position: relative;
+    left: -30px;
+}
+#buyerRating{
+
+    position: relative;
+    left: 10px;
+}
+.form-control{
+    font-size: 25px;
+}
+#buyer-rating{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.seller_info{
+    font-family: sans-serif;
+    font-size: 30px;
 }
     </style>
     <meta charset="UTF-8">
@@ -69,19 +94,25 @@
 <div class="seller_details">
 
                   <div class="seller_info">
-                      <h2>Seller Info: <br>
-                         Name: {{ job.assigned_to.name }}
-                         <br>
-                         Email: {{ job.assigned_to.email }}
-                         <br>
-                         Phone No. : {{ job.assigned_to.phone_no }}</h2>
-
-        <p> otp: {{ otp }}</p>
-<form method="post">
-    {% csrf_token %}
-  <input type="text" name="review"   placeholder='Review' />
-  <input type="number" name="rating"   placeholder='Rating'/>
-  <button class="btn">send</button>
+                  <ul>
+                      <li>Seller Info:</li>
+                      <li>Name: {{ job.assigned_to.name }}</li>
+                      <li>Email: {{ job.assigned_to.email }}</li>
+                      <li>Phone No : {{ job.assigned_to.phone_no }}</li>
+                      <li> OTP: {{ otp }}</li>
+                  </ul></div>
+<form id="userInput" method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="userReview" class="form-label">Review:</label>
+    <input type="text" name="review" class="form-control" id="buyerReview">
+  </div>
+  <div class="mb-3" id="buyer-rating">
+    <label for="userRating"  class="form-label">Rating:</label>
+    <input type="number"  name="rating" class="form-control" id="buyerRating">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 {% else %}
     <div class="finalPage">
         <div class="finalpage_message">

@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="{% static  'main/style.css'%}">
     <link rel="stylesheet" href="{% static  'main/Navbar.css'%}">
     <link rel="stylesheet" href="{% static  'main/indexcontainer.css'%}">
-
+    <style>
+        img{
+            padding: 80px;
+            width: 300px;
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
     <div class="App">
@@ -52,7 +58,7 @@
               </div>
       
               <div class='right'>
-                  <img src="/static/indexPageImg.png" alt="homepageimg" />
+                  <img src="{% static "media/homepage.jpg" %}" alt="homepageimg"  />
               </div>
       
             </div>

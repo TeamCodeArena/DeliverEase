@@ -11,7 +11,20 @@
     <link rel="stylesheet" href="{% static "seller/Navbar.css" %}">
     <link rel="stylesheet" href="{% static "seller/sellerNavbar.css" %}">
     <link rel="stylesheet" href="{% static "seller/sellerCheckjob.css" %}">
-
+    <style>
+        #submit-btn{
+            width: 200px;
+            height: 50px;
+        }
+        #otp_label{
+            font-size: 25px;
+            background-color: white;
+        }
+        #order_form{
+            background-color: white;
+            color:
+        }
+    </style>
 </head>
 <body>
 
@@ -85,13 +98,11 @@
                            <p> {{ job.delivery_time }} </p>
                         </div>
                      <p> After the delivery is complete Enter the OTP taking it from the Buyer to complete the Delivery.</p>
-                   <form method="post">
+                   <form id="order_form" method="post">
                         {% csrf_token %}
-                    <input type="text" name="otp"   placeholder='Enter the OTP' />
-                    <button class="btn">Complete Delivery</button>
-
-                     </div>
-
+                    <label id="otp_label">OTP</label>
+                    <input type="text" name="otp">
+                    <button type="submit" id="submit-btn" class="btn">Complete Delivery</button>
                    </form>
                      <div>
                         <p>Please don't drive faster than 40KM, take your time, the time we told you is just the customer expectations, we never promote, deliver time.</p>
