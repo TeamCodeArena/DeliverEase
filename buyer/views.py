@@ -110,6 +110,23 @@ def my_orders(request):
             request, "buyer/my_orders.html", {"jobs": all_job, "buyer": buyer}
         )
 
+def completed_orders(request):
+    """This function allows the buyer to visit the  page via a GET method:
+        1) GET : The buyer is shown the reviews and rating and list of all the
+        jobs he has completed"""
+    if "buyer_id" in request.session:
+        pass
+    else:
+        return HttpResponseRedirect("/auth/login")
+
+    id = request.session["buyer_id"]
+    current_user = Buyer.objects.get(pk=id)
+    jobs = Job.objects.filter(created_by=current_user, status="Completed")
+    for job in jobs:
+        print(job.assigned_to.id)
+        print(job.status)
+    return render(request, "buyer/buyer_completed_jobs.html", {"jobs": jobs})
+
 
 def check_order(request):
     """This function allows the buyer to visit the  page via 2 methods:
