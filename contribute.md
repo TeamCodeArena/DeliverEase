@@ -12,9 +12,9 @@ To contribute to DeliverEase, please follow these guidelines:
 
 3. Create a virtual environment 
 
-4. IF you are using virtualenv, install all the dependencies to your system by: `pip install -r requirements.txt`.
+4. If you are using virtualenv, install all the dependencies to your system by: `pip install -r requirements.txt`.
 
-5. OR if you are using poetry, install all the dependencies to your system by: `poetry install`
+5. Or if you are using poetry, install all the dependencies to your system by: `poetry install`
 
 6. Make migrations into the Database : `python manage.py migrate`
 
@@ -40,15 +40,15 @@ To contribute to DeliverEase, please follow these guidelines:
 
 17. Write clear and concise commit messages for your changes and add GH-(issue number) for ex.add  GH-9 in the end of commit message  if you are working on issue 9.
 
-18. Add the remote upstream branch to git :  `git remote add upstream https://github.com/TeamCodeArena/DeliverEase`
+18. Add the remote upstream branch to git: `git remote add upstream https://github.com/TeamCodeArena/DeliverEase`
 
 19. Fetch all the updates in the remote branch while you were working on the issue: `git fetch upstream`
 
 20. Merge your local  branch with the remote branch: `git merge upstream/main`.
 
-21. Add a remote origin : `git remote add origin <link_to_your_forked_copy>` 
+21. Add a remote origin: `git remote add origin <link_to_your_forked_copy>` 
 
-22. Push your changes to the new branch : `git push origin <name_of_ur_current_branch>`
+22. Push your changes to the new branch: `git push origin <name_of_ur_current_branch>`
 
 23. Go to your forked repo on Github and you will see a option to create a PR. select the option and create a PR.
 
