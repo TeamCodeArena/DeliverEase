@@ -1,17 +1,14 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{% static "seller/style.css" %}">
     <link rel="stylesheet" href="{% static "seller/Navbar.css" %}">
     <link rel="stylesheet" href="{% static "seller/sellerNavbar.css" %}">
-
     <link rel="stylesheet" href="{% static "seller/sellerCheckjob.css" %}">
     <style>
         #order_form{
@@ -55,11 +52,6 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
                     </div>
 
 
-{#                  <div class="buyer_image">#}
-{#                     <!-- <img src="{{ url_for('static', filename='user.png') }}" alt="buyerImg">#}
-{#                     <img src="/static/buyer.jpeg" alt="buyerimage" > -->#}
-{#                     <img src="{{ url_for('static', filename='buyer.jpeg') }}" alt="buyerImg">#}
-{#                  </div>#}
                   <div class="buyer_info">
                      <h2>Buyer Information<br>
                          Name: {{ job.created_by.name }}<br>
