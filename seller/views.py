@@ -126,7 +126,7 @@ def complete_delivery(request):
     # This is executed on a post request to the page
 
     if request.method == "POST":
-        otp = request.POST["otp"]  # retrives the otp entered by the seller
+        otp = request.POST.get("otp")  # retrieves the otp entered by the seller
         try:
             otp = int(otp)
 

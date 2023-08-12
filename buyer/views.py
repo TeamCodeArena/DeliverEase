@@ -150,6 +150,8 @@ def check_order(request):
     job = Job.objects.get(pk=job_id)
     return render(request, "buyer/check_order.html", {"job": job})
 
+def thank_you(request):
+    return render(request, "buyer/thank_you.html")
 
 def get_otp(request):
     """This function allows the buyer to visit the  page via 2 methods:
@@ -171,7 +173,8 @@ def get_otp(request):
             print(get_job)
             print(review, rating)
             return HttpResponseRedirect(reverse("get_otp"))
-        return render(request, "buyer/thank_you.html")
+        return HttpResponseRedirect(reverse('thank_you'))
+
     if "buyer_id" in request.session:
         pass
     else:
