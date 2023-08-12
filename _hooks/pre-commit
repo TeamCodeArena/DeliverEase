@@ -59,12 +59,14 @@ run_python_linters() {
             fi
         fi
 
-        if [[ $(uname -s) == "Linux" || $(uname -s) == "Darwin" ]]; then # for linux and MacOS
-            cat logs/linter.log
-        elif [[ $(uname -s) == "MINGW"* ]]; then  # Windows
-            type logs/linter.log
-        fi 
     done
+    
+    if [[ $(uname -s) == "Linux" || $(uname -s) == "Darwin" ]]; then # for linux and MacOS
+        cat logs/linter.log
+    elif [[ $(uname -s) == "MINGW"* ]]; then  # Windows
+        type logs/linter.log
+    fi 
+
     if [[ $fail != false ]]; then
         echo "Python linters failed, Commit aborted."
         echo "Please check terminal or logs in logs/linters.log"
