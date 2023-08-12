@@ -54,7 +54,7 @@ To contribute to DeliverEase, please follow these guidelines:
 
 24. Provide a detailed description of your changes in the pull request, including the problem you are solving, the approach you took, and any relevant information for reviewers.
 
-25. Attach an issue number in the description while creating the PR so that GitHub can automatically link it to the issue. For. ex: add #9 if you are making PR for issue number 9 and also make sure to tag @SID262000. So that he can be notified about your PR and review it accordingly.
+25. Attach an issue number in the description while creating the PR so that GitHub can automatically link it to the issue. For. ex: add #9 if you are making PR for issue number 9 and also make sure to tag **@SID262000**. So that he can be notified about your PR and review it accordingly.
 
 26. Be responsive to feedback and comments on your pull request. If changes are requested, make the necessary adjustments.
 
@@ -72,7 +72,7 @@ To maintain a consistent codebase, we follow specific code style and guidelines.
 - Include comments where necessary to explain complex logic or processes.
 
 ## Join our Mailing List
-Slack Group: https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g
+[**Click on this link to join our Slack Community**](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g)
 
 ## Reporting Issues
 
@@ -82,7 +82,7 @@ If you come across any issues, bugs, or have suggestions for improvements, pleas
 ## Code of Conduct
 
 We expect all contributors to adhere to our Code of Conduct, which promotes a welcoming and inclusive community. Please be respectful and considerate of others' opinions and contributions.
-Please Checkout [`**CODE_OF_CONDUCT**`](CODE_OF_CONDUCT.md)
+Please Checkout [**`CODE_OF_CONDUCT`**](CODE_OF_CONDUCT.md).
 
 
 ## Thank You
