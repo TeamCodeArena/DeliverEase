@@ -70,25 +70,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <script>
-            const hamburger = document.querySelector(".hamburger");
-            const navMenu = document.querySelector(".nav-menu");
-            const navLink = document.querySelectorAll(".nav-link");
-
-            hamburger.addEventListener("click", mobileMenu);
-            navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-            function mobileMenu() {
-                hamburger.classList.toggle("active");
-                navMenu.classList.toggle("active");
-            }
-
-            function closeMenu() {
-                hamburger.classList.remove("active");
-                navMenu.classList.remove("active");
-            }
-    </script>
-
+    <script src="{% static "main_js/index.js" %}"></script>
     
 </body>
 </html>
