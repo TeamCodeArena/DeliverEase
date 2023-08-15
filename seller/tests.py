@@ -3,7 +3,7 @@ from django.db.models import Max
 from buyer.models import Job, Seller, Buyer
 from django.urls import reverse
 
-class RedirectingWithoutUserLogin(TestCase):
+class RedirectingToSellerPagesWithoutUserLogin(TestCase):
     def test_home(self):
         c = Client()
         response = c.get(reverse("home"))
@@ -29,7 +29,26 @@ class RedirectingWithoutUserLogin(TestCase):
         response = c.get(reverse("complete_delivery"))
         self.assertRedirects(response, reverse("login"))
 
-class RedirectingWithoutJobCredentials(TestCase):
+class RedirectingToSellerPagesWithoutJobCredentials(TestCase):
+    def setUp(self):
+        c = Client()
+        s1 = Seller.objects.create(
+            name="Aryan Gupta",
+            password="hiaryan",
+            address="ghar pr",
+            phone_no="9999",
+            email="aryan@seller",
+            experience="None"
+        )
+        s2 = Seller.objects.create(
+            name="Aryan Gupta",
+            password="hiaryan",
+            address="ghar pr",
+            phone_no="9999",
+            email="aryan@new_seller",
+            experience="None"
+        )
+
     def test_job_details(self):
         c = Client()
         session = c.session
