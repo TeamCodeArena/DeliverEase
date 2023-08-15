@@ -15,6 +15,8 @@ class Buyer(models.Model):
         return f"{self.name}  {self.id} {self.email} {self.phone_no} " \
                f"{self.email} {self.address}"
 
+    def is_valid_buyer(self):
+        return len(email) > 4 and name > 2 and len(password) > 7
 
 # this is the seller table contains the different details about the seller
 class Seller(models.Model):
@@ -28,3 +30,7 @@ class Seller(models.Model):
     def __repr__(self) -> str:
         return f"{self.name}  {self.id} {self.email} {self.experience}" \
                f" {self.phone_no}  {self.address}"
+
+    def is_valid_seller(self):
+        return len(email) > 4 and name > 2 and len(password) > 7
+
