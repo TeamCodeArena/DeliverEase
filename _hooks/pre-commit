@@ -26,7 +26,7 @@ run_python_linters() {
         if [ $exit_code -ne 0 ]; then
             read -p "Install $linter?[y/n] " answer 
             if [[ $answer =~ ^[Yy] ]]; then
-                python3 -m pip install $linter || exit 1
+                python -m pip install $linter || exit 1
             else
                 echo "Requirements not met, commit aborted."
                 exit 1
@@ -47,19 +47,19 @@ run_python_linters() {
             echo -e "File Path: $file\n" >> logs/linter.log
 
             echo -e "FLAKE8:" >> logs/linter.log
-            python3 -m flake8 $file >> logs/linter.log
+            python -m flake8 $file >> logs/linter.log
 
             echo -e "PYCODESTYLE:" >> logs/linter.log
-            python3 -m pycodestyle $file >> logs/linter.log
+            python -m pycodestyle $file >> logs/linter.log
 
             echo -e "PYLINT:" >> logs/linter.log
-            python3 -m pylint $file >> logs/linter.log
+            python -m pylint $file >> logs/linter.log
 
             echo -e "BLACK:" >> logs/linter.log
-            python3 -m black --diff $file >> logs/linter.log 2>&1
+            python -m black --diff $file >> logs/linter.log 2>&1
 
             echo -e "RUFF:" >> logs/linter.log
-            python3 -m ruff check $file >> logs/linter.log
+            python -m ruff check $file >> logs/linter.log
 
             # echo -e "\n PYDOCSTYLE \n" >> logs/linter.log
             # pydocstyle . >> logs/linter.log 
@@ -72,7 +72,7 @@ run_python_linters() {
 
     done
     
-    cat logs/linter.log
+    cat logs/linter.log 
 
     if [[ $fail != false ]]; then
         echo "Python linters failed, Commit aborted."
