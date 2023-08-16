@@ -112,11 +112,11 @@ def user_login(email, password):
             url += f"/?email={email}"
             return url, message
         else:
-            url = "/auth/login"
+            url = "/auth/login/"
             message = "Incorrect password, try again."
             return url, message
     if user_type == "None":
-        url = "/auth/login"
+        url = "/auth/login/"
         message = "Account does not exist."
         return url, message
 
@@ -231,3 +231,4 @@ def login_user(request):
             pass
         pass
     return render(request, "userAuth/login.html")
+
