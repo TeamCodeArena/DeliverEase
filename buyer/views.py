@@ -1,10 +1,12 @@
+"""This module contains views related to the Buyer app"""
 from django.shortcuts import render
+import random
 from userAuth.models import Buyer, Seller
 from .models import Job
 from django.http import HttpResponseRedirect
-import random
 from django.urls import reverse
 
+#pylint : disable = W6022
 
 def index(request):
     """This function allows the buyer to visit the home page via GET method"""
@@ -117,8 +119,8 @@ def my_orders(request):
 
 def completed_orders(request):
     """This function allows the buyer to visit the  page via a GET method:
-        1) GET : The buyer is shown the reviews and rating and list of all the
-        jobs he has completed"""
+    1) GET : The buyer is shown the reviews and rating and list of all the
+    jobs he has completed"""
     if "buyer_id" in request.session:
         pass
     else:
@@ -185,7 +187,7 @@ def get_otp(request):
             print(get_job)
             print(review, rating)
             return HttpResponseRedirect(reverse("get_otp"))
-        return HttpResponseRedirect(reverse('thank_you'))
+        return HttpResponseRedirect(reverse("thank_you"))
 
     if "buyer_id" in request.session:
         pass
