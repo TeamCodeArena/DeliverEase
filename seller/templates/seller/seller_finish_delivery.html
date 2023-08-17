@@ -74,7 +74,7 @@
                      <h2>Buyer Information<br>
                          Name: {{ job.created_by.name }}<br>
                          Email: {{ job.created_by.email }}<br>
-                         Phone No. : {{ job.created_by.phoneNo }}</h2>
+                         Phone No. : {{ job.created_by.phone_no }}</h2>
                   </div>
               </div>
 
@@ -87,7 +87,7 @@
 
                         <div>
                            <h2>Collect the Delivery At :-</h2>
-                           <p>{{ job.pickup_time }}</p>
+                           <p>{{job.pickup_date}} at {{ job.pickup_time }} </p>
                         </div>
                         <div>
                            <h2>Deliver At :-</h2>
@@ -96,7 +96,7 @@
 
                         <div>
                            <h2>Deliver By:-</h2>
-                           <p> {{ job.delivery_time }} </p>
+                           <p> {{job.delivery_date}} at {{ job.delivery_time }} </p>
                         </div>
                      <p> After the delivery is complete Enter the OTP taking it from the Buyer to complete the Delivery.</p>
                    <form id="order_form" method="post">
