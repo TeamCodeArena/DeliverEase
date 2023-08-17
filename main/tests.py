@@ -1,5 +1,4 @@
 from django.test import TestCase, Client
-from django.db.models import Max
 
 class MainTestCase(TestCase):
     def test_index_page(self):
