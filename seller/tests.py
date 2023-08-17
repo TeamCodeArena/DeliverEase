@@ -1,5 +1,4 @@
 from django.test import TestCase, Client
-from django.db.models import Max
 from buyer.models import Job, Seller, Buyer
 from django.urls import reverse
 
