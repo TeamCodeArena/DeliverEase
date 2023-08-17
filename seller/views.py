@@ -133,8 +133,10 @@ def complete_delivery(request):
         job_id = request.session["job_id"]
         job = Job.objects.get(pk=job_id)
         if job.otp is None:
-            message = "Please ask the Buyer to generate to " \
-                      "check the order status and generate otp"
+            message = (
+                    "Please ask the Buyer to generate to "
+                     "check the order status and generate OTP"
+                    )
         # job is completed if the otp is correct else he is asked again to
         # re-enter the otp
         if job.otp:
@@ -171,9 +173,8 @@ def complete_delivery(request):
     job.assigned_to = current_seller
     job.status = "In Progress"
     job.save()
-    return render(request, "seller/seller_finish_delivery.html", {
-        "job": job
-    })
+    return render(request, "seller/seller_finish_delivery.html", {"job": job})
+
 
 
 def completed_jobs(request):
