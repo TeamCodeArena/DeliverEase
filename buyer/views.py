@@ -6,7 +6,8 @@ from .models import Job
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-#pylint : disable = W6022
+# pylint:disable=W6022
+
 
 def index(request):
     """This function allows the buyer to visit the home page via GET method"""
