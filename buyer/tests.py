@@ -158,7 +158,9 @@ class BuyerTestCase(TestCase):
             pickup_pincode=23453,
             created_by=b1,
             assigned_to=s1,
-            status="In Progress"
+            status="In Progress",
+            delivery_date="12 August",
+            pickup_date="10 August"
         )
 
         # unassigned job
@@ -169,7 +171,9 @@ class BuyerTestCase(TestCase):
             pickup_time="10pm",
             delivery_pincode=14234,
             pickup_pincode=23453,
-            created_by=b1
+            created_by=b1,
+            delivery_date="12 August",
+            pickup_date="10 August"
         )
 
         job3 = Job.objects.create(
@@ -181,7 +185,9 @@ class BuyerTestCase(TestCase):
             pickup_pincode=23453,
             created_by=b2,
             assigned_to=s2,
-            status="In Progress"
+            status="In Progress",
+            delivery_date="12 August",
+            pickup_date="10 August"
         )
         job4 = Job.objects.create(
             pickup_address="home",
@@ -192,7 +198,9 @@ class BuyerTestCase(TestCase):
             pickup_pincode=23453,
             created_by=b2,
             assigned_to=s4,
-            status="In Progress"
+            status="In Progress",
+            delivery_date="12 August",
+            pickup_date="10 August"
         )
         job5 = Job.objects.create(
             pickup_address="home",
@@ -203,7 +211,9 @@ class BuyerTestCase(TestCase):
             pickup_pincode=23432453,
             created_by=b1,
             assigned_to=s4,
-            status="In Progress"
+            status="In Progress",
+            delivery_date="12 August",
+            pickup_date="10 August"
         )
         job6 = Job.objects.create(
             pickup_address="home",
@@ -214,7 +224,9 @@ class BuyerTestCase(TestCase):
             pickup_pincode=23432453,
             created_by=b1,
             assigned_to=s5,
-            status="Completed"
+            status="Completed",
+            delivery_date="12 August",
+            pickup_date="10 August"
         )
         job7 = Job.objects.create(
             pickup_address="home",
@@ -225,7 +237,9 @@ class BuyerTestCase(TestCase):
             pickup_pincode=23453,
             created_by=b4,
             assigned_to=s1,
-            status="In Progress"
+            status="In Progress",
+            delivery_date="12 August",
+            pickup_date="10 August"
         )
     def test_home_page_redirect_from_other_page(self):
         c = Client()

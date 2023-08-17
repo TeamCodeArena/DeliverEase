@@ -1,12 +1,10 @@
 """This module contains views related to the Buyer app"""
-from django.shortcuts import render
 import random
-from userAuth.models import Buyer, Seller
-from .models import Job
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-
-# pylint:disable=W6022
+from userAuth.models import Buyer, Seller
+from .models import Job
 
 
 def index(request):
@@ -49,10 +47,10 @@ def add_job(request):
         try:
             pickup_address = request.POST["pickup_address"]
             pickup_time1 = request.POST["pickup_time"]
-            request.POST["pickup_date"]
+            pickup_date = request.POST["pickup_date"]
             delivery_address = request.POST["delivery_address"]
             delivery_time1 = request.POST["delivery_time"]
-            request.POST["delivery_date"]
+            delivery_date = request.POST["delivery_date"]
             delivery_pincode = request.POST["delivery_pincode"]
             pickup_pincode = request.POST["pickup_pincode"]
         except Exception:
@@ -65,6 +63,8 @@ def add_job(request):
             return HttpResponseRedirect(reverse("add_job"))
         try:
             new_job = Job(
+                delivery_date=delivery_date,
+                pickup_date=pickup_date,
                 pickup_address=pickup_address,
                 pickup_time=pickup_time1,
                 delivery_address=delivery_address,
@@ -160,6 +160,7 @@ def check_order(request):
 
 
 def thank_you(request):
+    """This function greets the buyer with a Thank You after the job is completed."""
     if "buyer_id" in request.session:
         pass
     else:
@@ -216,5 +217,5 @@ def get_otp(request):
         return render(
             request,
             "buyer/final_page.html",
-            {"seller": seller, "otp": otp, "job": get_job},
+            {"seller": seller, "otp": otp, "job": get_job}
         )

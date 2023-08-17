@@ -1,11 +1,11 @@
+"""This module contains the views for the UserAuth app"""
 from django.shortcuts import render
-from .models import Buyer, Seller
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-# change confPassword, workExperience, phone_no to underscore separated
+from .models import Buyer, Seller
 
-# Create your views here.
+
 def check_user_exists(email):
     """This function makes sure that the user who is trying to register with a
     email doesn't exists already in the table"""
@@ -132,7 +132,7 @@ def buyer_signup(request):
         phone_no = request.POST["phone_no"]
         email = request.POST["email"]
         address = request.POST["address"]
-        ## register the buyer on our web
+        # register the buyer on our web
         try:
             url, message = user_signup(
                 username=username,
@@ -156,10 +156,10 @@ def buyer_signup(request):
     try:
         del request.session["buyer_id"]
 
-    except:
+    except Exception:
         try:
             del request.session["id"]
-        except:
+        except Exception:
             pass
 
     return render(request, "userAuth/buyerSignup.html")
@@ -172,7 +172,7 @@ def seller_signup(request):
         username = request.POST["fullName"]
         password = request.POST["password"]
         conf_password = request.POST["conf_password"]
-        phone_no= request.POST["phone_no"]
+        phone_no = request.POST["phone_no"]
         email = request.POST["email"]
         work_experience = request.POST["work_experience"]
         address = request.POST["address"]
@@ -187,7 +187,7 @@ def seller_signup(request):
                 user_type="Seller",
                 experience=work_experience,
             )
-        except:
+        except Exception:
             return HttpResponseRedirect(reverse("seller_signup"))
         messages.warning(request, message)
         return HttpResponseRedirect(url)
@@ -195,10 +195,10 @@ def seller_signup(request):
     try:
         del request.session["buyer_id"]
 
-    except:
+    except Exception:
         try:
             del request.session["id"]
-        except:
+        except Exception:
             pass
 
     return render(request, "userAuth/sellerSignup.html")
@@ -216,19 +216,18 @@ def login_user(request):
         # authenticates the user and redirect it to the actual page
         try:
             url, message = user_login(email=email, password=password)
-        except:
+        except Exception:
             return HttpResponseRedirect(reverse("login"))
         messages.warning(request, message)
         print(f"url: {url}")
         return HttpResponseRedirect(url)
     try:
         del request.session["id"]
-    except:
+    except Exception:
         try:
             del request.session["buyer_id"]
 
-        except:
+        except Exception:
             pass
         pass
     return render(request, "userAuth/login.html")
-
