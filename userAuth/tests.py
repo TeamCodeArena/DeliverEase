@@ -57,7 +57,7 @@ class BuyerAuthTestCase(TestCase):
         self.assertEqual(buyer.phone_no, '1234567890')
         self.assertEqual(buyer.address, '123 Main St')
 
-    def test_buyer_page_on_already_registered_email(self):
+    def test_buyer_signup_page_on_already_registered_email(self):
         c = Client()
         data2 = {
             'fullName': 'John Doe',
@@ -137,7 +137,7 @@ class SellerAuthTestCase(TestCase):
         self.assertEqual(seller.address, '123 Main St')
         self.assertEqual(seller.experience, 'None')
 
-    def test_buyer_page_on_already_registered_email(self):
+    def test_seller_page_on_already_registered_email(self):
         c = Client()
         data2 = {
             "fullName": "John Doe",
@@ -237,3 +237,12 @@ class UserLoginTestCase(TestCase):
             response = c.post(reverse("login"), data)
             self.assertRedirects(response, reverse('login'))
 
+    def test_not_existing_user(self):
+        c = Client()
+        data = {
+            "email": "aryan@buyer3",
+            "password": "hiaryan2"
+        }
+        response = c.post(reverse("login"), data)
+        self.assertRedirects(response, reverse('login'))
+        self.assertEquals(response.status_code, 302)

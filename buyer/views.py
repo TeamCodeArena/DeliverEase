@@ -187,7 +187,6 @@ def get_otp(request):
             get_job.save()
         except Exception:
             print(get_job)
-            print(review, rating)
             return HttpResponseRedirect(reverse("get_otp"))
         return HttpResponseRedirect(reverse("thank_you"))
 
