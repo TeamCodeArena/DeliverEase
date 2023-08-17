@@ -13,7 +13,8 @@ def index(request):
         "email", "None"
     )  # gets the email of the buyer passed in the get request
 
-    # this is the block  that verifies the user is actually logged into the session
+    # this is the block  that verifies the user is actually logged into the
+    #  session
     if email == "None":
         if "buyer_id" in request.session:
             pass
@@ -22,7 +23,7 @@ def index(request):
 
     try:
         buyer = Buyer.objects.get(email=email)
-    except:
+    except Exception:
         id = request.session["buyer_id"]
         buyer = Buyer.objects.get(pk=id)
     else:
