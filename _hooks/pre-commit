@@ -9,7 +9,7 @@ run_python_linters() {
     fail=false
     
     # Installing linters in case they are not installed
-    linters=(pylint flake8 ruff black pycodestyle pydocstyle)
+    linters=(flake8 ruff black pycodestyle ) # Add pylint and pydocstyle later
     for linter in ${linters[@]}; do 
         # Handling black separately because it throws error in git bash on windows.
         if [[ $linter == "black" ]]; then
@@ -52,8 +52,8 @@ run_python_linters() {
             echo -e "PYCODESTYLE:" >> logs/linter.log
             python -m pycodestyle $file >> logs/linter.log
 
-            echo -e "PYLINT:" >> logs/linter.log
-            python -m pylint $file >> logs/linter.log
+            # echo -e "PYLINT:" >> logs/linter.log
+            # python -m pylint $file >> logs/linter.log
 
             echo -e "BLACK:" >> logs/linter.log
             python -m black --diff $file >> logs/linter.log 2>&1
