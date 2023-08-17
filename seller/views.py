@@ -1,11 +1,8 @@
+"""this module contains the seller views"""
 from django.shortcuts import render
-from buyer.models import Seller, Job
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-
-# Create your views here.
-
-# the functions in this file are executed on visiting the seller's urls
+from buyer.models import Seller, Job
 
 
 def home(request):
@@ -38,7 +35,7 @@ def home(request):
         # so that the seller id is accessible in all the pages
         try:
             seller = Seller.objects.get(email=email)
-        except:
+        except Exception:
             id = request.session["id"]
             seller = Seller.objects.get(pk=id)
         else:
@@ -77,7 +74,7 @@ def my_orders(request):
     try:
         del request.session["job_id"]  # to delete the job id stored currently
         # so that a new one can be stored
-    except:
+    except Exception:
         pass
 
     id = request.session["id"]  # get the id of the current
@@ -110,7 +107,7 @@ def job_details(request):
     # this code is executed when the seller enters with a GET request
     try:
         job_id = request.session["job_id"]
-    except:
+    except Exception:
         return HttpResponseRedirect(reverse("seller_orders"))
 
     job = Job.objects.get(pk=job_id)
@@ -126,17 +123,20 @@ def complete_delivery(request):
     # This is executed on a post request to the page
 
     if request.method == "POST":
-        otp = request.POST.get("otp")  # retrieves the otp entered by the seller
+        otp = request.POST.get("otp")  # retrieves the otp entered by the
+        # seller
         try:
             otp = int(otp)
 
-        except:
+        except Exception:
             return HttpResponseRedirect(reverse("complete_delivery"))
         job_id = request.session["job_id"]
         job = Job.objects.get(pk=job_id)
         if job.otp is None:
-            message = "Please ask the Buyer to generate to " \
-                      "check the order status and generate otp"
+            message = (
+                    "Please ask the Buyer to generate to "
+                     "check the order status and generate OTP"
+                    )
         # job is completed if the otp is correct else he is asked again to
         # re-enter the otp
         if job.otp:
@@ -164,7 +164,7 @@ def complete_delivery(request):
         return HttpResponseRedirect("/auth/login/")
     try:
         job_id = request.session["job_id"]
-    except:
+    except Exception:
         return HttpResponseRedirect(reverse("seller_orders"))
     id = request.session["id"]
     job = Job.objects.get(pk=job_id)
@@ -173,9 +173,8 @@ def complete_delivery(request):
     job.assigned_to = current_seller
     job.status = "In Progress"
     job.save()
-    return render(request, "seller/seller_finish_delivery.html", {
-        "job": job
-    })
+    return render(request, "seller/seller_finish_delivery.html", {"job": job})
+
 
 
 def completed_jobs(request):
