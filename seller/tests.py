@@ -153,24 +153,13 @@ class SellerTestCase(TestCase):
             assigned_to=s2,
             status="In Progress"
         )
-        job3 = Job.objects.create(
+        job4 = Job.objects.create(
             pickup_address="home",
             delivery_address="office",
             delivery_time="5pm",
             pickup_time="10pm",
             delivery_pincode=14234,
             pickup_pincode=23453,
-            created_by=b1,
-            assigned_to=s4,
-            status="In Progress"
-        )
-        job4 = Job.objects.create(
-            pickup_address="home",
-            delivery_address="office",
-            delivery_time="5pm",
-            pickup_time="10pm",
-            delivery_pincode=242234,
-            pickup_pincode=23432453,
             created_by=b1,
             assigned_to=s4,
             status="In Progress"
@@ -183,9 +172,33 @@ class SellerTestCase(TestCase):
             delivery_pincode=242234,
             pickup_pincode=23432453,
             created_by=b1,
+            assigned_to=s4,
+            status="In Progress"
+        )
+        job6 = Job.objects.create(
+            pickup_address="home",
+            delivery_address="office",
+            delivery_time="5pm",
+            pickup_time="10pm",
+            delivery_pincode=242234,
+            pickup_pincode=23432453,
+            created_by=b1,
             assigned_to=s5,
             status="Completed"
         )
+        job7 = Job.objects.create(
+            pickup_address="home",
+            delivery_address="office",
+            delivery_time="5pm",
+            pickup_time="10pm",
+            delivery_pincode=14234,
+            pickup_pincode=23453,
+            created_by=b1,
+            assigned_to=s1,
+            status="In Progress",
+            otp=1234
+        )
+
     def test_home_page_redirect_from_other_page(self):
         c = Client()
 
@@ -208,6 +221,18 @@ class SellerTestCase(TestCase):
         self.assertEquals(response2.status_code, 200)
         self.assertEquals(response2.context["jobs"].count(), 1)
         self.assertTemplateUsed(response2, "seller/jobs.html")
+
+    def test_home_page_post(self):
+        c = Client()
+        session = c.session
+        s1 = Seller.objects.get(pk=3)
+
+        session["id"] = s1.id
+        session.save()
+        response2 = c.post(reverse('home'), data={"job_id": 1})
+
+        self.assertEquals(response2.status_code, 302)
+        self.assertRedirects(response2, reverse("job_details"))
 
     def test_my_orders_page_without_jobs(self):
         c = Client()
@@ -303,8 +328,24 @@ class SellerTestCase(TestCase):
         job1 = Job.objects.get(pk=1)
         session["job_id"] = job1.id
         session.save()
-        response = c.post(reverse("complete_delivery"), {"otp": "2342234"})
-        self.assertEquals(response.status_code, 200)
+        response = c.post(reverse("complete_delivery"), {"otp": "2342234f"})
+        self.assertEquals(response.status_code, 302)
+        self.assertRedirects(response, reverse("complete_delivery"))
+
+    def test_complete_delivery_page_postReq_with_valid_otp(self):
+        c = Client()
+        session = c.session
+        b1 = Buyer.objects.get(pk=1)
+        session["buyer_id"] = b1.id
+        job1 = Job.objects.get(pk=7)
+        session["job_id"] = job1.id
+
+        s1 = Seller.objects.get(pk=2)
+        session["id"] = s1.id
+        session.save()
+        response = c.post(reverse("complete_delivery"), {"otp": job1.otp})
+        self.assertEquals(response.status_code, 302)
+        self.assertRedirects(response, reverse("completed_jobs"))
 
 
     def test_completed_jobs_get(self):

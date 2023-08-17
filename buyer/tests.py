@@ -294,7 +294,7 @@ class BuyerTestCase(TestCase):
             "pickup_address": "ghar se",
             "pickup_time": "7 pm",
             "pickup_date": "12 July",
-            "delivery_address": "tere ghar pr",
+            "delivery_address": "mere ghar pr",
             "delivery_time": "4 pm",
             "delivery_date": "15 July",
             "delivery_pincode": "432f423",
@@ -401,6 +401,68 @@ class BuyerTestCase(TestCase):
         response = c.get(reverse("get_otp"))
         self.assertTemplateUsed(response, "buyer/final_page.html")
         self.assertEquals(response.status_code, 200)
+
+    def test_job_otp_page_with_post_request_without_review(self):
+        c = Client()
+        session = c.session
+        b1 = Buyer.objects.get(pk=1)
+        session["buyer_id"] = b1.id
+        session.save()
+        job1 = Job.objects.get(pk=2)
+        session["job_id"] = job1.id
+        session.save()
+        data = {
+            "rating": "3"
+        }
+        response = c.post(reverse("get_otp"), data)
+        self.assertRedirects(response, reverse("get_otp"))
+        self.assertEquals(response.status_code, 302)
+
+    def test_job_otp_page_with_post_request_without_rating(self):
+        c = Client()
+        session = c.session
+        b1 = Buyer.objects.get(pk=1)
+        session["buyer_id"] = b1.id
+        session.save()
+        job1 = Job.objects.get(pk=2)
+        session["job_id"] = job1.id
+        session.save()
+        data = {
+            "review": "good"
+        }
+        response = c.post(reverse("get_otp"), data)
+        self.assertRedirects(response, reverse("get_otp"))
+        self.assertEquals(response.status_code, 302)
+
+    def test_job_otp_page_with_post_request_no_input(self):
+        c = Client()
+        session = c.session
+        b1 = Buyer.objects.get(pk=1)
+        session["buyer_id"] = b1.id
+        session.save()
+        job1 = Job.objects.get(pk=2)
+        session["job_id"] = job1.id
+        session.save()
+        response = c.post(reverse("get_otp"))
+        self.assertRedirects(response, reverse("get_otp"))
+        self.assertEquals(response.status_code, 302)
+
+    def test_job_otp_page_with_post_request_with_valid_info(self):
+        c = Client()
+        session = c.session
+        b1 = Buyer.objects.get(pk=1)
+        session["buyer_id"] = b1.id
+        session.save()
+        job1 = Job.objects.get(pk=2)
+        session["job_id"] = job1.id
+        session.save()
+        data = {
+            "review": "Good Boy",
+            "rating": "5"
+        }
+        response = c.post(reverse("get_otp"), data)
+        self.assertRedirects(response, reverse("thank_you"))
+        self.assertEquals(response.status_code, 302)
 
     def test_completed_orders_with_zero_completed_jobs(self):
         c = Client()
