@@ -2,9 +2,7 @@
 
 Welcome to DeliverEase! We are excited to have you contribute to our project. Your contributions can help us improve and enhance the platform, empowering delivery partners and connecting communities even more effectively.
 
-## How to Contribute
-
-To contribute to DeliverEase, please follow these guidelines:
+## Guide to Setting up the Project Locally
 
 1. Fork the repository to your GitHub account.
 
@@ -16,49 +14,61 @@ To contribute to DeliverEase, please follow these guidelines:
 
 5. Or if you are using poetry, install all the dependencies to your system by: `poetry install`
 
-6. Make migrations into the Database: `python manage.py migrate`
+6. Make migrations into the codebase: `python manage.py makemigrations`
 
-7. Run the server locally: `python manage.py  runserver`
+7. Migrate your changes: `python manage.py migrate`
 
-8. Check if there is a stale issue by asking out the current assignee or the maintainer about the progress of the issue or if there is a unassigned issue.
+8. Run the server locally: `python manage.py  runserver`
 
-9. In either case get the issue assigned to yourself by commenting on the issue like I would like to work on this issue please assign me and tag a maintainer, and start working on it after you are assigned the issue.
+9. Now we need to enable the git hooks so for that you need to cd to the _hooks directory and run hooks_setup file.
+    Step 1: `cd _hooks`
+    Step 2: `./hooks_setup`
 
-10. Checkout to a new branch whose name will be similar to the issue you worked on . For ex. you worked on the readme you can name it as "docs/readme": `git checkout -b docs/readme`
+10. Now the Project's setup is completed.
 
-11. Make your changes to the codebase or documentation in your branch. Be sure to follow the coding style and conventions used in the project.
+## Guidelines for Contributors
 
-12. Test your changes thoroughly to ensure they work as expected.
+To contribute to DeliverEase, please follow these guidelines:
+ 
+1. Check if there is a stale issue by asking out the current assignee or the maintainer about the progress of the issue or if there is a unassigned issue.
 
-13. Update or create new tests where applicable and also update the dependencies if you have used a new software.
+2. In either case get the issue assigned to yourself by commenting on the issue like I would like to work on this issue please assign me and tag a maintainer, and start working on it after you are assigned the issue.
 
-14. Ensure that all existing tests pass successfully before submitting your changes.
+3. Checkout to a new branch whose name will be similar to the issue you worked on . For ex. you worked on the readme you can name it as "docs/readme": `git checkout -b docs/readme`
 
-15. Add your changes to git.
+4. Make your changes to the codebase or documentation in your branch. Be sure to follow the coding style and conventions used in the project.
 
-16. Commit your changes. 
+5. Test your changes thoroughly to ensure they work as expected.
 
-17. Write clear and concise commit messages for your changes and add GH-(issue number) for ex.add  GH-9 in the end of commit message  if you are working on issue 9.
+6. Update or create new tests where applicable and also update the dependencies if you have used a new software.
 
-18. Add the remote upstream branch to git: `git remote add upstream https://github.com/TeamCodeArena/DeliverEase`
+7. Ensure that all existing tests pass successfully before submitting your changes.
 
-19. Fetch all the updates in the remote branch while you were working on the issue: `git fetch upstream`
+8. Add your changes to git.
 
-20. Merge your local  branch with the remote branch: `git merge upstream/main`.
+9. Commit your changes. 
 
-21. Add a remote origin: `git remote add origin <link_to_your_forked_copy>` 
+10. Write clear and concise commit messages for your changes and add GH-(issue number) for ex.add  GH-9 in the end of commit message  if you are working on issue 9.
 
-22. Push your changes to the new branch: `git push origin <name_of_ur_current_branch>`
+11. Add the remote upstream branch to git: `git remote add upstream https://github.com/TeamCodeArena/DeliverEase`
 
-23. Go to your forked repo on Github and you will see a option to create a PR. select the option and create a PR.
+12. Fetch all the updates in the remote branch while you were working on the issue: `git fetch upstream`
 
-24. Provide a detailed description of your changes in the pull request, including the problem you are solving, the approach you took, and any relevant information for reviewers.
+13. Merge your local  branch with the remote branch: `git merge upstream/main`.
 
-25. Attach an issue number in the description while creating the PR so that GitHub can automatically link it to the issue. For. ex: add #9 if you are making PR for issue number 9 and also make sure to tag **@SID262000**. So that he can be notified about your PR and review it accordingly.
+14. Add a remote origin: `git remote add origin <link_to_your_forked_copy>` 
 
-26. Be responsive to feedback and comments on your pull request. If changes are requested, make the necessary adjustments.
+15. Push your changes to the new branch: `git push origin <name_of_ur_current_branch>`
 
-27. Once your pull request is approved and meets the project's quality standards, it will be merged into the main repository.
+16. Go to your forked repo on Github and you will see a option to create a PR. select the option and create a PR.
+
+17. Provide a detailed description of your changes in the pull request, including the problem you are solving, the approach you took, and any relevant information for reviewers.
+
+18. Attach an issue number in the description while creating the PR so that GitHub can automatically link it to the issue. For. ex: add #9 if you are making PR for issue number 9 and also make sure to tag **@SID262000**. So that he can be notified about your PR and review it accordingly.
+
+19. Be responsive to feedback and comments on your pull request. If changes are requested, make the necessary adjustments.
+
+20. Once your pull request is approved and meets the project's quality standards, it will be merged into the main repository.
 
 ## Code Style and Guidelines
 
