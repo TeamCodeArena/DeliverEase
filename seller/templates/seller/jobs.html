@@ -5,9 +5,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}"></link>
-    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}"></link>
-    <link rel="stylesheet" href="{% static "buyer/myorders.css" %}"></link>
+    <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}">
+    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
+    <link rel="stylesheet" href="{% static "buyer/myorders.css" %}">
+    <style>
+        form{
+            width: 100px;
+            position: relative;
+            top: -75px;
+            right: 75px;
+            }
+
+    </style>
+
 </head>
 <body>
 <div class="App">
@@ -61,7 +71,7 @@
                     <form method="post">
                         {% csrf_token %}
                         <input value="{{ job1.id }}" name="job_id" type="hidden">
-                        <button type="submit">Check Job</button>
+                        <button class="btn" type="submit">Check Job</button>
                     </form>
 
                 </div>

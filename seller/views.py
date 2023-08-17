@@ -31,7 +31,7 @@ def home(request):
                 print(request.session["id"])
                 pass
             else:
-                return HttpResponseRedirect("/auth/login")
+                return HttpResponseRedirect("/auth/login/")
 
         #  This  code tries to search for the user with the email and saves
         #  his id in the session
@@ -71,7 +71,7 @@ def my_orders(request):
     if "id" in request.session:
         print(request.session["id"])
     else:
-        return HttpResponseRedirect("/auth/login")
+        return HttpResponseRedirect("/auth/login/")
 
     # The code executed when the seller visits it with a GET request
     try:
@@ -105,7 +105,7 @@ def job_details(request):
     if "id" in request.session:
         pass
     else:
-        return HttpResponseRedirect("/auth/login")
+        return HttpResponseRedirect("/auth/login/")
 
     # this code is executed when the seller enters with a GET request
     try:
@@ -126,7 +126,7 @@ def complete_delivery(request):
     # This is executed on a post request to the page
 
     if request.method == "POST":
-        otp = request.POST["otp"]  # retrives the otp entered by the seller
+        otp = request.POST.get("otp")  # retrieves the otp entered by the seller
         try:
             otp = int(otp)
 
@@ -161,7 +161,7 @@ def complete_delivery(request):
     if "id" in request.session:
         pass
     else:
-        return HttpResponseRedirect("/auth/login")
+        return HttpResponseRedirect("/auth/login/")
     try:
         job_id = request.session["job_id"]
     except:
@@ -185,7 +185,7 @@ def completed_jobs(request):
     if "id" in request.session:
         pass
     else:
-        return HttpResponseRedirect("/auth/login")
+        return HttpResponseRedirect("/auth/login/")
 
     id = request.session["id"]
     current_user = Seller.objects.get(pk=id)

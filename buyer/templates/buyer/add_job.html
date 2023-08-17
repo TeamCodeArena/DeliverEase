@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "buyer/jobform.css" %}">
     <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
-    <link rel="stylesheet" href="{% static "buyer/navbar.css" %}">
+    <link rel="stylesheet" href="{% static "buyer/Navbar.css" %}">
     <title>DeliverEase</title>
 </head>
 <body>
@@ -62,22 +62,5 @@
 
   </div>
 </body>
-<script>
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-  const navLink = document.querySelectorAll(".nav-link");
-
-  hamburger.addEventListener("click", mobileMenu);
-  navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-  function mobileMenu() {
-      hamburger.classList.toggle("active");
-      navMenu.classList.toggle("active");
-  }
-
-  function closeMenu() {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-  }
-  </script>
+<script src="{% static "buyer_js/add_job.html" %}"></script>
 </html>

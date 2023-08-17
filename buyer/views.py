@@ -7,7 +7,7 @@ from django.urls import reverse
 
 
 def index(request):
-    """This function allows the seller to visit the home page via GET method"""
+    """This function allows the buyer to visit the home page via GET method"""
 
     email = request.GET.get(
         "email", "None"
@@ -19,7 +19,7 @@ def index(request):
         if "buyer_id" in request.session:
             pass
         else:
-            return HttpResponseRedirect("/auth/login")
+            return HttpResponseRedirect("/auth/login/")
 
     try:
         buyer = Buyer.objects.get(email=email)
@@ -43,14 +43,17 @@ def add_job(request):
         current_buyer = Buyer.objects.get(id=id)
 
         # retrieves the data entered by the user in the job form
-        pickup_address = request.POST["pickup_address"]
-        pickup_time1 = request.POST["pickup_time"]
-        request.POST["pickup_date"]
-        delivery_address = request.POST["delivery_address"]
-        delivery_time1 = request.POST["delivery_time"]
-        request.POST["delivery_date"]
-        delivery_pincode = request.POST["delivery_pincode"]
-        pickup_pincode = request.POST["pickup_pincode"]
+        try:
+            pickup_address = request.POST["pickup_address"]
+            pickup_time1 = request.POST["pickup_time"]
+            request.POST["pickup_date"]
+            delivery_address = request.POST["delivery_address"]
+            delivery_time1 = request.POST["delivery_time"]
+            request.POST["delivery_date"]
+            delivery_pincode = request.POST["delivery_pincode"]
+            pickup_pincode = request.POST["pickup_pincode"]
+        except Exception as error:
+            return HttpResponseRedirect(reverse("add_job"))
         # makes sure the pincode is a int and proceeds to save the job
         try:
             delivery_pincode = int(delivery_pincode)
@@ -79,7 +82,7 @@ def add_job(request):
             print(request.session["buyer_id"])
 
         else:
-            return HttpResponseRedirect("/auth/login")
+            return HttpResponseRedirect("/auth/login/")
 
         return render(request, "buyer/add_job.html")
 
@@ -97,7 +100,7 @@ def my_orders(request):
         if "buyer_id" in request.session:
             print(request.session["buyer_id"])
         else:
-            return HttpResponseRedirect("/auth/login")
+            return HttpResponseRedirect("/auth/login/")
 
         try:
             del request.session["job_id"]
@@ -110,6 +113,23 @@ def my_orders(request):
         return render(
             request, "buyer/my_orders.html", {"jobs": all_job, "buyer": buyer}
         )
+
+def completed_orders(request):
+    """This function allows the buyer to visit the  page via a GET method:
+        1) GET : The buyer is shown the reviews and rating and list of all the
+        jobs he has completed"""
+    if "buyer_id" in request.session:
+        pass
+    else:
+        return HttpResponseRedirect("/auth/login/")
+
+    id = request.session["buyer_id"]
+    current_user = Buyer.objects.get(pk=id)
+    jobs = Job.objects.filter(created_by=current_user, status="Completed")
+    for job in jobs:
+        print(job.assigned_to.id)
+        print(job.status)
+    return render(request, "buyer/buyer_completed_jobs.html", {"jobs": jobs})
 
 
 def check_order(request):
@@ -124,7 +144,7 @@ def check_order(request):
     if "buyer_id" in request.session:
         pass
     else:
-        return HttpResponseRedirect("/auth/login")
+        return HttpResponseRedirect("/auth/login/")
     # checks if a job_id exists in the session
     try:
         job_id = request.session["job_id"]
@@ -134,6 +154,13 @@ def check_order(request):
     job = Job.objects.get(pk=job_id)
     return render(request, "buyer/check_order.html", {"job": job})
 
+def thank_you(request):
+    if "buyer_id" in request.session:
+        pass
+    else:
+        return HttpResponseRedirect("/auth/login/")
+
+    return render(request, "buyer/thank_you.html")
 
 def get_otp(request):
     """This function allows the buyer to visit the  page via 2 methods:
@@ -155,13 +182,17 @@ def get_otp(request):
             print(get_job)
             print(review, rating)
             return HttpResponseRedirect(reverse("get_otp"))
-        return render(request, "buyer/thank_you.html")
+        return HttpResponseRedirect(reverse('thank_you'))
+
     if "buyer_id" in request.session:
         pass
     else:
-        return HttpResponseRedirect("/auth/login")
+        return HttpResponseRedirect("/auth/login/")
 
-    job_id = request.session["job_id"]
+    try:
+        job_id = request.session["job_id"]
+    except:
+        return HttpResponseRedirect(reverse("my_orders"))
     get_job = Job.objects.get(id=job_id)
     try:
         seller_id = get_job.assigned_to.id

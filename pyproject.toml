@@ -21,4 +21,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pydocstyle]
-match = "(?!_init_|000).*.py"
+match = "(?!__init__|000).*.py"

@@ -20,7 +20,8 @@
 - [Contributing](#contributing)
 - [Feedback](#feedback)
 - [License](#license)
-- [How you can reach us]()
+- [How you can reach us](#social-media)
+
 ## Introduction
 DeliverEase is built on the foundation of **empowering delivery partners**, enabling them to earn income while providing **efficient delivery services** to the community. By **bridging the gap between buyers and sellers directly**, DeliverEase eliminates the need for intermediaries, leading to **faster deliveries** and **reduced costs**.
 
@@ -76,13 +77,7 @@ Please note that this is a **simplified installation guide** **assuming you have
 
 ## Contributing
 <!-- TODO: Link Contribiute.md -->
-We welcome contributions from the community to enhance DeliverEase. If you want to contribute, follow these steps:
-
-1. **Fork the repository**
-2. **Create a new branch:** `git checkout -b feature/your_feature`
-3. **Make your changes and commit them:** `git commit -m "Add feature/fix"`
-4. **Push to the branch:** `git push origin feature/your_feature`
-5. **Create a pull request**
+We welcome contributions from the community to enhance DeliverEase. If you want to contribute, follow the steps in the [**`Contributing.md`**](Contributing.md) file.
 
 ## Feedback
 
@@ -90,7 +85,8 @@ We value feedback to improve our platform continuously. If you have any suggesti
 
 ## License
 <!-- TODO: Link LICENSE.md -->
-DeliverEase is released under the [**MIT License**](https://opensource.org/licenses/MIT).
+DeliverEase is released under the [**MIT License**](https://opensource.org/licenses/MIT). 
+See [**`LICENSE.md`**](LICENSE) for more information.
 
 
 ## Social Media

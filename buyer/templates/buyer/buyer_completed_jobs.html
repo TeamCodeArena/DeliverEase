@@ -5,19 +5,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}">
-    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
-    <link rel="stylesheet" href="{% static "buyer/myorders.css" %}">
-    <style>
-        form{
-            width: 100px;
-            position: relative;
-            top: -75px;
-            right: 75px;
-            }
-
-    </style>
-
+    <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}"></link>
+    <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}"></link>
+    <link rel="stylesheet" href="{% static "buyer/myorders.css" %}"></link>
 </head>
 <body>
 <div class="App">
@@ -52,11 +42,8 @@
 
     <div class="sellerJobs">
         <div class="eachJobBox">
-            <div class="image">
-                <img src="{% static "media/buyer.jpg" %}" alt="buyerImg">
-            </div>
             <div class="jobDetails">
-                <h2> Job By : {{ job1.created_by.name }}</h2>
+                <h2> Completed By : {{ job1.assigned_to.name }}</h2>
                 <div class="time">
                     <p> Delivery Time : {{ job1.delivery_time }}  </p>
                     <p> Pickup Time : {{ job1.pickup_time }} </p>
@@ -64,22 +51,18 @@
                 <div>
                     <p>Delivery Address: {{ job1.delivery_address }}</p>
                     <p>Pickup Address: {{ job1.pickup_address }}</p>
+                    <p>Review: {{ job1.review }}</p>
+                    <p>Rating: {{ job1.rating }}</p>
                 </div>
-                <div class="job_button" id="btn-area">
-                    <form method="post">
-                        {% csrf_token %}
-                        <input value="{{ job1.id }}" name="job_id" type="hidden">
-                        <button id="check-job-button" class="btn" type="submit">Check Job</button>
-                    </form>
+                <div class="job_button">
 
                 </div>
             </div>
         </div>
     </div>
-
 {% endfor %}
-{% else %}
-    <p> No jobs created by you</p>
+ {% else %}
+    <p> No Jobs completed till now.<p>
 {% endif %}
 </body>
 </html>
