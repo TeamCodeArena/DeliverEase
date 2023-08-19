@@ -1,11 +1,17 @@
 {% load static %}
+<!-- This index.html page will rendered first after running server -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index page</title>
+    
+     <!-- The title of the webpage -->
+    <title>DeliverEase|Connecting Delivery Partner with Customer</title>
+
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static  'main/style.css'%}">
     <link rel="stylesheet" href="{% static  'main/Navbar.css'%}">
     <link rel="stylesheet" href="{% static  'main/indexcontainer.css'%}">
@@ -20,8 +26,7 @@
 <body>
     <div class="App">
 
-        
-
+        <!-- Header section -->
         <header class="header">
             <nav class="navbar">
                 <h2> DeliverEase</h2>
@@ -33,7 +38,7 @@
                         <a href="/about_us" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
-<!--                         <a href="#" class="btn">My Orders</a> -->
+                    
                       <a href='/auth/login'  ><button  class="btn"> Login</button></a>
                     </li>
                 </ul>
@@ -45,6 +50,7 @@
             </nav>
         </header>
 
+        <!-- Main content section -->
         <div class='container'>
             <h1> Empowering Delivery Partners,<br/>Connecting Communities!</h1>
       
@@ -67,6 +73,7 @@
        
        
     </div>
+     <!-- External JS Link to get required icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
