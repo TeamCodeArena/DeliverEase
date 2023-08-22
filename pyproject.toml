@@ -22,3 +22,10 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.pydocstyle]
 match = "(?!__init__|000).*.py"
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module ="DeliverEase.settings"
+strict_settings = true
