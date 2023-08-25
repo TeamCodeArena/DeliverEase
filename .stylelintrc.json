@@ -1,0 +1,13 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "selector-class-pattern": null,
+      "selector-id-pattern" : null,
+      "comment-whitespace-inside" : null,
+      "comment-empty-line-before": "always", 
+      "color-function-notation" : null,
+      "property-no-vendor-prefix" : null,
+      "media-feature-range-notation" : null,
+      "color-hex-case": "lower"
+    }
+}

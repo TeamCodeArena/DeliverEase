@@ -5,16 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- The title of this page -->
+    <title>DeliverEase Seller Signup Page </title>
+
+     <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "userAuth/style.css" %}">
     <link rel="stylesheet" href="{% static "userAuth/sellersignup.css" %}">
 </head>
+
 <body>
     <div class='App'>
+
         <ul>
             <li>Please ensure that password is atleast 7 digits long</li>
             <li>first name must be  greater than single character</li>
         </ul>
+
+        <!-- Signup form for Seller -->
     <div class='signUp'>
         <h1> Signup as a seller  </h1>
 
@@ -25,8 +33,6 @@
                 {% csrf_token %}
               <div class="sellerInfo_first">
                 <input type="text" name="fullName"   placeholder='Full Name' />
-
-
 
                 <input type="email" name="email"   placeholder='Billiot@example.com' />
               </div>
@@ -42,11 +48,10 @@
               <div class="sellerInfo_third">
                 <input type="text" name="work_experience"   autoComplete="organization-title" placeholder='Do you have any work experience?'/>
 
-
-
                 <textarea name="address"  autoComplete="street-address" placeholder='2639 1st Hwy, STE 7768, Pierre, South Dakota, 93567'></textarea>
               </div>
 
+              <!-- By clicking Register Button, it will Redirect to seller's home page-->
             <button class='btn' type="submit">Register</button>
           </form>
 

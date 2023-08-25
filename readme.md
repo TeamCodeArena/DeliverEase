@@ -92,9 +92,14 @@ See [**`LICENSE.md`**](LICENSE) for more information.
 ## Social Media
 You can join our Slack community by clicking this [**link**](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g)
 
-<img align="right" width="100" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
+
+
+## Github Wiki
+
+You can see our Github wiki [**here**](https://github.com/N3v1/DeliverEase/wiki).
 
 ---
+<img align="right" width="100" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
 
 Thank you for choosing DeliverEase! We hope this platform enhances your delivery experience and connects communities in a meaningful way. Happy delivering!
 <!-- Documentation end -->

@@ -1,0 +1,23 @@
+{
+  "name": "deliverease",
+  "version": "1.0.0",
+  "description": "<!-- Documentation start -->\r <!-- Logo start -->\r <img align=\"right\" width=\"100\" src=\"https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png\"></a>\r <!-- Logo end -->",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "jest": "^29.6.4",
+    "stylelint-config-standard": "^34.0.0"
+  },
+  "dependencies": {
+    "jsdom": "^22.1.0"
+  }
+}

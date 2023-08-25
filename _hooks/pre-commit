@@ -9,7 +9,7 @@ run_python_linters() {
     fail=false
     
     # Installing linters in case they are not installed
-    linters=(flake8 ruff black pycodestyle ) # Add pylint and pydocstyle later
+    linters=(flake8 ruff black pycodestyle pydocstyle mypy django-stubs) # Add pylint later
     for linter in ${linters[@]}; do 
         # Handling black separately because it throws error in git bash on windows.
         if [[ $linter == "black" ]]; then
@@ -61,8 +61,11 @@ run_python_linters() {
             echo -e "RUFF:" >> logs/linter.log
             python -m ruff check $file >> logs/linter.log
 
-            # echo -e "\n PYDOCSTYLE \n" >> logs/linter.log
-            # pydocstyle . >> logs/linter.log 
+            echo -e "MYPY:" >> logs/linter.log
+            python -m mypy $file >> logs/linter.log
+
+            echo -e "PYDOCSTYLE" >> logs/linter.log
+            python -m pydocstyle $file >> logs/linter.log 
             
             exit_code=$?
             if [ $exit_code -ne 0 ]; then
@@ -89,6 +92,7 @@ ins_empty_line(){
         last_char=$(tail -c 1 $file)
         if [[ "$last_char" != "" ]]; then
             echo >> "$file"
+            git add "$file"
         fi
     done
 }
