@@ -12,7 +12,7 @@
 # pip install --upgrade pip
 
 # Installing all the linters
-# pip install pylint flake8 ruff black pycodestyle pydocstyle
+# pip install pylint flake8 ruff black pycodestyle pydocstyle mypy django-stubs
 
 # The following commands will create symbolic links for both hooks
 ln -s -f ../../_hooks/commit-msg ../.git/hooks/commit-msg
