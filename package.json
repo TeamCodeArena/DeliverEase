@@ -1,0 +1,18 @@
+{
+  "name": "atrikadeliverease",
+  "version": "1.0.0",
+  "description": "<!-- Documentation start --> <!-- Logo start --> <img align=\"right\" width=\"100\" src=\"https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png\"></a> <!-- Logo end -->",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "htmlhint": "^1.1.4"
+  }
+}
