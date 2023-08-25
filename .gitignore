@@ -1,4 +1,6 @@
 db.sqlite3
+node_modules
+coverage
 pyvenv.cfg
 Lib/
 Scripts/
