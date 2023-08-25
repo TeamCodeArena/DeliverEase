@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- The title of this page -->
+    <title>Get Started with DeliverEase</title>
+
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "main/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "main/buyerorseller.css" %}">
     <link rel="stylesheet" href="{% static "main/jobform.css" %}">
 
-    <title>DeliverEase</title>
     <style>
         .button-container{
             margin: auto;
@@ -30,6 +33,7 @@
     </style>
 </head>
 <body>
+     <!-- Navigation section -->
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
@@ -43,8 +47,11 @@
         </ul>
       </nav>
 
+       <!-- Main content section -->
       <div>
         <h1 id="txt-home" class='que'>Who are you?</h1>
+
+        <!-- This div contains buyer & seller buttons which will redirect to buyer signup & seller signup page respectively -->
         <div class="button-container">
             <a class='butt' id="buyer_button" href="/auth/buyer_signup">Buyer</a>
             <a class='butt' id="seller_button" href="/auth/seller_signup">Seller</a>
