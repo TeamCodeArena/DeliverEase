@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class='App'>
+    <div class="App">
 
         <ul>
             <li>Please ensure that password is atleast 7 digits long</li>
@@ -23,7 +23,7 @@
         </ul>
 
         <!-- Signup form for Seller -->
-    <div class='signUp'>
+    <div class="signUp">
         <h1> Signup as a seller  </h1>
 
           <hr/>
@@ -32,27 +32,27 @@
               <form  method="post" >
                 {% csrf_token %}
               <div class="sellerInfo_first">
-                <input type="text" name="fullName"   placeholder='Full Name' />
+                <input type="text" name="fullName" placeholder="Full Name" />
 
-                <input type="email" name="email"   placeholder='Billiot@example.com' />
+                <input type="email" name="email" placeholder="Billiot@example.com" />
               </div>
 
               <div class="sellerInfo_second">
-                <input type="password" name="password"    placeholder='Password'/>
-                <input type="tel" name="phone_no"  autoComplete="tel" placeholder='Phone Number'/>
+                <input type="password" name="password"    placeholder="Password"/>
+                <input type="tel" name="phone_no"  autocomplete="tel" placeholder="Phone Number"/>
               </div>
               <div class="confpass">
-              <input type="password" name="conf_password" id="confpassword"  placeholder='Confirm Password'/>
+              <input type="password" name="conf_password" id="confpassword"  placeholder="Confirm Password"/>
             </div>
 
               <div class="sellerInfo_third">
-                <input type="text" name="work_experience"   autoComplete="organization-title" placeholder='Do you have any work experience?'/>
+                <input type="text" name="work_experience"  autocomplete="organization-title" placeholder="Do you have any work experience?"/>
 
-                <textarea name="address"  autoComplete="street-address" placeholder='2639 1st Hwy, STE 7768, Pierre, South Dakota, 93567'></textarea>
+                <textarea name="address"  autocomplete="street-address" placeholder="2639 1st Hwy, STE 7768, Pierre, South Dakota, 93567"></textarea>
               </div>
 
               <!-- By clicking Register Button, it will Redirect to seller's home page-->
-            <button class='btn' type="submit">Register</button>
+            <button class="btn" type="submit">Register</button>
           </form>
 
 
