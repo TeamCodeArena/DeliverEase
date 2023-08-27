@@ -93,7 +93,7 @@ See [**`LICENSE.md`**](LICENSE) for more information.
 
 ## Social Media
 <a aria-label="Join the community on Slack" href="https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g" target="_blank">
-    <img alt="" src="https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white">
+    <img alt="" src="https://img.shields.io/badge/Join the community on Slack-4A154B?style=flat&logo=slack&logoColor=white">
 </a>
 
 
