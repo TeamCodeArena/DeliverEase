@@ -57,13 +57,13 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 5. **Delivery Completion:** Once the delivery is successfully completed, both the buyer and seller will **receive notifications of the successful order**
 
 ## Key Features ![Platform](https://img.shields.io/badge/Platform-Web-brightgreen?style=flat-square) ![Language](https://img.shields.io/badge/Language-Python%2C%20HTML%2C%20CSS%2C%20Shell%2C%20JavaScript-blue?style=flat-square) ![Framework](https://img.shields.io/badge/Framework-Django-orange?style=flat-square) [![Innovation](https://img.shields.io/badge/Innovation-%F0%9F%9A%80-yellow?style=flat-square)](#key-features)
-- Empowerment of delivery partners to **earn income on flexible schedules** [![Empowerment](https://img.shields.io/badge/Empowerment-%F0%9F%9A%80-brightgreen?style=flat-square)](#key-features)
-- Direct **connection between buyers and sellers** without middlemen [![Seamless Connections](https://img.shields.io/badge/Seamless%20Connections-%F0%9F%94%97-blue?style=flat-square)](#key-features)
-- Efficient and **seamless order placement process** [![Efficient Processes](https://img.shields.io/badge/Efficient%20Processes-%F0%9F%94%A5-orange?style=flat-square)](#key-features)
+- Empowerment of delivery partners to **earn income on flexible schedules** 
+- Direct **connection between buyers and sellers** without middlemen 
+- Efficient and **seamless order placement process** 
 - Post a Job feature for buyers to **find suitable delivery partners**
-- **Real-time job acceptance** [![Real-time Updates](https://img.shields.io/badge/Real--time%20Updates-%F0%9F%95%B0-brightgreen?style=flat-square)](#key-features)
+- **Real-time job acceptance** 
 - **Convenient pickup and drop-off services**
-- **No tracking system** to ensure user privacy [![User Privacy](https://img.shields.io/badge/User%20Privacy-%F0%9F%94%90-blue?style=flat-square)](#key-features)
+- **No tracking system** to ensure user privacy 
 
 ## Getting Started ![Getting Started](https://img.shields.io/badge/Getting%20Started-Ready-blueviolet?style=flat-square) [![Quick Setup](https://img.shields.io/badge/Quick%20Setup-6%20Steps-success?style=flat-square)](#quick-setup) [![Installation Guide](https://img.shields.io/badge/Installation%20Guide-Easy-brightgreen?style=flat-square)](#installation-guide)
 To get started with DeliverEase using Django, follow these steps:
