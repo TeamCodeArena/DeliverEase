@@ -91,8 +91,10 @@ DeliverEase is released under the [**MIT License**](https://opensource.org/licen
 See [**`LICENSE.md`**](LICENSE) for more information.
 
 
-## Social Media [![Join the Community](https://img.shields.io/badge/Join%20the%20Community-%F0%9F%92%AC-blueviolet?style=flat-square)](#contributing)
-You can join our [![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g) community.
+## Social Media
+<a aria-label="Join the community on Slack" href="https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g" target="_blank">
+    <img alt="" src="https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white">
+</a>
 
 
 
