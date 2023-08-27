@@ -1,11 +1,13 @@
 <!-- Documentation start -->
 <!-- Logo start -->
-<img align="right" width="100" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>
+<p align="center">
+<img height="128" width="100" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>
 <!-- Logo end -->
 <a id="top"></a>
-# DeliverEase [![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT)  [![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g)
+# DeliverEase 
+</p>
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
-
+[![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT)  [![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g)
 ### Empowering Delivery Partners, Connecting Communities
 >DeliverEase is an innovative platform **designed to empower delivery partners** and foster **seamless connections between buyers and sellers** without the need for intermediaries. With a **user-friendly interface** and **efficient processes**, DeliverEase aims to **revolutionize the way goods are delivered**, making it convenient for both consumers and businesses.
 
