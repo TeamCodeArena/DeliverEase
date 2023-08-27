@@ -3,7 +3,7 @@
 <img align="right" width="100" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>
 <!-- Logo end -->
 <a id="top"></a>
-# DeliverEase [![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT)  [![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g) [![Issues](https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/issues) [![Coverage](https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://codecov.io/gh/TeamCodeArena/DeliverEase) ![Security](https://img.shields.io/badge/Security-SSL-yellow?style=flat-square)
+# DeliverEase [![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT)  [![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g) [![Issues](https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/issues) [![Coverage](https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://codecov.io/gh/TeamCodeArena/DeliverEase) ![Security](https://img.shields.io/badge/Security-SSL-yellow?style=flat-square) ![Platform](https://img.shields.io/badge/Platform-Web-brightgreen?style=flat-square) ![Language](https://img.shields.io/badge/Language-Python%2C%20HTML%2C%20CSS%2C%20Shell%2C%20JavaScript-blue?style=flat-square) ![Framework](https://img.shields.io/badge/Framework-Django-orange?style=flat-square)
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
 ### Empowering Delivery Partners, Connecting Communities
@@ -38,14 +38,14 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 
 4. **Submit Order:** After providing all the necessary information, the Buyer can **submit the order request**
 
-### Post a Job ![Post a Job](https://img.shields.io/badge/Post%20a%20Job-Enabled-blue?style=flat-square)
+### Post a Job 
 1. **Post a Job:** Sellers can post delivery jobs by **clicking on the "Post a Job" option on the homepage**
 
 2. **Job Details:** They must **enter the job specifics**, including the **item to be delivered**, **pickup location**, **delivery location**, and **expected delivery time**
 
 3. **Delivery Partner Assignment:** Once the job is posted, the nearest available delivery partner will have the option to accept the job **`(algorithms are still to be developed)`**
 
-### Acceptance and Delivery ![Acceptance and Delivery](https://img.shields.io/badge/Acceptance%20and%20Delivery-Active-green?style=flat-square)
+### Acceptance and Delivery 
 1. **Delivery Partner Selection:** The nearest available delivery partner can **view available jobs and accept** the ones that match their location and schedule
 
 2. **Order Confirmation:** Once the delivery partner accepts the job the delivery process will begin
@@ -56,7 +56,7 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 
 5. **Delivery Completion:** Once the delivery is successfully completed, both the buyer and seller will **receive notifications of the successful order**
 
-## Key Features ![Platform](https://img.shields.io/badge/Platform-Web-brightgreen?style=flat-square) ![Language](https://img.shields.io/badge/Language-Python%2C%20HTML%2C%20CSS%2C%20Shell%2C%20JavaScript-blue?style=flat-square) ![Framework](https://img.shields.io/badge/Framework-Django-orange?style=flat-square) [![Innovation](https://img.shields.io/badge/Innovation-%F0%9F%9A%80-yellow?style=flat-square)](#key-features)
+## Key Features  [![Innovation](https://img.shields.io/badge/Innovation-%F0%9F%9A%80-yellow?style=flat-square)](#key-features)
 - Empowerment of delivery partners to **earn income on flexible schedules** 
 - Direct **connection between buyers and sellers** without middlemen 
 - Efficient and **seamless order placement process** 
