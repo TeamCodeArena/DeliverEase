@@ -56,7 +56,7 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 
 5. **Delivery Completion:** Once the delivery is successfully completed, both the buyer and seller will **receive notifications of the successful order**
 
-## Key Features  [![Innovation](https://img.shields.io/badge/Innovation-%F0%9F%9A%80-yellow?style=flat-square)](#key-features)
+## Key Features
 - Empowerment of delivery partners to **earn income on flexible schedules** 
 - Direct **connection between buyers and sellers** without middlemen 
 - Efficient and **seamless order placement process** 
@@ -74,18 +74,17 @@ To get started with DeliverEase using Django, follow these steps:
 - **Migrate the migrations made:** `python manage.py migrate`
 - **Start the Django development server:** `python manage.py runserver`
 
-Now, you should have the **DeliverEase Django application** up and running locally. You can access it by visiting **http://127.0.0.1:8000/** in your web browser. ![Yay!](https://img.shields.io/badge/Yay!-%F0%9F%8E%89%F0%9F%98%81-green?style=flat-square)
-
+Now, you should have the **DeliverEase Django application** up and running locally. You can access it by visiting **http://127.0.0.1:8000/** in your web browser. 
 Please note that this is a **simplified installation guide** **assuming you have Django and Python already set up on your system.** If you encounter any issues during the installation process, make sure to check Django's official documentation or reach out for support. Happy delivering!
 
-## Contributing [![Contributions Welcome](https://img.shields.io/badge/Contributions%20Welcome-%F0%9F%91%8D-green?style=flat-square)](#contributing)
+## Contributing 
 <!-- TODO: Link Contribiute.md -->
 We welcome contributions from the community to enhance DeliverEase. If you want to contribute, follow the steps in the [**`Contributing.md`**](Contributing.md) file.
 
-## Feedback [![Feedback](https://img.shields.io/badge/Feedback-%F0%9F%92%AD-blue?style=flat-square)](#feedback)
+## Feedback 
 We value feedback to improve our platform continuously. If you have any suggestions or encounter any issues, please [**open an issue**](https://github.com/TeamCodeArena/DeliverEase/issues).
 
-## License [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+## License 
 <!-- TODO: Link LICENSE.md -->
 DeliverEase is released under the [**MIT License**](https://opensource.org/licenses/MIT). 
 See [**`LICENSE.md`**](LICENSE) for more information.
