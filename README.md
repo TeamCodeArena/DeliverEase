@@ -3,7 +3,7 @@
 <img align="right" width="100" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>
 <!-- Logo end -->
 <a id="top"></a>
-# DeliverEase [![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT)  [![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g) [![Issues](https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/issues) [![Coverage](https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://codecov.io/gh/TeamCodeArena/DeliverEase)  
+# DeliverEase [![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT)  [![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g) [![Issues](https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/issues) [![Coverage](https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://codecov.io/gh/TeamCodeArena/DeliverEase) ![Security](https://img.shields.io/badge/Security-SSL-yellow?style=flat-square)
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
 ### Empowering Delivery Partners, Connecting Communities
@@ -27,9 +27,9 @@
 ## Introduction
 DeliverEase is built on the foundation of **empowering delivery partners**, enabling them to earn income while providing **efficient delivery services** to the community. By **bridging the gap between buyers and sellers directly**, DeliverEase eliminates the need for intermediaries, leading to **faster deliveries** and **reduced costs**.
 
-## How it Works ![Process](https://img.shields.io/badge/Process-Simplified-green?style=flat-square) ![Architecture](https://img.shields.io/badge/Architecture-MVC-lightgrey?style=flat-square) ![Deployment](https://img.shields.io/badge/Deployment-Heroku-purple?style=flat-square)
+## How it Works ![Architecture](https://img.shields.io/badge/Architecture-MVC-lightgrey?style=flat-square) ![Deployment](https://img.shields.io/badge/Deployment-Heroku-purple?style=flat-square)
 
-### Order Placement ![User Interaction](https://img.shields.io/badge/User%20Interaction-Smooth-blue?style=flat-square) ![Real-time](https://img.shields.io/badge/Real--time-Enabled-brightgreen?style=flat-square) ![Security](https://img.shields.io/badge/Security-SSL-yellow?style=flat-square)
+### Order Placement 
 1. **Click Order:** To place an order, Buyers can click on the **"Order Something" button** on the homepage, which will lead them to the **order details page**
 
 2. **Enter Delivery Details:** On the order details page, the Buyer can specify the **delivery location**, **preferred delivery time**, and any **additional information** relevant to the delivery
