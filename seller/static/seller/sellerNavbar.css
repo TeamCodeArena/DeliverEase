@@ -1,32 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,300&display=swap');
+
 .navbar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
 .navbar h1{
-    font-family: "Kaushan Script";
+    font-family: "Kaushan Script", sans-serif;
 }
+
 .nav_right{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
 .nav_link{
     display: flex;
 }
+
 .nav_link li a{
     color: var(--font-color);
     padding: 1rem;
     margin-right: 1rem;
     font-size: 1.2rem;
 }
+
 .nav_link li a:hover{
     color: rgb(42, 169, 233);
 }
-
-  
+ 
 /*============================================================*/
 
   @media screen and (max-width: 780px) {

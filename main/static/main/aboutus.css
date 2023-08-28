@@ -5,7 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 .button {
-
     align-items: right;
     background-color: #343F71;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -15,7 +14,7 @@
     color: #FFF;
     cursor: pointer;
     display: inline-flex;
-    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: system-ui,-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 600;
     justify-content: center;
@@ -31,15 +30,18 @@
     vertical-align: baseline;
     width: auto;
   }
+
   .button:hover,
   .button:focus {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     color: rgba(0, 0, 0, 0.65);
   }
+
   .button:hover {
     transform: translateY(-1px);
   }
+
   .button:active {
     background-color: #F0F0F1;
     border-color: rgba(0, 0, 0, 0.15);
@@ -55,7 +57,8 @@
   }
   
   html {
-      font-size: 42.5%;
+
+      /* font-size: 42.5%; */
       color: #645888;
       margin-left: 1rem;
       text-decoration: none;
@@ -96,7 +99,6 @@
   }
   
   .nav-menu {
-
       justify-content: space-between;
       align-items: center;
   }
@@ -174,14 +176,15 @@
     width: 90vw;
     margin: auto;
 }
+
 .aboutus_title{
-    font-family: 'Pathway Extreme', sans-serif;
+    font-family: "Pathway Extreme", sans-serif;
     margin-bottom: 1rem;   
 }
 
 .aboutus_para{
     color: #645888;
-    font-family: 'Abel', sans-serif;
+    font-family: Abel, sans-serif;
     font-size: 20px;
 }
 
@@ -190,6 +193,7 @@
     .aboutus_title{
         font-size: 1.4rem;   
     }
+    
     .aboutus_para{
         font-size: 15px;
     }

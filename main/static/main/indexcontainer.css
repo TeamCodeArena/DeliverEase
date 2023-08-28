@@ -1,24 +1,28 @@
 .container h1{
     color: var(--font-color);
-    font-family: "Kaushan Script";
+    font-family: "Kaushan Script", sans-serif;
     font-size: 4rem;
     font-weight: 400;
     display: inline-block;
 }
+
 .containerLower{
     display: flex;
     justify-content: space-between;
 }
+
 .container .left{
     width: 50%;
     position: relative;
 }
+
 .containerLower .left p{
     color: var(--font-color);
-    font-family: 'Inter';
+    font-family: Inter, sans-serif;
     font-size: 1rem;
     font-weight: 400;
 }
+
 .containerLower .left button{
     margin-right: 2rem;
     width: 12rem;
@@ -27,7 +31,7 @@
 
 .containerLower .right img{
     position: absolute;
-    right: 0px;
+    right: 0;
     bottom: 2px;
     width: 31rem;
     
@@ -37,17 +41,21 @@
     .container h1{
         font-size: 3.3rem;
     }
+
     .containerLower .right img{
         width: 30rem;
     }
 }
+
 @media screen and (max-width: 1100px) {
     .container h1{
         font-size: 3.1rem;
     }
+
     .containerLower .right img{
         width: 28rem;
     }
+
     .containerLower .left button{
         margin-right: 1.2rem;
         width: 10rem;
@@ -59,15 +67,18 @@
         font-size: 2.8rem;
         margin-top: 3rem;
     }
+
     .containerLower .right img{
         width: 26rem;
     }
+
     .container .left{
         display: flex;
         flex-direction: column;
         padding-top: 3.5rem;
 
     }
+
     .containerLower .left button{
         margin-bottom: 1rem;
         width: 12rem;
@@ -80,6 +91,7 @@
         overflow: scroll;
         overflow-x:hidden ;
     }
+
     .container h1{
         font-size: 2.4rem;
         margin-top: 3rem;
@@ -89,23 +101,26 @@
         flex-direction: row;
         width: 100%;
     }
+
     .containerLower .left p {
         position: absolute;
-        top: 0px;
+        top: 0;
     }
       
     .containerLower .left button{
         margin-right: 2.2rem;
         width: 15rem;
     }
+
     .containerLower .right img{
         bottom: -42rem;
         width: 31rem;
         height: 25rem; 
         right: 0;
-        width: 31rem;
         transform: translate(-50%, -50%);
         left: 50%;
+
+        /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
         top: 50%;
     }
 }
@@ -115,10 +130,12 @@
         font-size: 2.1rem;
         margin-top: 3rem;
     }
+    
     .containerLower .left{
         flex-wrap: wrap;
         justify-content: center;
     }
+    
     .containerLower .right img{
         width: 25rem;
         height: 20rem;

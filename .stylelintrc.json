@@ -8,6 +8,6 @@
       "color-function-notation" : null,
       "property-no-vendor-prefix" : null,
       "media-feature-range-notation" : null,
-      "color-hex-case": "lower"
+      "alpha-value-notation" : null
     }
 }

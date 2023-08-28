@@ -2,23 +2,31 @@
 
 *{
     background: #E2F3F5;
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+    
   }
+
   :root{
     --background-color : #E2F3F5;
     --font-color:#645888;
     --white-color :#ffff;
-  
-    --transition: 0.8s all ease;
+    --transition: 0.8s all ease;
 }
 
 body{
     background-color: #E2F3F5;
+    font-family: montserrat, sans-serif;
 }
+
 .App{
   width: 90vw;
   margin: auto;
-
 }
+
 .btn{
   cursor: pointer;
   background-color: var(--font-color);
@@ -26,20 +34,21 @@ body{
   margin-right: 15px;
   width: 9rem;
   height: 2.6rem;
-  border: 0px solid;
+  border: 0 solid;
   border-radius: 8px;
-
-  font-family: 'NSimSun';
+  font-family: NSimSun, sans-serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 22px;
   text-align: center;
   letter-spacing: -0.408px;
 }
+
 .btn_sm{
   width: 9rem;
   height: 2.6rem;
 }
+
 .btn:hover{
   background-color: transparent;
   color: var(--font-color);
@@ -47,13 +56,12 @@ body{
   transition: var(--transition);
 }
 
-
 img{
   width: 100%;
   object-fit: cover;
-  margin: auto;
-  
+  margin: auto; 
 }
+
 .brandname{
     font-family: 'Kaushan Script', cursive;
     color: #645888;
@@ -66,7 +74,7 @@ img{
 
 .home{
     position: absolute;
-    font-family: 'Poppins', sans-serif;
+    font-family: Poppins, sans-serif;
     left: 1022px;
     top: 1px;
     width: 46px;
@@ -78,7 +86,7 @@ img{
 
 .about{
     position: absolute;
-    font-family: 'Poppins', sans-serif;
+    font-family: Poppins, sans-serif;
     left: 1122px;
     top: 1px;
     width: 76px;
@@ -98,11 +106,12 @@ img{
     box-sizing: border-box;
     color: #FFF;
     cursor: pointer;
-    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: system-ui,-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 600;
     justify-content: center;
-    margin: 0;
+
+    /* margin: 0; */
     min-height: 3rem;
     line-height: 1.25;
     padding: calc(.875rem - 1px) calc(1.5rem - 1px);
@@ -115,15 +124,18 @@ img{
     vertical-align: baseline;
     width: auto;
   }
+
   .button:hover,
   .button:focus {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     color: rgba(0, 0, 0, 0.65);
   }
+
   .button:hover {
     transform: translateY(-1px);
   }
+
   .button:active {
     background-color: #F0F0F1;
     border-color: rgba(0, 0, 0, 0.15);
@@ -132,39 +144,31 @@ img{
     transform: translateY(0);
   }
 
-
-  *{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-  }
-  body{
-    font-family: montserrat;
-  }
   nav{
     background: #E2F3F5;
     height: 80px;
     width: 100%;
   }
+
   label.logo{
     color: #343F71;
     font-size: 35px;
     font-family: 'Kaushan Script', cursive;
     line-height: 80px;
-    /* padding: 0 100px; */
     font-weight: bold;
   }
+
   nav ul{
     float: right;
     margin-right: 20px;
   }
+
   nav ul li{
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
   }
+
   nav ul li a{
     color: white;
     font-size: 17px;
@@ -172,10 +176,12 @@ img{
     border-radius: 3px;
     text-transform: uppercase;
   }
+
   a.active,a:hover{
     background: #343F71;
     transition: .5s;
   }
+  
   .checkbtn{
     font-size: 30px;
     color: white;
@@ -185,22 +191,27 @@ img{
     cursor: pointer;
     display: none;
   }
+
   #check{
     display: none;
   }
+
   @media (max-width: 952px){
     label.logo{
       font-size: 30px;
       padding-left: 50px;
     }
+
     nav ul li a{
       font-size: 16px;
     }
   }
+
   @media (max-width: 858px){
     .checkbtn{
       display: block;
     }
+
     ul{
       position: fixed;
       width: 100%;
@@ -211,24 +222,29 @@ img{
       text-align: center;
       transition: all .5s;
     }
+
     nav ul li{
       display: block;
       margin: 50px 0;
       line-height: 30px;
     }
+
     nav ul li a{
       font-size: 20px;
     }
+
     a:hover,a.active{
       background: none;
       color: #343F71;
     }
+
     #check:checked ~ ul{
       left: 0;
     }
   }
+
   section{
-    background: url(bg1.jpg) no-repeat;
+    background: url("bg1.jpg") no-repeat;
     background-size: cover;
     height: calc(100vh - 80px);
   }
