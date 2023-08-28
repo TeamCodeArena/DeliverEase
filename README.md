@@ -95,6 +95,8 @@ See [**`LICENSE.md`**](LICENSE) for more information.
     <img alt="" src="https://img.shields.io/badge/Join the community on Slack-4A154B?style=flat&logo=slack&logoColor=white">
 </a>
 
+## Github Wiki
+You can see our Github wiki [**here**](https://github.com/N3v1/DeliverEase/wiki).
 
 
 <img align="right" width="100" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
