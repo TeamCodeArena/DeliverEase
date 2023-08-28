@@ -5,8 +5,8 @@
     width: 247px;
     height: 43px;
     color: #645888;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 36px;
     font-weight: 700;
-    font: bold;
+    font-weight: bold;
 }

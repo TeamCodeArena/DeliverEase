@@ -1,8 +1,10 @@
 @import url('../static/style.css');
+
 *{
     list-style-type: none ;
     text-decoration: none;
 }
+
 .nav{
     width: 100%;
     margin: auto;
@@ -10,12 +12,14 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .navbar h2{
     color: #645888;
-    font-family: "Kaushan Script";
+    font-family: "Kaushan Script", sans-serif;
     font-size: 1.8rem;
     font-weight: 400;
 }
+
 .nav .nav_right{
     display: flex;
     align-items: center;
@@ -25,12 +29,14 @@
     display: flex;
     margin-right: 4rem;
 }
+
 .nav ul li {
-    margin: 0rem 2rem;
+    margin: 0 2rem;
 }
+
 .nav ul li a{
     color: var(--font-color);
-    font-family: "Sofadi One";
+    font-family: "Sofadi One", sans-serif;
     font-size: 1.2rem;
 }
 
@@ -40,25 +46,28 @@
     color: var(--font-color);
     margin-left: 0.7rem;
 }
+
 .menuIcon, .closeIcon{
     display: none;
 }
 
 @media screen and (max-width: 750px) {
-    
     .nav ul li {
-        margin: 0rem 1rem;
+        margin: 0 1rem;
     }
+
     .nav ul {
         display: flex;
         margin-right: 2.8rem;
     }
+
     .btn{
     width: 6rem;
     }
 }
 
 /* specially for only icon*/
+
 /*
 @media screen and (min-width:551px){
     

@@ -3,8 +3,8 @@
     flex-direction: column;
     margin-top: 2rem;
 }
+
 .sellerJobs{
-    
     padding: 2rem 0;
     display: flex;
     justify-content: center;
@@ -14,33 +14,37 @@
     height: auto;
     border: 2px solid white;
 }
+
 /*----------------------------------sellerInbox Responsiveness Design---------------------------------------*/
 
 @media screen and (max-width: 685px) {
-   
     .sellerJobs{
         width: 39rem;
     }
 }
+
 @media screen and (max-width: 585px) {
     .sellerJobs{
         width: 38rem;
     }
 }
+
 /*----------------------------------Myorder Responsiveness Design---------------------------------------*/
+
 @media screen and (max-width: 1005px) {
-   
     .job_button .btn_sm{
         width: auto;
         height: 2.4rem;
         padding: 0 1rem;
     }
 }
+
 @media screen and (max-width: 880px) {
       .eachJobBox{
         display: flex;
         flex-direction: column;
     }
+
     .eachJobBox_left{
         width: 36rem;
         display: flex;
@@ -48,11 +52,13 @@
         background-color: transparent;
         justify-content: space-between;
     }
+
     .job_button{
         background-color: transparent;
         position:relative;
       } 
 }
+
 @media screen and (max-width: 720px) {
     .eachJobBox_left{
         width: 33rem; 

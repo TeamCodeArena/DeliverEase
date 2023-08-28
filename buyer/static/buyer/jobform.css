@@ -1,10 +1,10 @@
 .formBox h1{
   color: #645888;
-    font-family: Itim;
+    font-family: Itim, sans-serif;
     font-size: 1.8rem;
     font-weight: 400;
-
 }
+
 .collectdel {
     padding: 8px 12px;
     border: 1px solid #645888;
@@ -13,8 +13,7 @@
     line-height: 1.5;
     color: #333;
     background-color: #f6f6f6;
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.08);
-
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
     margin-top: 50px;
     margin-left: 10px;
     width: 500px;
@@ -45,13 +44,17 @@
     color: #FFF;
     cursor: pointer;
     display: inline-flex;
-    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: system-ui,-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 600;
     justify-content: center;
     line-height: 1.25;
+
+    /* stylelint-disable-next-line declaration-block-no-shorthand-property-overrides */
     margin: 0;
     min-height: 3rem;
+
+    /* stylelint-disable-next-line declaration-block-no-shorthand-property-overrides */
     padding: calc(.875rem - 1px) calc(1.5rem - 1px);
     position: relative;
     text-decoration: none;
@@ -62,15 +65,18 @@
     vertical-align: baseline;
     width: auto;
   }
+
   .butt:hover,
   .butt:focus {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     color: rgba(0, 0, 0, 0.65);
   }
+
   .butt:hover {
     transform: translateY(-1px);
   }
+
   .butt:active {
     background-color: #F0F0F1;
     border-color: rgba(0, 0, 0, 0.15);
@@ -87,9 +93,11 @@
     align-items: center;
     flex-direction: column;
   }
+
   .formInput div:nth-child(4){
     margin-bottom: 2rem;
   }
+
 @media screen and (max-width: 1140px) {
     .collectdel {
       width: 300px;
@@ -99,35 +107,40 @@
       display: flex;
       justify-content: space-between;
     }
+
     .formInput div:nth-child(2){
       display: flex;
       justify-content: space-between;
     }
+
     .formInput div:nth-child(3){
       display: flex;
       justify-content: space-between;
     }
+
     .formInput div:nth-child(4){
       display: flex;
       justify-content: space-between;
       margin-bottom: 2rem;
     }
 }
+
 @media screen and (max-width: 640px) {
-  
-  
   .formInput div:nth-child(1){
     flex-direction: column;
     justify-content: center;
   }
+
   .formInput div:nth-child(2){
     flex-direction: column;
     justify-content: center;
   }
+  
   .formInput div:nth-child(3){
     flex-direction: column;
     justify-content: center;
   }
+
   .formInput div:nth-child(4){
     flex-direction: column;
     justify-content: center;
@@ -140,14 +153,17 @@
   }
 
 }
+
 @media screen and (max-width: 480px) {
   .formBox{
     width: 25rem;
     margin: auto;
   }
+
   .formBox h1{
     font-size: 1.5rem;
   }
+
   .collectdel {
     width: 300px;
   }
