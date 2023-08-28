@@ -96,7 +96,8 @@ See [**`LICENSE.md`**](LICENSE) for more information.
 </a>
 
 ## Github Wiki
-You can see our Github wiki [Wiki Home](https://github.com/N3v1/DeliverEase/wiki)
+You can see our Github wiki [![Wiki](https://img.shields.io/badge/Wiki-User_Docs-blue.svg?style=flat)](https://github.com/N3v1/DeliverEase/wiki)
+
 
 
 
