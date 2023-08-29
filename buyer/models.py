@@ -1,4 +1,4 @@
-"""This file contains all the models for the Buyer App"""
+"""This file contains all the models for the Buyer App."""
 from django.db import models
 from django.utils import timezone
 from userAuth.models import Buyer, Seller
@@ -7,7 +7,8 @@ from userAuth.models import Buyer, Seller
 
 
 class Job(models.Model):
-    """It is the Job table that contains the details of the job"""
+    """Job table that contains the details of the job."""
+
     pickup_address = models.CharField(max_length=100)
     event_date = models.DateField(default=timezone.now)  # For date only
     event_time = models.TimeField(default=timezone.now)
@@ -34,6 +35,7 @@ class Job(models.Model):
     review = models.CharField(max_length=100, null=True)
 
     def __repr__(self) -> str:
+         """Return a string representation of the object."""
          return (
             f"Job ID: {self.id} Job Status: {self.status}" 
             f"Job Review: {self.review} Item Type: {self.product_type}"

@@ -1,4 +1,4 @@
-"""This module contains the views for the UserAuth app"""
+"""This module contains the views for the UserAuth app."""
 from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -7,8 +7,8 @@ from .models import Buyer, Seller
 
 
 def check_user_exists(email):
-    """This function makes sure that the user who is trying to register with a
-    email doesn't exists already in the table"""
+    """User who is trying to register with a email \
+    doesn't exists already in the table."""
     buyer_exists = Buyer.objects.filter(email=email).exists()
     seller_exists = Seller.objects.filter(email=email).exists()
     if buyer_exists or seller_exists:
@@ -27,7 +27,7 @@ def user_signup(
     user_type,
     experience="None",
 ):
-    """This function is used to register the user on our website"""
+    """Register the user on our website."""
     user = check_user_exists(email=email)
 
     if user is True:
@@ -86,7 +86,7 @@ def user_signup(
 
 
 def user_login(email, password):
-    """This function is used to login the user on our website"""
+    """Login the user on our website."""
     try:
         user = Seller.objects.get(email=email)
         user_type = "Seller"
@@ -122,8 +122,7 @@ def user_login(email, password):
 
 
 def buyer_signup(request):
-    """This function is executed on the buyer signup page"""
-
+    """Execute on the buyer signup page."""
     if request.method == "POST":
         # retrives all the details filled in by the user
         username = request.POST["fullName"]
@@ -166,8 +165,7 @@ def buyer_signup(request):
 
 
 def seller_signup(request):
-    """This function is executed on the seller signup page"""
-
+    """Execute on the seller signup page."""
     if request.method == "POST":
         username = request.POST["fullName"]
         password = request.POST["password"]
@@ -205,8 +203,7 @@ def seller_signup(request):
 
 
 def login_user(request):
-    """This function is executed on the login page"""
-
+    """Execute on the login page."""
     if request.method == "POST":
         # retrives the data entered by the user
         email = request.POST["email"]

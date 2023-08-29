@@ -1,4 +1,4 @@
-"""This module contains the urls for the UserAuth app"""
+"""This module contains the urls for the UserAuth app."""
 from django.urls import path
 from . import views
 

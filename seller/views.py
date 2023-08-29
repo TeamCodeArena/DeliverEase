@@ -1,4 +1,4 @@
-"""this module contains the seller views"""
+"""This module contains the seller views."""
 from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -6,11 +6,13 @@ from buyer.models import Seller, Job
 
 
 def home(request):
-    """This function allows the seller to visit the home page via 2 methods:
+    """
+    Allow the seller to visit the home page via 2 methods.
+
     1) GET : The seller is shown all the available jobs currently
     2) POST : The job_id of the job the seller wants to check out is saved in
-    the session so that the job details be rendered accordingly"""
-
+    the session so that the job details be rendered accordingly
+    """
     if request.method == "POST":
         job_id = request.POST["job_id"]
         request.session["job_id"] = job_id
@@ -48,12 +50,14 @@ def home(request):
 
 
 def my_orders(request):
-    """This function allows the seller to visit the  page via 2 methods:
+    """
+    Allow the seller to visit the  page via 2 methods.
+
     1) GET : The seller is shown all the jobs assigned to him and currently
     in progress.
     2) POST : The job_id of the job the seller wants to check out is saved in
-    the session so that the job details be rendered accordingly"""
-
+    the session so that the job details be rendered accordingly
+    """
     # The code is executed on a post request from the seller it searches
     # for the job and redirect the seller to the  next page accordingly
     if request.method == "POST":
@@ -91,9 +95,12 @@ def my_orders(request):
 
 
 def job_details(request):
-    """This function allows the seller to visit the  page via 2 methods:
+    """
+    Allow the seller to visit the  page via 2 methods.
+
     1) GET : The seller is the shown the details of the job he wishes to see
-    2) POST : The seller is redirected to another page"""
+    2) POST : The seller is redirected to another page
+    """
     # This is executed on a post request to the page
     if request.method == "POST":
         return HttpResponseRedirect(reverse("complete_delivery"))
@@ -115,11 +122,14 @@ def job_details(request):
 
 
 def complete_delivery(request):
-    """This function allows the seller to visit the  page via 2 methods:
+    """
+    Allow the seller to visit the  page via 2 methods.
+
     1) GET : The seller is assigned the job and the job status is updated
      and the seller can enter the otp to complete the delivery
-    2) POST : The OTP entered by the seller is authenticated and job is
-    completed"""
+    2) POST : The OTP entered by the seller is authenticated 
+    and job is completed
+    """
     # This is executed on a post request to the page
 
     if request.method == "POST":
@@ -178,9 +188,12 @@ def complete_delivery(request):
 
 
 def completed_jobs(request):
-    """This function allows the seller to visit the  page via a GET method:
+    """
+    Allow the seller to visit the  page via a GET method.
+
     1) GET : The seller is shown the reviews and rating and list of all the
-    jobs he has completed"""
+    jobs he has completed
+    """
     if "id" in request.session:
         pass
     else:
