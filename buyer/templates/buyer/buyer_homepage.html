@@ -1,4 +1,6 @@
 {% load static %}
+<!-- add comments before each div, header, ul, li to explain what the div is doing in the project. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,12 +58,14 @@
           </div>
       </nav>
   </header>
+  <!-- this is the buyer dashboard. -->
       <div class="container"> 
         <div class="buyerhomepage_left"> 
           <h1 class="heading">Get something delivered.<br>Directly by them.</h1>
           <a id="order_btn" href="{% url "add_job" %}" ><button id="order_button" class="btn">Place Order</button></a>
         </div>
         <div id="add_img" class="image">
+            <!-- this is image on the buyer homepage -->
          <img src="{% static "media/homepage.jpg" %}">
         </div>
     </div>

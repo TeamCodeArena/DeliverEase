@@ -1,4 +1,5 @@
 {% load static %}
+<!-- add comments before each div, header, ul, li to explain what the div is doing in the project. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,10 +49,11 @@
 <h2> Jobs </h2>
 {% if jobs %}
 {% for job1 in jobs %}
+<!-- this is for the buyer details -->
 <div class="sellerJobBox">
-
     <div class="sellerJobs">
         <div class="eachJobBox">
+            <!-- this page is for the buyer to see the jobs created by him better known as my orders. -->
             <div class="image">
                 <img src="{% static "media/buyer.jpg" %}" alt="buyerImg">
             </div>

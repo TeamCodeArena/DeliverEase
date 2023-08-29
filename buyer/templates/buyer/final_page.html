@@ -1,4 +1,5 @@
 {% load static %}
+<!-- add comments before each div, header, ul, li to explain what the div is doing in the project. -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -91,16 +92,19 @@
       </header>
 
 {% if seller %}
+<!-- this div is for the seller details -->
 <div class="seller_details">
-
                   <div class="seller_info">
                   <ul>
+                    <!-- this is the seller info -->
                       <li>Seller Info:</li>
                       <li>Name: {{ job.assigned_to.name }}</li>
                       <li>Email: {{ job.assigned_to.email }}</li>
                       <li>Phone No : {{ job.assigned_to.phone_no }}</li>
                       <li> OTP: {{ otp }}</li>
                   </ul></div>
+
+<!-- this form is for finalpage including review and rating. -->
 <form id="userInput" method="post">
   {% csrf_token %}
   <div class="mb-3">

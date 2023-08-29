@@ -1,3 +1,5 @@
+<!-- add comments before each div, header, ul, li to explain what the div is doing in the project. -->
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -12,21 +14,25 @@
 </head>
 <body>
   <div class="App">
-
+    <!-- this header is for the navbar -->
     <header class="header">
       <nav class="navbar">
           <a href="{% url "index" %}" class="nav-logo">DeliverEase</a>
           <ul class="nav-menu">
+              <!-- add the url for the home page -->
               <li class="nav-item">
                   <a href="{% url "index" %}" class="nav-link">Home</a>
               </li>
+              <!-- add the url for the about us page -->
               <li class="nav-item">
                   <a href="/about_us" class="nav-link">About Us</a>
               </li>
+              <!-- add the url for the contact us page -->
               <li class="nav-item">
                   <a href="{% url "my_orders" %}" class="button">My Orders</a>
               </li>
           </ul>
+          <!-- this div is for the hamburger menu -->
           <div class="hamburger">
               <span class="bar"></span>
               <span class="bar"></span>
@@ -34,8 +40,8 @@
           </div>
       </nav>
   </header>
-
       <div class="formBox">
+        <!-- this div is the form for buyer.-->
       <h1>Please fill these details to continue :-</h1>
       <form  method="POST">
           {% csrf_token %}
