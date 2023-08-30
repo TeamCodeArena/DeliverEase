@@ -24,24 +24,29 @@ margin-top: 20px;
 font-family: 'Roboto Mono', monospace;
 font-size: 15px;
 }
+
 .otp{
     width: 300px;
     margin-left: 180px;
     margin-top: 10px;
-    font-family: 'Sigmar', cursive;
+    font-family: Sigmar, cursive;
     font-size: 40px;
     color: #645888;
+
+    /* stylelint-disable-next-line declaration-block-no-shorthand-property-overrides */
     font: bold;
     }
+
 .headingon{  position: absolute;
     left: 550px;
     top: 100px;
     width: 487px;
     height: 49px;
     color: #645888;
-    font-family: Inter;
+
+    /* font-family: Inter, sans-serif; */
     font-size: 16px;
-    font-family: 'Kanit', sans-serif;
+    font-family: Kanit, sans-serif;
     font-weight: 700;
 }
 
@@ -52,9 +57,8 @@ font-size: 15px;
     width: 487px;
     height: 49px;
     color: #343F71;
-    font-family: Inter;
     font-size: 16px;
-    font-family: 'Kanit', sans-serif;
+    font-family: Kanit, sans-serif;
     font-weight: 700;
 }
 
@@ -64,9 +68,8 @@ font-size: 15px;
     width: 387px;
     height: 49px;
     color: #645888;
-    font-family: Inter;
     font-size: 16px;
-    font-family: 'Kanit', sans-serif;
+    font-family: Kanit, sans-serif;
     font-weight: 700;
 }
 
@@ -77,8 +80,7 @@ font-size: 15px;
     width: 387px;
     height: 49px;
     color: #343F71;
-    font-family: Inter;
     font-size: 16px;
-    font-family: 'Kanit', sans-serif;
+    font-family: Kanit, sans-serif;
     font-weight: 700;
 }

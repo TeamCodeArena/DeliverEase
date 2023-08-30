@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .sellerJobs{
     padding: 2rem 0;
     display: flex;
@@ -18,27 +19,30 @@
     list-style: none;
     text-decoration: none;
   }
+
   :root{
     --background-color : #E2F3F5;
     --font-color:#645888;
     --white-color :#ffff;
-  
     --transition: 0.8s all ease;
   }
+
   .App{
     width: 90vw;
     margin: auto;
   } 
+
   h1{
     color: var(--font-color);
   }
+
   h2{
-    
     color: #757575;
-    font-family: Inter;
+    font-family: Inter,sans-serif;
     font-size: 25px;
     font-weight: 400;
   }
+
   .btn{
     cursor: pointer;
     background-color: var(--font-color);
@@ -46,16 +50,16 @@
     margin-right: 15px;
     width: 9rem;
     height: 2.6rem;
-    border: 0px solid;
+    border: 0 solid;
     border-radius: 8px;
-  
-    font-family: 'NSimSun';
+    font-family: NSimSun, sans-serif ;
     font-size: 17px;
     font-weight: 400;
     line-height: 22px;
     text-align: center;
     letter-spacing: -0.408px;
   }
+
   .btn:hover{
     background-color: transparent;
     color: var(--font-color);
@@ -69,43 +73,51 @@
     margin: auto;
     
   }
+
   p{
     background-color: transparent;
   }
+
   .eachJobBox{
     background-color: transparent;
     width: 90%;
     height: auto;
     padding: 5px;
     margin-bottom: 1.2rem;
+
+    /* stylelint-disable-next-line declaration-block-no-shorthand-property-overrides */
     background: rgba(139, 213, 232, 0.19);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(139, 213, 232, 0.3);
-  
     display: flex;
     align-items: center;
   }
+
    .eachJobBox .image{
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-  } 
+  }
+
   .eachJobBox img{
     width: 5rem;
-    border: 0px solid black;
+    border: 0 solid black;
     border-radius: 50%;
   }
+
   .jobDetails{
     background-color: transparent;
     padding-left: 22px;
   }
+
   .jobDetails > h2{
     background-color: transparent;
   }
+
   .job_button{
     background-color: transparent;
     position:absolute;
@@ -119,7 +131,7 @@
     width: 215px;
     height: 19px;
     color: #757575;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 26px;
     font-weight: 700;
   }
@@ -137,12 +149,13 @@
     color: #FFF;
     cursor: pointer;
     display: inline-flex;
-    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: system-ui,-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 600;
     justify-content: center;
     line-height: 1.25;
-    margin: 0;
+
+    /* margin: 0; */
     min-height: 3rem;
     padding: calc(.875rem - 1px) calc(1.5rem - 1px);
     position: relative;
@@ -154,15 +167,18 @@
     vertical-align: baseline;
     width: auto;
   }
+
   .butto:hover,
   .butto:focus {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     color: rgba(0, 0, 0, 0.65);
   }
+
   .butto:hover {
     transform: translateY(-1px);
   }
+
   .butto:active {
     background-color: #F0F0F1;
     border-color: rgba(0, 0, 0, 0.15);

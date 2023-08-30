@@ -1,4 +1,4 @@
-"""This module registers all the Tables into the Admin Panel"""
+"""This module registers all the Tables into the Admin Panel."""
 from django.contrib import admin
 from .models import Buyer, Job, Seller
 

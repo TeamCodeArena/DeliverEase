@@ -1,31 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,300&display=swap');
 @import url('../static/sellerJobBox.css');
+
 *{
     background: #E2F3F5;
     list-style: none;
     text-decoration: none;
   }
+
   :root{
     --background-color : #E2F3F5;
     --font-color:#645888;
     --white-color :#ffff;
-  
     --transition: 0.8s all ease;
   }
+
   .App{
     width: 90vw;
     margin: auto;
   } 
+
   h1{
     color: var(--font-color);
   }
+
   h2{
-    
     color: #757575;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 25px;
     font-weight: 400;
   }
+
   .btn{
     cursor: pointer;
     background-color: var(--font-color);
@@ -33,20 +37,21 @@
     margin-right: 15px;
     width: 9rem;
     height: 2.6rem;
-    border: 0px solid;
+    border: 0 solid;
     border-radius: 8px;
-  
-    font-family: 'NSimSun';
+    font-family: NSimSun, sans-serif;
     font-size: 17px;
     font-weight: 400;
     line-height: 22px;
     text-align: center;
     letter-spacing: -0.408px;
   }
+
   .btn_sm{
     width: 9rem;
     height: 2.6rem;
   }
+
   .btn:hover{
     background-color: transparent;
     color: var(--font-color);
@@ -57,12 +62,13 @@
   img{
     width: 100%;
     object-fit: cover;
-    margin: auto;
-    
+    margin: auto; 
   }
+
   p{
     background-color: transparent;
   }
+
   .eachJobBox{
     width: 90%;
     height: auto;
@@ -74,52 +80,58 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(139, 213, 232, 0.3);
-  
     display: flex;
     align-items: center;
   }
+
   .eachJobBox_left{
     display: flex;
     flex-direction: row;
     background-color: transparent;
   }
+
    .eachJobBox .image{
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
   } 
+
   .eachJobBox img{
     width: 5rem;
-    border: 0px solid black;
+    border: 0 solid black;
     border-radius: 50%;
   }
+
   .jobDetails{
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     background-color: transparent;
     padding-left: 22px;
   }
+
   .jobDetails .time{
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .jobDetails .time p{
     margin-right: 1.5rem;
   }
+
   .jobDetails div{
     background-color: transparent;
   }
+
   .jobDetails > h2{
     background-color: transparent;
   }
+
   .job_button{
     background-color: transparent;
     position:absolute;
     right: 0;
   }
-
-
 
   /*----------------------------- for NAVBAR MEDIA QUERY------------------------------------*/
  
@@ -170,6 +182,7 @@
       height: auto;
       padding: 10px;
     }
+
     .nav-item {
       margin-left: 1.2rem;
   }
@@ -191,15 +204,15 @@
               0 10px 27px rgba(0, 0, 0, 0.05);
               z-index: 10;
       }
+
       .nav-menu li:nth-child(1) a {
         background-color: #fff;
     }
+
       .nav-menu li:nth-child(2) a {
         background-color: #fff;
     }
 
-   
-  
       .nav-menu.active {
           left: 0;
       }

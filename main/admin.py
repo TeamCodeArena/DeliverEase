@@ -1,2 +1,2 @@
+"""Register your main app models here."""
 
-# Register your models here.

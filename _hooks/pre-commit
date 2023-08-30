@@ -42,8 +42,7 @@ run_python_linters() {
     echo "Running Python linters..."
 
     for file in $staged_files; do
-        if [[ $file = *.py && $file != */migrations/* && $file != *test* && $file != *settings* && $file != *init* ]]; then
-    
+        if [[ $file = *.py && $file != */migrations/* && $file != *test* && $file != *settings* && $file != *init* && $file != *docs/* ]]; then
             echo -e "File Path: $file\n" >> logs/linter.log
 
             echo -e "FLAKE8:" >> logs/linter.log

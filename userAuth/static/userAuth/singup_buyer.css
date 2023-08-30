@@ -1,10 +1,13 @@
 @import url('../../App.css');
+
 h1{
     text-align: center;
-    margin: auto;
+    
+    /* margin: auto; */
     font-size:4rem ;
-    margin: 5px 0px 1.2rem;
+    margin: 5px 0 1.2rem;
 }
+
 .signWithGoogle{
     width: 25vw;
     height: 10vh;
@@ -16,28 +19,33 @@ h1{
     align-items: center;
 
 }
+
 .image{
     background-color: #fff;
     width: 15%;
 }
+
 .image img{
     background-color: transparent;
 }
+
 .title{
     background-color: #fff;
     margin-left: 22px;
 
 }
+
 .title h2{
     background-color: #fff;
     display: inline;
     font-size: 1.4rem;
-    font-family: Helvetica;
+    font-family: Helvetica, sans-serif;
     font-weight: 400;
     line-height: 22px;
     text-align: center;
     letter-spacing: -0.408px;
 }
+
 hr{
     margin-top: 2rem;
     width: 40rem;
@@ -52,6 +60,7 @@ hr{
     justify-content: center;
     align-items: center;
 }
+
 input, textarea{
     background-color: var(--white-color);
     padding: 1rem;
@@ -60,44 +69,52 @@ input, textarea{
     border: 1px solid white;
     outline: none;
 }
+
 input::placeholder{
     color: rgba(60,60,67,0.3);
-    font-family: "SFProText-Regular";
+    font-family: SFProText-Regular, sans-serif;
     font-weight: 400;
     line-height: 22px;
     letter-spacing: -0.408px;
     font-size: 1.2rem;
 
 }
+
 textarea::placeholder{
     color: rgba(60,60,67,0.3);
-    font-family: "SFProText-Regular";
+    font-family: SFProText-Regular, sans-serif;
     font-weight: 400;
     line-height: 22px;
     letter-spacing: -0.408px;
     font-size: 1.2rem;
 }
+
 .sellerInfo_third{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .sellerInfo_third input{
     width: 70%;
 }
+
 .confpass{
     display: flex;
     justify-content: center;
 }
+
 #confpassword{
     width: 70%;
 }
+
 .sellerInfo_third textarea{
     width: 70%;
     margin-bottom: 2rem;
     resize: none;
 }
+
 .sellerDetails button{
     display: block;
    margin: auto;
@@ -106,33 +123,41 @@ textarea::placeholder{
 /*Media query*/
 @media screen and (max-width: 1140px) {
     .signWithGoogle{
-        padding: 0px 20px;
+        padding: 0 20px;
         height: 9vh;
         width: 27vw;
     }
+
     .title h2{
         font-size: 1rem;
     }
+
     .sellerDetails .sellerInfo_first, .sellerInfo_second{
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
 }
+
 @media screen and (max-width: 730px) {
     .signWithGoogle{
-        padding: 0px 20px;
+        padding: 0 20px;
         height: 8vh;
     }
+
     .title h2{
         font-size: 0.8rem;
     }
+
     h1{
         font-size: 3.2rem;
     }
+
     hr{
         width: 30rem;
     }
+
     .sellerDetails .sellerInfo_first, .sellerInfo_second{
         display: flex;
         flex-direction: column;
@@ -145,20 +170,25 @@ textarea::placeholder{
     h1{
         font-size: 2.2rem;
     }
+
     .signWithGoogle{
         padding: 2px 20px;
         height: 5vh;
         width: 27vw;
     }
+
     .title{
         margin-left: 15px;
     }
+
     .title h2{
         font-size: 0.5rem;
     }
+
     hr{
         width: 20rem;
     }
+
     .sellerDetails input, textarea{
         width: 12rem;
         margin: 10px;
@@ -172,7 +202,7 @@ textarea::placeholder{
     width: 178px;
     height: 15px;
     color: #59adff;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 12px;
     font-weight: 400;
     text-align: right;

@@ -1,4 +1,4 @@
-"""this module contains the seller urls"""
+"""This module contains the seller urls."""
 from django.urls import path
 from . import views
 
