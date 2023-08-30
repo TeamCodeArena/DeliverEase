@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+     <!-- The title of the webpage -->
+    <title>DeliverEase | Job</title>
+
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "seller/style.css" %}">
     <link rel="stylesheet" href="{% static "seller/Navbar.css" %}">
     <link rel="stylesheet" href="{% static "seller/sellerNavbar.css" %}">
@@ -19,10 +23,16 @@
 <body>
 <div class="checkJob">
         <div class="App">
+           
+        <!-- Header section -->
         <header class="header">
+
+            <!-- Navigation bar -->
           <nav class="navbar">
               <h1> DeliverEase</h1>
               <ul class="nav-menu">
+
+                <!-- Navigation links -->
                   <li class="nav-item">
                       <a href="{% url "home" %}" class="nav-link">Home</a>
                   </li>
@@ -30,11 +40,12 @@
                       <a href="/about_us" class="nav-link">About Us</a>
                   </li>
                   <li class="nav-item">
-                      <!-- <a href="#" class="btn">My Orders</a> -->
                       <a href="{% url "seller_orders" %}"><button  class="btn btn_sm"> My Orders</button></a>
                       <a href="{% url "completed_jobs" %}"><button  class="btn btn_sm">Completed Jobs</button></a>
                   </li>
               </ul>
+              
+              <!-- hamburger div will use for responsiveness -->
               <div class="hamburger">
                   <span class="bar"></span>
                   <span class="bar"></span>
@@ -45,7 +56,8 @@
 
 
             <div class="contentBox_sellercheckjob">
-
+                
+                <!-- Details of Buyer (Who posted this job) -->
                <div class="buyers_details">
                    <div class="buyer_image">
                         <img src="{% static "media/buyer.jpg" %}" alt="buyerImg">
@@ -61,6 +73,7 @@
               </div>
 
                <div>
+                <!-- Details of a particular Job, provided by Buyer -->
                      <div class="buyers_Jobdetails">
                         <div>
                            <h2> Collect The Delivery from :-</h2>
@@ -87,6 +100,7 @@
 
                      </div>
                      <div>
+                        <!-- Message for seller -->
                         <p>Please don't drive faster than 40KM, take your time, the time we told you is just the customer expectations, we never promote, deliver time.</p>
                      </div>
                 </div>

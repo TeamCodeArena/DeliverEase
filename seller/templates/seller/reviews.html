@@ -3,18 +3,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- The title of this page -->
+    <title>Review page</title>
 
+    <!-- Include external CSS files -->
     <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}">
     <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "buyer/myorders.css" %}">
 </head>
+
 <body>
 <div class="App">
         <header class="header">
           <nav class="navbar">
               <h1> DeliverEase</h1>
+
               <ul class="nav-menu">
+                 <!-- Navigation links -->
                   <li class="nav-item">
                       <a href="{% url "home" %}" class="nav-link">Home</a>
                   </li>
@@ -22,11 +27,12 @@
                       <a href="/about_us" class="nav-link">About Us</a>
                   </li>
                   <li class="nav-item">
-                      <!-- <a href="#" class="btn">My Orders</a> -->
                       <a href="{% url "seller_orders" %}"><button  class="btn"> My Orders</button></a>
                       <a href="{% url "completed_jobs" %}"><button  class="btn">Completed Jobs</button></a>
                   </li>
               </ul>
+
+              <!-- hamburger div will use for responsiveness -->
               <div class="hamburger">
                   <span class="bar"></span>
                   <span class="bar"></span>
@@ -42,6 +48,7 @@
 
     <div class="sellerJobs">
         <div class="eachJobBox">
+            <!-- In this div seller will be able to see the info (which is in {{ here }} ) of each jobs which is coming from the backend's data-->
             <div class="jobDetails">
                 <h2> Job By : {{ job1.created_by.name }}</h2>
                 <div class="time">
@@ -62,6 +69,8 @@
     </div>
 {% endfor %}
  {% else %}
+
+    <!-- If the seller does not complete any job then this message will display-->
     <p> No Jobs completed till now.<p>
 {% endif %}
 </body>
