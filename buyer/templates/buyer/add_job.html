@@ -1,5 +1,3 @@
-<!-- add comments before each div, header, ul, li to explain what the div is doing in the project. -->
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -7,18 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- The title of the webpage -->
+    <title>DeliverEase | Post a Job</title>
+
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "buyer/jobform.css" %}">
     <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "buyer/Navbar.css" %}">
-    <title>DeliverEase</title>
 </head>
 <body>
   <div class="App">
-    <!-- this header is for the navbar -->
+    <!-- Header section -->
     <header class="header">
       <nav class="navbar">
           <a href="{% url "index" %}" class="nav-logo">DeliverEase</a>
+          
           <ul class="nav-menu">
+             <!-- Navigation links -->
+
               <!-- add the url for the home page -->
               <li class="nav-item">
                   <a href="{% url "index" %}" class="nav-link">Home</a>
@@ -27,12 +32,13 @@
               <li class="nav-item">
                   <a href="/about_us" class="nav-link">About Us</a>
               </li>
-              <!-- add the url for the contact us page -->
+              
               <li class="nav-item">
                   <a href="{% url "my_orders" %}" class="button">My Orders</a>
               </li>
           </ul>
-          <!-- this div is for the hamburger menu -->
+
+          <!-- hamburger div will use for responsiveness -->
           <div class="hamburger">
               <span class="bar"></span>
               <span class="bar"></span>
@@ -41,7 +47,7 @@
       </nav>
   </header>
       <div class="formBox">
-        <!-- this div is the form for buyer.-->
+        <!-- Buyer can post a job by filling this form-->
       <h1>Please fill these details to continue :-</h1>
       <form  method="POST">
           {% csrf_token %}
@@ -62,11 +68,13 @@
           <input type="text" name="pickup_pincode" class="collectdel" placeholder="PickUp Pin Code" />
           <input type="text" name="delivery_pincode" class="collectdel" placeholder="Delivery Pin Code" />
         </div>
+        <!-- After Clicking this button, This job will be shown to seller's home page -->
           <button class="btn">Place Order</button>
         </div>
       </form>
 
   </div>
 </body>
+ <!-- External JavaScript file -->
 <script src="{% static "buyer_js/add_job.html" %}"></script>
 </html>

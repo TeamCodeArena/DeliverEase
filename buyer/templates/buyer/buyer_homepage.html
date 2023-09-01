@@ -1,15 +1,16 @@
 {% load static %}
-<!-- add comments before each div, header, ul, li to explain what the div is doing in the project. -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- The title of the webpage -->
+    <title>DeliverEase | Home page</title>
+
+     <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "buyer/Navbar.css" %}">
-    <title>DeliverEase</title>
     <style>
         #order_button{
             height: 80px;
@@ -37,10 +38,12 @@
 <body>
 
   <div class="App"> 
+    <!-- Header section -->
     <header class="header">
       <nav class="navbar">
           <a href="#" class="nav-logo">DeliverEase</a>
           <ul class="nav-menu">
+            <!-- Navigation links -->
               <li class="nav-item">
                   <a href="/buyer/home" class="nav-link">Home</a>
               </li>
@@ -51,6 +54,7 @@
                   <a href="{% url "my_orders" %}" class="button">My Orders</a>
               </li>
           </ul>
+          <!-- hamburger div will use for responsiveness -->
           <div class="hamburger">
               <span class="bar"></span>
               <span class="bar"></span>
@@ -72,5 +76,6 @@
 
   </div>
 </body>
+ <!-- External JavaScript file -->
 <script src="{% static "buyer_js/index.js" %}"></script>
 </html>

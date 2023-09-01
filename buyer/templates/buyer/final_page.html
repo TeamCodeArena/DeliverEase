@@ -1,5 +1,4 @@
 {% load static %}
-<!-- add comments before each div, header, ul, li to explain what the div is doing in the project. -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -67,10 +66,12 @@
 </head>
 <body>
 <div class="App">
+         <!-- Header section -->
         <header class="header">
           <nav class="navbar">
               <h1> DeliverEase</h1>
               <ul class="nav-menu">
+                <!-- Navigation links -->
                   <li class="nav-item">
                       <a href="{% url "index" %}" class="nav-link">Home</a>
                   </li>
@@ -83,6 +84,7 @@
                       <a href="{% url "buyer_completed_jobs" %}"><button  class="btn">Completed Jobs</button></a>
                   </li>
               </ul>
+       <!-- hamburger div will use for responsiveness -->
               <div class="hamburger">
                   <span class="bar"></span>
                   <span class="bar"></span>
@@ -93,7 +95,7 @@
 
 {% if seller %}
 <!-- this div is for the seller details -->
-<div class="seller_details">
+                <div class="seller_details">
                   <div class="seller_info">
                   <ul>
                     <!-- this is the seller info -->
