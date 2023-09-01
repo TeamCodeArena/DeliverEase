@@ -3,8 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+     <!-- The title of this page -->
+    <title>My order | current order</title>
 
+    <!-- Include external CSS files -->
     <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}">
     <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "buyer/myorders.css" %}">
@@ -22,9 +24,13 @@
 <body>
 <div class="App">
         <header class="header">
+
+            <!-- Navigation bar -->
           <nav class="navbar">
               <h1> DeliverEase</h1>
+
               <ul class="nav-menu">
+                 <!-- Navigation links -->
                   <li class="nav-item">
                       <a href="{% url "home" %}" class="nav-link">Home</a>
                   </li>
@@ -32,11 +38,13 @@
                       <a href="/about_us" class="nav-link">About Us</a>
                   </li>
                   <li class="nav-item">
-                      <!-- <a href="#" class="btn">My Orders</a> -->
                       <a href="{% url "seller_orders" %}"><button  class="btn"> My Orders</button></a>
+
+                      <!-- This button "Completed Jobs" will redirect to seller completed Job page which will display all jobs which has been completed by seller -->
                       <a href="{% url "completed_jobs" %}"><button  class="btn">Completed Jobs</button></a>
                   </li>
               </ul>
+            <!-- hamburger div will use for responsiveness -->
               <div class="hamburger">
                   <span class="bar"></span>
                   <span class="bar"></span>
@@ -51,12 +59,16 @@
 {% for job1 in jobs %}
 <div class="sellerJobBox">
 
+    <!-- In this div All avilable jobs which has been posted by all the buyers will be displayed -->
     <div class="sellerJobs">
+
+         <!-- In 'eachJobBox' div Each Job will be displayed -->
         <div class="eachJobBox">
             <div class="image">
                 <img src="{% static "media/buyer.jpg" %}" alt="buyerImg">
             </div>
 
+            <!-- In this div seller will be able to see the info (which is in {{ here }} ) of each jobs which is coming from the backend's data-->
             <div class="jobDetails">
                 <h2> Job By : {{ buyer.name }}</h2>
                 <div class="time">
@@ -67,6 +79,8 @@
                     <p>Delivery Address: {{ job1.delivery_address }}</p>
                     <p>Pickup Address: {{ job1.pickup_address }}</p>
                 </div>
+
+                <!-- By clicking 'Check Job' button seller will be able to check the entire details of this particular Job -->
                 <div class="job_button">
                     <form method="post">
                         {% csrf_token %}
@@ -80,9 +94,11 @@
     </div>
 {% endfor %}
  {% else %}
+    <!-- If there are no jobs available currently, seller will see this message -->
     <p> No Jobs available currently<p>
 {% endif %}
 
+<!-- Include JavaScript file --> 
   <script src="{% static "seller/index.js" %}"></script>
 </body>
 </html>

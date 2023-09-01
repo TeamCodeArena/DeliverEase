@@ -30,8 +30,13 @@
         <header class="header">
             <nav class="navbar">
                 <h2> DeliverEase</h2>
+                
                 <ul class="nav-menu">
+<<<<<<< HEAD
          <!-- Navigation links -->                    
+=======
+                    <!-- Navigation links -->
+>>>>>>> 7cc0f7325d563abfe52d25380ea1e6e7bcc92e8a
                     <li class="nav-item">
                         <a href="{% url "global_index" %}" class="nav-link">Home</a>
                     </li>
@@ -43,6 +48,8 @@
                       <a href="/auth/login"  ><button  class="btn"> Login</button></a>
                     </li>
                 </ul>
+
+                <!-- hamburger div will use for responsiveness -->
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -77,7 +84,8 @@
      <!-- External JS Link to get required icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    
+    <!-- External JavaScript file -->
     <script src="{% static "main_js/index.js" %}"></script>
     
 </body>
