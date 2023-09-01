@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "userAuth/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "userAuth/singup_buyer.css" %}">
+    <!-- The title of the webpage -->
     <title>DeliverEase | Register</title>
     <style>
         #reg-button{
@@ -39,55 +40,54 @@
 </head>
 <body>
 {#    {% messages %}#}
+<!-- navbar -->
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
           <i class="fas fa-bars"></i>
         </label>
         <label class="logo">DeliverEase</label>
+        <!-- Navigation Links -->
         <ul>
           <li><a class="active" href="/">Home</a></li>
           <li><a href="/about_us">About Us</a></li>
-          <!-- <li> <a class='button' href="/templates/myorders.html">My Orders</a></li> -->
-  
         </ul>
       </nav>
 
       <div class="App">
-
+        <!-- instructions or kind of rules -->
         <ul id="reg-ins">
             <li>Please ensure that password is at-least 7 digits long</li>
             <li>first name must be  greater than single character</li>
         </ul>
+        <!-- this is buyer signup page -->
         <div class="signUp"> 
+          <!-- heading -->
             <h1> Signup as a Buyer</h1>
-              
               <div class="buyerDetails">
+                <!-- creating a form  -->
                   <form method="post">
                       {% csrf_token %}
-                  
+                  <!-- taking information from buyer such as name and email. -->
                   <div class="buyerInfo_first">
-
                     <input type="text" name="fullName" id="fullName" placeholder="Full Name" />
-                    
-                    
-                      
                     <input type="email" name="email" id="email" placeholder="Billiot@example.com" />
                   </div>
-                
+                  <!-- phone number and password according to the above criteria -->
                   <div class="buyerInfo_second">
                     <input type="password" name="password" placeholder="Password"/>
                     <input type="tel" name="phone_no" autocomplete="tel" placeholder="Phone Number"/>
                   </div>
+                  <!-- confirm password and address -->
                   <div class="confpass"> 
                   <input type="password" name="conf_password" id="confpassword" placeholder="Confirm Password"/>
                 </div>
-
                   <div class="sellerInfo_third">
                     <textarea name="address"  autocomplete="street-address" placeholder="2639 1st Hwy, STE 7768, Pierre, South Dakota, 93567"></textarea>
                   </div>
-      
+                  <!-- submit button -->
                 <button class="button" id="reg-button" type="submit">Register</button>
+              <!-- already got an account -->
               </form>
                   <form class="already-log" action="/auth/login">
                       <label id="askHaveAccount" for="askHaveAccount">Already Have a account?</label>
