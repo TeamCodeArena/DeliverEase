@@ -5,22 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <!-- The title of the webpage -->
+    <title>DeliverEase | About Us page</title>
+
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "main/aboutus.css" %}">
     <link rel="stylesheet" href="{% static "main/stylesheet.css" %}">
-    <title>DeliverEase</title>
+   
 </head>
 <body>
+   <!-- Header section -->
   <header class="header">
     <nav class="navbar">
         <a href="{% url "index" %}" class="nav-logo">DeliverEase</a>
+
+           <!-- Navigation links -->
         <ul class="nav-menu">
             <li class="nav-item">
                 <a href="{% url "redirect_home" %}" class="nav-link">Home</a>
             </li>
-            <li class="nav-item">
-                <a href="/about_us" class="nav-link">About Us</a>
-            </li>
            </ul>
+
+           <!-- hamburger div will use for responsiveness -->
         <div class="hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -29,6 +36,7 @@
     </nav>
 </header>
 
+  <!-- A brief Introduction of DeliverEase team -->
       <div class="aboutus_container"> 
         <h1 class="aboutus_title" >Who are we?</h1>
           <div class="aboutus_para"> 
@@ -40,6 +48,8 @@
             </div>
       </div>
 </body>
+
+<!-- Internal JS code for responsiveness -->
 <script>
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");

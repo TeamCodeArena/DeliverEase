@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title of the webpage -->
     <title>login page</title>
+
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "userAuth/style.css" %}">
     <link rel="stylesheet" href="{% static "userAuth/sellersignup.css" %}">
     <style>
@@ -32,9 +36,13 @@
             <h1>Login</h1>
             <form  method="post" >
                 {% csrf_token %}
+
+            <!-- To Login in their account (Seller/ buyer), they have to provide registered email & password in respective field-->
             <div class="sellerInfo_login"> 
                 <input type="email" name="email" placeholder="Billiot@example.com" />
                 <input type="password" name="password" placeholder="Password"/>
+
+                <!-- By clicking Login button buyer/ seller will be able to access their account -->
                 <button class="btn">login</button>
 
             </div>

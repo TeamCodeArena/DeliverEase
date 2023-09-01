@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title of the webpage -->
     <title>{%block title%}Home{% endblock %}</title>
+
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "seller/style.css" %}">
     <link rel="stylesheet" href="{% static "seller/Navbar.css" %}">
     <link rel="stylesheet" href="{% static "seller/sellerNavbar.css" %}">
@@ -14,11 +18,20 @@
    
 </head>
 <body>
+
+    <!-- The main container for the webpage -->
     <div class="App">
+
+        <!-- The header of the webpage -->
         <header class="header">
+
+        <!-- Navigation bar -->
           <nav class="navbar">
+            
               <h1> DeliverEase</h1>
               <ul class="nav-menu">
+                
+                <!-- Navigation links -->
                   <li class="nav-item">
                       <a href="{% url "home" %}" class="nav-link">Home</a>
                   </li>
@@ -26,11 +39,15 @@
                       <a href="/about_us" class="nav-link">About Us</a>
                   </li>
                   <li class="nav-item">
-                      <!-- <a href="#" class="btn">My Orders</a> -->
+                      <!-- This button "My order" will redirect to seller myorder page which will display the current job of seller -->
                       <a href="{% url "seller_orders" %}"><button  class="btn btn_sm"> My Orders</button></a>
+
+                      <!-- This button "Completed Jobs" will redirect to seller completed Job page which will display all jobs which has been completed by seller -->
                       <a href="{% url "completed_jobs" %}"><button  class="btn btn_sm">Completed Jobs</button></a>
                   </li>
               </ul>
+
+              <!-- hamburger div will use for responsiveness -->
               <div class="hamburger">
                   <span class="bar"></span>
                   <span class="bar"></span>
@@ -42,7 +59,7 @@
     
     {% endblock %}
     
-
+ <!-- External JavaScript file -->
   <script src="{% static "seller/index.js" %}"></script>
 </body>
 </html>
