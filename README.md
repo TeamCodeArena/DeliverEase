@@ -104,7 +104,7 @@ You can see our Github wiki [![Wiki](https://img.shields.io/badge/Wiki-User_Docs
   <tr>
     <td align="center">
       <a href="https://github.com/TeamCodeArena/deliverease.app">
-      <img src="https://user-images.githubusercontent.com/806104/193877051-c60d255d-0b6a-408c-bb21-6fabc5e0e60c.png" height="128">
+      <img src="img/LogoDeliverEase.png" height="128">
       <p>&nbsp;&nbsp;&nbsp;&nbsp;deliverease.app&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </a>
     </td>
