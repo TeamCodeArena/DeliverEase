@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- The title of this page -->
-    <title>DeliverEase Seller Signup Page </title>
+    <title>DeliverEase|Seller Signup</title>
 
      <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "userAuth/style.css" %}">
@@ -16,7 +16,7 @@
 
 <body>
     <div class="App">
-
+        <!-- instructions or kind of rules -->
         <ul>
             <li>Please ensure that password is atleast 7 digits long</li>
             <li>first name must be  greater than single character</li>
@@ -25,22 +25,22 @@
         <!-- Signup form for Seller -->
     <div class="signUp">
         <h1> Signup as a seller  </h1>
-
           <hr/>
-
           <div class="sellerDetails">
               <form  method="post" >
                 {% csrf_token %}
+                <!-- taking information from seller such as name and email. -->
               <div class="sellerInfo_first">
                 <input type="text" name="fullName" placeholder="Full Name" />
 
                 <input type="email" name="email" placeholder="Billiot@example.com" />
               </div>
-
+               <!-- phone number and password according to the above criteria -->
               <div class="sellerInfo_second">
                 <input type="password" name="password"    placeholder="Password"/>
                 <input type="tel" name="phone_no"  autocomplete="tel" placeholder="Phone Number"/>
               </div>
+              <!-- confirm password  -->
               <div class="confpass">
               <input type="password" name="conf_password" id="confpassword"  placeholder="Confirm Password"/>
             </div>

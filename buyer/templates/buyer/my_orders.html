@@ -3,8 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- The title of the webpage -->
+    <title>DeliverEase | My Orders</title>
 
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "seller/sellerJobBox.css" %}">
     <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "buyer/myorders.css" %}">
@@ -14,17 +19,18 @@
             position: relative;
             top: -75px;
             right: 75px;
-            }
-
+        }
     </style>
 
 </head>
 <body>
 <div class="App">
+   <!-- Header section -->
         <header class="header">
           <nav class="navbar">
               <h1> DeliverEase</h1>
               <ul class="nav-menu">
+                <!-- Navigation links -->
                   <li class="nav-item">
                       <a href="{% url "index" %}" class="nav-link">Home</a>
                   </li>
@@ -37,6 +43,8 @@
                       <a href="{% url "buyer_completed_jobs" %}"><button  class="btn">Completed Jobs</button></a>
                   </li>
               </ul>
+
+  <!-- hamburger div will use for responsiveness -->
               <div class="hamburger">
                   <span class="bar"></span>
                   <span class="bar"></span>
@@ -48,10 +56,11 @@
 <h2> Jobs </h2>
 {% if jobs %}
 {% for job1 in jobs %}
+<!-- this is for the buyer details -->
 <div class="sellerJobBox">
-
     <div class="sellerJobs">
         <div class="eachJobBox">
+            <!-- this page is for the buyer to see the jobs created by him better known as my orders. -->
             <div class="image">
                 <img src="{% static "media/buyer.jpg" %}" alt="buyerImg">
             </div>
@@ -79,6 +88,7 @@
 
 {% endfor %}
 {% else %}
+    <!-- Message for buyer -->
     <p> No jobs created by you</p>
 {% endif %}
 </body>
