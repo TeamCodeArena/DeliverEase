@@ -99,6 +99,14 @@ See [**`LICENSE.md`**](LICENSE) for more information.
 You can see our Github wiki [![Wiki](https://img.shields.io/badge/Wiki-User_Docs-blue.svg?style=flat)](https://github.com/N3v1/DeliverEase/wiki)
 
 
+## Related Projects
+<table>
+  <td align="center">
+    <a href="https://github.com/TeamCodeArena/deliverease.app">
+    <img src="https://user-images.githubusercontent.com/806104/193877051-c60d255d-0b6a-408c-bb21-6fabc5e0e60c.png" height="128">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;deliverease.app&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  </td>
+</table>
 
 
 <img align="right" width="100" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
