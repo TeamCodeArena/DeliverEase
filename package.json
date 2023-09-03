@@ -15,6 +15,7 @@
   "devDependencies": {
     "htmlhint": "^1.1.4",
     "jest": "^29.6.4",
+    "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0"
   },
   "dependencies": {
