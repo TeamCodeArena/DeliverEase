@@ -2,7 +2,7 @@
 
 # Needed in order to make read work in hook
 exec < /dev/tty
-run_python_linters() {
+run_linters() {
     # the logs will contain output from previous run only
     mkdir -p logs
     echo > logs/linter.log
@@ -42,42 +42,55 @@ run_python_linters() {
     echo "Running Python linters..."
 
     for file in $staged_files; do
-        if [[ $file = *.py && $file != */migrations/* && $file != *test* && $file != *settings* && $file != *init* && $file != *docs/* ]]; then
+        if [[ $file != */migrations/* && $file != *test* && $file != *settings* && $file != *init* && $file != *docs/* ]]; then
+
             echo -e "File Path: $file\n" >> logs/linter.log
 
-            echo -e "FLAKE8:" >> logs/linter.log
-            python -m flake8 $file >> logs/linter.log
+            if [[ $file = *.py ]]; then
 
-            echo -e "PYCODESTYLE:" >> logs/linter.log
-            python -m pycodestyle $file >> logs/linter.log
+                echo -e "FLAKE8:" >> logs/linter.log
+                python -m flake8 $file >> logs/linter.log
 
-            # echo -e "PYLINT:" >> logs/linter.log
-            # python -m pylint $file >> logs/linter.log
+                echo -e "PYCODESTYLE:" >> logs/linter.log
+                python -m pycodestyle $file >> logs/linter.log
 
-            echo -e "BLACK:" >> logs/linter.log
-            python -m black --diff $file >> logs/linter.log 2>&1
+                # echo -e "PYLINT:" >> logs/linter.log
+                # python -m pylint $file >> logs/linter.log
 
-            echo -e "RUFF:" >> logs/linter.log
-            python -m ruff check $file >> logs/linter.log
+                echo -e "BLACK:" >> logs/linter.log
+                python -m black --diff $file >> logs/linter.log 2>&1
 
-            echo -e "MYPY:" >> logs/linter.log
-            python -m mypy $file >> logs/linter.log
+                echo -e "RUFF:" >> logs/linter.log
+                python -m ruff check $file >> logs/linter.log
 
-            echo -e "PYDOCSTYLE" >> logs/linter.log
-            python -m pydocstyle $file >> logs/linter.log 
+                echo -e "MYPY:" >> logs/linter.log
+                python -m mypy $file >> logs/linter.log
+
+                echo -e "PYDOCSTYLE" >> logs/linter.log
+                python -m pydocstyle $file >> logs/linter.log 
+                
+            elif [[ $file = *.html ]]; then
+                echo -e "HTMLHINT:" >> logs/linter.log
+                npx htmlhint . >> logs/linter.log
+
+            elif [[ $file = *.css ]]; then
+                echo -e "STYLELINT:" >> logs/linter.log
+                npx stylelint "**/*.css" >> logs/linter.log
+            fi
+            
+            echo -e "\n" >> logs/linter.log
             
             exit_code=$?
             if [ $exit_code -ne 0 ]; then
                 fail=true
             fi
         fi
-
     done
     
     cat logs/linter.log 
 
     if [[ $fail != false ]]; then
-        echo "Python linters failed, Commit aborted."
+        echo "Linters failed, Commit aborted."
         echo "Please check terminal or logs in logs/linters.log"
         exit 1
     fi
@@ -97,4 +110,4 @@ ins_empty_line(){
 }
 
 ins_empty_line
-run_python_linters
+run_linters
