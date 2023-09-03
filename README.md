@@ -20,7 +20,7 @@
 <!--<img align="right" width="128" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>-->
 
 <a id="top"></a>
-[![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT)  [![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g) [![Issues](https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/issues) [![Coverage](https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://codecov.io/gh/TeamCodeArena/DeliverEase) ![Security](https://img.shields.io/badge/Security-SSL-yellow?style=flat-square) ![Platform](https://img.shields.io/badge/Platform-Web-brightgreen?style=flat-square) ![Language](https://img.shields.io/badge/Language-Python%2C%20HTML%2C%20CSS%2C%20Shell%2C%20JavaScript-blue?style=flat-square) ![Framework](https://img.shields.io/badge/Framework-Django-orange?style=flat-square)
+[![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Issues](https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/issues) [![Coverage](https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://codecov.io/gh/TeamCodeArena/DeliverEase) ![Security](https://img.shields.io/badge/Security-SSL-yellow?style=flat-square) ![Platform](https://img.shields.io/badge/Platform-Web-brightgreen?style=flat-square) ![Language](https://img.shields.io/badge/Language-Python%2C%20HTML%2C%20CSS%2C%20Shell%2C%20JavaScript-blue?style=flat-square) ![Framework](https://img.shields.io/badge/Framework-Django-orange?style=flat-square)
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
 ### Empowering Delivery Partners, Connecting Communities
@@ -106,11 +106,6 @@ We value feedback to improve our platform continuously. If you have any suggesti
 DeliverEase is released under the [**MIT License**](https://opensource.org/licenses/MIT). 
 See [**`LICENSE.md`**](LICENSE) for more information.
 
-
-## Social Media
-<a aria-label="Join the community on Slack" href="https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g" target="_blank">
-    <img alt="" src="https://img.shields.io/badge/Join the community on Slack-4A154B?style=flat&logo=slack&logoColor=white">
-</a>
 
 ## Github Wiki
 You can see our Github wiki [![Wiki](https://img.shields.io/badge/Wiki-User_Docs-blue.svg?style=flat)](https://github.com/N3v1/DeliverEase/wiki)
