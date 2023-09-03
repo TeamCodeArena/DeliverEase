@@ -17,7 +17,7 @@
 <!-- Old logo-->
 <!--<img align="right" width="128" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>-->
 
-<div style="align-items: center>
+<div align="center">
   <a id="top"></a>
   <a href="https://github.com/TeamCodeArena/DeliverEase/releases"><img src="https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="Github release"></a></img>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="license"></a></img>
