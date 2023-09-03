@@ -25,9 +25,9 @@
   <a href="https://codecov.io/gh/TeamCodeArena/DeliverEase"><img src="https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="issues"></a></img>
 </div>
 
+### Empowering Delivery Partners, Connecting Communities
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
-### Empowering Delivery Partners, Connecting Communities
 >DeliverEase is an innovative platform **designed to empower delivery partners** and foster **seamless connections between buyers and sellers** without the need for intermediaries. With a **user-friendly interface** and **efficient processes**, DeliverEase aims to **revolutionize the way goods are delivered**, making it convenient for both consumers and businesses.
 
 ## Table of Contents
