@@ -100,7 +100,7 @@ run_linters() {
 
             elif [[ $file = *.css ]]; then
                 echo -e "STYLELINT:" >> logs/linter.log
-                npx stylelint $file >> logs/linter.log
+                npx stylelint $file --config .stylelintrc.json
             fi
             
             echo -e "" >> logs/linter.log
