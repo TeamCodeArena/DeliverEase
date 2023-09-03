@@ -14,13 +14,17 @@
   </a>
 </p>
 
-
-
-
+<!-- Old logo-->
 <!--<img align="right" width="128" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>-->
 
-<a id="top"></a>
-[![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Issues](https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/issues) [![Coverage](https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://codecov.io/gh/TeamCodeArena/DeliverEase) ![Security](https://img.shields.io/badge/Security-SSL-yellow?style=flat-square) ![Platform](https://img.shields.io/badge/Platform-Web-brightgreen?style=flat-square) ![Language](https://img.shields.io/badge/Language-Python%2C%20HTML%2C%20CSS%2C%20Shell%2C%20JavaScript-blue?style=flat-square) ![Framework](https://img.shields.io/badge/Framework-Django-orange?style=flat-square)
+<div style="align-items: center>
+  <a id="top"></a>
+  <a href="https://github.com/TeamCodeArena/DeliverEase/releases"><img src="https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="Github release"></a></img>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="license"></a></img>
+  <a href="https://github.com/TeamCodeArena/DeliverEase/issues"><img src="https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="issues"></a></img>
+  <a href="https://codecov.io/gh/TeamCodeArena/DeliverEase"><img src="https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="issues"></a></img>
+</div>
+
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
 ### Empowering Delivery Partners, Connecting Communities
@@ -108,7 +112,7 @@ See [**`LICENSE.md`**](LICENSE) for more information.
 
 
 ## Github Wiki
-You can see our Github wiki [![Wiki](https://img.shields.io/badge/Wiki-User_Docs-blue.svg?style=flat)](https://github.com/N3v1/DeliverEase/wiki)
+You can see our Github wiki here: [![Wiki](https://img.shields.io/badge/Wiki-User_Docs-blue.svg?style=flat)](https://github.com/N3v1/DeliverEase/wiki)
 
 
 ## Related Projects
