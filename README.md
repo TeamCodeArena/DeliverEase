@@ -4,6 +4,9 @@
   <h1 align="center">DeliverEase</h1>
 </p>
 
+<!-- Old logo-->
+<!--<img align="right" width="128" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>-->
+
 
 <p align="center">
   <a aria-label="Follow DeliverEase on GitHub" href="https://github.io/TeamCodeArena" target="_blank">
@@ -13,9 +16,6 @@
     <img alt="" src="https://img.shields.io/badge/Join%20the%20community-black.svg?style=for-the-badge&logo=Slack">
   </a>
 </p>
-
-<!-- Old logo-->
-<!--<img align="right" width="128" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>-->
 
 <div align="center">
   <a id="top"></a>
@@ -29,6 +29,9 @@
 <img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
 
 >DeliverEase is an innovative platform **designed to empower delivery partners** and foster **seamless connections between buyers and sellers** without the need for intermediaries. With a **user-friendly interface** and **efficient processes**, DeliverEase aims to **revolutionize the way goods are delivered**, making it convenient for both consumers and businesses.
+
+> **Note:** \
+> DeliverEase is currently in development. You can find our badges [**here**](Status.md)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -86,7 +89,7 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 - **Convenient pickup and drop-off services**
 - **No tracking system** to ensure user privacy 
 
-## Getting Started ![Getting Started](https://img.shields.io/badge/Getting%20Started-Ready-blueviolet?style=flat-square) [![Quick Setup](https://img.shields.io/badge/Quick%20Setup-6%20Steps-success?style=flat-square)](#quick-setup) [![Installation Guide](https://img.shields.io/badge/Installation%20Guide-Easy-brightgreen?style=flat-square)](#installation-guide)
+## Getting Started
 To get started with DeliverEase using Django, follow these steps:
 - **Clone the repository:** `git clone https://github.com/TeamCodeArena/DeliverEase`
 - **Navigate to the project directory:** `cd DeliverEase`

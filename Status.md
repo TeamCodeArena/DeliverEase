@@ -10,9 +10,3 @@
 ![Getting Started](https://img.shields.io/badge/Getting%20Started-Ready-blueviolet?style=flat-square) [![Quick Setup](https://img.shields.io/badge/Quick%20Setup-6%20Steps-success?style=flat-square)](#quick-setup) [![Installation Guide](https://img.shields.io/badge/Installation%20Guide-Easy-brightgreen?style=flat-square)](#installation-guide)
 
 [![Wiki](https://img.shields.io/badge/Wiki-User_Docs-blue.svg?style=flat)](https://github.com/N3v1/DeliverEase/wiki)
-
-
-
-
-// gg
-[![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Issues](https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/issues) [![Coverage](https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://codecov.io/gh/TeamCodeArena/DeliverEase)
