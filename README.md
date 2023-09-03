@@ -30,7 +30,7 @@
 
 >DeliverEase is an innovative platform **designed to empower delivery partners** and foster **seamless connections between buyers and sellers** without the need for intermediaries. With a **user-friendly interface** and **efficient processes**, DeliverEase aims to **revolutionize the way goods are delivered**, making it convenient for both consumers and businesses.
 
-> **Note:** \
+> **Note**\
 > DeliverEase is currently in development. You can find our badges [**here**](Status.md)
 
 ## Table of Contents
