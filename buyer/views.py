@@ -1,10 +1,12 @@
 """This module contains views related to the Buyer app."""
 import random
+from django.contrib.auth import logout
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from userAuth.models import Buyer, Seller
 from .models import Job
+
 
 
 def index(request):
@@ -30,6 +32,11 @@ def index(request):
         request.session["buyer_id"] = buyer.id
 
     return render(request, "buyer/buyer_homepage.html")
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("index"))
 
 
 def add_job(request):
