@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>DeliverEase | Login</title>
-=======
 
     <!-- The title of the webpage -->
     <title>login page</title>
 
     <!-- Link to the external stylesheet -->
->>>>>>> 7cc0f7325d563abfe52d25380ea1e6e7bcc92e8a
     <link rel="stylesheet" href="{% static "userAuth/style.css" %}">
     <link rel="stylesheet" href="{% static "userAuth/sellersignup.css" %}">
     <style>
@@ -45,16 +42,18 @@
                 <!-- take email and password in the input. -->
                 <input type="email" name="email" placeholder="Billiot@example.com" />
                 <input type="password" name="password" placeholder="Password"/>
-<<<<<<< HEAD
                 <!-- button -->
-=======
 
                 <!-- By clicking Login button buyer/ seller will be able to access their account -->
->>>>>>> 7cc0f7325d563abfe52d25380ea1e6e7bcc92e8a
                 <button class="btn">login</button>
 
             </div>
             </form>
+
+            <label id="askDontHaveAccount" for="askDontHaveAccount">Create an account?</label>
+            <a href="{% url "get_started" %}"><button class="btn">Sign Up</button></a>
+        
+
         </div>
 
 
