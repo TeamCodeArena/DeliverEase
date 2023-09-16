@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- The title of the webpage -->
+    <title>DeliverEase | Home page</title>
+
+     <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "buyer/Navbar.css" %}">
-    <title>DeliverEase</title>
     <style>
         #order_button{
             height: 80px;
@@ -35,10 +38,12 @@
 <body>
 
   <div class="App"> 
+    <!-- Header section -->
     <header class="header">
       <nav class="navbar">
           <a href="#" class="nav-logo">DeliverEase</a>
           <ul class="nav-menu">
+            <!-- Navigation links -->
               <li class="nav-item">
                   <a href="/buyer/home" class="nav-link">Home</a>
               </li>
@@ -48,7 +53,11 @@
               <li class="nav-item">
                   <a href="{% url "my_orders" %}" class="button">My Orders</a>
               </li>
+              <li class="nav-item">
+                    <a href = "{% url "logout" %}" class="button">Logout</a>
+              </li>
           </ul>
+          <!-- hamburger div will use for responsiveness -->
           <div class="hamburger">
               <span class="bar"></span>
               <span class="bar"></span>
@@ -56,17 +65,20 @@
           </div>
       </nav>
   </header>
+  <!-- this is the buyer dashboard. -->
       <div class="container"> 
         <div class="buyerhomepage_left"> 
           <h1 class="heading">Get something delivered.<br>Directly by them.</h1>
           <a id="order_btn" href="{% url "add_job" %}" ><button id="order_button" class="btn">Place Order</button></a>
         </div>
         <div id="add_img" class="image">
+            <!-- this is image on the buyer homepage -->
          <img src="{% static "media/homepage.jpg" %}">
         </div>
     </div>
 
   </div>
 </body>
+ <!-- External JavaScript file -->
 <script src="{% static "buyer_js/index.js" %}"></script>
 </html>

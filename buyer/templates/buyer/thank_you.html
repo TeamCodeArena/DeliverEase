@@ -181,6 +181,7 @@
                   <li class="nav-item">
                       <a href="{% url "my_orders" %}"><button id="order_btn" class="btn"> My Orders</button></a>
                       <a href="{% url "buyer_completed_jobs" %}"><button id="comp_btn" class="btn">Completed Jobs</button></a>
+                      <a href = "{% url "logout" %}"><button class="btn">Logout</button></a>
                   </li>
               </ul>
               <div class="hamburger">
@@ -190,9 +191,11 @@
               </div>
           </nav>
       </header>
+      <!-- thank you page! -->
     <h1 class="main">Thank you!</h1>
     <h3 class="alt" >For ordering with DeliverEase</h3>
 
+    <!-- some animations -->
     <div class="confetti">
         <div class="confetti-piece"></div>
         <div class="confetti-piece"></div>

@@ -5,28 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- The title of the webpage -->
+    <title>DeliverEase | Post a Job</title>
+
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "buyer/jobform.css" %}">
     <link rel="stylesheet" href="{% static "buyer/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "buyer/Navbar.css" %}">
-    <title>DeliverEase</title>
 </head>
 <body>
   <div class="App">
-
+    <!-- Header section -->
     <header class="header">
       <nav class="navbar">
           <a href="{% url "index" %}" class="nav-logo">DeliverEase</a>
+          
           <ul class="nav-menu">
+             <!-- Navigation links -->
+
+              <!-- add the url for the home page -->
               <li class="nav-item">
                   <a href="{% url "index" %}" class="nav-link">Home</a>
               </li>
+              <!-- add the url for the about us page -->
               <li class="nav-item">
                   <a href="/about_us" class="nav-link">About Us</a>
               </li>
+              
               <li class="nav-item">
                   <a href="{% url "my_orders" %}" class="button">My Orders</a>
               </li>
+
+              <li class="nav-item">
+                <a href = "{% url "logout" %}"><button class="btn">Logout</button></a>
+              </li>
+
           </ul>
+
+          <!-- hamburger div will use for responsiveness -->
           <div class="hamburger">
               <span class="bar"></span>
               <span class="bar"></span>
@@ -34,8 +51,8 @@
           </div>
       </nav>
   </header>
-
       <div class="formBox">
+        <!-- Buyer can post a job by filling this form-->
       <h1>Please fill these details to continue :-</h1>
       <form  method="POST">
           {% csrf_token %}
@@ -45,22 +62,24 @@
             <input type="text" name="delivery_address" class="collectdel" placeholder="Delivery Address" />
           </div>
           <div>
-            <input type="text" name="pickup_time" class="collectdel" placeholder="PickUp Time" />
-            <input type="text" name="delivery_time" class="collectdel" placeholder="Delivery Time" />
+            <input type="time" name="pickup_time" class="collectdel" placeholder="PickUp Time" />
+            <input type="time" name="delivery_time" class="collectdel" placeholder="Delivery Time" />
           </div>
           <div>
-            <input type="text" name="pickup_date" class="collectdel" placeholder="PickUp Date" />
-            <input type="text" name="delivery_date" class="collectdel" placeholder="Delivery Date" />
+            <input type="date" name="pickup_date" class="collectdel" placeholder="PickUp Date" />
+            <input type="date" name="delivery_date" class="collectdel" placeholder="Delivery Date" />
           </div>
           <div>
           <input type="text" name="pickup_pincode" class="collectdel" placeholder="PickUp Pin Code" />
           <input type="text" name="delivery_pincode" class="collectdel" placeholder="Delivery Pin Code" />
         </div>
+        <!-- After Clicking this button, This job will be shown to seller's home page -->
           <button class="btn">Place Order</button>
         </div>
       </form>
 
   </div>
 </body>
+ <!-- External JavaScript file -->
 <script src="{% static "buyer_js/add_job.html" %}"></script>
 </html>

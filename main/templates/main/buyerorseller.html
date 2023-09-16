@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{% static "main/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "main/buyerorseller.css" %}">
     <link rel="stylesheet" href="{% static "main/jobform.css" %}">
+    <!-- The title of the webpage -->
+    <title>DeliverEase | Who are you?</title>
     
 </head>
 <body>
@@ -25,6 +27,7 @@
         </label>
         <label class="logo">DeliverEase</label>
         <ul>
+          <!-- Navigation links -->
           <li><a class="active" href="{% url "global_index" %}">Home</a></li>
           <li><a href="/about_us">About Us</a></li>
           <li> <a class='button' href="{% url "my_orders" %}">My Orders</a></li>
@@ -32,6 +35,8 @@
       </nav>
 
       <div>
+        <!-- to select who are you? seller or buyer -->
+        <h1 class="que">Who are you?</h1>
         <h1 class="que">Want to join as a</h1>
         
         <!-- This div contains buyer & seller buttons which will redirect to buyer signup & seller signup page respectively -->

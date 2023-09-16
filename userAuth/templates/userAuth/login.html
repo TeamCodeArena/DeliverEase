@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliverEase | Login</title>
 
     <!-- The title of the webpage -->
     <title>login page</title>
@@ -21,16 +22,15 @@
             align-items: center;
             flex-direction: column;
             margin: auto;
-            
         }
         button{
             margin-top: 1rem;
         }
-
     </style>
     
 </head>
 <body>
+    <!-- page for login -->
     <div class="App">
         <div class="signUp"> 
             <h1>Login</h1>
@@ -39,14 +39,21 @@
 
             <!-- To Login in their account (Seller/ buyer), they have to provide registered email & password in respective field-->
             <div class="sellerInfo_login"> 
+                <!-- take email and password in the input. -->
                 <input type="email" name="email" placeholder="Billiot@example.com" />
                 <input type="password" name="password" placeholder="Password"/>
+                <!-- button -->
 
                 <!-- By clicking Login button buyer/ seller will be able to access their account -->
                 <button class="btn">login</button>
 
             </div>
             </form>
+
+            <label id="askDontHaveAccount" for="askDontHaveAccount">Create an account?</label>
+            <a href="{% url "get_started" %}"><button class="btn">Sign Up</button></a>
+        
+
         </div>
 
 
