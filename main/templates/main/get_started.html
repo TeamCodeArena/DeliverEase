@@ -1,60 +1,151 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- The title of this page -->
-    <title>Get Started with DeliverEase</title>
-    <!-- Link to the external stylesheet -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The title of this page -->
+  <title>Get Started with DeliverEase</title>
+  <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{% static "main/stylesheet.css" %}">
     <link rel="stylesheet" href="{% static "main/buyerorseller.css" %}">
     <link rel="stylesheet" href="{% static "main/jobform.css" %}">
 
-    <style>
-        .button-container{
-            margin: auto;
-            padding-top: 100px;
-        }
-        #buyer_button{
-            padding: 50px;
-            margin-right: 100px;
-         }
+  <style>
+    .button-container {
+      margin: auto;
+      padding-top: 100px;
+    }
 
-        #seller_button{
-            padding: 50px;
-        }
-        #txt-home{
-            margin-left : 100px;
-        }
-    </style>
+    #buyer_button {
+      padding: 50px;
+      margin-right: 100px;
+    }
+
+    #seller_button {
+      padding: 50px;
+    }
+
+    #txt-home {
+      margin-left: 100px;
+    }
+    .chooseProfile{
+    /* background-color: #343F71; */
+    width: 67%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  .chooseProfile >h1{
+    font-size: 3.2rem;
+    color: #645888;
+  }
+
+  .chooseProfileImg{
+    background-color: #d3d1d1;
+  }
+  .chooseProfileImg img{
+    width: 5rem;
+    background-color: #d3d1d1;
+    padding-bottom: 20px;
+  }
+  .buyerSeller{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 3.2rem;
+  }
+  .buyer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d3d1d1;
+    width: 15rem;
+    padding: 30px;
+    border: 0 solid black;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .buyerPara{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d3d1d1;
+  }
+
+  .buyerPara >h2{
+    background-color: #d3d1d1;
+    color: gray;
+    font-size: 2rem;
+  }
+
+  .buyerPara >h3{
+    background-color: #d3d1d1;
+    color: gray;
+    font-size: 1.2rem;
+  }
+  </style>
 </head>
 <body>
-     <!-- Navigation section -->
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo">DeliverEase</label>
-        <ul>
+  <!-- Navigation section -->
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">DeliverEase</label>
+    <ul>
           <li><a class="active" href="{% url "index" %}">Home</a></li>
-          <li><a href="/about_us">About Us</a></li>
+      <li><a href="/about_us">About Us</a></li>
           <li> <a class='button' href="{% url "my_orders" %}">My Orders</a></li>
-        </ul>
-      </nav>
+    </ul>
+  </nav>
 
-       <!-- Main content section -->
-      <div>
-        <h1 id="txt-home" class= "que">Who are you?</h1>
-        <h1 id="txt-home" class= "que">Want to join as a</h1>
+  <!-- Main content section -->
 
-        <!-- This div contains buyer & seller buttons which will redirect to buyer signup & seller signup page respectively -->
-        <div class="button-container">
-            <a class="butt" id="buyer_button" href="/auth/buyer_signup">Buyer</a>
-            <a class="butt" id="seller_button" href="/auth/seller_signup">Seller</a>
-        </div>
+  <div class="chooseProfile">
+    <h1>Want to join as a? </h1>
+
+    <div class="buyerSeller">
+
+        <div class="buyer"> 
+      <!-- link korte hobe jate img e click korle onno page e redirect kore -->
+      <!-- <img src="{% static "media/homepage.jpg" %}" alt="homepageimg"  /> -->
+      <div class="chooseProfileImg">
+        <img src="{% static "media/user.png" %}" alt="image">
       </div>
+
+        <div class="buyerPara">
+          <h2>Buyer</h2>
+          <h3>I am a client</h3>
+        </div>
+
+        </div>
+      
+        <div class="buyer">
+
+        <div class="chooseProfileImg">
+          <img src="{% static "media/seller.png" %}" alt="image">
+        </div>
+
+        <div class="buyerPara">
+          <h2>Seller</h2>
+          <h3>I will deliver goods</h3>
+        </div>
+        </div>
+      
+    </div>
+  </div>
+
+
 </body>
+
 </html>

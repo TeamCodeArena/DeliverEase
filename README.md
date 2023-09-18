@@ -1,13 +1,41 @@
 <!-- Documentation start -->
-<!-- Logo start -->
-<img align="right" width="128" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>
-<!-- Logo end -->
-<a id="top"></a>
-# DeliverEase [![GitHub release](https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/releases)  [![License](https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://opensource.org/licenses/MIT)  [![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)](https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g) [![Issues](https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://github.com/TeamCodeArena/DeliverEase/issues) [![Coverage](https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square)](https://codecov.io/gh/TeamCodeArena/DeliverEase) ![Security](https://img.shields.io/badge/Security-SSL-yellow?style=flat-square) ![Platform](https://img.shields.io/badge/Platform-Web-brightgreen?style=flat-square) ![Language](https://img.shields.io/badge/Language-Python%2C%20HTML%2C%20CSS%2C%20Shell%2C%20JavaScript-blue?style=flat-square) ![Framework](https://img.shields.io/badge/Framework-Django-orange?style=flat-square)
-<img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
+<p align="center">
+  <img src="img/LogoDeliverEase.png" height="128">
+  <h1 align="center">DeliverEase</h1>
+</p>
+
+<!-- Old logo-->
+<!--<img align="right" width="128" src="https://gcdnb.pbrd.co/images/nlDr0mgn0Nkp.png"></a>-->
+
+
+<p align="center">
+  <a aria-label="Follow DeliverEase on GitHub" href="https://github.io/TeamCodeArena" target="_blank">
+    <img alt="" src="https://img.shields.io/badge/Follow%20@DeliverEase-black.svg?style=for-the-badge&logo=GitHub">
+  </a>
+  <a aria-label="Join the our community on Slack" href="https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g" target="_blank">
+    <img alt="" src="https://img.shields.io/badge/Join%20the%20community-black.svg?style=for-the-badge&logo=Slack">
+  </a>
+</p>
+
+<div align="center">
+  <a id="top"></a>
+  <a href="https://github.com/TeamCodeArena/DeliverEase/releases"><img src="https://img.shields.io/github/release/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="Github release"></a></img>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="license"></a></img>
+  <a href="https://github.com/TeamCodeArena/DeliverEase/issues"><img src="https://img.shields.io/github/issues/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="issues"></a></img>
+  <a href="https://codecov.io/gh/TeamCodeArena/DeliverEase"><img src="https://img.shields.io/codecov/c/github/TeamCodeArena/DeliverEase.svg?style=flat-square" alt="issues"></a></img>
+</div>
 
 ### Empowering Delivery Partners, Connecting Communities
+<img align="right" width="200" src="https://gcdnb.pbrd.co/images/UkjcafJdZxhy.png"></a>
+
 >DeliverEase is an innovative platform **designed to empower delivery partners** and foster **seamless connections between buyers and sellers** without the need for intermediaries. With a **user-friendly interface** and **efficient processes**, DeliverEase aims to **revolutionize the way goods are delivered**, making it convenient for both consumers and businesses.
+
+<!--TODO: Product Image start-->
+
+<!--TODO: Product Image end-->
+
+> **Note**\
+> DeliverEase is currently in development. You can find our badges [**here**](Status.md)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -65,7 +93,7 @@ DeliverEase is built on the foundation of **empowering delivery partners**, enab
 - **Convenient pickup and drop-off services**
 - **No tracking system** to ensure user privacy 
 
-## Getting Started ![Getting Started](https://img.shields.io/badge/Getting%20Started-Ready-blueviolet?style=flat-square) [![Quick Setup](https://img.shields.io/badge/Quick%20Setup-6%20Steps-success?style=flat-square)](#quick-setup) [![Installation Guide](https://img.shields.io/badge/Installation%20Guide-Easy-brightgreen?style=flat-square)](#installation-guide)
+## Getting Started
 To get started with DeliverEase using Django, follow these steps:
 - **Clone the repository:** `git clone https://github.com/TeamCodeArena/DeliverEase`
 - **Navigate to the project directory:** `cd DeliverEase`
@@ -90,15 +118,21 @@ DeliverEase is released under the [**MIT License**](https://opensource.org/licen
 See [**`LICENSE.md`**](LICENSE) for more information.
 
 
-## Social Media
-<a aria-label="Join the community on Slack" href="https://join.slack.com/t/deliverease-group/shared_invite/zt-20af47vjo-msHq~8~PRsmi3x5~rMzs7g" target="_blank">
-    <img alt="" src="https://img.shields.io/badge/Join the community on Slack-4A154B?style=flat&logo=slack&logoColor=white">
-</a>
-
 ## Github Wiki
-You can see our Github wiki [![Wiki](https://img.shields.io/badge/Wiki-User_Docs-blue.svg?style=flat)](https://github.com/N3v1/DeliverEase/wiki)
+You can see our Github wiki here: [![Wiki](https://img.shields.io/badge/Wiki-User_Docs-blue.svg?style=flat)](https://github.com/N3v1/DeliverEase/wiki)
 
 
+## Related Projects
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/TeamCodeArena/deliverease.app">
+      <img src="img/LogoDeliverEase.png" height="128">
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;deliverease.app&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      </a>
+    </td>
+  </tr>
+</table>
 
 
 <img align="right" width="100" src="https://gcdnb.pbrd.co/images/GbLnj1MXCQRu.jpg?o=1"></a>
