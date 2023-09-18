@@ -39,7 +39,15 @@ Welcome to DeliverEase! We are excited to have you contribute to our project. Yo
     
 • To run all CSS files in the project directory, run ```npx stylelint "**/*.css"```(to run only one file; cd into that folder -> replace "**/*.css"(npx stylelint example.css) with the file name.)
 
-11. Now that the Project's setup is complete, Thank you for setting up the project locally. Now you can start contributing to the project.
+11. After that, You can setup and view front-end testcases and code coverage by the following the steps given below:
+
+  • Step 1: ```npm install --save-dev jest``` to install jest for the testcases.
+
+  • Step 2: ```npm install jsdom``` to install jsdom.
+
+  • Step 3: ```npm test``` to run the testcases and print the code coverage report for the front-end.
+
+12. Now that the Project's setup is complete, Thank you for setting up the project locally. Now you can start contributing to the project.
 
 ## Guidelines for Contributors
 
