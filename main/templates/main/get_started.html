@@ -1,19 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- The title of this page -->
-  <title>Get Started with DeliverEase</title>
-  <!-- Link to the external stylesheet -->
-    <link rel="stylesheet" href="{% static "main/stylesheet.css" %}">
-    <link rel="stylesheet" href="{% static "main/buyerorseller.css" %}">
-    <link rel="stylesheet" href="{% static "main/jobform.css" %}">
-
-  <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- The title of this page -->
+        <title>Get Started with DeliverEase</title>
+        <!-- Link to the external stylesheet -->
+        <link rel="stylesheet" href="{% static "main/stylesheet.css" %}">
+        <link rel="stylesheet" href="{% static "main/buyerorseller.css" %}">
+        <link rel="stylesheet" href="{% static "main/jobform.css" %}">
+        <style>
     .button-container {
       margin: auto;
       padding-top: 100px;
@@ -92,60 +90,60 @@
     color: gray;
     font-size: 1.2rem;
   }
-  </style>
-</head>
-<body>
-  <!-- Navigation section -->
-  <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-      <i class="fas fa-bars"></i>
-    </label>
-    <label class="logo">DeliverEase</label>
-    <ul>
-          <li><a class="active" href="{% url "index" %}">Home</a></li>
-      <li><a href="/about_us">About Us</a></li>
-          <li> <a class='button' href="{% url "my_orders" %}">My Orders</a></li>
-    </ul>
-  </nav>
-
-  <!-- Main content section -->
-
-  <div class="chooseProfile">
-    <h1>Want to join as a? </h1>
-
-    <div class="buyerSeller">
-
-        <div class="buyer"> 
-      <!-- link korte hobe jate img e click korle onno page e redirect kore -->
-      <!-- <img src="{% static "media/homepage.jpg" %}" alt="homepageimg"  /> -->
-      <div class="chooseProfileImg">
-        <img src="{% static "media/user.png" %}" alt="image">
-      </div>
-
-        <div class="buyerPara">
-          <h2>Buyer</h2>
-          <h3>I am a client</h3>
+  .noHoverColor:hover{
+      background-color: transparent;
+  }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation section -->
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">DeliverEase</label>
+            <ul>
+                <li>
+                    <a class="active" href="{% url "index" %}">Home</a>
+                </li>
+                <li>
+                    <a href="/about_us">About Us</a>
+                </li>
+                <li>
+                    <a class='button' href="{% url "my_orders" %}">My Orders</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Main content section -->
+        <div class="chooseProfile">
+            <h1>Want to join as a?</h1>
+            <div class="buyerSeller">
+                <a class="noHoverColor" href="{% url 'buyer_signup' %}">
+                    <div class="buyer">
+                        <!-- link korte hobe jate img e click korle onno page e redirect kore -->
+                        <!-- <img src="{% static "media/homepage.jpg" %}" alt="homepageimg" /> -->
+                        <div class="chooseProfileImg">
+                            <img src="{% static "media/user.png" %}" alt="image">
+                        </div>
+                        <div class="buyerPara">
+                            <h2>Buyer</h2>
+                            <h3>I am a client</h3>
+                        </div>
+                    </div>
+                </a>
+                <a class="noHoverColor" href="{% url 'seller_signup' %}">
+                    <div class="buyer">
+                        <div class="chooseProfileImg">
+                            <img src="{% static "media/seller.png" %}" alt="image">
+                        </div>
+                        <div class="buyerPara">
+                            <h2>Seller</h2>
+                            <h3>I will deliver goods</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
-
-        </div>
-      
-        <div class="buyer">
-
-        <div class="chooseProfileImg">
-          <img src="{% static "media/seller.png" %}" alt="image">
-        </div>
-
-        <div class="buyerPara">
-          <h2>Seller</h2>
-          <h3>I will deliver goods</h3>
-        </div>
-        </div>
-      
-    </div>
-  </div>
-
-
-</body>
-
+    </body>
 </html>
