@@ -35,7 +35,7 @@
 <!--TODO: Product Image end-->
 
 > **Note**\
-> DeliverEase is currently in development. You can find our badges [**here**](Status.md)
+> DeliverEase is currently in development. You can find our badges [**here**](https://github.com/TeamCodeArena/DeliverEase/blob/main/Status.md)
 
 ## Table of Contents
 - [Introduction](#introduction)
