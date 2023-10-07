@@ -4,6 +4,21 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Buyer, Seller
+from twilio.rest import Client
+from random import randrange
+
+
+#This is what will send the message top the phone
+def send_message_verification(number, code):
+    account_sid = 'YOUR ACCOUNT SID'
+    auth_token = 'YOUR AUTH TOKEN'
+    client = Client(account_sid, auth_token)
+
+    message = client.messages.create(
+    from_='YOUR TWILIO NUMBER',
+    body='Verification Code: '  + str(code),
+    to='+1' + number #+1 assumes they are in the us if not just tell them to add an area code
+    )
 
 
 def check_user_exists(email):
@@ -132,6 +147,9 @@ def buyer_signup(request):
         email = request.POST["email"]
         address = request.POST["address"]
         # register the buyer on our web
+        #send a verification code
+        code = randrange(1001, 5000)
+        send_message_verification(phone_no, code)
         try:
             url, message = user_signup(
                 username=username,
@@ -174,6 +192,11 @@ def seller_signup(request):
         email = request.POST["email"]
         work_experience = request.POST["work_experience"]
         address = request.POST["address"]
+
+        #send a verification code
+        code = randrange(1001, 5000)
+        send_message_verification(phone_no, code)
+
         try:
             url, message = user_signup(
                 username=username,
