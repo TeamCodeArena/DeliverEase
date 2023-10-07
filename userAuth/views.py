@@ -15,10 +15,11 @@ def send_message_verification(number, code):
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-    from_='YOUR TWILIO NUMBER',
+    from_='YOUR TWILIO NUMBER', 
     body='Verification Code: '  + str(code),
     to='+1' + number #+1 assumes they are in the us if not just tell them to add an area code
     )
+
 
 
 def check_user_exists(email):
@@ -147,7 +148,7 @@ def buyer_signup(request):
         email = request.POST["email"]
         address = request.POST["address"]
         # register the buyer on our web
-        #send a verification code
+        #send a verification code, DESIGN TBA
         code = randrange(1001, 5000)
         send_message_verification(phone_no, code)
         try:
