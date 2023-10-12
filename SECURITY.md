@@ -8,7 +8,7 @@ Please note that only the following versions are currently supported and activel
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.x.x   | ✅                  |
+| 1.0.0   | ✅                 |
 
 ## Reporting a Vulnerability
 
